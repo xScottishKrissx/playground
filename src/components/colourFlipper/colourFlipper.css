@@ -1,0 +1,26 @@
+.colourFlipper{
+    background-color: black;
+    color: white;
+    margin-bottom: 200px;
+    padding: 20px
+}
+
+.colourFlipper__innerContainer{
+    background-color: #6c757d;
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+    .colourFlipper__header{
+        color: aqua;
+    }
+    .colourFlipper__displayColour{
+        padding-bottom: 10px;
+        padding-top: 10px;
+        text-align: center;
+    }
+.colourFlipper__buttonContainer{
+    margin: 0 auto;
+    margin-top: 25px;
+    width: 90%;
+}
