@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 import ColourFlipper from './components/colourFlipper/colourFlipper';
+import Counter from './components/counter/counter';
 
 
 
@@ -21,10 +22,16 @@ function App() {
 
       <Container >
         
-        <Row>
-          <Col><ColourFlipper /></Col>
-          <Col>2</Col>
-          <Col>3</Col>
+        <Row fluid>
+          <Col sm={6} lg={4}> <ColourFlipper /></Col>
+          <Col sm={6} lg={4}> <Counter /> </Col>
+
+
+          
+          <Col sm={6} lg={4}></Col>
+          <Col sm={6} lg={4}></Col>
+          <Col sm={6} lg={4}></Col>
+          <Col sm={6} lg={4}></Col>
         </Row>
 
       </Container>

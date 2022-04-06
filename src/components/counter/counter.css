@@ -1,0 +1,18 @@
+.counter{
+    /* outline: 1px solid red; */
+    padding: 20px;
+}
+
+.counter__displayCounter{
+    font-size: 3rem;
+    padding: 20px;
+    text-align: center;
+}
+.counter_buttonContainer{
+    display: flex;
+    justify-content: space-around;
+
+}
+    .counter__button{
+
+    }
