@@ -42,6 +42,14 @@ export class ColourFlipper extends React.Component{
         return Math.floor((Math.random() * x.length))
     }
 
+
+    // 
+    handleCopy(){
+        navigator.clipboard.writeText(this.state.setColour)
+        console.log("Copy")
+    }
+
+
     render(){
         const style = { backgroundColor: this.state.setColour }
         const displayColour = this.state.setColour
@@ -52,9 +60,13 @@ export class ColourFlipper extends React.Component{
                 <h2>Colour Flipper</h2>
                 <div className="colourFlipper__innerContainer" >
                     {displayColour.length > 0 ? 
-                        <span className="colourFlipper__displayColour">{displayColour}</span> : 
+                        <span className="colourFlipper__displayColour">{displayColour}
+                        <Button variant="secondary" onClick={()=>this.handleCopy()}><span class="material-icons">content_copy</span></Button>
+                        
+                        </span> : 
                         <span className="colourFlipper__displayColour"> ...</span>
                     }
+                    
 
 
 
@@ -66,9 +78,11 @@ export class ColourFlipper extends React.Component{
                     <Row>
                         <Col xs={6}><Button variant="secondary" onClick={()=>this.handleClick()}>Get RBGA</Button></Col>
                         <Col xs={6}><Button variant="secondary" onClick={()=>this.getHex()}>Get HEX</Button></Col>
+                        
                     </Row>
-
                 </div>
+
+                
                
             </div>
         )

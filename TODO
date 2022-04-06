@@ -5,7 +5,7 @@ Javascript:
   ☐ Calculator
   ☐ Simple CRUD
   ☐ Search Box
-  ☐ Random colour picker
+  ✔ Random colour picker @done(16:40 - 06/04/22)
   ☐ Number counter
   ☐ review carousel
   ☐ responsive navbar
@@ -42,4 +42,3 @@ React:
 
 Typescript:
   ☐ Arkanoid Game
-  
