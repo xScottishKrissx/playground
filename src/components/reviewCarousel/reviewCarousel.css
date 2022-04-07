@@ -1,0 +1,27 @@
+.carousel__container{
+    height: 100%;
+    /* outline: 1px solid black; */
+}
+.carousel__innerContainer{
+    box-shadow: 0px 5px 12px 5px #8f8f8f;
+    border-radius: 20px;
+    margin: 0 auto;
+    /* outline: 1px solid red; */
+    width: 90%;
+}
+.carousel__review{
+    display: flex;
+    align-items: center;
+
+    flex-direction: row;
+    justify-content: space-around;
+}
+    .carousel__review p, .carousel__review h3{
+        /* padding: 0; */
+        margin: 0;
+    }
+.carousel__imgContainer img{
+    /* border:1px solid blue; */
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}

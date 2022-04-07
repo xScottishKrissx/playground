@@ -11,6 +11,7 @@ import Col from 'react-bootstrap/Col'
 
 import ColourFlipper from './components/colourFlipper/colourFlipper';
 import Counter from './components/counter/counter';
+import ReviewCarousel from './components/reviewCarousel/reviewCarousel';
 
 
 
@@ -24,11 +25,10 @@ function App() {
         
         <Row fluid>
           <Col sm={6} lg={4}> <ColourFlipper /></Col>
-          <Col sm={6} lg={4}> <Counter /> </Col>
-
+          <Col sm={6} lg={4}> <Counter /> </Col>          
+          <Col sm={6} lg={4}><ReviewCarousel /></Col>
 
           
-          <Col sm={6} lg={4}></Col>
           <Col sm={6} lg={4}></Col>
           <Col sm={6} lg={4}></Col>
           <Col sm={6} lg={4}></Col>

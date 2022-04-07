@@ -54,6 +54,8 @@ export class ColourFlipper extends React.Component{
         const style = { backgroundColor: this.state.setColour }
         const displayColour = this.state.setColour
 
+        
+
         return(
             <div style={style} className="colourFlipper">
                 
@@ -78,7 +80,6 @@ export class ColourFlipper extends React.Component{
                     <Row>
                         <Col xs={6}><Button variant="secondary" onClick={()=>this.handleClick()}>Get RBGA</Button></Col>
                         <Col xs={6}><Button variant="secondary" onClick={()=>this.getHex()}>Get HEX</Button></Col>
-                        
                     </Row>
                 </div>
 
