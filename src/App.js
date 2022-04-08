@@ -12,6 +12,7 @@ import Col from 'react-bootstrap/Col'
 import ColourFlipper from './components/colourFlipper/colourFlipper';
 import Counter from './components/counter/counter';
 import ReviewCarousel from './components/reviewCarousel/reviewCarousel';
+import Navbar from './components/navBar/navbar';
 
 
 
@@ -19,9 +20,11 @@ import ReviewCarousel from './components/reviewCarousel/reviewCarousel';
 function App() {
   return (
     <div className="App">
-      <h2>Playground</h2>
+      {/* <h2>Playground</h2> */}
 
-      <Container >
+
+      <Navbar />
+      <Container className="mt-5">
         
         <Row fluid>
           <Col sm={6} lg={4}> <ColourFlipper /></Col>
