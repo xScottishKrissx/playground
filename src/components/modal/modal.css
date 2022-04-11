@@ -1,0 +1,9 @@
+.modal__innerModalBackground{
+    background-color: #818181ad;
+    /* outline: 1px solid red; */
+
+}
+.modal_innerModalContainer{
+    background-color: white;
+    z-index: 10;
+}

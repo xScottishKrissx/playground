@@ -14,7 +14,7 @@ import Counter from './components/counter/counter';
 import ReviewCarousel from './components/reviewCarousel/reviewCarousel';
 import Navbar from './components/navBar/navbar';
 import Sidebar from './components/sidebar/sidebar';
-
+import Modal from './components/modal/modal';
 
 
 
@@ -32,6 +32,7 @@ function App() {
           <Col sm={6} lg={4}> <Counter /> </Col>          
           <Col sm={6} lg={4}> <ReviewCarousel /> </Col>
           <Col sm={6} lg={4}> <Sidebar /> </Col>
+          <Col sm={6} lg={4}> <Modal /> </Col>
           
           <Col sm={6} lg={4}></Col>
           <Col sm={6} lg={4}></Col>

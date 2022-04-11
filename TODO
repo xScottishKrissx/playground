@@ -7,10 +7,10 @@ Javascript:
   ☐ Search Box
   ✔ Random colour picker @done(16:40 - 06/04/22)
   ✔ Number counter @done(17:41 - 06/04/22)
-  ✔ review carousel @done(19:13 - 07/04/22)
-  ☐ responsive navbar
-  ☐ sidebar
-  ☐ modals
+  ☐ review carousel
+  ✔ responsive navbar @done(17:54 - 11/04/22)
+  ✔ sidebar @done(17:54 - 11/04/22)
+  ✔ modal @done(18:28 - 11/04/22)
   ☐ faq page
   ☐ menu page
   ☐ video background
@@ -25,7 +25,7 @@ Javascript:
   ☐ platformer game
   ☐ js flappy bird game
   ☐ various js games
-  ☐ 
+
   
 React:
   ☐ react tic tac toe
