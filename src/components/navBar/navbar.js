@@ -11,13 +11,13 @@ export const Navbar = (props) =>{
     function toggleMenu(){
 
         if(displayMenu === true){
-            console.log("Hide Menu")
+            // console.log("Hide Menu")
             document.getElementById("responsiveNavbar__menuAnchor").classList.remove("showMenu")
             setMenuStatus(false)
         }
 
         if(displayMenu === false){
-            console.log("Show Menu")
+            // console.log("Show Menu")
             document.getElementById("responsiveNavbar__menuAnchor").classList.add("showMenu")
             setMenuStatus(true)
         }

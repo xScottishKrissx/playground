@@ -53,3 +53,8 @@
   margin: 0 auto;
   width: 90%;
 }
+
+h2{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold !important;
+}
