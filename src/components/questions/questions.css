@@ -1,3 +1,7 @@
+.questions__container{
+    width: 100%;
+
+}
 .questions__questionTitle{
     display: flex;
         align-items: center;

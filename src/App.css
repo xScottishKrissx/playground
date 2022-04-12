@@ -44,12 +44,19 @@
   /* outline:1px solid black */
 }
 
-.container .row .col{
+.container > div > div{
   /* background-color: rgb(255, 255, 255); */
+  box-shadow: 0px 0px 10px 0px #00000040;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+  min-height: 350px;
+  /* outline: 1px solid #00000021; */
+  padding: 30px;
 }
 .container .row .col > div {
   /* background-color: white; */
-  /* outline: 1px solid rgb(170, 170, 170); */
+  outline: 1px solid rgb(170, 170, 170);
   margin: 0 auto;
   width: 90%;
 }

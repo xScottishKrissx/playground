@@ -29,13 +29,14 @@ function App() {
       <Container className="mt-5">
         
         <Row fluid>
-          <Col sm={6} lg={4}> <ColourFlipper /> </Col>
-          <Col sm={6} lg={4}> <Counter /> </Col>          
-          <Col sm={6} lg={4}> <ReviewCarousel /> </Col>
-          <Col sm={6} lg={4}> <Sidebar /> </Col>
-          <Col sm={6} lg={4}> <Modal /> </Col>
+         
           <Col sm={6} lg={4}> <Questions /> </Col>
-          
+          <Col sm={6} lg={4}> <Modal /> </Col>
+          <Col sm={6} lg={4}> <Sidebar /> </Col>      
+          <Col sm={6} lg={4}> <ReviewCarousel /> </Col>
+          <Col sm={6} lg={4}> <Counter /> </Col>
+          <Col sm={6} lg={4}> <ColourFlipper /> </Col>
+
           <Col sm={6} lg={4}></Col>
           <Col sm={6} lg={4}></Col>
           <Col sm={6} lg={4}></Col>
