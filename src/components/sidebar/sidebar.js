@@ -31,9 +31,9 @@ return(
         <h1>Sidebar</h1>
         <Button className="sidebar__toggleButton" onClick={()=>toggleSidebar()}>
             {displaySidebar === false ? 
-                 <div className="d-flex"><span class="material-icons">view_sidebar</span>Show Sidebar</div>
+                 <div className="d-flex"><span className="material-icons">view_sidebar</span>Show Sidebar</div>
                 : 
-                <div className="d-flex"><span class="material-icons">close</span>Hide Sidebar</div>
+                <div className="d-flex"><span className="material-icons">close</span>Hide Sidebar</div>
             }
         </Button>
 
@@ -43,7 +43,7 @@ return(
 
 {/* Menu Header and Toggle Sidebar Button */}
                 <div onClick={()=>toggleSidebar()} id="sidebar__header" className="sidebar__header d-flex align-items-center mt-2 mb-3" role="button">
-                    <div class="sidebar__toggleButton m-3"><span class="material-icons">close</span></div>
+                    <div className="sidebar__toggleButton m-3"><span className="material-icons">close</span></div>
                     <h2>Sidebar</h2>
                 </div>
 

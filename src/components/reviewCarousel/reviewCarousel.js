@@ -113,20 +113,20 @@ export class ReviewCarousel extends React.Component{
                                 <Col className="p-0 mx-0" >                        
                                     {/* previous button */}
                                     <Button className="p-1" onClick={()=>this.prevButton(people.length)} variant="secondary" >
-                                        <span class="material-icons">chevron_left</span>
+                                        <span className="material-icons">chevron_left</span>
                                     </Button>
                                 </Col>
 
                                 <Col className="p-0 mx-0" >  {/* next button */}
                                     <Button className="p-1" onClick={()=>this.nextButton(people.length)} variant="secondary" >
-                                        <span class="material-icons">chevron_right</span>
+                                        <span className="material-icons">chevron_right</span>
                                     </Button>
                                 </Col>
 
                                 <Col className="p-0 mx-0" >
                                     {/* random button */}
                                     <Button  className="p-1" onClick={()=>this.randButton(people.length)} variant="secondary" >
-                                        <span class="material-icons">shuffle</span>
+                                        <span className="material-icons">shuffle</span>
                                     </Button>
                                 </Col>
                             </Row>

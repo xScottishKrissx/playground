@@ -1,0 +1,20 @@
+.questions__questionTitle{
+    display: flex;
+        align-items: center;
+        justify-content: space-between;
+}
+
+
+.questions__questionAnswer{
+    display: none;
+}
+.questions__questionTitle .remove{
+    display: none;
+}
+
+.showAnswer .questions__questionAnswer{
+    display: block;
+}
+
+.showAnswer .questions__questionTitle .add {display: none;}
+.showAnswer .questions__questionTitle .remove{ display: block; }

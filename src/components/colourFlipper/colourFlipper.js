@@ -63,7 +63,7 @@ export class ColourFlipper extends React.Component{
                 <div className="colourFlipper__innerContainer" >
                     {displayColour.length > 0 ? 
                         <span className="colourFlipper__displayColour">{displayColour}
-                        <Button variant="secondary" onClick={()=>this.handleCopy()}><span class="material-icons">content_copy</span></Button>
+                        <Button variant="secondary" onClick={()=>this.handleCopy()}><span className="material-icons">content_copy</span></Button>
                         
                         </span> : 
                         <span className="colourFlipper__displayColour"> ...</span>
