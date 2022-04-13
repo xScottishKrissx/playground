@@ -46,7 +46,7 @@ export const Questions = () =>{
                 } 
             >
 
-            <div role="button" className="questions__questionTitle"  onClick={()=>toggleQuestions(index)}>
+            <div role="button" className="questions__questionTitle d-flex align-items-center justify-content-between"  onClick={()=>toggleQuestions(index)}>
                 <h3>{x.question}</h3>
                 <span className="material-icons add">add_circle_outline</span>
                 <span className="material-icons remove">remove_circle_outline</span>
@@ -55,7 +55,8 @@ export const Questions = () =>{
             <div className="questions__questionAnswer">
                 <p>{x.answer}</p>    
             </div>    
-
+            
+                
         </div>
         )
 
@@ -63,7 +64,7 @@ export const Questions = () =>{
 
 
     return(
-        <div className="questions__container">
+        <div className="questions__container w-100">
             <h2>Questions</h2>
             {getQuestions}
         </div>

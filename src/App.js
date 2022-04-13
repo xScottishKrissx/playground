@@ -16,6 +16,7 @@ import Navbar from './components/navBar/navbar';
 import Sidebar from './components/sidebar/sidebar';
 import Modal from './components/modal/modal';
 import Questions from './components/questions/questions';
+import SimpleFilter from './components/simpleFilter/simpleFIlter';
 
 
 
@@ -29,7 +30,8 @@ function App() {
       <Container className="mt-5">
         
         <Row fluid>
-         
+
+          <Col sm={6} lg={4}> <SimpleFilter /> </Col>
           <Col sm={6} lg={4}> <Questions /> </Col>
           <Col sm={6} lg={4}> <Modal /> </Col>
           <Col sm={6} lg={4}> <Sidebar /> </Col>      
