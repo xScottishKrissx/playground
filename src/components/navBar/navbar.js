@@ -32,7 +32,7 @@ return(
             <h2 className="mb-0">Responsive Navbar</h2>
 
             {/* Toggle */}
-            <span onClick={()=>toggleMenu()} id="menuToggle" class="material-icons">menu</span>
+            <span onClick={()=>toggleMenu()} id="menuToggle" className="material-icons">menu</span>
 
         </div>
 

@@ -29,7 +29,7 @@ function App() {
       <Navbar />
       <Container className="mt-5">
         
-        <Row fluid>
+        <Row fluid="true">
 
           <Col sm={6} lg={4}> <SimpleFilter /> </Col>
           <Col sm={6} lg={4}> <Questions /> </Col>
