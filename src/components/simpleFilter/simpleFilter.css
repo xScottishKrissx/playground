@@ -1,9 +1,43 @@
-.modal__innerModalBackground{
-    background-color: #818181ad;
-    /* outline: 1px solid red; */
 
+/* Base Modal Styling */
+.simpleFilter__modalContainer{
+    align-items: center;
 }
-.modal_innerModalContainer{
+
+.simpleFilter__innerModalBackground{
+    background-color: #818181ad;
+}
+
+.simpleFilter__innerModalContainer{
     background-color: white;
     z-index: 10;
+}
+
+
+/* Information Layout */
+.simpleFilter__staffOutput div {
+    box-shadow: 0px 5px 12px 5px #8f8f8f;
+    border-radius: 20px;
+}
+
+    .simpleFilter__staffOutput div img{
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+    }
+
+    .simpleFilter__staffOutput div p{
+        /* text-align: center; */
+        width: 200px;
+    }
+
+/* media queries */
+@media screen and (max-width:1200px){
+    .simpleFilter__modalContainer{
+        align-items: flex-start;
+    }
+}
+
+/* Lock background scrolling while modal is active */
+.lock-scroll{
+    overflow: hidden;
 }
