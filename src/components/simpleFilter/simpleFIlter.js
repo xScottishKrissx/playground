@@ -105,6 +105,7 @@ export const SimpleFilter = (props) =>{
 
     // Mapping Buttons from data
     const getDepartmentFromData = data.map(x => x.department)
+    // ...return an array of unique values(the departments)
     const departmentArray = Array.from(new Set(getDepartmentFromData))
     departmentArray.unshift("All")
     departmentArray.sort()

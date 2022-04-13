@@ -17,6 +17,7 @@ import Sidebar from './components/sidebar/sidebar';
 import Modal from './components/modal/modal';
 import Questions from './components/questions/questions';
 import SimpleFilter from './components/simpleFilter/simpleFIlter';
+import SimpleVideo from './components/videoBackground/video';
 
 
 
@@ -31,6 +32,7 @@ function App() {
         
         <Row fluid="true">
 
+          <Col sm={6} lg={4} className="p-0 overflow-hidden position-relative"> <SimpleVideo /> </Col>
           <Col sm={6} lg={4}> <SimpleFilter /> </Col>
           <Col sm={6} lg={4}> <Questions /> </Col>
           <Col sm={6} lg={4}> <Modal /> </Col>
