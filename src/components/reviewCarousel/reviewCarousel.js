@@ -93,7 +93,7 @@ export class ReviewCarousel extends React.Component{
 
         const getPerson =  people[this.state.count]
         return(
-            <div className="carousel__container">
+            <div className="carousel__container" id="carousel__container" >
                 <h2>Carousel</h2>
 
                 <div className="carousel__innerContainer">

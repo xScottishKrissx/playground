@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 
@@ -18,28 +17,27 @@ import Modal from './components/modal/modal';
 import Questions from './components/questions/questions';
 import SimpleFilter from './components/simpleFilter/simpleFIlter';
 import SimpleVideo from './components/videoBackground/video';
+import Footer from './components/footer/footer';
 
 
 
 function App() {
   return (
-    <div className="App">
-      {/* <h2>Playground</h2> */}
-
+    <div className="App d-flex flex-column align-items-center" id="App">
 
       <Navbar />
-      <Container className="mt-5">
+      <Container id="app__container" className="mt-5 mb-5">
         
         <Row fluid="true">
 
-          <Col sm={6} lg={4} className="p-0 overflow-hidden position-relative"> <SimpleVideo /> </Col>
-          <Col sm={6} lg={4}> <SimpleFilter /> </Col>
-          <Col sm={6} lg={4}> <Questions /> </Col>
-          <Col sm={6} lg={4}> <Modal /> </Col>
-          <Col sm={6} lg={4}> <Sidebar /> </Col>      
-          <Col sm={6} lg={4}> <ReviewCarousel /> </Col>
-          <Col sm={6} lg={4}> <Counter /> </Col>
-          <Col sm={6} lg={4}> <ColourFlipper /> </Col>
+          <Col sm={6} lg={6} className="p-0 overflow-hidden position-relative"> <SimpleVideo /> </Col>
+          <Col sm={6} lg={6}> <SimpleFilter /> </Col>
+          <Col sm={6} lg={6}> <Questions /> </Col>
+          <Col sm={6} lg={6}> <Modal /> </Col>
+          <Col sm={6} lg={6}> <Sidebar /> </Col>      
+          <Col sm={6} lg={6}> <ReviewCarousel /> </Col>
+          <Col sm={6} lg={6}> <Counter /> </Col>
+          <Col sm={6} lg={6} className="p-0"> <ColourFlipper /> </Col>
 
           <Col sm={6} lg={4}></Col>
           <Col sm={6} lg={4}></Col>
@@ -48,13 +46,11 @@ function App() {
 
       </Container>
 
+      <Footer />
+
 
     </div>
   );
 }
 
 export default App;
-
-
-// Ideas for practice
-// 1 -- 

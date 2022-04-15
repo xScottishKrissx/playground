@@ -57,7 +57,7 @@ export class ColourFlipper extends React.Component{
         
 
         return(
-            <div style={style} className="colourFlipper">
+            <div style={style} id="colourFlipper" className="colourFlipper">
                 
                 <h2>Colour Flipper</h2>
                 <div className="colourFlipper__innerContainer" >
@@ -66,7 +66,7 @@ export class ColourFlipper extends React.Component{
                         <Button variant="secondary" onClick={()=>this.handleCopy()}><span className="material-icons">content_copy</span></Button>
                         
                         </span> : 
-                        <span className="colourFlipper__displayColour"> ...</span>
+                        <span className="colourFlipper__displayColour">...</span>
                     }
                     
 

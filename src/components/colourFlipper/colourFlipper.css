@@ -1,15 +1,25 @@
 .colourFlipper{
     background-color: black;
     color: white;
-    margin: 20px;
-    padding: 20px
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    height: 100%;
+    /* margin: 20px; */
+    /* padding: 20px */
+    width: 100%;
 }
 
 .colourFlipper__innerContainer{
     background-color: #6c757d;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
+    min-width: 60px;
     font-size: x-large;
+    padding-left: 10px;
+    padding-right: 10px;
 }
     .colourFlipper__header{
         color: aqua;
@@ -22,5 +32,6 @@
 .colourFlipper__buttonContainer{
     margin: 0 auto;
     margin-top: 25px;
+    text-align: center;
     width: 90%;
 }
