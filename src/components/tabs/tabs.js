@@ -34,18 +34,25 @@ export const Tabs = (props) =>{
     ]
 
     const getTab = data.filter(x => x.id === isActive)
-    const mapTabs = getTab.map(x => {
+    const mapTabs = getTab.map((x,index) => {
         return(
-            <div className="tabs__content p-3">
+            <div key={index} className="tabs__content p-3">
                 <h3>{x.title}</h3>
                 <p>{x.content}</p>
             </div>
         )
     })
 
-    const mapButtons = data.map (x => {
+    const mapButtons = data.map ((x,index) => {
         return (
-                <button className={ `${x.id === isActive ? "tabs__button active" : "tabs__button" }`  }  onClick={()=>showTab(x.id)}>{x.title}</button>
+                <button 
+                    key={index}
+                    className={ `${x.id === isActive ? "tabs__button active" : "tabs__button" }`  }  
+                    onClick={()=>showTab(x.id)}>
+
+                        {x.title}
+                        
+                </button>
         )
     })
 
@@ -54,17 +61,16 @@ export const Tabs = (props) =>{
 return(
     <div className="tabs__container position-relative h-100 w-100">
 
-        <div class="tabs__header text-center pt-3">
+        <div className="tabs__header text-center pt-3">
             <h2>Simple Tabs</h2>
         </div>
 
         {mapTabs}  
         
-        <div class="tabs__buttonsContainer d-flex position-absolute bottom-0 w-100">
+        <div className="tabs__buttonsContainer d-flex position-absolute bottom-0 w-100">
             {mapButtons}  
         </div>
                   
-
     </div>
 )
 
