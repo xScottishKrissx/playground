@@ -8,20 +8,18 @@ export const Navbar = (props) =>{
    
     const [displayMenu, setMenuStatus] = useState(false) 
     const navbar = useRef(null)
+    const menuAnchor = useRef(null)
+    
 
     function toggleMenu(){
 
-
-
-        console.log(document.querySelector('.footer__innerContainer').getBoundingClientRect());
-
         if(displayMenu === true){
-            document.getElementById("responsiveNavbar__menuAnchor").classList.remove("showMenu")
+            menuAnchor.current.classList.remove("showMenu")
             setMenuStatus(false)
         }
 
         if(displayMenu === false){
-            document.getElementById("responsiveNavbar__menuAnchor").classList.add("showMenu")
+            menuAnchor.current.classList.add("showMenu")
             setMenuStatus(true)
         }
     }
@@ -29,25 +27,23 @@ export const Navbar = (props) =>{
 
 
 
-    console.log(window.pageYOffset);
+    // console.log(window.pageYOffset);
 
     // Scroll into view...    
     function customScrollTo(id){
         if(!navbar.current) return
-        document.getElementById("responsiveNavbar__menuAnchor").classList.remove("showMenu")
+        menuAnchor.current.classList.remove("showMenu")
         
         const navbarHeight = navbar.current.getBoundingClientRect().height;       
-        const fixedNav = document.getElementById("responsiveNavbar").classList.contains("fixMenu")
+        const fixedNav = navbar.current.classList.contains("fixMenu")
         
         let element = document.getElementById(id)
-
         // element.scrollIntoView({behavior: 'smooth', block: 'start'})
+        let position = element.offsetTop - navbarHeight
         if(fixedNav){
-            console.log("navbar IS fixed");
-            window.scrollTo({left:0, top:element.offsetTop})
+            window.scrollTo({left:0, top:position})
         }else{
-            console.log("navbar is NOT fixed");
-            window.scrollTo({left:0, top:element.offsetTop - 200})
+            window.scrollTo({left:0, top:position - navbarHeight})
         }
     }
 
@@ -60,9 +56,9 @@ export const Navbar = (props) =>{
         const navbarHeight = navbar.current.getBoundingClientRect().height;       
 
         if(window.scrollY > navbarHeight ) {
-            document.getElementById("responsiveNavbar").classList.add('fixMenu')
+           navbar.current.classList.add('fixMenu')
         }else{
-            document.getElementById("responsiveNavbar").classList.remove('fixMenu')
+            navbar.current.classList.remove('fixMenu')
         }
         
       };
@@ -71,10 +67,10 @@ export const Navbar = (props) =>{
     
     
 return(
-    <nav className="responsiveNavbar mt-2" id="responsiveNavbar">
+    <nav className="responsiveNavbar mt-2" ref={navbar}>
 
         {/* Nav Header */}
-        <div className="responsiveNavbar__header " ref={navbar}>
+        <div className="responsiveNavbar__header" >
             <h2 className="mb-0">Responsive Navbar</h2>
 
             {/* Toggle */}
@@ -83,7 +79,7 @@ return(
         </div>
 
         {/* Links */}
-        <div className="responsiveNavbar__links" id="responsiveNavbar__menuAnchor">
+        <div className="responsiveNavbar__links" ref={menuAnchor}>
             <span className="ps-2 pe-2">Home</span>
             <span className="ps-2 pe-2">About</span>
             <span className="ps-2 pe-2">Contact</span>
@@ -92,6 +88,7 @@ return(
 
             {/* Scroll Into View Menu */}
             <span onClick={()=>customScrollTo("colourFlipper")}>Scroll to...</span>
+
 
 
         </div>

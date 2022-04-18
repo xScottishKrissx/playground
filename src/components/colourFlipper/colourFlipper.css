@@ -1,5 +1,6 @@
 .colourFlipper{
     background-color: black;
+    /* outline: 1px solid red; */
     color: white;
     display: flex;
         flex-direction: column;
@@ -9,6 +10,7 @@
     /* margin: 20px; */
     /* padding: 20px */
     width: 100%;
+    /* z-index: 20; */
 }
 
 .colourFlipper__innerContainer{
