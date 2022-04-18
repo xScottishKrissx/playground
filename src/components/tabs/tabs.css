@@ -1,0 +1,39 @@
+
+/* Tabs Header */
+.tabs__header{
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Tabs */
+
+
+
+.tabs__container {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+    .tabs__content{
+        padding: 20px;
+    }
+
+/* Buttons */
+
+.tabs__buttonsContainer{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+    .tabs__buttonsContainer .active{
+        background-color: black;
+        color: white;
+    } 
+
+    .tabs__button{
+        width: 100%;
+        border: none;
+        padding: 10px;
+    }
