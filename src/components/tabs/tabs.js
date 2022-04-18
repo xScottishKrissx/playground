@@ -36,7 +36,7 @@ export const Tabs = (props) =>{
     const getTab = data.filter(x => x.id === isActive)
     const mapTabs = getTab.map(x => {
         return(
-            <div className="tabs__content">
+            <div className="tabs__content p-3">
                 <h3>{x.title}</h3>
                 <p>{x.content}</p>
             </div>
@@ -45,24 +45,22 @@ export const Tabs = (props) =>{
 
     const mapButtons = data.map (x => {
         return (
-            
                 <button className={ `${x.id === isActive ? "tabs__button active" : "tabs__button" }`  }  onClick={()=>showTab(x.id)}>{x.title}</button>
-            
         )
     })
 
     function showTab(x){ setActive(x) }
     
 return(
-    <div className="tabs__container">
+    <div className="tabs__container position-relative h-100 w-100">
 
-        <div class="tabs__header">
+        <div class="tabs__header text-center pt-3">
             <h2>Simple Tabs</h2>
         </div>
 
         {mapTabs}  
         
-        <div class="tabs__buttonsContainer">
+        <div class="tabs__buttonsContainer d-flex position-absolute bottom-0 w-100">
             {mapButtons}  
         </div>
                   
