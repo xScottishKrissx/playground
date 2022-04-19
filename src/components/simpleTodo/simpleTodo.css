@@ -1,0 +1,23 @@
+.simpleTodo__container{
+    background-color: blueviolet;
+    display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.simpleTodo__formContainer{
+    display: flex;
+}
+
+.simpleTodo__form{
+    border: none;
+    line-height: 2rem;
+}
+.simpleTodo__formContainer button{
+    border: none;
+    line-height: 2rem;
+}
