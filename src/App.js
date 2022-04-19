@@ -20,6 +20,7 @@ import SimpleVideo from './components/videoBackground/video';
 import Footer from './components/footer/footer';
 import Tabs from './components/tabs/tabs';
 import Countdown from './components/countdown/countdown';
+import LoremIpsum from './components/loremIpsum/loremIpsum';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <Container id="app__container" className="mt-5 mb-5">
         
         <Row fluid="true">
+          <Col sm={6} lg={6} > <LoremIpsum /> </Col>
           <Col sm={6} lg={6} > <Countdown /> </Col>
           <Col sm={6} lg={6} className="p-0"> <Tabs /> </Col>
           <Col sm={6} lg={6} className="p-0 overflow-hidden position-relative"> <SimpleVideo /> </Col>
