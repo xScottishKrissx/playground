@@ -1,5 +1,5 @@
 .simpleTodo__container{
-    background-color: blueviolet;
+    /* background-color: blueviolet; */
     display: flex;
         flex-direction: column;
         justify-content: center;
@@ -11,13 +11,63 @@
 
 .simpleTodo__formContainer{
     display: flex;
+    width: 100%;
 }
 
 .simpleTodo__form{
     border: none;
     line-height: 2rem;
+    width: inherit;
 }
 .simpleTodo__formContainer button{
     border: none;
     line-height: 2rem;
 }
+
+.simpleTodo__formContainer input{
+    border: none;
+    border-bottom: 10px solid #efefef;
+    width: inherit;
+}
+
+.simpleTodo__formContainer input:focus-visible{
+    background-color: #efefef;
+    outline: none;
+}
+
+/* List */
+
+.simpleTodo__list{
+    /* outline: 1px solid; */
+    width: 100%;
+}
+
+.simpleTodo__singleItem{
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 1px black;
+    margin-top: 10px;
+    outline: 1px solid;
+
+}
+
+.simpleTodo__singleItem p{
+    
+    overflow-wrap: break-word;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
+
+.simpleTodo__singleItemButtons{
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+    .simpleTodo__editButton{
+        color: #4554ff;
+    }
+    .simpleTodo__deleteButton{
+        color: red;
+    }

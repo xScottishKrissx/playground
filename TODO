@@ -20,6 +20,12 @@ Javascript:
   ✔ countdown clock @done(18:57 - 18/04/22)
   ✔ create lorem impsum @done(17:25 - 19/04/22)
   ☐ grocery lists / simple todo
+    Tasks:
+      ✔ Ability to add items @done(13:42 - 20/04/22)
+        ☐ Shouldnt be able to add with an empty field
+      ☐ Edit Button
+      ☐ Delete button
+      ☐ Reset button
   ☐ image slider
   ☐ rock paper scissor
   ☐ simon game
