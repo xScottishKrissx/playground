@@ -21,7 +21,8 @@ import Footer from './components/footer/footer';
 import Tabs from './components/tabs/tabs';
 import Countdown from './components/countdown/countdown';
 import LoremIpsum from './components/loremIpsum/loremIpsum';
-import SimpleTodo from './components/simpleTodo/simpleTodo';
+import SimpleTodo from './components/simpleTodo/simpleTodoStateful';
+import SimpleTodoFunctional from './components/simpleTodo/simpleTodo';
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
       <Container id="app__container" className="mt-5 mb-5">
         
         <Row fluid="true">
+          
+          <Col sm={6} lg={6} > <SimpleTodoFunctional /> </Col>
           <Col sm={6} lg={6} > <SimpleTodo /> </Col>
           <Col sm={6} lg={6} > <LoremIpsum /> </Col>
           <Col sm={6} lg={6} > <Countdown /> </Col>

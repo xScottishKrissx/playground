@@ -1,53 +1,57 @@
 import * as React from 'react'
-import { useState,useRef } from 'react'
+import { useState,useRef,useEffect } from 'react'
 
 import './simpleTodo.css'
 
-export const SimpleTodo = (props) =>{
+export const SimpleTodoFunctional = () =>{
 
-    const [items, setItem] = useState(false)
+    const [items, setItem] = useState([])
     const formInput = useRef(null)
 
-    function collectUserInput(){
-        // Grab the value in the box
+    function handleClick(){
+
         const value = formInput.current.value
+        console.log(value)
+        
+        let itemsArray = items || [] 
+        itemsArray.push(value)  
+        setItem(items => ([...items]))
 
-        // Create / get the current items array
-        let itemArray = items || []
-        // add new value to the array
-        itemArray.push(value)
+    
+        console.log(items)
 
-        console.log(itemArray)
-        // format the item array in a readable format
-
-
-        // save the formatted items in state
-        setItem(itemArray)
     }
 
-    // Problem - Not updating on button click
-    
+    const mapItems = items.map((x,index) => {
+        return(
+            <p key={index}>{x}</p>
+        )
+    })
+
 return(
+
     <div className="simpleTodo__container">
-        <h1>Simple To-Do</h1>
+        <h1>Simple To-Do - Functional</h1>
 
         <div className="simpleTodo__formContainer">
             <form className="simpleTodo__form">
                 <label htmlFor="itemEntry"></label>
                 <input ref={formInput} type="text" name="itemEntry" />
             </form>
-            <button onClick={() => collectUserInput()}>add</button>
+            <button onClick={()=>handleClick()}>add</button>
             {/* <button>edit</button> */}
 
             
         </div>
 
         <div className="simpleTodo__list">
-            {items}
+
+            {mapItems}
+
         </div>
     </div>
 )
 
 }
 
-export default SimpleTodo;
+export default SimpleTodoFunctional;
