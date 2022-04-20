@@ -1,10 +1,6 @@
 import * as React from 'react'
 import { useState,useRef,useEffect } from 'react'
 
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-
-
 import './simpleTodo.css'
 
 export const SimpleTodoFunctional = () =>{
@@ -17,25 +13,89 @@ export const SimpleTodoFunctional = () =>{
     // console.log(getLocalStorage)
 
     const [items, setItem] = useState(getLocalStorage || [])
+
+    const [edit, setEditState] = useState({
+        editMode:false,
+        editIndex:false
+    })
     const formInput = useRef(null)
 
-    function handleClick(){
 
+
+
+    function handleNewItem(){
+        console.log("Add New Item");
+        setEditState({editMode:false})
     // Grab the value of the input box using the ref and add it to a new or existing array of items
-        const value = formInput.current.value        
-        let itemsArray = items || [] 
-        itemsArray.push(value)  
+        const value = formInput.current.value     
 
-    // Set the new state which will update the page.
-        setItem(items => ([...items]))    
+        if(value.length > 1){
+            let itemsArray = items || [] 
+            itemsArray.push(value)  
+    
+        // Set the new state which will update the page.
+            setItem(items => ([...items]))    
+    
+        // Save the items array to local state
+            localStorage.setItem("items",JSON.stringify(items))
+            // console.log(items)
+    
+        // Clear the input after adding a new item
+            formInput.current.value = null
+        }else{
+            console.log("Do Nothing")
+        }
+    }
 
-    // Save the items array to local state
-        localStorage.setItem("items",JSON.stringify(items))
-        // console.log(items)
+    function startEdit(index){
+        console.log("Start Edit");
+        const edit = getLocalStorage[index]
+        setEditState({editMode:true, editIndex:index})
+        formInput.current.value = edit
+    }
 
-    // Clear the input after adding a new item
+    function submitEdit(){        
+        console.log("Submit Edit");
+        // Check length of current value, if empty stop edit mode
+        const newValue = formInput.current.value
+        if(newValue.length < 1) {
+            setEditState({editMode:false})
+            alert("Error: Field cannot be empty")
+            return
+        }
+ 
+        // loop through local storage array and push to new array. If index of target matches index in array, push a new value in its place  
+        const valueToChange = edit.editIndex
+        // let editedArray = []
+
+
+        // getLocalStorage.forEach((x,index) => {
+        //     if(index === valueToChange){ editedArray.push(newValue) }else{ editedArray.push(x) }
+        // })
+
+        getLocalStorage.splice(valueToChange,1,newValue)
+        // console.log(getLocalStorage);
+
+
+        // set the new array to state, cancel edit mode and add the new items array to local storage
+        setItem(getLocalStorage) 
+        setEditState({editMode:false})
+        localStorage.setItem("items",JSON.stringify(getLocalStorage))
+
+        // empty the form input after confirming an edit
         formInput.current.value = null
 
+    }
+
+
+
+
+    function handleDelete(itemIndex){
+
+        getLocalStorage.splice(itemIndex,1)
+        setItem(getLocalStorage) 
+        localStorage.setItem("items",JSON.stringify(getLocalStorage))
+        
     }
 
     // Display the items array in a readable format.
@@ -45,8 +105,8 @@ export const SimpleTodoFunctional = () =>{
                 <p className="w-75">{x}</p>
 
                 <div  className="simpleTodo__singleItemButtons w-25">
-                    <span className="material-icons simpleTodo__editButton">edit</span>
-                    <span className="material-icons simpleTodo__deleteButton">delete</span>
+                    <span role="button" onClick={()=>startEdit(index)} className="material-icons simpleTodo__editButton">edit</span>
+                    <span role="button" onClick={()=>handleDelete(index)} className="material-icons simpleTodo__deleteButton">delete</span>
                 </div>
 
                 
@@ -64,8 +124,14 @@ return(
                 <label htmlFor="itemEntry"></label>
                 <input ref={formInput} type="text" name="itemEntry" />
             </form>
-            <button onClick={()=>handleClick()}><span className="material-icons">add</span></button>
-            {/* <button>edit</button> */}
+            
+            {!edit.editMode ? 
+                <button onClick={()=>handleNewItem()}>
+                    <span className="material-icons">add</span></button>
+                : 
+                <button onClick={()=>submitEdit()}><span className="material-icons">edit</span></button>
+                }
+
 
             
         </div>

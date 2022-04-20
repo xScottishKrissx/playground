@@ -22,8 +22,10 @@ Javascript:
   ☐ grocery lists / simple todo
     Tasks:
       ✔ Ability to add items @done(13:42 - 20/04/22)
-        ☐ Shouldnt be able to add with an empty field
-      ☐ Edit Button
+        ✔ Shouldnt be able to add with an empty field @done(15:47 - 20/04/22)
+      ☐ Edit Button 
+        ☐ Shouldnt be able to confirm an edit if the field is empty
+        ☐ Ability to cancel an edit
       ☐ Delete button
       ☐ Reset button
   ☐ image slider
