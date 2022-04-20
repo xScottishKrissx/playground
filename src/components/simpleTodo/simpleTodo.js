@@ -55,7 +55,7 @@ export const SimpleTodoFunctional = () =>{
     }
 
     function submitEdit(){        
-        console.log("Submit Edit");
+
         // Check length of current value, if empty stop edit mode
         const newValue = formInput.current.value
         if(newValue.length < 1) {
@@ -63,39 +63,24 @@ export const SimpleTodoFunctional = () =>{
             alert("Error: Field cannot be empty")
             return
         }
- 
-        // loop through local storage array and push to new array. If index of target matches index in array, push a new value in its place  
+
         const valueToChange = edit.editIndex
-        // let editedArray = []
-
-
-        // getLocalStorage.forEach((x,index) => {
-        //     if(index === valueToChange){ editedArray.push(newValue) }else{ editedArray.push(x) }
-        // })
-
         getLocalStorage.splice(valueToChange,1,newValue)
-        // console.log(getLocalStorage);
 
-
-        // set the new array to state, cancel edit mode and add the new items array to local storage
         setItem(getLocalStorage) 
         setEditState({editMode:false})
         localStorage.setItem("items",JSON.stringify(getLocalStorage))
-
-        // empty the form input after confirming an edit
         formInput.current.value = null
 
     }
 
 
-
-
-    function handleDelete(itemIndex){
-
-        getLocalStorage.splice(itemIndex,1)
+    function handleDelete(itemIndex, numToDelete){
+        getLocalStorage.splice(itemIndex,numToDelete)
         setItem(getLocalStorage) 
+        setEditState({editMode:false})
         localStorage.setItem("items",JSON.stringify(getLocalStorage))
-        
+        formInput.current.value = null
     }
 
     // Display the items array in a readable format.
@@ -106,7 +91,7 @@ export const SimpleTodoFunctional = () =>{
 
                 <div  className="simpleTodo__singleItemButtons w-25">
                     <span role="button" onClick={()=>startEdit(index)} className="material-icons simpleTodo__editButton">edit</span>
-                    <span role="button" onClick={()=>handleDelete(index)} className="material-icons simpleTodo__deleteButton">delete</span>
+                    <span role="button" onClick={()=>handleDelete(index, 1)} className="material-icons simpleTodo__deleteButton">delete</span>
                 </div>
 
                 
@@ -126,21 +111,14 @@ return(
             </form>
             
             {!edit.editMode ? 
-                <button onClick={()=>handleNewItem()}>
-                    <span className="material-icons">add</span></button>
+                <button onClick={()=>handleNewItem()}><span className="material-icons">add</span></button>
                 : 
                 <button onClick={()=>submitEdit()}><span className="material-icons">edit</span></button>
-                }
-
-
-            
-        </div>
-
-        <div className="simpleTodo__list">
-
-            {mapItems}
+            }
 
         </div>
+
+        <div className="simpleTodo__list"> {mapItems} - <button onClick={()=>handleDelete('',items.length)}>Delete All</button></div>
     </div>
 )
 

@@ -27,6 +27,7 @@ Javascript:
         ☐ Shouldnt be able to confirm an edit if the field is empty
         ☐ Ability to cancel an edit
       ☐ Delete button
+        ☐ Delete All option
       ☐ Reset button
   ☐ image slider
   ☐ rock paper scissor
