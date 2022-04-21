@@ -1,11 +1,9 @@
 import * as React from 'react'
-import { useState,useRef,useEffect } from 'react'
+import { useState,useRef } from 'react'
 
 import './simpleTodo.css'
 
 export const SimpleTodoFunctional = () =>{
-
-    // Reset Local Storage Manually
     // localStorage.clear()
 
 // Local Storage
@@ -13,16 +11,18 @@ export const SimpleTodoFunctional = () =>{
 
 // State
     const [items, setItem] = useState(getLocalStorage || [])
-
     const [edit, setEditState] = useState({
         editMode:false,
         editIndex:false
     })
+
 // References
     const formInput = useRef(null)
+    const confirmDeleteAll = useRef(false)
 
 // Add Item
-    function addItem(){
+    const addItem = () => {
+        
         console.log("Add New Item");
         toggleEditMode(false)
         const value = formInput.current.value     
@@ -34,19 +34,20 @@ export const SimpleTodoFunctional = () =>{
             setFormValue(null)
         }return;
     }
+
 // Edit
-    function startEdit(index){
+    const startEdit = (index) => {
         console.log("Start Edit");
         const edit = getLocalStorage[index]
         setFormValue(edit)
         setEditState({editMode:true,editIndex:index})
     }
-    
+
     const cancelEdit = () => {
         setFormValue(null)
         toggleEditMode(false)
     }
-    function submitEdit(){        
+    const submitEdit =() => {        
 
         const newValue = formInput.current.value
         if(newValue.length < 1) {
@@ -58,33 +59,34 @@ export const SimpleTodoFunctional = () =>{
         const valueToChange = edit.editIndex
         getLocalStorage.splice(valueToChange,1,newValue)
 
+        setFormValue(null)
         setItem(getLocalStorage) 
         toggleEditMode(false)
         setLocalStorage(getLocalStorage)
-        setFormValue(null)
+        
 
     }
-
-
 
 // Delete
-    function handleDelete(itemIndex, numToDelete){
+    const handleDelete = (itemIndex, numToDelete) => {
+
         getLocalStorage.splice(itemIndex,numToDelete)
-        
+
+        if(numToDelete > 1) toggleConfirmDeleteAllBox()
+
         setFormValue(null)
         setItem(getLocalStorage) 
         toggleEditMode(false)
         setLocalStorage(getLocalStorage)
     }
 
-
-
+// Utility Functions
     const setLocalStorage = (toBeStored) =>  localStorage.setItem("items",JSON.stringify(toBeStored))
     const toggleEditMode = (setEditModeTo) => setEditState({editMode:setEditModeTo}) 
     const setFormValue = (setFormValueTo) => formInput.current.value = setFormValueTo
+    const toggleConfirmDeleteAllBox = () => confirmDeleteAll.current.classList.toggle("show")
 
-
-    // Display the items array in a readable format.
+// Display the items
     const mapItems = items.map((x,index) => {
         return(
             <div key={index} className="simpleTodo__singleItem d-flex">
@@ -101,33 +103,50 @@ export const SimpleTodoFunctional = () =>{
         )
     })
 
-return(
+    return(
 
-    <div className="simpleTodo__container">
-        <h1>Simple To-Do - Functional</h1>
+        <div className="simpleTodo__container"> 
 
-        <div className="simpleTodo__formContainer">
-            <form className="simpleTodo__form">
-                <label htmlFor="itemEntry"></label>
-                
-                <input ref={formInput} type="text" name="itemEntry" />
-            </form>
+    {/* Delete All Button */}
+        {items.length > 1 ?
+
+            <div className="simpleTodo__deleteAllContainer">
+                <button className="simpleTodo__deleteAllButton"  onClick={()=>toggleConfirmDeleteAllBox()}>
+                    <span className="material-icons">delete_sweep</span>Delete All
+                </button>
+
+                <div className="simpleTodo__confirmDeleteAllContainer " ref={confirmDeleteAll} >
+                    <span id="simpleTodo__confirmDeleteAllButton" role="button" onClick={()=>handleDelete('',items.length)}>Confirm</span>
+                    <span id="simpleTodo__confirmCancelButton" role="button" onClick={toggleConfirmDeleteAllBox}>Cancel</span>
+                </div>
+            </div>
+
+        :null}  
             
-            {!edit.editMode ? 
-                <button onClick={()=>addItem()}><span className="material-icons">add</span></button>
-                : 
-                <button onClick={()=>submitEdit()}><span className="material-icons">edit</span></button>
-            }
+            <h2>Simple To-Do</h2>
+    {/* List Item Entry */}
+            <div className="simpleTodo__formContainer">
+                <form className="simpleTodo__form">
+                    <label htmlFor="itemEntry"></label>
+                    <input ref={formInput} type="text" name="itemEntry" />
+                </form>
+                
+                {!edit.editMode ? 
+                    <button title="Add To List" onClick={addItem}><span className="material-icons">add_circle_outline</span></button>
+                    : 
+                    <>
+                        <button onClick={submitEdit} title="Confirm Edit"><span className="material-icons">check</span></button>
+                        <button onClick={cancelEdit} title="Cancel Edit"><span className="material-icons">close</span></button>
+                    </>
+                }
 
-        </div>
+            </div>
 
-        <div className="simpleTodo__list"> 
-            {mapItems} - 
-            <button onClick={()=>handleDelete('',items.length)}>Delete All</button>
-            <button onClick={cancelEdit}>Cancel Edit</button>
+    {/* The To Do List */}
+            <div className="simpleTodo__list"> {mapItems} </div>
+            
         </div>
-    </div>
-)
+    )
 
 }
 

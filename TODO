@@ -23,12 +23,12 @@ Javascript:
     Tasks:
       ✔ Ability to add items @done(13:42 - 20/04/22)
         ✔ Shouldnt be able to add with an empty field @done(15:47 - 20/04/22)
-      ☐ Edit Button 
-        ☐ Shouldnt be able to confirm an edit if the field is empty
-        ☐ Ability to cancel an edit
-      ☐ Delete button
-        ☐ Delete All option
-      ☐ Reset button
+      ✔ Edit Button @done(17:48 - 21/04/22)
+        ✔ Shouldnt be able to confirm an edit if the field is empty @done(17:47 - 21/04/22)
+        ✔ Ability to cancel an edit @done(17:47 - 21/04/22)
+      ✔ Delete button @done(17:47 - 21/04/22)
+        ✔ Delete All option @done(17:47 - 21/04/22)
+      ✔ Reset button @done(17:47 - 21/04/22)
   ☐ image slider
   ☐ rock paper scissor
   ☐ simon game
