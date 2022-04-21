@@ -8,58 +8,49 @@ export const SimpleTodoFunctional = () =>{
     // Reset Local Storage Manually
     // localStorage.clear()
 
-
+// Local Storage
     const getLocalStorage = JSON.parse(localStorage.getItem("items"))
-    // console.log(getLocalStorage)
 
+// State
     const [items, setItem] = useState(getLocalStorage || [])
 
     const [edit, setEditState] = useState({
         editMode:false,
         editIndex:false
     })
+// References
     const formInput = useRef(null)
 
-
-
-
-    function handleNewItem(){
+// Add Item
+    function addItem(){
         console.log("Add New Item");
-        setEditState({editMode:false})
-    // Grab the value of the input box using the ref and add it to a new or existing array of items
+        toggleEditMode(false)
         const value = formInput.current.value     
-
         if(value.length > 1){
             let itemsArray = items || [] 
             itemsArray.push(value)  
-    
-        // Set the new state which will update the page.
             setItem(items => ([...items]))    
-    
-        // Save the items array to local state
-            localStorage.setItem("items",JSON.stringify(items))
-            // console.log(items)
-    
-        // Clear the input after adding a new item
-            formInput.current.value = null
-        }else{
-            console.log("Do Nothing")
-        }
+            setLocalStorage(items)
+            setFormValue(null)
+        }return;
     }
-
+// Edit
     function startEdit(index){
         console.log("Start Edit");
         const edit = getLocalStorage[index]
-        setEditState({editMode:true, editIndex:index})
-        formInput.current.value = edit
+        setFormValue(edit)
+        setEditState({editMode:true,editIndex:index})
     }
-
+    
+    const cancelEdit = () => {
+        setFormValue(null)
+        toggleEditMode(false)
+    }
     function submitEdit(){        
 
-        // Check length of current value, if empty stop edit mode
         const newValue = formInput.current.value
         if(newValue.length < 1) {
-            setEditState({editMode:false})
+            toggleEditMode(false)
             alert("Error: Field cannot be empty")
             return
         }
@@ -68,25 +59,36 @@ export const SimpleTodoFunctional = () =>{
         getLocalStorage.splice(valueToChange,1,newValue)
 
         setItem(getLocalStorage) 
-        setEditState({editMode:false})
-        localStorage.setItem("items",JSON.stringify(getLocalStorage))
-        formInput.current.value = null
+        toggleEditMode(false)
+        setLocalStorage(getLocalStorage)
+        setFormValue(null)
 
     }
 
 
+
+// Delete
     function handleDelete(itemIndex, numToDelete){
         getLocalStorage.splice(itemIndex,numToDelete)
+        
+        setFormValue(null)
         setItem(getLocalStorage) 
-        setEditState({editMode:false})
-        localStorage.setItem("items",JSON.stringify(getLocalStorage))
-        formInput.current.value = null
+        toggleEditMode(false)
+        setLocalStorage(getLocalStorage)
     }
+
+
+
+    const setLocalStorage = (toBeStored) =>  localStorage.setItem("items",JSON.stringify(toBeStored))
+    const toggleEditMode = (setEditModeTo) => setEditState({editMode:setEditModeTo}) 
+    const setFormValue = (setFormValueTo) => formInput.current.value = setFormValueTo
+
 
     // Display the items array in a readable format.
     const mapItems = items.map((x,index) => {
         return(
             <div key={index} className="simpleTodo__singleItem d-flex">
+
                 <p className="w-75">{x}</p>
 
                 <div  className="simpleTodo__singleItemButtons w-25">
@@ -107,18 +109,23 @@ return(
         <div className="simpleTodo__formContainer">
             <form className="simpleTodo__form">
                 <label htmlFor="itemEntry"></label>
+                
                 <input ref={formInput} type="text" name="itemEntry" />
             </form>
             
             {!edit.editMode ? 
-                <button onClick={()=>handleNewItem()}><span className="material-icons">add</span></button>
+                <button onClick={()=>addItem()}><span className="material-icons">add</span></button>
                 : 
                 <button onClick={()=>submitEdit()}><span className="material-icons">edit</span></button>
             }
 
         </div>
 
-        <div className="simpleTodo__list"> {mapItems} - <button onClick={()=>handleDelete('',items.length)}>Delete All</button></div>
+        <div className="simpleTodo__list"> 
+            {mapItems} - 
+            <button onClick={()=>handleDelete('',items.length)}>Delete All</button>
+            <button onClick={cancelEdit}>Cancel Edit</button>
+        </div>
     </div>
 )
 
