@@ -1,29 +1,7 @@
-.simpleTodo__container{
-    /* background-color: blueviolet; */
-    display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    height: 100%;
-    position: relative;
-    width: 100%;
-}
-
-
-.simpleTodo__formContainer{
-    display: flex;
-    width: 100%;
-}
-
-.simpleTodo__form{
-    border: none;
-    line-height: 2rem;
-    width: inherit;
-}
+/* Form - Styles left to avoid html bloat */
 .simpleTodo__formContainer button{
     background-color: #ff000000;
     border: none;
-    /* line-height: 2rem; */
 }
 
 .simpleTodo__formContainer input{
@@ -38,60 +16,29 @@
 }
 
 /* List */
-
-.simpleTodo__list{
-    /* outline: 1px solid; */
-    width: 100%;
-}
-
 .simpleTodo__singleItem{
+    cursor: pointer;
     border-radius: 20px;
     box-shadow: 3px 3px 3px 1px black;
-    margin-top: 10px;
     outline: 1px solid;
+    padding: 13px;
 
 }
 
-.simpleTodo__singleItem p{
-    
+.simpleTodo__singleItem:hover{
+    background-color: #e0edff;
+    transform: translateX(2px);
+    transition: 1s;
+}
+
+.simpleTodo__singleItem p{    
     overflow-wrap: break-word;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
 }
-
-.simpleTodo__singleItemButtons{
-    /* background-color: aqua; */
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-    .simpleTodo__editButton{
-        color: #4554ff;
-    }
-    .simpleTodo__deleteButton{
-        color: red;
-    }
 
 /* Delete All */
-.simpleTodo__deleteAllContainer{
-    margin-bottom: 2rem;
-    top: 0;
-    /* position: absolute; */
-    width: inherit;
-}
     .simpleTodo__deleteAllButton{
-
-        border: none;
         background-color: #ff000000;        
-        display: flex;
-            align-items: center;
-            justify-content: center;
         opacity: 0.5;
-            
-        padding: 10px;
-        width: inherit;
     }
 
     .simpleTodo__deleteAllButton:hover{
@@ -101,34 +48,17 @@
 
     .simpleTodo__confirmDeleteAllContainer{
         display: none;
-
-        border: none;
-        /* background-color: #ff000012;         */
-        /* display: flex; */
-            align-items: center;
-            justify-content: space-evenly;
-        /* opacity: 0.2; */
-            
-        /* padding: 10px; */
-        width: inherit;
     }
 
     .simpleTodo__confirmDeleteAllContainer span{
-        /* background-color: red; */
         opacity: 2;
         width: inherit;
         text-align: center;
         padding: 10px;
     }
 
+    /* Empty Field Warning */
+    .simpleTodo__emptyFieldWarning{ display: none;}
+    
+    /* Used for various functions when unhiding elements */
     .show{ display: flex;}
-
-    #simpleTodo__confirmDeleteAllButton{
-        background-color: red;
-        color: white;
-    }
-
-    #simpleTodo__confirmCancelButton{
-        background-color: green;
-        color: white;
-    }

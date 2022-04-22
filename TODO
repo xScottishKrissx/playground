@@ -23,12 +23,21 @@ Javascript:
     Tasks:
       ✔ Ability to add items @done(13:42 - 20/04/22)
         ✔ Shouldnt be able to add with an empty field @done(15:47 - 20/04/22)
+        ✔ Add error message for no value when adding items. @done(11:46 - 22/04/22)
+
       ✔ Edit Button @done(17:48 - 21/04/22)
         ✔ Shouldnt be able to confirm an edit if the field is empty @done(17:47 - 21/04/22)
         ✔ Ability to cancel an edit @done(17:47 - 21/04/22)
+        ✘ When editing, the same item in the last should be easily distinguished @cancelled(12:23 - 22/04/22)
       ✔ Delete button @done(17:47 - 21/04/22)
         ✔ Delete All option @done(17:47 - 21/04/22)
       ✔ Reset button @done(17:47 - 21/04/22)
+
+      ✔ Items should animate on hover @done(12:23 - 22/04/22)
+      ✔ Items arent symetrical as the p tag has a margin bottom tag pushing it up @done(12:23 - 22/04/22)
+      ☐ Split up into components
+      ☐ Assign bootstrap classnames instead of css
+
   ☐ image slider
   ☐ rock paper scissor
   ☐ simon game
