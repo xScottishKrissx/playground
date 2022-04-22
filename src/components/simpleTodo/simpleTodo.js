@@ -1,6 +1,10 @@
 import * as React from 'react'
 import { useState,useRef } from 'react'
 
+
+// Import functions
+import EmptyFieldWarningMessage from './EmptyFieldWarningMessage'
+
 import './simpleTodo.css'
 
 export const SimpleTodoFunctional = () =>{
@@ -140,12 +144,15 @@ export const SimpleTodoFunctional = () =>{
             <h2>Simple To-Do</h2>
 
     {/* Empty Field Warning Message */}
-                <div ref={emptyFieldWarning} className="simpleTodo__emptyFieldWarning">
+                {/* <div ref={emptyFieldWarning} className="simpleTodo__emptyFieldWarning">
                     <p className="d-flex">
                         <span className="material-icons">priority_high</span>
                         <strong>oops, this field <span className="text-decoration-underline">cannot</span> be empty</strong>
                     </p>
-                </div>
+                </div> */}
+
+                <EmptyFieldWarningMessage ref={emptyFieldWarning}/>
+
 
     {/* List Item Entry */}
             <div className="simpleTodo__formContainer d-flex w-100">
