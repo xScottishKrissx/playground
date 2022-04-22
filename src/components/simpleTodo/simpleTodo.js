@@ -5,6 +5,7 @@ import DeleteAll from './deleteAll/deleteAll'
 
 // Import functions
 import EmptyFieldWarningMessage from './EmptyFieldWarningMessage'
+import InputBox from './inputBox/InputBox'
 
 import './simpleTodo.css'
 
@@ -158,7 +159,7 @@ export const SimpleTodoFunctional = () =>{
 
 
     {/* List Item Entry */}
-            <div className="simpleTodo__formContainer d-flex w-100">
+            {/* <div className="simpleTodo__formContainer d-flex w-100">
 
 
                 <form className="simpleTodo__form border-0 lh-lg w-100">
@@ -175,7 +176,8 @@ export const SimpleTodoFunctional = () =>{
                     </>
                 }
 
-            </div>
+            </div> */}
+    <InputBox ref={formInput} edit={edit.editMode} addItem={addItem} submitEdit={submitEdit} cancelEdit={cancelEdit}/>
 
     {/* The To Do List */}
             <div className="simpleTodo__list w-100"> {mapItems} </div>
