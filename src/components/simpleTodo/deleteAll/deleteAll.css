@@ -1,0 +1,21 @@
+/* Delete All */
+.simpleTodo__deleteAllButton{
+    background-color: #ff000000;        
+    opacity: 0.5;
+}
+
+.simpleTodo__deleteAllButton:hover{
+    background-color: red;
+    opacity: 2;
+}
+
+.simpleTodo__confirmDeleteAllContainer{
+    display: none;
+}
+
+.simpleTodo__confirmDeleteAllContainer span{
+    opacity: 2;
+    width: inherit;
+    text-align: center;
+    padding: 10px;
+}

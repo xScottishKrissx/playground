@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState,useRef } from 'react'
+import DeleteAll from './deleteAll/deleteAll'
 
 
 // Import functions
@@ -125,7 +126,7 @@ export const SimpleTodoFunctional = () =>{
 
 
     {/* Delete All Button */}
-        {items.length > 1 ?
+        {/* {items.length > 100 ?
 
             <div className="simpleTodo__deleteAllContainer mb-4 top-0 w-100 ">
                 
@@ -139,7 +140,9 @@ export const SimpleTodoFunctional = () =>{
                 </div>
             </div>
 
-        :null}  
+        :null}   */}
+
+        <DeleteAll itemsLength={items.length} ref={confirmDeleteAll} handleDelete={()=>handleDelete('',items.length)} confirmDelete={toggleConfirmDeleteAllBox} />
             
             <h2>Simple To-Do</h2>
 
