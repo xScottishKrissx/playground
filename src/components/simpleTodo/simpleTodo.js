@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useState,useRef } from 'react'
 import DeleteAll from './deleteAll/deleteAll'
+import DisplayList from './displayList/displayList'
 
 
 // Import functions
@@ -48,6 +49,9 @@ export const SimpleTodoFunctional = () =>{
 // Edit
     const startEdit = (index,e) => {
         // console.log("Start Edit");
+
+        console.log(index)
+        console.log(getLocalStorage[index])
 
         setFormValue(getLocalStorage[index])
         setEditState({editMode:true,editIndex:index})
@@ -104,21 +108,21 @@ export const SimpleTodoFunctional = () =>{
     const toggleConfirmDeleteAllBox = () => confirmDeleteAll.current.classList.toggle("show")
 
 // Display the items
-    const mapItems = items.map((x,index) => {
-        return(
-            <div key={index} className="simpleTodo__singleItem d-flex mt-3">
+    // const mapItems = items.map((x,index) => {
+    //     return(
+    //         <div key={index} className="simpleTodo__singleItem d-flex mt-3">
 
-                <p className="w-75 m-0 p-0">{x}</p>
+    //             <p className="w-75 m-0 p-0">{x}</p>
 
-                <div  className="simpleTodo__singleItemButtons d-flex justify-content-evenly align-items-center w-25">
-                    <span role="button" onClick={(e)=>startEdit(index,e)} className="material-icons simpleTodo__editButton text-info">edit</span>
-                    <span role="button" onClick={()=>handleDelete(index, 1)} className="material-icons simpleTodo__deleteButton text-danger">delete</span>
-                </div>
+    //             <div  className="simpleTodo__singleItemButtons d-flex justify-content-evenly align-items-center w-25">
+    //                 <span role="button" onClick={(e)=>startEdit(index,e)} className="material-icons simpleTodo__editButton text-info">edit</span>
+    //                 <span role="button" onClick={()=>handleDelete(index, 1)} className="material-icons simpleTodo__deleteButton text-danger">delete</span>
+    //             </div>
 
                 
-            </div>
-        )
-    })
+    //         </div>
+    //     )
+    // })
 
     return(
 
@@ -180,7 +184,14 @@ export const SimpleTodoFunctional = () =>{
     <InputBox ref={formInput} edit={edit.editMode} addItem={addItem} submitEdit={submitEdit} cancelEdit={cancelEdit}/>
 
     {/* The To Do List */}
-            <div className="simpleTodo__list w-100"> {mapItems} </div>
+            <div className="simpleTodo__list w-100"> 
+                {/* {mapItems}  */}
+                <DisplayList 
+                    items={items} 
+                    startEdit={()=>startEdit} 
+                    handleDelete={()=>handleDelete} 
+                    />
+            </div>
             
         </div>
     )
