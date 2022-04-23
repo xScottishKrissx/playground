@@ -48,10 +48,6 @@ export const SimpleTodoFunctional = () =>{
 
 // Edit
     const startEdit = (index) => {
-        // console.log("Start Edit");
-        console.log(index)
-        console.log(getLocalStorage[index])
-
         setFormValue(getLocalStorage[index])
         setEditState({editMode:true,editIndex:index})
         toggleEmptyFieldWarning()
@@ -62,6 +58,7 @@ export const SimpleTodoFunctional = () =>{
         toggleEditMode(false)
         
     }
+    
     const submitEdit =() => {        
 
         const newValue = formInput.current.value
@@ -99,96 +96,32 @@ export const SimpleTodoFunctional = () =>{
         if(!setVisible)emptyFieldWarning.current.classList.remove("show")       
     }
 
-
-
     const setLocalStorage = (toBeStored) =>  localStorage.setItem("items",JSON.stringify(toBeStored))
     const toggleEditMode = (setEditModeTo) => setEditState({editMode:setEditModeTo}) 
     const setFormValue = (setFormValueTo) => formInput.current.value = setFormValueTo
     const toggleConfirmDeleteAllBox = () => confirmDeleteAll.current.classList.toggle("show")
 
-// Display the items
-    // const mapItems = items.map((x,index) => {
-    //     return(
-    //         <div key={index} className="simpleTodo__singleItem d-flex mt-3">
-
-    //             <p className="w-75 m-0 p-0">{x}</p>
-
-    //             <div  className="simpleTodo__singleItemButtons d-flex justify-content-evenly align-items-center w-25">
-    //                 <span role="button" onClick={(e)=>startEdit(index,e)} className="material-icons simpleTodo__editButton text-info">edit</span>
-    //                 <span role="button" onClick={()=>handleDelete(index, 1)} className="material-icons simpleTodo__deleteButton text-danger">delete</span>
-    //             </div>
-
-                
-    //         </div>
-    //     )
-    // })
-
     return(
 
-        <div className="simpleTodo__container d-flex flex-column justify-content-center align-items center h-100 w-100 position-relative"> 
+    <div className="simpleTodo__container d-flex flex-column justify-content-center align-items center h-100 w-100 position-relative"> 
 
-
-
-    {/* Delete All Button */}
-        {/* {items.length > 100 ?
-
-            <div className="simpleTodo__deleteAllContainer mb-4 top-0 w-100 ">
-                
-                <button className="simpleTodo__deleteAllButton border-0 d-flex align-items-center justify-content-center p-2 w-100"  onClick={()=>toggleConfirmDeleteAllBox()}>
-                    <span className="material-icons">delete_sweep</span>Delete All
-                </button>
-
-                <div className="simpleTodo__confirmDeleteAllContainer border-0 align-items-center justify-content-evenly w-100" ref={confirmDeleteAll} >
-                    <span className="bg-danger text-white" id="simpleTodo__confirmDeleteAllButton" role="button" onClick={()=>handleDelete('',items.length)}>Confirm</span>
-                    <span className="bg-secondary text-white" id="simpleTodo__confirmCancelButton" role="button" onClick={toggleConfirmDeleteAllBox}>Cancel</span>
-                </div>
-            </div>
-
-        :null}   */}
-
+        {/* Delete All Button */}
         <DeleteAll itemsLength={items.length} ref={confirmDeleteAll} handleDelete={()=>handleDelete('',items.length)} confirmDelete={toggleConfirmDeleteAllBox} />
-            
-            <h2>Simple To-Do</h2>
-
-    {/* Empty Field Warning Message */}
-                {/* <div ref={emptyFieldWarning} className="simpleTodo__emptyFieldWarning">
-                    <p className="d-flex">
-                        <span className="material-icons">priority_high</span>
-                        <strong>oops, this field <span className="text-decoration-underline">cannot</span> be empty</strong>
-                    </p>
-                </div> */}
-
-                <EmptyFieldWarningMessage ref={emptyFieldWarning}/>
-
-
-    {/* List Item Entry */}
-            {/* <div className="simpleTodo__formContainer d-flex w-100">
-
-
-                <form className="simpleTodo__form border-0 lh-lg w-100">
-                    <label htmlFor="itemEntry"></label>
-                    <input ref={formInput} type="text" name="itemEntry" />
-                </form>
                 
-                {!edit.editMode ? 
-                    <button title="Add To List" onClick={addItem}><span className="material-icons">add_circle_outline</span></button>
-                    : 
-                    <>
-                        <button onClick={submitEdit} title="Confirm Edit"><span className="material-icons">check</span></button>
-                        <button onClick={cancelEdit} title="Cancel Edit"><span className="material-icons">close</span></button>
-                    </>
-                }
+        <h2>Simple To-Do</h2>
 
-            </div> */}
-    <InputBox ref={formInput} edit={edit.editMode} addItem={addItem} submitEdit={submitEdit} cancelEdit={cancelEdit}/>
+        {/* Empty Field Warning Message */}
+        <EmptyFieldWarningMessage ref={emptyFieldWarning}/>
 
-    {/* The To Do List */}
-            <div className="simpleTodo__list w-100"> 
-                {/* {mapItems}  */}
-                <DisplayList items={items} startEdit={startEdit} handleDelete={handleDelete} />
-            </div>
-            
+        {/* List Item Entry */}
+        <InputBox ref={formInput} edit={edit.editMode} addItem={addItem} submitEdit={submitEdit} cancelEdit={cancelEdit}/>
+
+        {/* The To Do List */}
+        <div className="simpleTodo__list w-100"> 
+            <DisplayList items={items} startEdit={startEdit} handleDelete={handleDelete} />
         </div>
+            
+    </div>
     )
 
 }
