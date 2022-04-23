@@ -47,9 +47,8 @@ export const SimpleTodoFunctional = () =>{
     }
 
 // Edit
-    const startEdit = (index,e) => {
+    const startEdit = (index) => {
         // console.log("Start Edit");
-
         console.log(index)
         console.log(getLocalStorage[index])
 
@@ -186,11 +185,7 @@ export const SimpleTodoFunctional = () =>{
     {/* The To Do List */}
             <div className="simpleTodo__list w-100"> 
                 {/* {mapItems}  */}
-                <DisplayList 
-                    items={items} 
-                    startEdit={()=>startEdit} 
-                    handleDelete={()=>handleDelete} 
-                    />
+                <DisplayList items={items} startEdit={startEdit} handleDelete={handleDelete} />
             </div>
             
         </div>

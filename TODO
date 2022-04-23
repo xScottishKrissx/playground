@@ -36,7 +36,7 @@ Javascript:
       ✔ Items should animate on hover @done(12:23 - 22/04/22)
       ✔ Items arent symetrical as the p tag has a margin bottom tag pushing it up @done(12:23 - 22/04/22)
       ☐ Split up into components
-        ☐ Got most of it but arrived at the display list map and hit a block. The issue seems to be getting the proper index from the child component to the parent.
+        ✔ Got most of it but arrived at the display list map and hit a block. The issue seems to be getting the proper index from the child component to the parent. @done(09:47 - 23/04/22)
       ☐ Assign bootstrap classnames instead of css
 
   ☐ image slider
