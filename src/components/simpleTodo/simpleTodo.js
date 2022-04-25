@@ -5,7 +5,7 @@ import DisplayList from './displayList/displayList'
 
 
 // Import functions
-import EmptyFieldWarningMessage from './EmptyFieldWarningMessage'
+import EmptyFieldWarningMessage from './emptyFieldWarningMessage/EmptyFieldWarningMessage'
 import InputBox from './inputBox/InputBox'
 
 import './simpleTodo.css'

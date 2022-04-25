@@ -1,0 +1,19 @@
+/* List */
+.simpleTodo__singleItem{
+    cursor: pointer;
+    border-radius: 20px;
+    box-shadow: 3px 3px 3px 1px black;
+    outline: 1px solid;
+    padding: 13px;
+
+}
+
+.simpleTodo__singleItem:hover{
+    background-color: #e0edff;
+    transform: translateX(2px);
+    transition: 1s;
+}
+
+.simpleTodo__singleItem p{    
+    overflow-wrap: break-word;
+}

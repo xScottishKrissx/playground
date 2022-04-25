@@ -1,3 +1,4 @@
+import './displayList.css'
 export const DisplayList = (props) => {
     const mapItems = props.items.map((x,index) => {
         return(

@@ -1,0 +1,16 @@
+/* Form - Styles left to avoid html bloat */
+.simpleTodo__formContainer button{
+    background-color: #ff000000;
+    border: none;
+}
+
+.simpleTodo__formContainer input{
+    border: none;
+    border-bottom: 10px solid #efefef;
+    width: inherit;
+}
+
+.simpleTodo__formContainer input:focus-visible{
+    background-color: #efefef;
+    outline: none;
+}
