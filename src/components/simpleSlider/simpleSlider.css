@@ -1,15 +1,21 @@
 .simpleSlider__container{
     width: 100%;
-    position: relative;
-    top: 0;
+    overflow: hidden;
+    transition: 0.25s linear;
 }
 
 .simpleSlider__sliderWrapper{
     display: flex;
-    transition: 1s linear;
+    transition: 0.25s linear;
 }
 
-.simpleSlider__sliderWrapper img{
+/* .simpleSlider__sliderWrapper img{
     width: 100%;
-}
+} */
 
+
+.simpleSlider__buttonContainer button{
+    background-color: white;
+    display: grid;
+    border: none;
+}
