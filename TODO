@@ -40,6 +40,8 @@ Javascript:
       ✔ Assign bootstrap classnames instead of css @done(11:49 - 25/04/22)
 
   ☐ image slider
+      ☐ I thought i was finished but I just realised there is a gap at the edge of the slider container on larger windows.
+      
   ☐ rock paper scissor
   ☐ simon game
   ☐ platformer game
