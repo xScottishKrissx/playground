@@ -22,6 +22,7 @@ import Tabs from './components/tabs/tabs';
 import Countdown from './components/countdown/countdown';
 import LoremIpsum from './components/loremIpsum/loremIpsum';
 import SimpleTodo from './components/simpleTodo/simpleTodo';
+import SimpleSlider from './components/simpleSlider/simpleSlider';
 
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
       <Container id="app__container" className="mt-5 mb-5">
         
         <Row fluid="true">
+          
+          <Col sm={6} lg={6} className="p-0"> <SimpleSlider /> </Col>
           
           <Col sm={6} lg={6} > <SimpleTodo /> </Col>
           <Col sm={6} lg={6} > <LoremIpsum /> </Col>

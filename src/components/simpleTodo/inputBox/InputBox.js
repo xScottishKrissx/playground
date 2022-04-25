@@ -11,7 +11,7 @@ export const InputBox = forwardRef((props,ref) => {
 
                 <form className="simpleTodo__form border-0 lh-lg w-100">
                     <label htmlFor="itemEntry"></label>
-                    <input ref={ref} type="text" name="itemEntry" />
+                    <input ref={ref} type="text" name="itemEntry" placeholder="Get started..."/>
                 </form>
 
                 {!props.edit ? 
