@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import * as React from 'react'
-import { useRef,useEffect,useState } from 'react'
+import { useState } from 'react'
 
 import './simpleSlider.css'
 

@@ -39,8 +39,8 @@ Javascript:
         ✔ Got most of it but arrived at the display list map and hit a block. The issue seems to be getting the proper index from the child component to the parent. @done(09:47 - 23/04/22)
       ✔ Assign bootstrap classnames instead of css @done(11:49 - 25/04/22)
 
-  ☐ image slider
-      ☐ I thought i was finished but I just realised there is a gap at the edge of the slider container on larger windows.
+  ✔ image slider @done(16:40 - 26/04/22)
+      ✔ I thought i was finished but I just realised there is a gap at the edge of the slider container on larger windows. @done(16:40 - 26/04/22)
       
   ☐ rock paper scissor
   ☐ simon game

@@ -22,8 +22,7 @@ import Tabs from './components/tabs/tabs';
 import Countdown from './components/countdown/countdown';
 import LoremIpsum from './components/loremIpsum/loremIpsum';
 import SimpleTodo from './components/simpleTodo/simpleTodo';
-import SimpleSlider from './components/simpleSlider/simpleSlider';
-import Slider from './components/simpleSlider2/slider2';
+import Slider from './components/simpleSlider/slider';
 
 
 function App() {
@@ -35,9 +34,7 @@ function App() {
         
         <Row fluid="true">
           
-          <Col sm={6} lg={6}> <Slider /> </Col>
-          {/* <Col sm={6} lg={6} className="p-0"> <SimpleSlider /> </Col> */}
-          
+          <Col sm={6} lg={6}> <Slider /> </Col>          
           <Col sm={6} lg={6} > <SimpleTodo /> </Col>
           <Col sm={6} lg={6} > <LoremIpsum /> </Col>
           <Col sm={6} lg={6} > <Countdown /> </Col>

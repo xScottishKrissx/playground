@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as React from 'react'
 import { useEffect,useRef, useState } from 'react'
 import './slider.css'
@@ -13,6 +14,7 @@ export const Slider = () =>{
     const [count, setCount] = useState(0)
     const getSliderHeight = useRef()
 
+// Set the size of the slider after render
     useEffect(()=>{
 
         let sliderHeight;
@@ -23,7 +25,7 @@ export const Slider = () =>{
             window.addEventListener('resize', updateSize);
 
             // If the current slider height is not the same as the slider height in state, set a new slider height to state. This will update the style, adjusting the size of the slider.
-            if(getSliderHeight.current.clientHeight != sliderStyle){
+            if(getSliderHeight.current.clientHeight !== sliderStyle){
                 sliderHeight = getSliderHeight.current.clientHeight
                 setSliderStyle(sliderHeight)
             }else{ 
@@ -37,7 +39,7 @@ export const Slider = () =>{
     },[sliderStyle])
 
     let currentCount = count
-
+    
     const next = (arrayLength) => {
         if(count > arrayLength - 2){
             setSlidePosition(0)
@@ -47,7 +49,7 @@ export const Slider = () =>{
         currentCount++
         setCount(currentCount)
         setSlidePosition(slidePosition - 100 ) 
-        console.log(count)
+        // console.log(count)
     }
 
     const prev = (arrayLength) =>{
@@ -67,18 +69,18 @@ export const Slider = () =>{
     const mapImages = images.map ((x,index) => {
         const style = { transform: "translateX(" + (slidePosition + (index * 100) ) + '%)'}
         return(
-            <div ref={getSliderHeight} key={index}  style={style} className='slider__singleImage' alt={x + "__image"}>            
+            <div ref={getSliderHeight} key={index}  style={style} className='slider__singleImage position-absolute' alt={x + "__image"}>            
                 <img  className="w-100" key={index} alt={x} src={require('./' + x + '.jpg')} />
-                <div className='slider__singleImageCaptionWrapper'>{x}</div>     
+                <div className='slider__singleImageCaptionWrapper align-items-center d-flex fs-1 h-100 justify-content-center opacity-25 position-absolute text-white top-0 w-100'>{x}</div>     
             </div>
         )
     })
     
     let sliderHeight = {height: "" + sliderStyle + "px"}
     return(
-        <div className='slider__container'>
+        <div className='slider__container h-100 w-100'>
             <h2>Simple Slider</h2>
-            <div className="slider__ImageWrapper" style={sliderHeight}>
+            <div className="slider__ImageWrapper overflow-hidden position-relative" style={sliderHeight}>
                 {mapImages}
             </div>
 
