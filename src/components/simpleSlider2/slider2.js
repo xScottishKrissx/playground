@@ -9,6 +9,8 @@ import mountain from './mountain.jpg'
 export const Slider = () =>{
 
     const [sliderStyle, setSliderStyle] = useState(300)
+    const [slidePosition, setSlidePosition] = useState(0)
+    const [count, setCount] = useState(0)
     const getSliderHeight = useRef()
 
     useEffect(()=>{
@@ -34,18 +36,40 @@ export const Slider = () =>{
 
     },[sliderStyle])
 
+    let currentCount = count
 
-    const next = () => {
+    const next = (arrayLength) => {
+        if(count > arrayLength - 2){
+            setSlidePosition(0)
+            setCount(0)
+            return
+        }
+        currentCount++
+        setCount(currentCount)
+        setSlidePosition(slidePosition - 100 ) 
+        console.log(count)
+    }
 
+    const prev = (arrayLength) =>{
+        if(count === 0){
+            setSlidePosition(slidePosition - 100 * (arrayLength - 1))
+            setCount(arrayLength - 1)
+            return 
+        }
+        currentCount--
+        setCount(currentCount)
+        setSlidePosition(slidePosition + 100)
     }
     
 
+    
     const images = ["woods","cliffs", "mountain"]
     const mapImages = images.map ((x,index) => {
-        const style = { transform: "translateX(" + index * 100 + '%)'}
+        const style = { transform: "translateX(" + (slidePosition + (index * 100) ) + '%)'}
         return(
-            <div ref={getSliderHeight} key={index}  style={style} className='slider__singleImage' alt={x}>            
-                <img  className="w-100" key={index} alt={x} src={require('./' + x + '.jpg')} />                
+            <div ref={getSliderHeight} key={index}  style={style} className='slider__singleImage' alt={x + "__image"}>            
+                <img  className="w-100" key={index} alt={x} src={require('./' + x + '.jpg')} />
+                <div className='slider__singleImageCaptionWrapper'>{x}</div>     
             </div>
         )
     })
@@ -53,13 +77,16 @@ export const Slider = () =>{
     let sliderHeight = {height: "" + sliderStyle + "px"}
     return(
         <div className='slider__container'>
+            <h2>Simple Slider</h2>
             <div className="slider__ImageWrapper" style={sliderHeight}>
                 {mapImages}
             </div>
 
-
-            <h1>Slider</h1>
-            <button onClick={()=>next}>Next</button>
+           
+            <div className="simpleSlider__buttonContainer d-flex justify-content-center align-items-center p-3">
+                <button className='m-1 w-50' onClick={()=>prev(images.length)}><span className="material-icons">arrow_back</span></button>
+                <button className="m-1 w-50" onClick={()=>next(images.length)}><span className="material-icons">arrow_forward</span></button>
+            </div>
             
         </div>
     )

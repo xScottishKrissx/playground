@@ -36,7 +36,7 @@ function App() {
         <Row fluid="true">
           
           <Col sm={6} lg={6}> <Slider /> </Col>
-          <Col sm={6} lg={6} className="p-0"> <SimpleSlider /> </Col>
+          {/* <Col sm={6} lg={6} className="p-0"> <SimpleSlider /> </Col> */}
           
           <Col sm={6} lg={6} > <SimpleTodo /> </Col>
           <Col sm={6} lg={6} > <LoremIpsum /> </Col>

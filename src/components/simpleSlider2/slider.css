@@ -1,12 +1,42 @@
 .slider__container{
-    background-color: red;
+    /* background-color: red; */
     height: 100%;
     width: 100%;
 }
 .slider__ImageWrapper{
+    border-radius: 20px;
+    overflow: hidden;
     position: relative;
     background-color: blue;
 }
 .slider__singleImage{
+    transition: 0.25s linear;
     position: absolute;
+}
+
+.slider__singleImageCaptionWrapper{
+    background-color: #00000094;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-size: 3rem;
+    opacity: 0.5;
+    position: absolute;
+        top: 0;
+        align-items: center;
+        justify-content: center;
+    transition: 0.25s linear;
+    height: 100%;
+    width: 100%;
+}
+
+.slider__singleImageCaptionWrapper:hover{
+    opacity: 2;
+}
+
+/* buttons */
+
+.simpleSlider__buttonContainer button{
+    border-radius: 10px;
+    background-color: #0b0d0d1f;
 }
