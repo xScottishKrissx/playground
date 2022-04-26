@@ -1,0 +1,12 @@
+.slider__container{
+    background-color: red;
+    height: 100%;
+    width: 100%;
+}
+.slider__ImageWrapper{
+    position: relative;
+    background-color: blue;
+}
+.slider__singleImage{
+    position: absolute;
+}

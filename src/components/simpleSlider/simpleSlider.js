@@ -64,8 +64,8 @@ export const SimpleSlider = (props) =>{
             <div style={style} className="simpleSlider__sliderWrapper" >{mapImages}</div>
 
             <div className="simpleSlider__buttonContainer d-flex justify-content-center align-items-center p-3">
-                <button className='m-1 w-50' onClick={()=>prev(images.length)}><span class="material-icons">arrow_back</span></button>
-                <button className="m-1 w-50" onClick={()=>next(images.length)}><span class="material-icons">arrow_forward</span></button>
+                <button className='m-1 w-50' onClick={()=>prev(images.length)}><span className="material-icons">arrow_back</span></button>
+                <button className="m-1 w-50" onClick={()=>next(images.length)}><span className="material-icons">arrow_forward</span></button>
             </div>
         </div>
     )
