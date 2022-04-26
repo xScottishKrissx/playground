@@ -41,10 +41,15 @@ Javascript:
 
   ✔ image slider @done(16:40 - 26/04/22)
       ✔ I thought i was finished but I just realised there is a gap at the edge of the slider container on larger windows. @done(16:40 - 26/04/22)
-      
+  
+    pause:
+      ☐ Clean up code across all previous tasks
+      ☐ Upload to portfolio
+      ☐ Wasnt there something about DNS changes
+  
   ☐ rock paper scissor
   ☐ simon game
-  ☐ platformer game
+  ☐ platformer game - more of a watch thing
   ☐ js flappy bird game
   ☐ various js games
 

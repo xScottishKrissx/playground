@@ -1,10 +1,7 @@
-.slider__ImageWrapper{
-    border-radius: 20px;
-}
-.slider__singleImage{
-    transition: 0.25s linear;
-    /* position: absolute; */
-}
+.slider__container{max-width: 630px;}
+.slider__ImageWrapper{ border-radius: 20px; }
+.slider__singleImage{ transition: 0.25s linear; }
+    .slider__singleImage img{ border-radius: 20px; }
 
 .slider__singleImageCaptionWrapper{
     background-color: #00000094;

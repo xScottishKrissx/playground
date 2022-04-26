@@ -65,7 +65,7 @@ export const Questions = () =>{
 
     return(
         <div className="questions__container w-100">
-            <h2>Questions</h2>
+            <h2>Simple Accordion</h2>
             {getQuestions}
         </div>
     )

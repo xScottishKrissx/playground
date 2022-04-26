@@ -23,6 +23,7 @@ import Countdown from './components/countdown/countdown';
 import LoremIpsum from './components/loremIpsum/loremIpsum';
 import SimpleTodo from './components/simpleTodo/simpleTodo';
 import Slider from './components/simpleSlider/slider';
+import IntroductionMessage from './components/introMessage/introMessage';
 
 
 function App() {
@@ -30,27 +31,35 @@ function App() {
     <div className="App d-flex flex-column align-items-center" id="App">
 
       <Navbar />
+      
       <Container id="app__container" className="mt-5 mb-5">
-        
+
+
+        <Row className='mb-3'>
+          <Col sm={12} className="intro"> <IntroductionMessage /> </Col>   
+        </Row>
+
         <Row fluid="true">
           
-          <Col sm={6} lg={6}> <Slider /> </Col>          
-          <Col sm={6} lg={6} > <SimpleTodo /> </Col>
-          <Col sm={6} lg={6} > <LoremIpsum /> </Col>
-          <Col sm={6} lg={6} > <Countdown /> </Col>
-          <Col sm={6} lg={6} className="p-0"> <Tabs /> </Col>
-          <Col sm={6} lg={6} className="p-0 overflow-hidden position-relative"> <SimpleVideo /> </Col>
-          <Col sm={6} lg={6}> <SimpleFilter /> </Col>
-          <Col sm={6} lg={6}> <Questions /> </Col>
-          <Col sm={6} lg={6}> <Modal /> </Col>
-          <Col sm={6} lg={6}> <Sidebar /> </Col>      
-          <Col sm={6} lg={6}> <ReviewCarousel /> </Col>
-          <Col sm={6} lg={6}> <Counter /> </Col>
-          <Col sm={6} lg={6} className="p-0"> <ColourFlipper /> </Col>
+          
+          
+          <Col sm={12} lg={6}> <Slider /> </Col>          
+          <Col sm={12} lg={6} > <SimpleTodo /> </Col>
+          <Col sm={12} lg={6} > <LoremIpsum /> </Col>
+          <Col sm={12} lg={6} > <Countdown /> </Col>
+          <Col sm={12} lg={6} className="p-0"> <Tabs /> </Col>
+          <Col sm={12} lg={6} className="p-0 overflow-hidden position-relative"> <SimpleVideo /> </Col>
+          <Col sm={12} lg={6}> <SimpleFilter /> </Col>
+          <Col sm={12} lg={6}> <Questions /> </Col>
+          <Col sm={12} lg={6}> <Modal /> </Col>
+          <Col sm={12} lg={6}> <Sidebar /> </Col>      
+          <Col sm={12} lg={6}> <ReviewCarousel /> </Col>
+          <Col sm={12} lg={6}> <Counter /> </Col>
+          <Col sm={12} lg={6} className="p-0"> <ColourFlipper /> </Col>
 
+          {/* <Col sm={6} lg={4}></Col>
           <Col sm={6} lg={4}></Col>
-          <Col sm={6} lg={4}></Col>
-          <Col sm={6} lg={4}></Col>
+          <Col sm={6} lg={4}></Col> */}
         </Row>
 
       </Container>

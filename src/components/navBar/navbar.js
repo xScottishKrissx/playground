@@ -71,7 +71,7 @@ return(
 
         {/* Nav Header */}
         <div className="responsiveNavbar__header" >
-            <h2 className="mb-0">Responsive Navbar</h2>
+            <h2 className="mb-0">React Micro Projects</h2>
 
             {/* Toggle */}
             <span onClick={()=>toggleMenu()} id="menuToggle" className="material-icons">menu</span>
@@ -80,14 +80,14 @@ return(
 
         {/* Links */}
         <div className="responsiveNavbar__links" ref={menuAnchor}>
-            <span className="ps-2 pe-2">Home</span>
-            <span className="ps-2 pe-2">About</span>
-            <span className="ps-2 pe-2">Contact</span>
-            <span className="ps-2 pe-2">Search</span>
+            {/* <span className="ps-2 pe-2">Home</span>
+            <span className="ps-2 pe-2">About</span> */}
+            <span className="ps-2 pe-2">Portfolio</span>
+            {/* <span className="ps-2 pe-2">Search</span> */}
 
 
             {/* Scroll Into View Menu */}
-            <span onClick={()=>customScrollTo("colourFlipper")}>Scroll to...</span>
+            {/* <span onClick={()=>customScrollTo("colourFlipper")}>Scroll to...</span> */}
 
 
 
