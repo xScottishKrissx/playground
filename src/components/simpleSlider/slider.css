@@ -5,6 +5,7 @@
 
 .slider__singleImageCaptionWrapper{
     background-color: #00000094;
+    border-radius: 20px;
     cursor: pointer;
     transition: 0.25s linear;
 }

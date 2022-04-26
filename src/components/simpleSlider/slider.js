@@ -16,27 +16,31 @@ export const Slider = () =>{
 
 // Set the size of the slider after render
     useEffect(()=>{
+        // console.log(sliderStyle)
+        // console.log(sliderHeight)
+        if(sliderStyle > 100 ){
+            const setSliderSize = setInterval(() =>{
 
-        let sliderHeight;
-        const setSliderSize = setInterval(() =>{
+                // Update the slider size if the window size changes
+                const updateSize = () =>{ setSliderStyle(sliderStyle) }
+                window.addEventListener('resize', updateSize);
 
-            // Update the slider size if the window size changes
-            const updateSize = () =>{ setSliderStyle(sliderHeight) }
-            window.addEventListener('resize', updateSize);
+                // If the current slider height is not the same as the slider height in state, set a new slider height to state. This will update the style, adjusting the size of the slider.
 
-            // If the current slider height is not the same as the slider height in state, set a new slider height to state. This will update the style, adjusting the size of the slider.
-            if(getSliderHeight.current.clientHeight !== sliderStyle){
-                sliderHeight = getSliderHeight.current.clientHeight
-                setSliderStyle(sliderHeight)
-            }else{ 
-                clearInterval(setSliderSize) 
-            }
+                if(getSliderHeight.current.clientHeight !== sliderStyle){
+                    setSliderStyle(getSliderHeight.current.clientHeight)
+                }else{ 
+                    clearInterval(setSliderSize) 
+                }
+            },1)
+            
+            return () => {clearInterval(setSliderSize)}
 
-        },1)
-        
-        return () => {clearInterval(setSliderSize)}
+        }else{
+            setSliderStyle(300)
+        }
 
-    },[sliderStyle])
+    })
 
     let currentCount = count
     
@@ -77,9 +81,12 @@ export const Slider = () =>{
     })
     
     let sliderHeight = {height: "" + sliderStyle + "px"}
+    // if(sliderHeight < 100)setSliderStyle(300)
+    // console.log(sliderStyle)
     return(
         <div className='slider__container h-100 w-100'>
-            <h2>Simple Slider</h2>
+            <h2>Simple Slider </h2>
+            {/* <p>V6</p> */}
             <div className="slider__ImageWrapper overflow-hidden position-relative" style={sliderHeight}>
                 {mapImages}
             </div>

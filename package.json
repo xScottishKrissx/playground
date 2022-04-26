@@ -1,5 +1,6 @@
 {
   "name": "playground",
+  "homepage": "https://christopherdunne.co.uk/rmp",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

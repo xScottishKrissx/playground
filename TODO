@@ -43,8 +43,11 @@ Javascript:
       ✔ I thought i was finished but I just realised there is a gap at the edge of the slider container on larger windows. @done(16:40 - 26/04/22)
   
     pause:
-      ☐ Clean up code across all previous tasks
-      ☐ Upload to portfolio
+      ✔ Clean up code across all previous tasks @done(18:37 - 26/04/22)
+      ✔ Upload to portfolio @done(19:22 - 26/04/22)
+        Upload Issues:
+          ✔ The slider is not set to the correct size on load but resizing the windows sets it. @done(19:17 - 26/04/22)
+            ✔ The issue was the useEffect hook setting the height before the images loaded in, i added a check to make sure the images were in place before setting the height of the div. @done(19:18 - 26/04/22)
       ☐ Wasnt there something about DNS changes
   
   ☐ rock paper scissor
