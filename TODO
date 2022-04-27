@@ -49,10 +49,14 @@ Javascript:
           ✔ The slider is not set to the correct size on load but resizing the windows sets it. @done(19:17 - 26/04/22)
             ✔ The issue was the useEffect hook setting the height before the images loaded in, i added a check to make sure the images were in place before setting the height of the div. @done(19:18 - 26/04/22)
       ☐ Wasnt there something about DNS changes
-      ☐ Add github link to intro section
-      ☐ Add portfolio link to RMP
-      ☐ Change page title of RMP on portfolio
+      ✔ Add github link to intro section @done(11:13 - 27/04/22)
+          ✔ Upload to portfolio @done(11:29 - 27/04/22)
+      ✔ Add portfolio link to RMP @done(11:22 - 27/04/22)
+          ✔ Upload to portfolio @done(11:29 - 27/04/22)
+      ✔ Change page title of RMP on portfolio @done(11:14 - 27/04/22)
+          ✔ Upload to portfolio @done(11:29 - 27/04/22)
       ☐ look into code previews(i.e click om a button to view the project code for each of the tasks)
+          ☐ Not started
       
   
   ☐ rock paper scissor

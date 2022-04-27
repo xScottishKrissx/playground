@@ -65,3 +65,7 @@ h2{
 .intro{
   min-height: auto !important;
 }
+a, a:active, a:hover, a:visited, a:focus, a:focus-visible{
+  color: black !important;
+  text-decoration: none !important;
+}

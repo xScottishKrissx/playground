@@ -55,6 +55,11 @@
         height: 0px;
         overflow: hidden;
     }
+    #portfolioLink, #portfolioLink:active, #portfolioLink:hover{
+        color: black !important;
+        
+        text-decoration: none !important;
+    }
 
     #menuToggle{
         cursor: pointer;

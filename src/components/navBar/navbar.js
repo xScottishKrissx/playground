@@ -30,22 +30,22 @@ export const Navbar = (props) =>{
     // console.log(window.pageYOffset);
 
     // Scroll into view...    
-    function customScrollTo(id){
-        if(!navbar.current) return
-        menuAnchor.current.classList.remove("showMenu")
+    // function customScrollTo(id){
+    //     if(!navbar.current) return
+    //     menuAnchor.current.classList.remove("showMenu")
         
-        const navbarHeight = navbar.current.getBoundingClientRect().height;       
-        const fixedNav = navbar.current.classList.contains("fixMenu")
+    //     const navbarHeight = navbar.current.getBoundingClientRect().height;       
+    //     const fixedNav = navbar.current.classList.contains("fixMenu")
         
-        let element = document.getElementById(id)
-        // element.scrollIntoView({behavior: 'smooth', block: 'start'})
-        let position = element.offsetTop - navbarHeight
-        if(fixedNav){
-            window.scrollTo({left:0, top:position})
-        }else{
-            window.scrollTo({left:0, top:position - navbarHeight})
-        }
-    }
+    //     let element = document.getElementById(id)
+    //     // element.scrollIntoView({behavior: 'smooth', block: 'start'})
+    //     let position = element.offsetTop - navbarHeight
+    //     if(fixedNav){
+    //         window.scrollTo({left:0, top:position})
+    //     }else{
+    //         window.scrollTo({left:0, top:position - navbarHeight})
+    //     }
+    // }
 
 
 
@@ -82,7 +82,7 @@ return(
         <div className="responsiveNavbar__links" ref={menuAnchor}>
             {/* <span className="ps-2 pe-2">Home</span>
             <span className="ps-2 pe-2">About</span> */}
-            <span className="ps-2 pe-2">Portfolio</span>
+            <a targer="__new" id="portfolioLink" href="https://christopherdunne.co.uk/"><span className="ps-2 pe-2">Portfolio</span></a>
             {/* <span className="ps-2 pe-2">Search</span> */}
 
 

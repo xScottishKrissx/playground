@@ -33,9 +33,9 @@ return(
 
             <Row>
                 <Col className='intro__githubLinkContainer'>
-                   <a title="View code on github" href="https://github.com/xScottishKrissx/playground" > 
+                   <a target="__new" title="View code on github" href="https://github.com/xScottishKrissx/playground" > 
                         <img alt="View code on github.com" src={githubLogo} />
-                        <span class="intro__githubLink">https://github.com/xScottishKrissx</span>
+                        <span className="intro__githubLink">https://github.com/xScottishKrissx</span>
                     </a>
                 </Col>
             </Row>
