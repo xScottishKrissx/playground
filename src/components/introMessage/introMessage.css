@@ -1,3 +1,16 @@
 .intro__container .col .row{
     outline: none !important;
 }
+
+.intro__githubLinkContainer{
+    display: flex;
+    align-items: center;
+}
+
+.intro__githubLinkContainer img{
+    width: 30px;
+}
+
+.intro__githubLink{
+    margin-left: 10px;
+}

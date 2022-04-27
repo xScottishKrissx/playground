@@ -5,6 +5,8 @@ import './introMessage.css'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
+import githubLogo  from './githubLogo.png'
+
 export const IntroductionMessage = () =>{
 
     
@@ -25,6 +27,16 @@ return(
                 <p>I intend to keep adding to this and improving the overall usefulness of the page by adding code previews, search functionality, filters, direct links to github and more.</p>
 
                 <p>Everything on this page was created using React, React Bootstrap and Google Fonts(icons and fonts)</p>
+                
+                </Col>
+            </Row>
+
+            <Row>
+                <Col className='intro__githubLinkContainer'>
+                   <a title="View code on github" href="https://github.com/xScottishKrissx/playground" > 
+                        <img alt="View code on github.com" src={githubLogo} />
+                        <span class="intro__githubLink">https://github.com/xScottishKrissx</span>
+                    </a>
                 </Col>
             </Row>
 
