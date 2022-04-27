@@ -24,7 +24,7 @@ import LoremIpsum from './components/loremIpsum/loremIpsum';
 import SimpleTodo from './components/simpleTodo/simpleTodo';
 import Slider from './components/simpleSlider/slider';
 import IntroductionMessage from './components/introMessage/introMessage';
-
+import SimpleCalculator from './components/simpleCalculator/simpleCalculator';
 
 function App() {
   return (
@@ -42,8 +42,8 @@ function App() {
         <Row fluid="true">
           
           
-          
-          <Col sm={12} lg={6}> <Slider /> </Col>          
+          <Col sm={12} lg={6}>  <SimpleCalculator /> </Col>
+          <Col sm={12} lg={6}>  <Slider /> </Col>          
           <Col sm={12} lg={6} > <SimpleTodo /> </Col>
           <Col sm={12} lg={6} > <LoremIpsum /> </Col>
           <Col sm={12} lg={6} > <Countdown /> </Col>

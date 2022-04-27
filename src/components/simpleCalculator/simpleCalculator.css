@@ -1,0 +1,16 @@
+.simpleCalculator_calculator{
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    outline: 1px solid red;
+
+}
+
+.simpleCalculator__numbers{
+    display: flex;
+    /* flex-direction: column; */
+}
+.simpleCalculator__numbers button{
+    border: none;
+    width: 20%;
+}
