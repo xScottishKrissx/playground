@@ -4,57 +4,62 @@ import { useState } from 'react'
 import './simpleCalculator.css'
 
 export const SimpleCalculator = (props) =>{
-    
-    const [storeSum, setSum] = useState(0)
-    
-    const [firstNum, setFirstNumber] = useState(0)
-    const [secondNum, setSecondNumber] = useState(0)
-    const [operator, setOperator] = useState()
 
+    // Calculator Numbers
+    const [previousNumber, setAsPreviousNumber] = useState(0)
+    const [currentNumber, setCurrentNumber] = useState(0)
+    const [operator, setOperator] = useState()
+    const [previousAnswer, setPrevAnswer] = useState(0)
+
+    // Display
     const [displayAnswer, setDisplay] = useState(0)
     
-    const action = (x) =>{
-    //   console.log(x)
-    //   console.log(storeSum)
+    const action = (x) => {
+        console.log(previousNumber)
+        console.log(currentNumber)
+        console.log("Previous Answer:" + previousAnswer)
 
-      if(storeSum === 0){
-          setSum(x)
-          return
-      }
-    //   console.log(storeSum)
+        // Add the previous answer to the current user input
+        if(previousAnswer !== 0){
+            setAsPreviousNumber(parseFloat(previousAnswer))
+            console.log(currentNumber + x)
+            setCurrentNumber(parseFloat(currentNumber + x))
+            return
+        }
 
-      const currentNumber = storeSum
-      const newNumber = x
-      const test = currentNumber + newNumber
+        // Replaces the default 0 as soon as a number is pressed
+        if(currentNumber === 0){
+            setCurrentNumber(x)
+            return
+        }
 
-      setSum(test)
-      console.log(test)
-
+        const combinedNumberString = currentNumber + x
+        setCurrentNumber(combinedNumberString)
     }
 
-    const getOperator = (operator) =>{
-        setOperator(operator)
+    const getOperator = (operator) => {
 
-        if(firstNum === 0){
-            console.log("Set First Number")
-            console.log(storeSum)
-            setFirstNumber(parseFloat(storeSum))
-            setSum(0)
+        
+        setOperator(operator)
+        console.log(previousAnswer)
+        if(previousAnswer !== 0){
+            setAsPreviousNumber(parseFloat(previousAnswer))
+            setCurrentNumber(0)
+            return
+        }
+
+        if(previousNumber === 0){
+            setAsPreviousNumber(parseFloat(currentNumber))
+            setCurrentNumber(0)
             return
         }
         
     }
     
-    const getAnswer = () => {
-        console.log("First Number: " + firstNum)
-        console.log("Second Number: " + secondNum)
-        console.log(storeSum)
-        // setSecondNumber(storeSum)
-        
-
-        const answer = Calculate(firstNum,operator,parseFloat(storeSum))
-        console.log(answer)
+    const getAnswer = () => {       
+        const answer = Calculate(previousNumber,operator,parseFloat(currentNumber))
         setDisplay(answer)
+        setPrevAnswer(answer)
     }
 
     const Calculate = (first,operator,second) =>{
@@ -68,7 +73,7 @@ export const SimpleCalculator = (props) =>{
     }
     
 
-    // console.log(storeSum)
+
 
 return(
     <div className='simpleCalculator__container'>
@@ -76,8 +81,10 @@ return(
 
         <div className='simpleCalculator_calculator'>
 
-            <div className="simpleCalculator__display">{displayAnswer || storeSum || 0}</div>
-
+            <div className="simpleCalculator__display">{displayAnswer || currentNumber || 0}</div>
+            <p>Previous Number: {previousNumber}</p>
+            <p>Current Number: {currentNumber}</p>
+            <p>Previous Answer: {previousAnswer}</p>
             <div className="simpleCalculator__options">
                 <button>AC</button>
                 <button>DEL</button>
