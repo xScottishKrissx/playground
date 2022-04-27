@@ -3,31 +3,38 @@ import { useState } from 'react'
 
 import './simpleCalculator.css'
 
+// This is my first proper crack at a calculator so please forgive me if this is a total mess. I'm focused on getting it to work and understanding how it works at the same time.
+
 export const SimpleCalculator = (props) =>{
 
     // Calculator Numbers
+    // This is number that needs something to be added to it
     const [previousNumber, setAsPreviousNumber] = useState(0)
+    // This is the most recent user input, will be added to the previous number or the previous answer
     const [currentNumber, setCurrentNumber] = useState(0)
+    // The operator as set by the user
     const [operator, setOperator] = useState()
+    // This is sum of the previous number and current number which i use to add to the current number on consecutive equations
     const [previousAnswer, setPrevAnswer] = useState(0)
 
     // Display
     const [displayAnswer, setDisplay] = useState(0)
     
     const action = (x) => {
-        console.log(previousNumber)
-        console.log(currentNumber)
-        console.log("Previous Answer:" + previousAnswer)
+        
+        // Don't do anything if first input is 0
+        //// This should be changed to add a decimal after pressing 0, so 0 => .0
+        if(currentNumber === "0" && x === "0")return
 
         // Add the previous answer to the current user input
+        //// This allows for consecutive answers
         if(previousAnswer !== 0){
             setAsPreviousNumber(parseFloat(previousAnswer))
-            console.log(currentNumber + x)
             setCurrentNumber(parseFloat(currentNumber + x))
             return
         }
 
-        // Replaces the default 0 as soon as a number is pressed
+        // Replace the default 0 as soon as a number is pressed
         if(currentNumber === 0){
             setCurrentNumber(x)
             return
@@ -38,16 +45,18 @@ export const SimpleCalculator = (props) =>{
     }
 
     const getOperator = (operator) => {
-
-        
+        //Set the operator into state, to be used in the getAnswer function 
         setOperator(operator)
-        console.log(previousAnswer)
+
+        // Set the previous number value as the last answer if it exists.
+        //// This is important for allowing consecutive answers
         if(previousAnswer !== 0){
             setAsPreviousNumber(parseFloat(previousAnswer))
             setCurrentNumber(0)
             return
         }
 
+        // If there is no previous answer then set the previous number to the current number
         if(previousNumber === 0){
             setAsPreviousNumber(parseFloat(currentNumber))
             setCurrentNumber(0)
@@ -58,21 +67,32 @@ export const SimpleCalculator = (props) =>{
     
     const getAnswer = () => {       
         const answer = Calculate(previousNumber,operator,parseFloat(currentNumber))
+        // Display the answer on page
         setDisplay(answer)
+        // Set the answer to the current equation as the previous answer, to be used in consecutive equations
         setPrevAnswer(answer)
     }
 
     const Calculate = (first,operator,second) =>{
-        let result = ''
         console.log(first, operator, second)
-        if(operator === "add")result = first + second
-        if(operator === "minus")result = first - second
-        if(operator === "multiply")result = first * second
-        if(operator === "divide")result = first / second
-        return result
+        if(operator === "add") return first + second
+        if(operator === "subtract")return first - second
+        if(operator === "multiply")return first * second
+        if(operator === "divide")return first / second
     }
     
 
+    const clearAll = () => {
+        console.log("Clear All")
+        setCurrentNumber(0)
+        setAsPreviousNumber(0)
+        setPrevAnswer(0)
+        setDisplay(0)
+    }
+
+    const clearEntry = () => {
+        console.log("Clear Entry")
+    }
 
 
 return(
@@ -82,12 +102,14 @@ return(
         <div className='simpleCalculator_calculator'>
 
             <div className="simpleCalculator__display">{displayAnswer || currentNumber || 0}</div>
+            
             <p>Previous Number: {previousNumber}</p>
             <p>Current Number: {currentNumber}</p>
             <p>Previous Answer: {previousAnswer}</p>
+
             <div className="simpleCalculator__options">
-                <button>AC</button>
-                <button>DEL</button>
+                <button onClick={()=>clearAll()}>All Clear</button>
+                <button onClick={()=>clearEntry()}>Clear Entry</button>
             </div>
 
             <div className='simpleCalculator__numbers'>
@@ -107,8 +129,9 @@ return(
                 <button onClick={()=>getOperator("add")}>+</button>
                 <button onClick={()=>getOperator("subtract")}>-</button>
                 <button onClick={()=>getOperator("divide")}>/</button>
-                <button onClick={()=>action("decimal")}>.</button>
                 <button onClick={()=>getOperator("multiply")}>*</button>
+                {/* There be monsters */}-
+                <button onClick={()=>action("decimal")}>.</button>
             </div>
             
         
