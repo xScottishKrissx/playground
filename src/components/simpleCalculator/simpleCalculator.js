@@ -8,7 +8,7 @@ import './simpleCalculator.css'
 export const SimpleCalculator = (props) =>{
 
     // Calculator Numbers
-    // This is number that needs something to be added to it
+    // This is number that needs somedisplayOperator to be added to it
     const [previousNumber, setAsPreviousNumber] = useState(0)
     // This is the most recent user input, will be added to the previous number or the previous answer
     const [currentNumber, setCurrentNumber] = useState(0)
@@ -21,8 +21,11 @@ export const SimpleCalculator = (props) =>{
     const [displayAnswer, setDisplay] = useState(0)
     
     const action = (x) => {
+        console.log(previousAnswer)
+        console.log(currentNumber)
+        console.log(previousNumber)
         
-        // Don't do anything if first input is 0
+        // Don't do anydisplayOperator if first input is 0
         //// This should be changed to add a decimal after pressing 0, so 0 => .0
         if(currentNumber === "0" && x === "0")return
 
@@ -67,6 +70,7 @@ export const SimpleCalculator = (props) =>{
     
     const getAnswer = () => {       
         const answer = Calculate(previousNumber,operator,parseFloat(currentNumber))
+        
         // Display the answer on page
         setDisplay(answer)
         // Set the answer to the current equation as the previous answer, to be used in consecutive equations
@@ -88,10 +92,23 @@ export const SimpleCalculator = (props) =>{
         setAsPreviousNumber(0)
         setPrevAnswer(0)
         setDisplay(0)
+        setOperator(0)
     }
 
     const clearEntry = () => {
         console.log("Clear Entry")
+        setCurrentNumber(0)
+    }
+
+    const showWorking = () =>{
+        let displayOperator;
+        if(operator === "add") displayOperator = "+"
+        if(operator === "subtract") displayOperator = "-"
+        if(operator === "divide") displayOperator = "/"
+        if(operator === "multiply") displayOperator = "*"
+
+        let showWork = "" + previousNumber + " " + displayOperator + " " + currentNumber;
+        return showWork
     }
 
 
@@ -100,8 +117,9 @@ return(
         <h1>SimpleCalculator</h1>
 
         <div className='simpleCalculator_calculator'>
-
+            {operator ? showWorking() :null}
             <div className="simpleCalculator__display">{displayAnswer || currentNumber || 0}</div>
+            
             
             <p>Previous Number: {previousNumber}</p>
             <p>Current Number: {currentNumber}</p>
@@ -110,6 +128,9 @@ return(
             <div className="simpleCalculator__options">
                 <button onClick={()=>clearAll()}>All Clear</button>
                 <button onClick={()=>clearEntry()}>Clear Entry</button>
+    
+
+
             </div>
 
             <div className='simpleCalculator__numbers'>

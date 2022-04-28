@@ -14,6 +14,7 @@ Javascript:
       ☐ At the moment the calculation takes place with the solve button, can this be changed to work on number instead?
       ☐ If a user hits the solve button without changing the second number, it shoudl solve the equation
         .. 1-1-1-1-1-1-1-1-1-1-1-1.... but without pressing -1 over and over.
+      ☐ After solving, hitting a number should reset the entire thing.
 
     Issues:
       ☐ There is some weirdness when subtract 1 from 0
