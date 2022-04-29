@@ -21,7 +21,7 @@ export const SimpleCalculator = (props) =>{
     const [currentAnswer, setAnswer] = useState(null)
     
     const action = (x) => {
-        
+        console.log(currentNumber)
         setAnswer(null)
         showAnswer()
         // console.log(previousAnswer)
@@ -55,6 +55,7 @@ export const SimpleCalculator = (props) =>{
         setOperator(operator)
 
         setAnswer(null)
+        console.log(currentNumber)
         // Set the previous number value as the last answer if it exists.
         //// This is important for allowing consecutive answers
         if(previousAnswer !== 0){
@@ -102,6 +103,12 @@ export const SimpleCalculator = (props) =>{
     const clearEntry = () => {
         // console.log("Clear Entry")
         setCurrentNumber(0)
+    }
+
+    const addDecimal = () =>{
+        let temp = currentNumber
+        if(temp.toString().includes("."))return
+        setCurrentNumber(temp + ".")
     }
 
     const showAnswer = () =>{
@@ -163,7 +170,7 @@ return(
                     <button onClick={()=>action("9")}>9</button>
                     <button onClick={()=>action("0")}>0</button>
                     {/* There be monsters */}
-                    <button onClick={()=>action("decimal")}>.</button>
+                    <button onClick={()=>addDecimal()}>.</button>
                     {/* <button onClick={()=>clearEntry()}>CE</button> */}
                     <button id="clearAllButton" onClick={()=>clearAll()}>AC</button>
                     

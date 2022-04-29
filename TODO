@@ -5,7 +5,7 @@ Javascript:
   ☐ Calculator
     Todo:
       ✔ Simple Sums @done(18:35 - 27/04/22)
-      ☐ Decimal Places
+      ✔ Decimal Places @done(16:52 - 29/04/22)
       ✘ CE Button - Cancel current input button @cancelled(15:49 - 29/04/22)
         .. removed this to help simplify things a little for me.
       ✔ AC Button - Clear all input button @done(15:50 - 29/04/22)
