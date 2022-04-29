@@ -16,6 +16,8 @@ Javascript:
 
       ☐ At the moment the calculation takes place with the solve button, can this be changed to work on number instead?
       ☐ After solving, hitting a number should reset the entire thing.
+        ..this is important
+        ☐ I think i've managed to achieve this. My codebase is a bombsite but it's doing what I want.
 
       ✘ If a user hits the solve button without changing the second number, it shoudl solve the equation @cancelled(12:48 - 28/04/22)
         .. 1-1-1-1-1-1-1-1-1-1-1-1.... but without pressing -1 over and over.

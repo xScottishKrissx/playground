@@ -1,3 +1,4 @@
+import { clear } from '@testing-library/user-event/dist/clear'
 import * as React from 'react'
 import { useState } from 'react'
 
@@ -17,16 +18,29 @@ export const SimpleCalculator = (props) =>{
     // This is sum of the previous number and current number which i use to add to the current number on consecutive equations
     const [previousAnswer, setPrevAnswer] = useState(0)
 
+    const [resetCalc, setReset] = useState(false)
+
     // Display
     const [currentAnswer, setAnswer] = useState(null)
+
+
+
     
     const action = (x) => {
-        console.log(currentNumber)
-        setAnswer(null)
-        showAnswer()
+
         // console.log(previousAnswer)
         // console.log(currentNumber)
         // console.log(previousNumber)
+        console.log(x)
+        if(resetCalc === true){
+            clearAll()
+            setCurrentNumber(x)
+            return
+        }
+
+        setAnswer(null)
+        showAnswer()
+
         
         // Don't do anydisplayOperator if first input is 0
         //// This should be changed to add a decimal after pressing 0, so 0 => .0
@@ -51,11 +65,11 @@ export const SimpleCalculator = (props) =>{
     }
 
     const getOperator = (operator) => {
+        if(resetCalc) setReset(false)
+
         //Set the operator into state, to be used in the getAnswer function 
         setOperator(operator)
-
         setAnswer(null)
-        console.log(currentNumber)
         // Set the previous number value as the last answer if it exists.
         //// This is important for allowing consecutive answers
         if(previousAnswer !== 0){
@@ -80,6 +94,7 @@ export const SimpleCalculator = (props) =>{
         setAnswer(answer)
         // Set the answer to the current equation as the previous answer, to be used in consecutive equations
         setPrevAnswer(answer)
+        setReset(true)
     }
 
     const Calculate = (first,operator,second) =>{
@@ -98,6 +113,7 @@ export const SimpleCalculator = (props) =>{
         setPrevAnswer(0)
         setAnswer(null)
         setOperator(0)
+        setReset(false)
     }
 
     const clearEntry = () => {
@@ -119,12 +135,9 @@ export const SimpleCalculator = (props) =>{
         if(operator === "multiply") displayOperator = "*"
         
         let formatCurrentNumber = currentNumber === 0 ? "" : currentNumber
-        // console.log(formatCurrentNumber)
-
         let formatAnswer = currentAnswer === null ? "" : " = " + currentAnswer
-        let showWork = "" + previousNumber + " " + displayOperator + " " + formatCurrentNumber + formatAnswer;
 
-        // console.log(currentAnswer)
+        let showWork = previousNumber + " " + displayOperator + " " + formatCurrentNumber + formatAnswer;
         return showWork
     }
 
