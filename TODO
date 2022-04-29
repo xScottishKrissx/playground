@@ -15,9 +15,9 @@ Javascript:
         .. that helped a lot. I should consider doing this as standard moving forward(style first -> build functionality.)
 
       ☐ At the moment the calculation takes place with the solve button, can this be changed to work on number instead?
-      ☐ After solving, hitting a number should reset the entire thing.
+      ✔ After solving, hitting a number should reset the entire thing. @done(17:26 - 29/04/22)
         ..this is important
-        ☐ I think i've managed to achieve this. My codebase is a bombsite but it's doing what I want.
+        ✔ I think i've managed to achieve this. My codebase is a bombsite but it's doing what I want. @done(17:26 - 29/04/22)
 
       ✘ If a user hits the solve button without changing the second number, it shoudl solve the equation @cancelled(12:48 - 28/04/22)
         .. 1-1-1-1-1-1-1-1-1-1-1-1.... but without pressing -1 over and over.
@@ -30,6 +30,12 @@ Javascript:
       ✔ The first time you add a second number, the display is set to 0 @done(15:51 - 29/04/22)
         .. it display the number on consecutive solves
         .. this is a presentational issue and doesn't appear to affect functionality
+      
+      ☐ Hitting a number then pressing an operator twice returns a weird output
+        .. 1 -> Hit 1
+        .. 2 -> Hit + twice
+        .. 3 -> result ---- 1 + = 1
+        .. ideally you wouldnt be able to active the calculate without a second number
 
 
 

@@ -6,15 +6,45 @@ borderRadius{
 
 
 .simpleCalculator__container {
-    background-color: #2fff8c;
+    /* background-color: #2fff8c; */
     display: flex;
         align-items: center;
+        position: relative;
     width: 100%;
     height: 100%;
 }
 
+
+.simpleCalculator__header{
+    /* outline: 1px solid red; */
+    
+    margin:0 auto;
+    text-align: center;
+    width: 35%;
+    z-index: 10;
+}
+.simpleCalculator__header p{
+    font-style: italic;
+    margin: 0;
+    
+    font-family: 'VT323', monospace;
+}
+.simpleCalculator__header h2{
+    font-family: 'VT323', monospace;
+}
+.randomShape{
+    background-color: #2fff8c;
+    position: absolute;
+    height: 33%;
+    width: 100%;
+    z-index: 0;
+}
+
+
+
 .simpleCalculator_calculator{
-    background-color: #efefef;
+    /* background-color: #efefef; */
+    background-color: #bdbdbde3;
     border-radius: var(--border-radius);
     /* background-color: blueviolet; */
     /* box-shadow: 1px 1px 18px 1px black; */
@@ -25,8 +55,11 @@ borderRadius{
     width: 250px;
     /* max-width: 260px; */
     margin: 0 auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
     outline: 5px solid black;
 
+    z-index: 10;
 }
 
 .simpleCalculator__display{
@@ -82,6 +115,10 @@ borderRadius{
     
 }
 
+.simpleCalculator__numbers button:active, .simpleCalculator__operators button:active{
+    box-shadow: inset 0px 0px 10px 5px white;
+}
+
 .simpleCalculator__operators button:hover{
     background-color: grey;
 }
@@ -110,6 +147,13 @@ borderRadius{
     grid-row-start: 1;
     grid-row-end: 5;
 }
+
+    #solutionButton:active{
+        box-shadow: inset 0px 0px 10px 5px #22cd6f;
+    }
+
+
+
 #solutionButton:hover{
     background-color: #2fff8c;
 
@@ -117,4 +161,8 @@ borderRadius{
 #clearAllButton:hover{
     background-color: red;
     color: white;
+}
+
+#clearAllButton:active{
+    box-shadow: inset 0px 0px 10px 5px white;
 }

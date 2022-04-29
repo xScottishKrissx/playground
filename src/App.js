@@ -42,7 +42,7 @@ function App() {
         <Row fluid="true">
           
           
-          <Col sm={12} lg={6}>  <SimpleCalculator /> </Col>
+          <Col sm={12} lg={6} className="p-0">  <SimpleCalculator /> </Col>
           <Col sm={12} lg={6}>  <Slider /> </Col>          
           <Col sm={12} lg={6} > <SimpleTodo /> </Col>
           <Col sm={12} lg={6} > <LoremIpsum /> </Col>

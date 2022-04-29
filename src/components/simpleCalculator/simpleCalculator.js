@@ -1,4 +1,3 @@
-import { clear } from '@testing-library/user-event/dist/clear'
 import * as React from 'react'
 import { useState } from 'react'
 
@@ -18,9 +17,10 @@ export const SimpleCalculator = (props) =>{
     // This is sum of the previous number and current number which i use to add to the current number on consecutive equations
     const [previousAnswer, setPrevAnswer] = useState(0)
 
+    // A detector to reset the calculator if the user selects a number without first selecting an operator
     const [resetCalc, setReset] = useState(false)
 
-    // Display
+    // Display the final answer
     const [currentAnswer, setAnswer] = useState(null)
 
 
@@ -144,21 +144,26 @@ export const SimpleCalculator = (props) =>{
 
 return(
     <div className='simpleCalculator__container'>
-        {/* <h1>SimpleCalculator</h1> */}
 
+        <div className="simpleCalculator__header">
+            <h2 className=''>*Simple Calculator</h2>
+            <p>*a very</p>
+        </div>
+
+        <div className="randomShape"></div>
+        
         <div className='simpleCalculator_calculator'>
-
-            
-            
+{/* Row 1 - Display */}
             <div className="simpleCalculator__row1">
-                {/* <div className="showAnswer">{operator ? showAnswer() :<p>Working</p>}</div> */}
                 <div className="simpleCalculator__display">
-
-                {operator ? showAnswer() : currentNumber || 0}
-                    {/* {currentAnswer || currentNumber || 0} */}
+                    {operator ? showAnswer() : currentNumber || 0}
                 </div>
             </div>
 
+
+
+
+{/* Row 2 - Operators */}
             <div className="simpleCalculator__row2">
                 <div className="simpleCalculator__operators">
                     <button onClick={()=>getOperator("add")}>+</button>
@@ -168,8 +173,9 @@ return(
                 </div>
             </div>
 
-            <div className="simpleCalculator__row3">
 
+{/* Row 3 - Numbers and Solution Buttons */}
+            <div className="simpleCalculator__row3">
                 <div className='simpleCalculator__numbers'>
                     <button id="solutionButton" onClick={()=>getAnswer()}>=</button>
                     <button onClick={()=>action("1")}>1</button>
@@ -182,47 +188,11 @@ return(
                     <button onClick={()=>action("8")}>8</button>
                     <button onClick={()=>action("9")}>9</button>
                     <button onClick={()=>action("0")}>0</button>
-                    {/* There be monsters */}
                     <button onClick={()=>addDecimal()}>.</button>
-                    {/* <button onClick={()=>clearEntry()}>CE</button> */}
                     <button id="clearAllButton" onClick={()=>clearAll()}>AC</button>
-                    
                 </div>
-
-                {/* <div className="simpleCalculator__solution">
-                    <button onClick={()=>getAnswer()}>=</button>
-                </div> */}
             </div>
-           
-
-                
-
-   
-
-
-
-                
-
-
-           
-
-
-    
-
-
-
-
-
-
-            
-        
-
-
         </div>
-
-            {/* <p>Previous Number: {previousNumber}</p>
-            <p>Current Number: {currentNumber}</p>
-            <p>Previous Answer: {previousAnswer}</p> */}
     </div>
 )
 
