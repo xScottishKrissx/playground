@@ -6,20 +6,26 @@ Javascript:
     Todo:
       ✔ Simple Sums @done(18:35 - 27/04/22)
       ☐ Decimal Places
-      ☐ CE Button - Cancel current input button
-      ☐ AC Button - Clear all input button
-        ☐ I think i've done it but more checking needed.
+      ✘ CE Button - Cancel current input button @cancelled(15:49 - 29/04/22)
+        .. removed this to help simplify things a little for me.
+      ✔ AC Button - Clear all input button @done(15:50 - 29/04/22)
+        ✔ I think i've done it but more checking needed. @done(15:50 - 29/04/22)
       ☐ Style calculator
+        ✔ I think i need to style the calculator to properly see where i need to improve. @done(15:50 - 29/04/22)
+        .. that helped a lot. I should consider doing this as standard moving forward(style first -> build functionality.)
 
       ☐ At the moment the calculation takes place with the solve button, can this be changed to work on number instead?
-      ☐ If a user hits the solve button without changing the second number, it shoudl solve the equation
-        .. 1-1-1-1-1-1-1-1-1-1-1-1.... but without pressing -1 over and over.
       ☐ After solving, hitting a number should reset the entire thing.
 
+      ✘ If a user hits the solve button without changing the second number, it shoudl solve the equation @cancelled(12:48 - 28/04/22)
+        .. 1-1-1-1-1-1-1-1-1-1-1-1.... but without pressing -1 over and over.
+        Reason for cancelling -- I dont want this anymore but I think i can do something similiar with the show working function
+
+
     Issues:
-      ☐ There is some weirdness when subtract 1 from 0
+      ✔ There is some weirdness when subtract 1 from 0 @done(15:52 - 29/04/22)
         .. it should solve to -1...right?
-      ☐ The first time you add a second number, the display is set to 0
+      ✔ The first time you add a second number, the display is set to 0 @done(15:51 - 29/04/22)
         .. it display the number on consecutive solves
         .. this is a presentational issue and doesn't appear to affect functionality
 
@@ -27,7 +33,8 @@ Javascript:
 
 
 
-  ☐ Simple CRUD
+  ✔ Simple CRUD @done(15:52 - 29/04/22)
+      ✔ did this with the todo @done(15:52 - 29/04/22)
   ☐ Search Box
   ✔ Random colour picker @done(16:40 - 06/04/22)
   ✔ Number counter @done(17:41 - 06/04/22)
