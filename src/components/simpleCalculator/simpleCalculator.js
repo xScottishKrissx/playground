@@ -8,7 +8,7 @@ import './simpleCalculator.css'
 export const SimpleCalculator = (props) =>{
 
     // Calculator Numbers
-    // This is number that needs somedisplayOperator to be added to it
+    // This is number that needs something to be added to it
     const [previousNumber, setAsPreviousNumber] = useState(0)
     // This is the most recent user input, will be added to the previous number or the previous answer
     const [currentNumber, setCurrentNumber] = useState(0)
@@ -31,7 +31,7 @@ export const SimpleCalculator = (props) =>{
         // console.log(previousAnswer)
         // console.log(currentNumber)
         // console.log(previousNumber)
-        console.log(x)
+        // console.log(x)
         if(resetCalc === true){
             clearAll()
             setCurrentNumber(x)
@@ -42,7 +42,7 @@ export const SimpleCalculator = (props) =>{
         showAnswer()
 
         
-        // Don't do anydisplayOperator if first input is 0
+        // Don't do anything if first input is 0
         //// This should be changed to add a decimal after pressing 0, so 0 => .0
         if(currentNumber === "0" && x === "0")return
 
@@ -64,11 +64,13 @@ export const SimpleCalculator = (props) =>{
         setCurrentNumber(combinedNumberString)
     }
 
-    const getOperator = (operator) => {
+    
+    const getOperator = (readOperator) => {
         if(resetCalc) setReset(false)
 
+
         //Set the operator into state, to be used in the getAnswer function 
-        setOperator(operator)
+        setOperator(readOperator)
         setAnswer(null)
         // Set the previous number value as the last answer if it exists.
         //// This is important for allowing consecutive answers
@@ -87,7 +89,12 @@ export const SimpleCalculator = (props) =>{
         
     }
     
-    const getAnswer = () => {       
+    const getAnswer = () => {      
+        
+        console.log()
+        console.log(currentNumber)
+ 
+
         const answer = Calculate(previousNumber,operator,parseFloat(currentNumber))
         
         // Display the answer on page
@@ -116,11 +123,6 @@ export const SimpleCalculator = (props) =>{
         setReset(false)
     }
 
-    const clearEntry = () => {
-        // console.log("Clear Entry")
-        setCurrentNumber(0)
-    }
-
     const addDecimal = () =>{
         let temp = currentNumber
         if(temp.toString().includes("."))return
@@ -138,6 +140,8 @@ export const SimpleCalculator = (props) =>{
         let formatAnswer = currentAnswer === null ? "" : " = " + currentAnswer
 
         let showWork = previousNumber + " " + displayOperator + " " + formatCurrentNumber + formatAnswer;
+
+
         return showWork
     }
 
