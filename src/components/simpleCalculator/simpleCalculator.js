@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useState } from 'react'
 import CalculatorDisplay from './display/calculatorDisplay'
+import Operators from './operators/operators'
 
 import './simpleCalculator.css'
 
@@ -66,6 +67,7 @@ export const SimpleCalculator = (props) =>{
 
     
     const getOperator = (readOperator) => {
+        console.log("Operator Press")
         if(resetCalc) setReset(false)
 
 
@@ -175,14 +177,16 @@ return(
 
 
 {/* Row 2 - Operators */}
-            <div className="simpleCalculator__row2">
+            {/* <div className="simpleCalculator__row2">
                 <div className="simpleCalculator__operators">
                     <button onClick={()=>getOperator("add")}>+</button>
                     <button onClick={()=>getOperator("subtract")}>-</button>
                     <button onClick={()=>getOperator("divide")}>/</button>
                     <button onClick={()=>getOperator("multiply")}>*</button>
                 </div>
-            </div>
+            </div> */}
+
+            <Operators getOperator={getOperator} />
 
 
 {/* Row 3 - Numbers and Solution Buttons */}
