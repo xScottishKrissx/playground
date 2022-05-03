@@ -87,30 +87,30 @@ export const SimpleCalculator = (props) =>{
         
     }
     
-    const getAnswer = () => {      
+    // const getAnswer = () => {      
 
-        // Prevents users from solving 1 = 
-        if(currentNumber && !operator) return
+    //     // Prevents users from solving 1 = 
+    //     if(currentNumber && !operator) return
 
-        // Prevents users from solving "1 + =" etc 
-        if(currentNumber === 0 && operator )return
+    //     // Prevents users from solving "1 + =" etc 
+    //     if(currentNumber === 0 && operator )return
         
-        const answer = Calculate(previousNumber,operator,parseFloat(currentNumber))
+    //     const answer = Calculate(previousNumber,operator,parseFloat(currentNumber))
         
-        // Display the answer on page
-        setAnswer(answer)
-        // Set the answer to the current equation as the previous answer, to be used in consecutive equations
-        setPrevAnswer(answer)
-        setReset(true)
-    }
+    //     // Display the answer on page
+    //     setAnswer(answer)
+    //     // Set the answer to the current equation as the previous answer, to be used in consecutive equations
+    //     setPrevAnswer(answer)
+    //     setReset(true)
+    // }
 
-    const Calculate = (first,operator,second) =>{
-        console.log(first, operator, second)
-        if(operator === "add") return first + second
-        if(operator === "subtract")return first - second
-        if(operator === "multiply")return first * second
-        if(operator === "divide")return first / second
-    }
+    // const Calculate = (first,operator,second) =>{
+    //     console.log(first, operator, second)
+    //     if(operator === "add") return first + second
+    //     if(operator === "subtract")return first - second
+    //     if(operator === "multiply")return first * second
+    //     if(operator === "divide")return first / second
+    // }
     
 
     const clearAll = () => {
@@ -149,6 +149,9 @@ export const SimpleCalculator = (props) =>{
     // }
 
     const setCurrentNumberState = (x) => {setCurrentNumber(x)}
+    const setAnswerState = (x) => {setAnswer(x)}
+    const setPrevAnswerState = (x) => {setPrevAnswer(x)}
+    const setResetState = (x) => {setResetState(x)}
 
 
 return(
@@ -170,17 +173,25 @@ return(
                 previousNumber={previousNumber}
                  />
             <Operators getOperator={getOperator} />
+
+
+
+            
             <Buttons 
-                getAnswer={()=>getAnswer()} 
+                // getAnswer={()=>getAnswer()} 
+                setAnswer={setAnswerState}
+                setPrevAnswer={setPrevAnswerState}
+                setReset={setResetState}
                 action={action} 
                 // addDecimal={()=>addDecimal()} 
                 // addDecimal={addDecimal}
                 resetCalc={resetCalc}
                 currentNumber={currentNumber}
+                previousNumber={previousNumber}
                 setCurrentNumber={setCurrentNumberState}
-                clearAll={()=>clearAll()
+                clearAll={()=>clearAll()}
+                operator={operator} 
                 
-                } 
                 />
         </div>
 
