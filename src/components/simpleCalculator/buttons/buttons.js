@@ -10,7 +10,9 @@ export default function Buttons(props) {
       <>
         <div className="simpleCalculator__row3">
             <div className='simpleCalculator__numbers'>
+
                 <button id="solutionButton" onClick={()=>getAnswer(props)}>=</button>
+                
                 <button onClick={ ()=> {numberPress("1",props) } }> 1 </button>
                 <button onClick={ ()=> {numberPress("2",props) } }>2</button>
                 <button onClick={ ()=> {numberPress("3",props) } }>3</button>
@@ -21,14 +23,16 @@ export default function Buttons(props) {
                 <button onClick={ ()=> {numberPress("8",props) } }>8</button>
                 <button onClick={ ()=> {numberPress("9",props) } }>9</button>
                 <button onClick={ ()=> {numberPress("0",props) } }>0</button>
-                {/* <button onClick={props.addDecimal}>.</button> */}
+
                 <AddDecimal 
                     resetCalc={props.resetCalc}
                     clearAll={props.clearAll}
                     currentNumber={props.currentNumber}
                     setCurrentNumber={props.setCurrentNumber}
                 />
+
                 <button id="clearAllButton" onClick={props.clearAll}>AC</button> 
+
             </div>
         </div>
     </>
