@@ -1,5 +1,9 @@
 export const numberPress = (x,props) => {
-        
+    
+    
+    // console.log(props.previousAnswer)
+    // console.log(props.currentNumber)
+
     if(props.resetCalc === true){
         props.clearAll()
         props.setCurrentNumber(x)

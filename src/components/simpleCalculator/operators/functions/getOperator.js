@@ -1,5 +1,5 @@
 export const getOperator = (readOperator,props) => {
-
+    // console.log(props.previousAnswer)
     if(props.resetCalc) props.setReset(false)
 
     //Set the operator into state, to be used in the getAnswer function 

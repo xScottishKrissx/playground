@@ -40,10 +40,10 @@ Javascript:
         .. 3 -> result ---- 1 + = 1
         .. ideally you wouldnt be able to active the calculate without a second number
 
-        ☐ Unexpected interactions to fix:
+        ✔ Unexpected interactions to fix: @done(17:41 - 03/05/22)
           ✔ pressing a number then =, then attempting to add will return a NaN @done(12:28 - 03/05/22)
           ✔ 1 + 1 then solve, pressing decimal will add a decimal to the second number instead of resetting the display @done(12:24 - 03/05/22)
-          ☐ 0 * 1 = 0, then pressing an operator will return a previous number of 1
+          ✔ 0 * 1 = 0, then pressing an operator will return a previous number of 1 @done(17:41 - 03/05/22)
 
 
 

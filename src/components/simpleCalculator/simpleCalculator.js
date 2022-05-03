@@ -45,6 +45,9 @@ export const SimpleCalculator = (props) =>{
     const setPrevAnswerState = (x) => {setPrevAnswer(x)}
     const setResetState = (x) => { setReset(x) }
 
+    // console.log(previousNumber)
+    // console.log(currentNumber)
+
 
     return(
         <div className='simpleCalculator__container'>

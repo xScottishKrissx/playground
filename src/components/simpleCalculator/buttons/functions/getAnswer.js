@@ -18,7 +18,7 @@ export const getAnswer = (props) => {
 }
 
 const Calculate = (first,operator,second) =>{
-    console.log(first, operator, second)
+    // console.log(first, operator, second)
     if(operator === "add") return first + second
     if(operator === "subtract")return first - second
     if(operator === "multiply")return first * second
