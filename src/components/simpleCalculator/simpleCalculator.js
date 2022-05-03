@@ -1,5 +1,7 @@
+import { clear } from '@testing-library/user-event/dist/clear'
 import * as React from 'react'
 import { useState } from 'react'
+import Buttons from './buttons/buttons'
 import CalculatorDisplay from './display/calculatorDisplay'
 import Operators from './operators/operators'
 
@@ -190,7 +192,7 @@ return(
 
 
 {/* Row 3 - Numbers and Solution Buttons */}
-            <div className="simpleCalculator__row3">
+            {/* <div className="simpleCalculator__row3">
                 <div className='simpleCalculator__numbers'>
                     <button id="solutionButton" onClick={()=>getAnswer()}>=</button>
                     <button onClick={()=>action("1")}>1</button>
@@ -206,7 +208,10 @@ return(
                     <button onClick={()=>addDecimal()}>.</button>
                     <button id="clearAllButton" onClick={()=>clearAll()}>AC</button>
                 </div>
-            </div>
+            </div> */}
+
+            <Buttons getAnswer={()=>getAnswer()} action={action} addDecimal={()=>addDecimal()} clearAll={()=>clearAll()} />
+
         </div>
     </div>
 )
