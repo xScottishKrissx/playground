@@ -93,7 +93,11 @@ export const SimpleCalculator = (props) =>{
     }
     
     const getAnswer = () => {      
-        // Prevents users from solving "1 +" etc 
+
+        // Prevents users from solving 1 = 
+        if(currentNumber && !operator) return
+
+        // Prevents users from solving "1 + =" etc 
         if(currentNumber === 0 && operator )return
         
         const answer = Calculate(previousNumber,operator,parseFloat(currentNumber))
@@ -133,7 +137,7 @@ export const SimpleCalculator = (props) =>{
             setCurrentNumber(0 + ".")
             return
         }
-        
+
         let temp = currentNumber
         if(temp.toString().includes("."))return
         setCurrentNumber(temp + ".")

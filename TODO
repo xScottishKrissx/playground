@@ -38,7 +38,7 @@ Javascript:
         .. ideally you wouldnt be able to active the calculate without a second number
 
         ☐ Unexpected interactions to fix:
-          ☐ pressing a number then =, then attempting to add will return a NaN
+          ✔ pressing a number then =, then attempting to add will return a NaN @done(12:28 - 03/05/22)
           ✔ 1 + 1 then solve, pressing decimal will add a decimal to the second number instead of resetting the display @done(12:24 - 03/05/22)
 
 
