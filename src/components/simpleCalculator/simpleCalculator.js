@@ -125,6 +125,15 @@ export const SimpleCalculator = (props) =>{
     }
 
     const addDecimal = () =>{
+        
+
+        // In case a user presses a decimal straight after solving
+        if(resetCalc === true){
+            clearAll()
+            setCurrentNumber(0 + ".")
+            return
+        }
+        
         let temp = currentNumber
         if(temp.toString().includes("."))return
         setCurrentNumber(temp + ".")
