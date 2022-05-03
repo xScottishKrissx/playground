@@ -1,9 +1,11 @@
-import { clear } from '@testing-library/user-event/dist/clear'
 import * as React from 'react'
 import { useState } from 'react'
+
 import Buttons from './buttons/buttons'
 import CalculatorDisplay from './display/calculatorDisplay'
 import Operators from './operators/operators'
+
+
 
 import './simpleCalculator.css'
 
@@ -26,9 +28,6 @@ export const SimpleCalculator = (props) =>{
 
     // Display the final answer
     const [currentAnswer, setAnswer] = useState(null)
-
-
-
 
     const action = (x) => {
 
@@ -60,18 +59,13 @@ export const SimpleCalculator = (props) =>{
             return
         }
 
-        
-  
-
         const combinedNumberString = currentNumber + x
         setCurrentNumber(combinedNumberString)
     }
 
     
     const getOperator = (readOperator) => {
-        console.log("Operator Press")
         if(resetCalc) setReset(false)
-
 
         //Set the operator into state, to be used in the getAnswer function 
         setOperator(readOperator)
@@ -128,18 +122,17 @@ export const SimpleCalculator = (props) =>{
         setReset(false)
     }
 
-    const addDecimal = () =>{
-        // In case a user presses a decimal straight after solving
-        if(resetCalc === true){
-            clearAll()
-            setCurrentNumber(0 + ".")
-            return
-        }
+    // const addDecimal = () =>{
+    //     // In case a user presses a decimal straight after solving
+    //     if(resetCalc === true){
+    //         clearAll()
+    //         setCurrentNumber(0 + ".")
+    //         return
+    //     }
 
-        let temp = currentNumber
-        if(temp.toString().includes("."))return
-        setCurrentNumber(temp + ".")
-    }
+    //     if(currentNumber.toString().includes("."))return
+    //     setCurrentNumber(currentNumber + ".")
+    // }
 
     const showAnswer = () =>{
         let displayOperator;
@@ -150,10 +143,12 @@ export const SimpleCalculator = (props) =>{
 
         let formatCurrentNumber = currentNumber === 0 ? "" : currentNumber
         let formatAnswer = currentAnswer === null ? "" : " = " + currentAnswer
-        let showWork = previousNumber + " " + displayOperator + " " + formatCurrentNumber + formatAnswer;
 
+        let showWork = previousNumber + " " + displayOperator + " " + formatCurrentNumber + formatAnswer;
         return showWork
     }
+
+    const setCurrentNumberState = (x) => {setCurrentNumber(x)}
 
 
 return(
@@ -167,52 +162,22 @@ return(
         <div className="randomShape"></div>
         
         <div className='simpleCalculator_calculator'>
-{/* Row 1 - Display */}
-            {/* <div className="simpleCalculator__row1">
-                <div className="simpleCalculator__display">
-                    {operator ? showAnswer() : currentNumber || 0}
-                </div>
-            </div> */}
             <CalculatorDisplay operator={operator} currentNumber={currentNumber} showAnswer={showAnswer()}/>
-
-
-
-
-{/* Row 2 - Operators */}
-            {/* <div className="simpleCalculator__row2">
-                <div className="simpleCalculator__operators">
-                    <button onClick={()=>getOperator("add")}>+</button>
-                    <button onClick={()=>getOperator("subtract")}>-</button>
-                    <button onClick={()=>getOperator("divide")}>/</button>
-                    <button onClick={()=>getOperator("multiply")}>*</button>
-                </div>
-            </div> */}
-
             <Operators getOperator={getOperator} />
-
-
-{/* Row 3 - Numbers and Solution Buttons */}
-            {/* <div className="simpleCalculator__row3">
-                <div className='simpleCalculator__numbers'>
-                    <button id="solutionButton" onClick={()=>getAnswer()}>=</button>
-                    <button onClick={()=>action("1")}>1</button>
-                    <button onClick={()=>action("2")}>2</button>
-                    <button onClick={()=>action("3")}>3</button>
-                    <button onClick={()=>action("4")}>4</button>
-                    <button onClick={()=>action("5")}>5</button>
-                    <button onClick={()=>action("6")}>6</button>
-                    <button onClick={()=>action("7")}>7</button>
-                    <button onClick={()=>action("8")}>8</button>
-                    <button onClick={()=>action("9")}>9</button>
-                    <button onClick={()=>action("0")}>0</button>
-                    <button onClick={()=>addDecimal()}>.</button>
-                    <button id="clearAllButton" onClick={()=>clearAll()}>AC</button>
-                </div>
-            </div> */}
-
-            <Buttons getAnswer={()=>getAnswer()} action={action} addDecimal={()=>addDecimal()} clearAll={()=>clearAll()} />
-
+            <Buttons 
+                getAnswer={()=>getAnswer()} 
+                action={action} 
+                // addDecimal={()=>addDecimal()} 
+                // addDecimal={addDecimal}
+                resetCalc={resetCalc}
+                currentNumber={currentNumber}
+                setCurrentNumber={setCurrentNumberState}
+                clearAll={()=>clearAll()
+                
+                } 
+                />
         </div>
+
     </div>
 )
 

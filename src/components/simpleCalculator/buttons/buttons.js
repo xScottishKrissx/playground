@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { AddDecimal } from '../functions/addDecimal'
+
 export default function Buttons(props) {
   return (
       <>
@@ -16,7 +18,13 @@ export default function Buttons(props) {
                 <button onClick={ ()=> {props.action("8") } }>8</button>
                 <button onClick={ ()=> {props.action("9") } }>9</button>
                 <button onClick={ ()=> {props.action("0") } }>0</button>
-                <button onClick={props.addDecimal}>.</button>
+                {/* <button onClick={props.addDecimal}>.</button> */}
+                <AddDecimal 
+                    resetCalc={props.resetCalc}
+                    clearAll={props.clearAll}
+                    currentNumber={props.currentNumber}
+                    setCurrentNumber={props.setCurrentNumber}
+                />
                 <button id="clearAllButton" onClick={props.clearAll}>AC</button> 
             </div>
         </div>
