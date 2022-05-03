@@ -5,7 +5,7 @@ import Buttons from './buttons/buttons'
 import CalculatorDisplay from './display/calculatorDisplay'
 import Operators from './operators/operators'
 
-
+// import { clearAllFunc } from './functions/clearAll'
 
 import './simpleCalculator.css'
 
@@ -38,7 +38,7 @@ export const SimpleCalculator = (props) =>{
         }
 
         setAnswer(null)
-        showAnswer()
+        // showAnswer()
 
         
         // Don't do anything if first input is 0
@@ -134,19 +134,19 @@ export const SimpleCalculator = (props) =>{
     //     setCurrentNumber(currentNumber + ".")
     // }
 
-    const showAnswer = () =>{
-        let displayOperator;
-        if(operator === "add") displayOperator = "+"
-        if(operator === "subtract") displayOperator = "-"
-        if(operator === "divide") displayOperator = "/"
-        if(operator === "multiply") displayOperator = "*"
+    // const showAnswer = () =>{
+    //     let displayOperator;
+    //     if(operator === "add") displayOperator = "+"
+    //     if(operator === "subtract") displayOperator = "-"
+    //     if(operator === "divide") displayOperator = "/"
+    //     if(operator === "multiply") displayOperator = "*"
 
-        let formatCurrentNumber = currentNumber === 0 ? "" : currentNumber
-        let formatAnswer = currentAnswer === null ? "" : " = " + currentAnswer
+    //     let formatCurrentNumber = currentNumber === 0 ? "" : currentNumber
+    //     let formatAnswer = currentAnswer === null ? "" : " = " + currentAnswer
 
-        let showWork = previousNumber + " " + displayOperator + " " + formatCurrentNumber + formatAnswer;
-        return showWork
-    }
+    //     let showWork = previousNumber + " " + displayOperator + " " + formatCurrentNumber + formatAnswer;
+    //     return showWork
+    // }
 
     const setCurrentNumberState = (x) => {setCurrentNumber(x)}
 
@@ -162,7 +162,13 @@ return(
         <div className="randomShape"></div>
         
         <div className='simpleCalculator_calculator'>
-            <CalculatorDisplay operator={operator} currentNumber={currentNumber} showAnswer={showAnswer()}/>
+            <CalculatorDisplay 
+                operator={operator} 
+                currentNumber={currentNumber} 
+                currentAnswer={currentAnswer} 
+                // showAnswer={showAnswer()} 
+                previousNumber={previousNumber}
+                 />
             <Operators getOperator={getOperator} />
             <Buttons 
                 getAnswer={()=>getAnswer()} 
