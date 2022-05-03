@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState } from 'react'
+import CalculatorDisplay from './display/calculatorDisplay'
 
 import './simpleCalculator.css'
 
@@ -28,10 +29,6 @@ export const SimpleCalculator = (props) =>{
 
     const action = (x) => {
 
-        // console.log(previousAnswer)
-        // console.log(currentNumber)
-        // console.log(previousNumber)
-        // console.log(x)
         if(resetCalc === true){
             clearAll()
             setCurrentNumber(x)
@@ -119,7 +116,6 @@ export const SimpleCalculator = (props) =>{
     
 
     const clearAll = () => {
-        // console.log("Clear All")
         setCurrentNumber(0)
         setAsPreviousNumber(0)
         setPrevAnswer(0)
@@ -129,8 +125,6 @@ export const SimpleCalculator = (props) =>{
     }
 
     const addDecimal = () =>{
-        
-
         // In case a user presses a decimal straight after solving
         if(resetCalc === true){
             clearAll()
@@ -148,10 +142,7 @@ export const SimpleCalculator = (props) =>{
         if(operator === "add") displayOperator = "+"
         if(operator === "subtract") displayOperator = "-"
         if(operator === "divide") displayOperator = "/"
-
-  
         if(operator === "multiply") displayOperator = "*"
-        
 
         let formatCurrentNumber = currentNumber === 0 ? "" : currentNumber
         let formatAnswer = currentAnswer === null ? "" : " = " + currentAnswer
@@ -173,11 +164,12 @@ return(
         
         <div className='simpleCalculator_calculator'>
 {/* Row 1 - Display */}
-            <div className="simpleCalculator__row1">
+            {/* <div className="simpleCalculator__row1">
                 <div className="simpleCalculator__display">
                     {operator ? showAnswer() : currentNumber || 0}
                 </div>
-            </div>
+            </div> */}
+            <CalculatorDisplay operator={operator} currentNumber={currentNumber} showAnswer={showAnswer()}/>
 
 
 
