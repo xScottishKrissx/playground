@@ -10,11 +10,11 @@ Javascript:
         .. removed this to help simplify things a little for me.
       ✔ AC Button - Clear all input button @done(15:50 - 29/04/22)
         ✔ I think i've done it but more checking needed. @done(15:50 - 29/04/22)
-      ☐ Style calculator
+      ✔ Style calculator @done(12:30 - 03/05/22)
         ✔ I think i need to style the calculator to properly see where i need to improve. @done(15:50 - 29/04/22)
         .. that helped a lot. I should consider doing this as standard moving forward(style first -> build functionality.)
 
-      ☐ At the moment the calculation takes place with the solve button, can this be changed to work on number instead?
+      ✘ At the moment the calculation takes place with the solve button, can this be changed to work on number instead? @cancelled(12:30 - 03/05/22)
       ✔ After solving, hitting a number should reset the entire thing. @done(17:26 - 29/04/22)
         ..this is important
         ✔ I think i've managed to achieve this. My codebase is a bombsite but it's doing what I want. @done(17:26 - 29/04/22)
@@ -22,6 +22,9 @@ Javascript:
       ✘ If a user hits the solve button without changing the second number, it shoudl solve the equation @cancelled(12:48 - 28/04/22)
         .. 1-1-1-1-1-1-1-1-1-1-1-1.... but without pressing -1 over and over.
         Reason for cancelling -- I dont want this anymore but I think i can do something similiar with the show working function
+
+      Reacitfy Calculator:
+        ☐ Split content into separate components and functions.
 
 
     Issues:
@@ -37,7 +40,7 @@ Javascript:
         .. 3 -> result ---- 1 + = 1
         .. ideally you wouldnt be able to active the calculate without a second number
 
-        ☐ Unexpected interactions to fix:
+        ✔ Unexpected interactions to fix: @done(12:30 - 03/05/22)
           ✔ pressing a number then =, then attempting to add will return a NaN @done(12:28 - 03/05/22)
           ✔ 1 + 1 then solve, pressing decimal will add a decimal to the second number instead of resetting the display @done(12:24 - 03/05/22)
 
