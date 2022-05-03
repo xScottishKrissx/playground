@@ -30,7 +30,7 @@ export const SimpleCalculator = (props) =>{
     const [currentAnswer, setAnswer] = useState(null)
 
     const action = (x) => {
-
+        
         if(resetCalc === true){
             clearAll()
             setCurrentNumber(x)
@@ -64,28 +64,28 @@ export const SimpleCalculator = (props) =>{
     }
 
     
-    const getOperator = (readOperator) => {
-        if(resetCalc) setReset(false)
+    // const getOperator = (readOperator) => {
+    //     if(resetCalc) setReset(false)
 
-        //Set the operator into state, to be used in the getAnswer function 
-        setOperator(readOperator)
-        setAnswer(null)
-        // Set the previous number value as the last answer if it exists.
-        //// This is important for allowing consecutive answers
-        if(previousAnswer !== 0){
-            setAsPreviousNumber(parseFloat(previousAnswer))
-            setCurrentNumber(0)
-            return
-        }
+    //     //Set the operator into state, to be used in the getAnswer function 
+    //     setOperator(readOperator)
+    //     setAnswer(null)
+    //     // Set the previous number value as the last answer if it exists.
+    //     //// This is important for allowing consecutive answers
+    //     if(previousAnswer !== 0){
+    //         setAsPreviousNumber(parseFloat(previousAnswer))
+    //         setCurrentNumber(0)
+    //         return
+    //     }
 
-        // If there is no previous answer then set the previous number to the current number
-        if(previousNumber === 0){
-            setAsPreviousNumber(parseFloat(currentNumber))
-            setCurrentNumber(0)
-            return
-        }
+    //     // If there is no previous answer then set the previous number to the current number
+    //     if(previousNumber === 0){
+    //         setAsPreviousNumber(parseFloat(currentNumber))
+    //         setCurrentNumber(0)
+    //         return
+    //     }
         
-    }
+    // }
     
     // const getAnswer = () => {      
 
@@ -119,7 +119,7 @@ export const SimpleCalculator = (props) =>{
         setPrevAnswer(0)
         setAnswer(null)
         setOperator(0)
-        setReset(false)
+        setResetState(false)
     }
 
     // const addDecimal = () =>{
@@ -148,10 +148,16 @@ export const SimpleCalculator = (props) =>{
     //     return showWork
     // }
 
-    const setCurrentNumberState = (x) => {setCurrentNumber(x)}
     const setAnswerState = (x) => {setAnswer(x)}
+    const setAsPreviousNumberState = (x) => {setAsPreviousNumber(x)}
+    const setCurrentNumberState = (x) => {setCurrentNumber(x)}
+    const setOperatorState = (x) => {setOperator(x)}
     const setPrevAnswerState = (x) => {setPrevAnswer(x)}
-    const setResetState = (x) => {setResetState(x)}
+    const setResetState = (x) => {
+        console.log("Reset: " + x)
+        setReset(x)
+        
+    }
 
 
 return(
@@ -172,7 +178,21 @@ return(
                 // showAnswer={showAnswer()} 
                 previousNumber={previousNumber}
                  />
-            <Operators getOperator={getOperator} />
+            <Operators 
+                // getOperator={getOperator}
+
+                currentNumber={currentNumber}
+                previousAnswer={previousAnswer}
+                previousNumber={previousNumber}
+                resetCalc={resetCalc} 
+
+
+                setAnswer={setAnswerState}
+                setCurrentNumber={setCurrentNumberState}
+                setReset={setResetState}
+                setOperator={setOperatorState}
+                setAsPreviousNumber={setAsPreviousNumberState}
+            />
 
 
 

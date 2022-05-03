@@ -5,6 +5,8 @@ import { AddDecimal } from '../functions/addDecimal'
 export default function Buttons(props) {
 
 
+    
+
     const getAnswer = (props) => {   
         console.log(props.operator)   
 
@@ -20,9 +22,9 @@ export default function Buttons(props) {
         props.setAnswer(answer)
         // Set the answer to the current equation as the previous answer, to be used in consecutive equations
         props.setPrevAnswer(answer)
-        
+
         // Fixes maximum call stack error
-        if(!props.setReset) props.setReset(true)
+        if(!props.resetCalc) props.setReset(true)
     }
 
     const Calculate = (first,operator,second) =>{
