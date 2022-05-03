@@ -25,7 +25,7 @@ export const SimpleCalculator = (props) =>{
 
 
 
-    
+
     const action = (x) => {
 
         // console.log(previousAnswer)
@@ -60,6 +60,9 @@ export const SimpleCalculator = (props) =>{
             return
         }
 
+        
+  
+
         const combinedNumberString = currentNumber + x
         setCurrentNumber(combinedNumberString)
     }
@@ -90,11 +93,9 @@ export const SimpleCalculator = (props) =>{
     }
     
     const getAnswer = () => {      
+        // Prevents users from solving "1 +" etc 
+        if(currentNumber === 0 && operator )return
         
-        console.log()
-        console.log(currentNumber)
- 
-
         const answer = Calculate(previousNumber,operator,parseFloat(currentNumber))
         
         // Display the answer on page
@@ -134,13 +135,14 @@ export const SimpleCalculator = (props) =>{
         if(operator === "add") displayOperator = "+"
         if(operator === "subtract") displayOperator = "-"
         if(operator === "divide") displayOperator = "/"
+
+  
         if(operator === "multiply") displayOperator = "*"
         
+
         let formatCurrentNumber = currentNumber === 0 ? "" : currentNumber
         let formatAnswer = currentAnswer === null ? "" : " = " + currentAnswer
-
         let showWork = previousNumber + " " + displayOperator + " " + formatCurrentNumber + formatAnswer;
-
 
         return showWork
     }
