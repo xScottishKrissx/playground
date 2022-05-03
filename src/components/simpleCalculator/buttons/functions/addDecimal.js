@@ -1,5 +1,4 @@
 export const AddDecimal = (props) =>{
-
     const addDecimal = (props) =>{
         // In case a user presses a decimal straight after solving
         if(props.resetCalc === true){

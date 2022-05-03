@@ -1,11 +1,8 @@
 import React from 'react'
-
-import showAnswer from '../functions/showAnswerr';
+import showAnswer from './functions/showAnswerr';
 
 export default function CalculatorDisplay(props) {
-
   return (
-
     <>
         <div className="simpleCalculator__row1">
             <div className="simpleCalculator__display">

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AddDecimal } from '../functions/addDecimal'
+import { AddDecimal } from './functions/addDecimal'
 import { getAnswer } from './functions/getAnswer'
 import { numberPress } from './functions/numberPress'
 
@@ -12,7 +12,7 @@ export default function Buttons(props) {
             <div className='simpleCalculator__numbers'>
 
                 <button id="solutionButton" onClick={()=>getAnswer(props)}>=</button>
-                
+
                 <button onClick={ ()=> {numberPress("1",props) } }> 1 </button>
                 <button onClick={ ()=> {numberPress("2",props) } }>2</button>
                 <button onClick={ ()=> {numberPress("3",props) } }>3</button>
