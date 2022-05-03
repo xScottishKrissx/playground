@@ -29,39 +29,39 @@ export const SimpleCalculator = (props) =>{
     // Display the final answer
     const [currentAnswer, setAnswer] = useState(null)
 
-    const action = (x) => {
+    // const action = (x) => {
+
+    //     if(resetCalc === true){
+    //         clearAll()
+    //         setCurrentNumber(x)
+    //         return
+    //     }
+
+    //     setAnswer(null)
+    //     // showAnswer()
+
         
-        if(resetCalc === true){
-            clearAll()
-            setCurrentNumber(x)
-            return
-        }
+    //     // Don't do anything if first input is 0
+    //     //// This should be changed to add a decimal after pressing 0, so 0 => .0
+    //     if(currentNumber === "0" && x === "0")return
 
-        setAnswer(null)
-        // showAnswer()
+    //     // Add the previous answer to the current user input
+    //     //// This allows for consecutive answers
+    //     if(previousAnswer !== 0){
+    //         setAsPreviousNumber(parseFloat(previousAnswer))
+    //         setCurrentNumber(parseFloat(currentNumber + x))
+    //         return
+    //     }
 
-        
-        // Don't do anything if first input is 0
-        //// This should be changed to add a decimal after pressing 0, so 0 => .0
-        if(currentNumber === "0" && x === "0")return
+    //     // Replace the default 0 as soon as a number is pressed
+    //     if(currentNumber === 0){
+    //         setCurrentNumber(x)
+    //         return
+    //     }
 
-        // Add the previous answer to the current user input
-        //// This allows for consecutive answers
-        if(previousAnswer !== 0){
-            setAsPreviousNumber(parseFloat(previousAnswer))
-            setCurrentNumber(parseFloat(currentNumber + x))
-            return
-        }
-
-        // Replace the default 0 as soon as a number is pressed
-        if(currentNumber === 0){
-            setCurrentNumber(x)
-            return
-        }
-
-        const combinedNumberString = currentNumber + x
-        setCurrentNumber(combinedNumberString)
-    }
+    //     const combinedNumberString = currentNumber + x
+    //     setCurrentNumber(combinedNumberString)
+    // }
 
     
     // const getOperator = (readOperator) => {
@@ -153,11 +153,7 @@ export const SimpleCalculator = (props) =>{
     const setCurrentNumberState = (x) => {setCurrentNumber(x)}
     const setOperatorState = (x) => {setOperator(x)}
     const setPrevAnswerState = (x) => {setPrevAnswer(x)}
-    const setResetState = (x) => {
-        console.log("Reset: " + x)
-        setReset(x)
-        
-    }
+    const setResetState = (x) => { setReset(x) }
 
 
 return(
@@ -171,21 +167,19 @@ return(
         <div className="randomShape"></div>
         
         <div className='simpleCalculator_calculator'>
+            
             <CalculatorDisplay 
                 operator={operator} 
                 currentNumber={currentNumber} 
                 currentAnswer={currentAnswer} 
-                // showAnswer={showAnswer()} 
                 previousNumber={previousNumber}
-                 />
-            <Operators 
-                // getOperator={getOperator}
+            />
 
+            <Operators 
                 currentNumber={currentNumber}
                 previousAnswer={previousAnswer}
                 previousNumber={previousNumber}
                 resetCalc={resetCalc} 
-
 
                 setAnswer={setAnswerState}
                 setCurrentNumber={setCurrentNumberState}
@@ -193,26 +187,21 @@ return(
                 setOperator={setOperatorState}
                 setAsPreviousNumber={setAsPreviousNumberState}
             />
-
-
-
-            
+           
             <Buttons 
-                // getAnswer={()=>getAnswer()} 
                 setAnswer={setAnswerState}
+                setCurrentNumber={setCurrentNumberState}
+                setAsPreviousNumber={setAsPreviousNumberState}
                 setPrevAnswer={setPrevAnswerState}
                 setReset={setResetState}
-                action={action} 
-                // addDecimal={()=>addDecimal()} 
-                // addDecimal={addDecimal}
                 resetCalc={resetCalc}
                 currentNumber={currentNumber}
+                previousAnswer={previousAnswer}
                 previousNumber={previousNumber}
-                setCurrentNumber={setCurrentNumberState}
                 clearAll={()=>clearAll()}
-                operator={operator} 
-                
-                />
+                operator={operator}     
+            />
+
         </div>
 
     </div>

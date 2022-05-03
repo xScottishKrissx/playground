@@ -4,6 +4,37 @@ import { AddDecimal } from '../functions/addDecimal'
 
 export default function Buttons(props) {
 
+    const action = (x,props) => {
+        
+        if(props.resetCalc === true){
+            props.clearAll()
+            props.setCurrentNumber(x)
+            return
+        }
+
+        props.setAnswer(null)
+
+        // Don't do anything if first input is 0
+        //// This should be changed to add a decimal after pressing 0, so 0 => .0
+        if(props.currentNumber === "0" && x === "0")return
+
+        // Add the previous answer to the current user input
+        //// This allows for consecutive answers
+        if(props.previousAnswer !== 0){
+            props.setAsPreviousNumber(parseFloat(props.previousAnswer))
+            props.setCurrentNumber(parseFloat(props.currentNumber + x))
+            return
+        }
+
+        // Replace the default 0 as soon as a number is pressed
+        if(props.currentNumber === 0){
+            props.setCurrentNumber(x)
+            return
+        }
+
+        const combinedNumberString = props.currentNumber + x
+        props.setCurrentNumber(combinedNumberString)
+    }
 
     
 
@@ -41,16 +72,16 @@ export default function Buttons(props) {
         <div className="simpleCalculator__row3">
             <div className='simpleCalculator__numbers'>
                 <button id="solutionButton" onClick={()=>getAnswer(props)}>=</button>
-                <button onClick={ ()=> {props.action("1") } }> 1 </button>
-                <button onClick={ ()=> {props.action("2") } }>2</button>
-                <button onClick={ ()=> {props.action("3") } }>3</button>
-                <button onClick={ ()=> {props.action("4") } }>4</button>
-                <button onClick={ ()=> {props.action("5") } }>5</button>
-                <button onClick={ ()=> {props.action("6") } }>6</button>
-                <button onClick={ ()=> {props.action("7") } }>7</button>
-                <button onClick={ ()=> {props.action("8") } }>8</button>
-                <button onClick={ ()=> {props.action("9") } }>9</button>
-                <button onClick={ ()=> {props.action("0") } }>0</button>
+                <button onClick={ ()=> {action("1",props) } }> 1 </button>
+                <button onClick={ ()=> {action("2",props) } }>2</button>
+                <button onClick={ ()=> {action("3",props) } }>3</button>
+                <button onClick={ ()=> {action("4",props) } }>4</button>
+                <button onClick={ ()=> {action("5",props) } }>5</button>
+                <button onClick={ ()=> {action("6",props) } }>6</button>
+                <button onClick={ ()=> {action("7",props) } }>7</button>
+                <button onClick={ ()=> {action("8",props) } }>8</button>
+                <button onClick={ ()=> {action("9",props) } }>9</button>
+                <button onClick={ ()=> {action("0",props) } }>0</button>
                 {/* <button onClick={props.addDecimal}>.</button> */}
                 <AddDecimal 
                     resetCalc={props.resetCalc}
