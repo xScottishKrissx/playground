@@ -2,7 +2,7 @@ Practice Projects and Tasks
 https://www.freecodecamp.org/news/javascript-projects-for-beginners/
 
 Javascript:
-  ☐ Calculator
+  ✔ Calculator @done(12:30 - 04/05/22)
     Todo:
       ✔ Simple Sums @done(18:35 - 27/04/22)
       ✔ Decimal Places @done(16:52 - 29/04/22)
@@ -52,6 +52,8 @@ Javascript:
   ✔ Simple CRUD @done(15:52 - 29/04/22)
       ✔ did this with the todo @done(15:52 - 29/04/22)
   ☐ Search Box
+      ☐ Created a basic search box with dummy data
+      ☐ Can i apply this to the react micro projects page to search for tags?
   ✔ Random colour picker @done(16:40 - 06/04/22)
   ✔ Number counter @done(17:41 - 06/04/22)
   ✔ review carousel @done(13:31 - 12/04/22)

@@ -1,0 +1,80 @@
+.simpleSearchBar__container{
+/* background-color: red; */
+height: 100%;
+width: 100%;
+}
+
+/***************************************** Input */
+.simpleSearchBar__input{
+    display: flex;
+}
+
+.simpleSearchBar__input input{
+    margin: 10px;
+    /* padding: 10px */
+}
+
+/***************************************** Results */
+
+.simpleSearchBar__showDataButton{
+    display: flex;
+    outline: 1px solid red;
+    justify-content: center;
+}
+
+.simpleSearchBar__results{
+
+    /* height: 100px; */
+    /* background-color: red; */
+    overflow: hidden;
+
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px;
+    padding: 10px;
+
+    transition: 0.25s linear;
+}
+
+/***************************************** Single Item */
+.simpleSearchBar__item{
+    outline: 1px solid black;
+    padding: 5px;
+}
+
+/***************************************** Preview Data */
+
+
+.simpleSearchBar__previewDataContainer{
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0.5;
+    padding: 5px;
+    transition: 0.1s linear;
+}
+
+#showDataButton{
+    background-color: white;
+    border: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.simpleSearchBar__previewData{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+.simpleSearchBar__dataItem{
+    outline: 1px solid black;
+    padding: 5px;
+}
+
+.show{
+    opacity: 2;
+    height: 100%
+}

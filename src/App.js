@@ -25,6 +25,7 @@ import SimpleTodo from './components/simpleTodo/simpleTodo';
 import Slider from './components/simpleSlider/slider';
 import IntroductionMessage from './components/introMessage/introMessage';
 import SimpleCalculator from './components/simpleCalculator/simpleCalculator';
+import SimpleSearchBar from './components/simpleSearchBar/simpleSearchBar';
 
 function App() {
   return (
@@ -40,9 +41,9 @@ function App() {
         </Row>
 
         <Row fluid="true">
-          
-          
+
           <Col sm={12} lg={6} className="p-0">  <SimpleCalculator /> </Col>
+          <Col sm={12} lg={6} className="p-0">  <SimpleSearchBar /> </Col> 
           <Col sm={12} lg={6}>  <Slider /> </Col>          
           <Col sm={12} lg={6} > <SimpleTodo /> </Col>
           <Col sm={12} lg={6} > <LoremIpsum /> </Col>
