@@ -27,6 +27,32 @@ import IntroductionMessage from './components/introMessage/introMessage';
 import SimpleCalculator from './components/simpleCalculator/simpleCalculator';
 import SimpleSearchBar from './components/simpleSearchBar/simpleSearchBar';
 
+
+const components = [
+  {
+    name:"Counter",
+    componentName:Counter 
+  },
+  {
+    name:"Tabs",
+    componentName:Tabs 
+  }
+]
+
+console.log(components[0].component)
+
+// Ok this will output a component, now to map...
+const Thing = components[0].componentName !== undefined ? components[0].componentName : ""
+
+const filterComps = components.filter(x => x.name === "Tabs")
+
+const MapThings = filterComps.map((x,index) => {
+  // return <x.componentName />
+  return(
+    <Col key={index} sm={12} lg={6} className="p-0">  <x.componentName /> </Col>
+  )
+})
+
 function App() {
   return (
     <div className="App d-flex flex-column align-items-center" id="App">
@@ -41,7 +67,8 @@ function App() {
         </Row>
 
         <Row fluid="true">
-
+          {MapThings}
+          <Col sm={12} lg={6} className="p-0">  <Thing /> </Col>
           <Col sm={12} lg={6} className="p-0">  <SimpleCalculator /> </Col>
           <Col sm={12} lg={6} className="p-0">  <SimpleSearchBar /> </Col> 
           <Col sm={12} lg={6}>  <Slider /> </Col>          

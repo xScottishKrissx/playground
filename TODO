@@ -54,6 +54,16 @@ Javascript:
   ☐ Search Box
       ☐ Created a basic search box with dummy data
       ☐ Can i apply this to the react micro projects page to search for tags?
+        Yes, you can.Maybe:
+          ✔ Part 1 - Map Components @done(18:55 - 04/05/22)
+            ✔ This part was tricky to figure out and my sucesses here doesn't mean the search part is a given but I can now filter components using an object array I manually create. This should me I can filter that object array for names and tags. @done(18:54 - 04/05/22)
+
+          ☐ Part 2 - Searchable Components
+            ✔ Let's try filtering components. @done(18:58 - 04/05/22)
+              .. You can just filter like any other array, the only thing that matters here is how you format the component part.
+                .. In the array the component MUST not have quotes
+                .. In the map it MUST look like -> <x.componentName /> as an example (componentName matches the object array)
+
   ✔ Random colour picker @done(16:40 - 06/04/22)
   ✔ Number counter @done(17:41 - 06/04/22)
   ✔ review carousel @done(13:31 - 12/04/22)
