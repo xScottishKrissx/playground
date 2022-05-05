@@ -2,6 +2,7 @@ import * as React from 'react'
 
 import './navbar.css'
 import { useState, useRef} from 'react';
+import RMPSearch from '../__RPMComponents/RMPSearch';
 
 
 export const Navbar = (props) =>{
@@ -84,7 +85,8 @@ return(
             <span className="ps-2 pe-2">About</span> */}
             <a targer="__new" id="portfolioLink" href="https://christopherdunne.co.uk/"><span className="ps-2 pe-2">Portfolio</span></a>
             {/* <span className="ps-2 pe-2">Search</span> */}
-
+            
+            <RMPSearch setInputState={props.setInputState}/>
 
             {/* Scroll Into View Menu */}
             {/* <span onClick={()=>customScrollTo("colourFlipper")}>Scroll to...</span> */}
