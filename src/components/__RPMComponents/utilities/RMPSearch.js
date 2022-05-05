@@ -8,5 +8,5 @@ export default function RMPSearch(props) {
     }
 
     
-  return <input ref={userInput} onChange={(e)=>getInput(e)}/>
+  return <input ref={userInput} onChange={(e)=>getInput(e)} placeholder="search..." />
 }

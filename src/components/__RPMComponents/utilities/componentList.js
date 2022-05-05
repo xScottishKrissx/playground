@@ -1,6 +1,3 @@
-
-
-
 import SimpleCalculator from "../../simpleCalculator/simpleCalculator";
 import SimpleSearchBar from "../../simpleSearchBar/simpleSearchBar";
 import Slider from "../../simpleSlider/slider";
@@ -21,68 +18,83 @@ import ColourFlipper from "../../colourFlipper/colourFlipper";
 export const components = [
   
     {
-      name:"Simple Calculator",
-      componentName:SimpleCalculator 
+      name:"SimpleCalculator",
+      componentName:SimpleCalculator,
+      tags:"useState hook, bootstrap, props, lifting state, toString, includes, if, parseFloat, conditional rendering,  " 
     },
     {
-      name:"Simple Search Bar",
-      componentName:SimpleSearchBar 
+      name:"SimpleSearch Bar",
+      componentName:SimpleSearchBar,
+      tags:"json, props, functional, map, toggle, class list, useRef hook, bootstrap, useState hook, e target value, toLowerCase, includes, conditional rendering" 
     },
 
     {
       name:"Slider",
-      componentName:Slider 
-    },
-    
-    {
-      name:"Simple Todo",
-      componentName:SimpleTodo 
+      componentName:Slider,
+      tags:"useEffect hook, useState hook, useRef hook, setInterval, addEventListener, resize, client height, clearInterval, if, map, image, bootstrap, " 
     },
 
     {
-      name:"Lorem Ipsum",
-      componentName:LoremIpsum 
+      name:"SimpleTodo",
+      componentName:SimpleTodo,
+      tags:"useState hook, useEffect hook, functional, local storage, json, parse, getItem,toggle, push, splice, setItem, conditional rendering, classList, bootstrap, lifting state, forwardRef,props, lifting props," 
+    },
+
+    {
+      name:"LoremIpsum",
+      componentName:LoremIpsum,
+      tags:"useState hook, useEffect hook, json, for, randomNumber, push, map, math, floor,random, parseInt, Number, isInteger, bootstrap, form, input, conditional rendering"
     },
     {
       name:"Countdown",
-      componentName:Countdown 
+      componentName:Countdown,
+      tags:"useState hook, useEffect hook, date, getFullYear, getMonth, getDate, getHours,toLocaleDateString, getTime,useEffect hook, setInterval, math, floor, clearInterval,bootstrap, conditional rendering" 
     },
     {
       name:"Tabs",
-      componentName:Tabs 
+      componentName:Tabs,
+      tags:"useState hook, json, filter, map, conditional rendering, functional, bootstrap"
     },
     {
-      name:"Simple Video",
-      componentName:SimpleVideo 
+      name:"SimpleVideo",
+      componentName:SimpleVideo,
+      tags:"useRef hook, useState hook, video, pause, play, bootstrap, conditional rendering" 
     },
 
     {
-      name:"Simple Filter",
-      componentName:SimpleFilter 
+      name:"SimpleFilter",
+      componentName:SimpleFilter,
+      tags:"bootstrap, useState hook, toggle, querySelector, filter, if, conditional rendering, map, from, unshift, sort,json" 
     },
     {
       name:"Questions",
-      componentName:Questions 
+      componentName:Questions,
+      tags:"functional, useState hook, conditional rendering, map, bootstrap, toggle  " 
     },
     {
       name:"Modal",
-      componentName:Modal 
+      componentName:Modal,
+      tags:"useState hook, toggle, bootstrap, toggle, conditional rendering" 
     },
     {
       name:"Sidebar",
-      componentName:Sidebar 
+      componentName:Sidebar,
+      tags:"functional, state, useState hook, bootstrap, toggle, ternary, conditional rendering" 
     },
     {
-      name:"Review Carousel",
-      componentName:ReviewCarousel 
+      name:"ReviewCarousel",
+      componentName:ReviewCarousel,
+      tags:"stateful, state, randomNumber, math, floor, bootstrap, random user api, image "
     },
     {
       name:"Counter",
-      componentName:Counter 
+      componentName:Counter,
+      tags:"stateful, state, bootstrap"
     },
     {
-      name:"Colour Flipper",
-      componentName:ColourFlipper 
+      name:"ColourFlipper",
+      componentName:ColourFlipper,
+      tags:"Stateful, for loop, state, random, clipboard, bootstrap, material"
     },
 
 

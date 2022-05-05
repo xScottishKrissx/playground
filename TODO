@@ -70,9 +70,15 @@ Javascript:
             ✔ I have rearranged the code so that the page can be searched. The styles are off(the video is totally broken) but the goal of being able to search the components has been achieved. Now I just need to polish and tweak @done(13:03 - 05/05/22)
           
           ☐ Part 4 - Tweaking and Polishing
-            ☐ Fix video
-            ☐ Ability to search using tags
+            ✔ Fix video @done(17:24 - 05/05/22)
+            ✔ Ability to search using tags @done(18:48 - 05/05/22)
             .. create and populate tags
+            ✔ Remove old code @done(17:24 - 05/05/22)
+            ✔ Style search bar and have another look at the navbar @done(18:48 - 05/05/22)
+            
+          ☐ Part 5 - Upload to portfolio
+            ☐ Everything is working
+            ☐ Moving On
             
 
   ✔ Random colour picker @done(16:40 - 06/04/22)

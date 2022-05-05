@@ -1,3 +1,6 @@
+.ColourFlipper__componentContainer{
+    padding: 0 !important;
+}
 .colourFlipper{
     background-color: black;
     /* outline: 1px solid red; */

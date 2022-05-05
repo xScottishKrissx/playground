@@ -1,4 +1,7 @@
 /* Buttons */
+.Tabs__componentContainer{
+    padding: 0 !important;
+}
 .tabs__buttonsContainer .active{
     background-color: black;
     color: white;

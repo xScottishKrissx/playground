@@ -17,10 +17,10 @@ export const Footer = (props) =>{
     
      
     return(
-        <footer >
+        <footer className='mt-5' >
             <div id="footer__innerContainer" className="footer__innerContainer p-4 d-flex align-items-center justify-content-center">
                 <span>&copy; {myDate} chris dunne </span> 
-                <span role="button" onClick={()=>customScrollTo("App")} className="material-icons footer__scrollTop">keyboard_double_arrow_up</span>
+                <span role="button" onClick={()=>customScrollTo("topOfPage")} className="material-icons footer__scrollTop">keyboard_double_arrow_up</span>
                 
             </div>
         </footer>

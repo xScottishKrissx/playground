@@ -1,0 +1,20 @@
+.RMPComponentView__resultNumber{
+    padding: 20px !important;
+    height: auto !important;
+    min-height: auto !important ;
+    font-size: 1.5rem;
+}
+
+.RMPComponentView__search{
+    min-height: auto !important;
+    padding: 0 !important;
+}
+.RMPComponentView__search input{
+    border: none;
+    font-size: 2rem;
+    opacity: 0.5;
+    padding: 0 !important;
+    text-align: center;
+    height: 100%;
+    width: 100% !important;
+}

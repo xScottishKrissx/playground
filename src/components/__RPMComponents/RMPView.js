@@ -14,31 +14,25 @@ import './RMPView.css'
 export default function NewView() {
 
     const [inputValue, setInput] = useState("")
-
-
     const setInputState = (x) =>{setInput(x)}
 
-
-
-
   return (
-    <div className='d-flex flex-column align-items-center'>
+    <div id="topOfPage" className='d-flex flex-column align-items-center'>
 
-        <Navbar setInputState={setInputState}/>
+        <Navbar setInputState={setInputState} />
         
         {/* Display Content */}
-        {/* This replaces all of the individual component calls in app.js */}
-
-        <Container className=' mt-5 mb-5'>
+        <Container className=' mt-5'>
             
             <Row className='mb-3'> 
                 <Col sm={12} className="intro"> <IntroductionMessage /> </Col> 
             </Row>
             
             {/* Component View Component */}
-            <RMPComponentView inputValue={inputValue} />
+            <RMPComponentView inputValue={inputValue} setInputState={setInputState} />
             
         <Footer />
+
         </Container>
         
 

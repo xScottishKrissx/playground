@@ -1,3 +1,9 @@
+.SimpleVideo__componentContainer{
+    overflow: hidden;
+    padding:0 !important;
+    position: relative;
+}
+
 .simpleVideo__controlsContainer{
     background-color: #00000085;
     z-index: 10;

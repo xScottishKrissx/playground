@@ -4,7 +4,9 @@ borderRadius{
     --border-radius:20px
 }
 
-
+.SimpleCalculator__componentContainer{
+    padding: 0 !important;
+}
 .simpleCalculator__container {
     /* background-color: #2fff8c; */
     display: flex;
