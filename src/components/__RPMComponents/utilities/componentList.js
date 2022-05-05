@@ -22,11 +22,6 @@ export const components = [
       componentName:SimpleCalculator,
       tags:"useState hook, bootstrap, props, lifting state, toString, includes, if, parseFloat, conditional rendering,  " 
     },
-    {
-      name:"SimpleSearch Bar",
-      componentName:SimpleSearchBar,
-      tags:"json, props, functional, map, toggle, class list, useRef hook, bootstrap, useState hook, e target value, toLowerCase, includes, conditional rendering" 
-    },
 
     {
       name:"Slider",
@@ -71,6 +66,12 @@ export const components = [
       componentName:Questions,
       tags:"functional, useState hook, conditional rendering, map, bootstrap, toggle  " 
     },
+    {
+      name:"SimpleSearch Bar",
+      componentName:SimpleSearchBar,
+      tags:"json, props, functional, map, toggle, class list, useRef hook, bootstrap, useState hook, e target value, toLowerCase, includes, conditional rendering" 
+    },
+
     {
       name:"Modal",
       componentName:Modal,

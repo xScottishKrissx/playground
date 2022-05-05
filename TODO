@@ -69,7 +69,7 @@ Javascript:
             .. Instead of everything being inside app.js, i have created view.js that will instead be the main wrapper for everything as I can't use state app.js.
             ✔ I have rearranged the code so that the page can be searched. The styles are off(the video is totally broken) but the goal of being able to search the components has been achieved. Now I just need to polish and tweak @done(13:03 - 05/05/22)
           
-          ☐ Part 4 - Tweaking and Polishing
+          ✔ Part 4 - Tweaking and Polishing @done(18:56 - 05/05/22)
             ✔ Fix video @done(17:24 - 05/05/22)
             ✔ Ability to search using tags @done(18:48 - 05/05/22)
             .. create and populate tags
@@ -77,8 +77,12 @@ Javascript:
             ✔ Style search bar and have another look at the navbar @done(18:48 - 05/05/22)
             
           ☐ Part 5 - Upload to portfolio
-            ☐ Everything is working
+            ✔ Everything is working @done(18:56 - 05/05/22)
             ☐ Moving On
+              ☐ One final thing
+                ☐ When searching, i think it should be clearer that a search has been performed.
+                ☐ Also it can be clearer what the search bar actually is.
+                  .. also consider just moving the search bar component further down
             
 
   ✔ Random colour picker @done(16:40 - 06/04/22)
