@@ -2,7 +2,7 @@ import * as React from 'react'
 
 import './navbar.css'
 import { useState, useRef} from 'react';
-import RMPSearch from '../__RPMComponents/RMPSearch';
+import RMPSearch from '../__RPMComponents/utilities/RMPSearch';
 
 
 export const Navbar = (props) =>{

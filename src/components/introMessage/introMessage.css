@@ -1,3 +1,7 @@
+.intro{
+    min-height: auto !important;
+  }
+  
 .intro__container .col .row{
     outline: none !important;
 }

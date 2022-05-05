@@ -64,9 +64,16 @@ Javascript:
                 .. In the array the component MUST not have quotes
                 .. In the map it MUST look like -> <x.componentName /> as an example (componentName matches the object array)
 
-          ☐ Part 3 - Refactoring code to work with new view
+          ✔ Part 3 - Refactoring code to work with new view @done(13:03 - 05/05/22)
             ..I had to create a new view component in order to get the search functionality working the way I want.
             .. Instead of everything being inside app.js, i have created view.js that will instead be the main wrapper for everything as I can't use state app.js.
+            ✔ I have rearranged the code so that the page can be searched. The styles are off(the video is totally broken) but the goal of being able to search the components has been achieved. Now I just need to polish and tweak @done(13:03 - 05/05/22)
+          
+          ☐ Part 4 - Tweaking and Polishing
+            ☐ Fix video
+            ☐ Ability to search using tags
+            .. create and populate tags
+            
 
   ✔ Random colour picker @done(16:40 - 06/04/22)
   ✔ Number counter @done(17:41 - 06/04/22)

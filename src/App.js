@@ -26,7 +26,7 @@ import Slider from './components/simpleSlider/slider';
 import IntroductionMessage from './components/introMessage/introMessage';
 import SimpleCalculator from './components/simpleCalculator/simpleCalculator';
 import SimpleSearchBar from './components/simpleSearchBar/simpleSearchBar';
-import NewView from './components/__RPMComponents/newView';
+import NewView from './components/__RPMComponents/RMPView';
 
 
 const components = [
