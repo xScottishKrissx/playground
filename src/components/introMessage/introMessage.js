@@ -1,5 +1,4 @@
 import * as React from 'react'
-
 import './introMessage.css'
 
 import Row from 'react-bootstrap/Row'
@@ -9,8 +8,12 @@ import githubLogo  from './githubLogo.png'
 
 export const IntroductionMessage = () =>{
 
+
+
     
-    
+
+
+
 return(
     <Row className='intro__container'>
         <Col>
@@ -30,6 +33,10 @@ return(
                 
                 </Col>
             </Row>
+
+         
+     
+
 
             <Row>
                 <Col className='intro__githubLinkContainer'>

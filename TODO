@@ -141,7 +141,16 @@ Javascript:
       ☐ look into code previews(i.e click om a button to view the project code for each of the tasks)
           ☐ Looked into it, seems a lot more work than I want to dedicate at this point.
       
-  
+  ☐ notebook
+  ☐ simple api + fetch
+          Todo:
+            ☐ Idea: a basic component that displays a random user using a button that cycles through and array of people
+              ☐ A fake twitter profile
+              
+            ☐ Integrate the leaflet js library with the random user api coordinates
+
+  ☐ covid-19 dashboard using api
+
   ☐ rock paper scissor
   ☐ simon game
   ☐ platformer game - more of a watch thing

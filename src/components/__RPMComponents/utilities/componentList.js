@@ -13,10 +13,17 @@ import Sidebar from "../../sidebar/sidebar";
 import ReviewCarousel from "../../reviewCarousel/reviewCarousel";
 import Counter from "../../counter/counter";
 import ColourFlipper from "../../colourFlipper/colourFlipper";
+import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
+
 
 
 export const components = [
-  
+    {
+     name:"Simple API Fetch",
+     componentName: SimpleApiFetch ,
+     tags:"api, fetch, then, response, json",
+     github:""
+    },
     {
       name:"SimpleCalculator",
       componentName:SimpleCalculator,
