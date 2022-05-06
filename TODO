@@ -79,10 +79,13 @@ Javascript:
           ☐ Part 5 - Upload to portfolio
             ✔ Everything is working @done(18:56 - 05/05/22)
             ☐ Moving On
-              ☐ One final thing
-                ☐ When searching, i think it should be clearer that a search has been performed.
-                ☐ Also it can be clearer what the search bar actually is.
+              ✔ One final thing @done(12:03 - 06/05/22)
+                ✔ When searching, i think it should be clearer that a search has been performed. @done(12:03 - 06/05/22)
+                ✔ Also it can be clearer what the search bar actually is. @done(12:03 - 06/05/22)
                   .. also consider just moving the search bar component further down
+              ☐ I've just realised I can now add github links for each project
+                ☐ Do this.
+
             
 
   ✔ Random colour picker @done(16:40 - 06/04/22)

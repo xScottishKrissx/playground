@@ -8,5 +8,5 @@ export default function RMPSearch(props) {
     }
 
     
-  return <input ref={userInput} onChange={(e)=>getInput(e)} placeholder="search..." />
+  return <input ref={userInput} onChange={(e)=>getInput(e)} placeholder="filter project by name, tech, library etc" />
 }
