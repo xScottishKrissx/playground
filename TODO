@@ -51,9 +51,9 @@ Javascript:
 
   ✔ Simple CRUD @done(15:52 - 29/04/22)
       ✔ did this with the todo @done(15:52 - 29/04/22)
-  ☐ Search Box
-      ☐ Created a basic search box with dummy data
-      ☐ Can i apply this to the react micro projects page to search for tags?
+  ✔ Search Box @done(12:52 - 06/05/22)
+      ✔ Created a basic search box with dummy data @done(12:52 - 06/05/22)
+      ✔ Can i apply this to the react micro projects page to search for tags? @done(12:52 - 06/05/22)
         Yes, you can.Maybe:
           ✔ Part 1 - Map Components @done(18:55 - 04/05/22)
             ✔ This part was tricky to figure out and my sucesses here doesn't mean the search part is a given but I can now filter components using an object array I manually create. This should me I can filter that object array for names and tags. @done(18:54 - 04/05/22)
@@ -76,15 +76,15 @@ Javascript:
             ✔ Remove old code @done(17:24 - 05/05/22)
             ✔ Style search bar and have another look at the navbar @done(18:48 - 05/05/22)
             
-          ☐ Part 5 - Upload to portfolio
+          ✔ Part 5 - Upload to portfolio @done(12:52 - 06/05/22)
             ✔ Everything is working @done(18:56 - 05/05/22)
-            ☐ Moving On
+            ✔ Moving On @done(12:52 - 06/05/22)
               ✔ One final thing @done(12:03 - 06/05/22)
                 ✔ When searching, i think it should be clearer that a search has been performed. @done(12:03 - 06/05/22)
                 ✔ Also it can be clearer what the search bar actually is. @done(12:03 - 06/05/22)
                   .. also consider just moving the search bar component further down
-              ☐ I've just realised I can now add github links for each project
-                ☐ Do this.
+              ✔ I've just realised I can now add github links for each project @done(12:50 - 06/05/22)
+                ✔ Do this. @done(12:50 - 06/05/22)
 
             
 

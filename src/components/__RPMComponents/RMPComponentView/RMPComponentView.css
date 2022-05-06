@@ -1,0 +1,71 @@
+.component_githubLinkContainer{
+    /* background-color: black; */
+    /* display: flex; */
+    /* align-items: flex-start; */
+    position: absolute;
+    top: 0;
+    left: 0%;
+    /* height: 100%; */
+    /* width: 100%; */
+    z-index: 0;
+}
+
+.componentGithubLink{
+    /* background-color: white; */
+    /* outline: 1px solid red; */
+    padding: 5px;
+}
+
+
+
+.componentGithubLink img{
+    opacity: 0.25;
+    width: 25px;
+    z-index: 20;
+
+    /* transform: rotate(0) */
+}
+
+.componentGithubLink img:hover{
+    cursor: pointer;
+    opacity: 2;
+    animation: githubAnimation 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes githubAnimation{
+    0%{
+        transform: rotate(0deg)
+    }
+    25%{
+        transform: rotate(20deg)
+    }
+
+    50%{
+        transform: rotate(-20deg)
+    }
+
+    75%{
+        transform: rotate(20deg)
+    }
+
+    100%{
+        transform: rotate(0deg)
+    }
+}
+
+/* Component Specific Github Link Styles */
+
+/* Video */
+.SimpleVideo__componentContainer .component_githubLinkContainer, .ColourFlipper__componentContainer .component_githubLinkContainer{
+    background-color: #ffffff4f;
+    z-index: 10;
+}
+
+.SimpleVideo__componentContainer .component_githubLinkContainer:hover, .ColourFlipper__componentContainer .component_githubLinkContainer{
+    background-color: white;
+
+}
+
+
+/* Counter */
