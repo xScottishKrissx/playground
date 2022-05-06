@@ -1,4 +1,5 @@
 import React from 'react'
+import './simpleApiFetch.css'
 
 import { useEffect, useState } from 'react'
 import View from './view/view'
@@ -32,7 +33,7 @@ const getRandomNumber = (x) =>{
 }
 
   return (
-    <div>
+    <div className='simpleApiFetch__container'>
         {loading ? 
             <p>Loading</p> : <View data={apiData.results} randomUser={getRandomNumber}/>}
     </div>

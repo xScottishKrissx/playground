@@ -146,7 +146,7 @@ Javascript:
           Todo:
             ☐ Idea: a basic component that displays a random user using a button that cycles through and array of people
               ☐ A fake twitter profile
-              
+                
             ☐ Integrate the leaflet js library with the random user api coordinates
 
   ☐ covid-19 dashboard using api
