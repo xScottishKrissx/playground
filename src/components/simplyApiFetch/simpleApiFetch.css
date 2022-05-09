@@ -1,126 +1,17 @@
+.SimpleAPIFetch__componentContainer{
+    padding: 0 !important;
+}
+
+/* Moving Github logo to right */
+.SimpleAPIFetch__componentContainer .component_githubLinkContainer{
+    left: auto;
+    right: 5px;
+}
+
+
 .simpleApiFetch__container{
     position: relative;
     width: 100%;
 }
 
-.simpleApiFetch__viewContainerTitle{
-    background-color: black;
-    color: white;
-    display: flex;
-        align-items: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-}
 
-/* Banner Image */
-.simpleApiFetch__bannerImage img{
-    /* position: relative; */
-    width: 100%;
-}
-
-
-/* User Information */
-.simpleApiFetch__userInformationWrapper{
-    background-color: black;
-    color: white;
-    /* outline: 1px solid red; */
-    padding-left: 20px;
-    padding-right: 20px;
-}
-.simpleApiFetch__userInformationWrapper > div {
-    margin-bottom: 10px;
-}
-
-/* User Image and Name */
-.simpleApiFetch__userImage{
-    background-color: black;
-    color: white;
-    display: flex;
-    /* outline: 1px solid red; */
-    
-}
-.simpleApiFetch__userImage--picture{
-    margin-top: -40px;
-    
-}
-
-.simpleApiFetch__userImage--picture img{
-    border-radius: 80px;
-    outline: 2px solid black;
-}
-.simpleApiFetch__userImage--picture h2{
-    font-size: 1.25rem;
-    padding-top: 10px;
-    margin-bottom: -5px;
-}
-
-
-/* User Social DM and Follow Button */
-.simpleApiFetch__userImage--socialContainer{
-    /* background-color: goldenrod; */
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    width: 100%;
-}
-
-    #simpleApiFetch__directMessageButton{
-
-    }
-    #followButton{
-        background-color: white;
-        height: fit-content;
-        color: black;
-        border-radius: 15px;
-    }
-    #simpleApiFetch__directMessageButton span{
-
-    }
-
-.simpleApiFetch__userImage--socialContainer span{
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-
-/* Description */
-.simpleApiFetch__description{
-    background-color: black;
-    color: white;
-
-    /* padding-right: 10px; */
-    /* padding-left: 20px; */
-}
-
-.simpleApiFetch__description span{
-    /* margin-left: 20px; */
-}
-
-#userHandle{
-    color: #04d1ff;
-}
-
-
-/* User Account Info */
-.simpleApiFetch__userAccountInfo{
-    display: flex;
-    align-items: center;
-    width: 70%;
-    font-size: 1rem;
-}
-.simpleApiFetch__userAccountInfo > span{
-    display: flex;
-    margin-right: 10px;
-    /* outline: 1px solid green; */
-    white-space: nowrap;
-}
-
-/* User Stats */
-.simpleApiFetch__userStats{
-
-}
-
-.simpleApiFetch__userStats span{
-    margin-right: 20px;
-}

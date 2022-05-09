@@ -147,9 +147,29 @@ Javascript:
             ☐ Idea: a basic component that displays a random user using a button that cycles through and array of people
               ☐ A fake twitter profile
                 
-            ☐ Integrate the leaflet js library with the random user api coordinates
-
+            ✘ Integrate the leaflet js library with the random user api coordinates @cancelled(17:32 - 09/05/22)
+              ✔ Just added a link to google maps instead @done(17:32 - 09/05/22)
+            ☐ The refresh button stops working after a number of presses.
+              ☐ I can't figure out whats going on here. 
+            ☐ Add a verfied tick button if the users age is an even number
+            ✔ This file is quite a mess, split it up into components so it's a bit easier to manage. @done(17:32 - 09/05/22)
+              ..Folder Structure
+              view.js
+                ..sections
+                  ..Title
+                  ..Banner Image
+                  ....User Proflile
+                  ......Avatar and Follow Button
+                  ......Description
+                  ......User Information
+                  ......User Stats
+                  ......Related Users
+            ☐ Bootstrapify css
+            
   ☐ covid-19 dashboard using api
+
+  RPM:
+    ☐ An information button that provides further context for each of the tasks.
 
   ☐ rock paper scissor
   ☐ simon game

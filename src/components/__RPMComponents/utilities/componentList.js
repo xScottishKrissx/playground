@@ -19,10 +19,11 @@ import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 
 export const components = [
     {
-     name:"Simple API Fetch",
+     name:"SimpleAPIFetch",
      componentName: SimpleApiFetch ,
      tags:"api, fetch, then, response, json",
-     github:""
+     github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simplyApiFetch",
+     githubIconColour:"light"
     },
     {
       name:"SimpleCalculator",
