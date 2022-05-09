@@ -1,61 +1,25 @@
 .simpleApiFetch__viewContainer{
     cursor: default;
-    display: flex;
-    flex-direction: column;
-    /* outline: 1px solid red; */
-    width: 100%;
-    color: grey;
-}
-
-.simpleApiFetch__viewContainerTitle{
-    background-color: black;
-    color: white;
-    display: flex;
-        align-items: center;
-    padding: 3px;
-    position: absolute;
-    top: 0;
-    width: 100%;
 }
 
 /* Title */
 .simpleApiFetch__title h5{
-    padding: 0;
     margin-bottom: -3px;
 }
 
-
 /* Banner Image */
 .simpleApiFetch__bannerImage img{
-    max-height: 225px;
-    /* position: relative; */
-    width: 100%;
+    max-height: 250px;
 }
-
 
 /* User Information */
-.simpleApiFetch__userInformationWrapper{
-    background-color: black;
-    color: white;
-    /* outline: 1px solid red; */
-    padding-left: 20px;
-    padding-right: 20px;
-}
 .simpleApiFetch__userInformationWrapper > div {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 /* User Image and Name */
-.simpleApiFetch__userImage{
-    background-color: black;
-    color: white;
-    display: flex;
-    /* outline: 1px solid red; */
-    
-}
 .simpleApiFetch__userImage--picture{
     margin-top: -40px;
-    
 }
 
 .simpleApiFetch__userImage--picture img{
@@ -64,70 +28,26 @@
 }
 .simpleApiFetch__userImage--picture h2{
     font-size: 1.25rem;
-    padding-top: 10px;
     margin-bottom: -5px;
 }
 
 
 /* User Social DM and Follow Button */
-.simpleApiFetch__userImage--socialContainer{
-    /* background-color: goldenrod; */
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px;
-    width: 100%;
+#followButton{
+    border-radius: 15px;
+    font-weight: bold;
+    height: fit-content;
 }
 
-    #followButton{
-        background-color: white;
-        border-radius: 15px;
-        color: black;
-        font-weight: bold;
-        height: fit-content;
-    }
-
-
-.simpleApiFetch__userImage--socialContainer span{
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-
-/* Description */
-.simpleApiFetch__description{
-    background-color: black;
-    color: white;
-
-    /* padding-right: 10px; */
-    /* padding-left: 20px; */
-}
-
-
-
-#userHandle{
-    color: #04d1ff;
-}
 .locationLink{cursor: pointer;}
 .locationLink a,.locationLink a:active,.locationLink a:visited{
     color: rgba(255,255,255,.5)!important;
 }
 
-/* User Account Info */
-.simpleApiFetch__userAccountInfo{
-    display: flex;
-    align-items: center;
-    width: 70%;
-    font-size: 1rem;
-}
 .simpleApiFetch__userAccountInfo > span{
-    display: flex;
     margin-right: 10px;
-    /* outline: 1px solid green; */
     white-space: nowrap;
 }
 
 
-.simpleApiFetch__userStats span{
-    margin-right: 20px;
-}
-
+#white-space-pre-wrap{white-space:pre-wrap}

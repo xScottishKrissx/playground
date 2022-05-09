@@ -1,5 +1,6 @@
 .SimpleAPIFetch__componentContainer{
     padding: 0 !important;
+    background-color: black;
 }
 
 /* Moving Github logo to right */
@@ -8,10 +9,5 @@
     right: 5px;
 }
 
-
-.simpleApiFetch__container{
-    position: relative;
-    width: 100%;
-}
 
 

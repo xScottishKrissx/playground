@@ -142,16 +142,18 @@ Javascript:
           ☐ Looked into it, seems a lot more work than I want to dedicate at this point.
       
   ☐ notebook
-  ☐ simple api + fetch
+          .. This would just be a combo of todo + tabs
+          
+  ✔ simple api + fetch @done(18:39 - 09/05/22)
           Todo:
-            ☐ Idea: a basic component that displays a random user using a button that cycles through and array of people
-              ☐ A fake twitter profile
+            .. Idea: a basic component that displays a random user using a button that cycles through and array of people
+              ..A fake twitter profile
                 
             ✘ Integrate the leaflet js library with the random user api coordinates @cancelled(17:32 - 09/05/22)
               ✔ Just added a link to google maps instead @done(17:32 - 09/05/22)
             ☐ The refresh button stops working after a number of presses.
-              ☐ I can't figure out whats going on here. 
-            ☐ Add a verfied tick button if the users age is an even number
+              .. I can't figure out whats going on here. 
+            ✔ Add a verfied tick button if the users age is an even number @done(17:50 - 09/05/22)
             ✔ This file is quite a mess, split it up into components so it's a bit easier to manage. @done(17:32 - 09/05/22)
               ..Folder Structure
               view.js
@@ -164,8 +166,8 @@ Javascript:
                   ......User Information
                   ......User Stats
                   ......Related Users
-            ☐ Bootstrapify css
-            
+            ✔ Bootstrapify css @done(18:39 - 09/05/22)
+
   ☐ covid-19 dashboard using api
 
   RPM:

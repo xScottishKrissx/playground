@@ -1,18 +1,12 @@
 import React from 'react'
 import './simpleApiFetch.css'
-
 import { useEffect, useState } from 'react'
 import View from './view/view'
-
-
-
 
 export default function SimpleApiFetch() {
 
 const [apiData, setApiData] = useState(null)
 const [loading, setLoading] = useState(true)
-
-
 
 useEffect(() => {
     // console.log("Rendered")
@@ -22,27 +16,24 @@ useEffect(() => {
         return res.json()
     })
     .then(data => {
-        // console.log(data.results[0].gender)
         setApiData(data)
         setLoading(false)
     } )
-    .catch(error => console.log("Error"))
+    .catch(error => console.log(error))
 
 }, [])
 
 
 const getRandomNumber = (x) =>{
-    // console.log(x)
     return Math.floor((Math.random() * x.length))
     
 }
 
-// console.log(loading)
-// console.log(apiData)
   return (
-    <div className='simpleApiFetch__container'>
+    <div className='simpleApiFetch__container position-relative bg-dark w-100'>
         {loading ? 
-            <p>Loading</p> : <View data={apiData.results} randomUser={getRandomNumber}/>}
+            <p>Loading simple api fetch...</p> : <View data={apiData.results} randomUser={getRandomNumber}/>
+        }
     </div>
   )
 }

@@ -17,12 +17,12 @@ export default function View(props) {
         setNewUser(props.data[getRandomNumber])
     }
 
-    const imgUrl = "https://unsplash.it/1920/1080?random=" + getRandomNumber;
+    
     const user = newUser || startingUser
-
+    const imgUrl = "https://unsplash.it/1920/1080?random=" + user.registered.age + user.dob.age;
 
     return (
-        <div className='simpleApiFetch__viewContainer'>
+        <div className='simpleApiFetch__viewContainer d-flex flex-column w-100 '>
 
             <TitleBar firstName={user.name.first} lastName={user.name.last} age={user.dob.age} getNewUser={getNewUser} />
             <BannerImage imgUrl={imgUrl}/>

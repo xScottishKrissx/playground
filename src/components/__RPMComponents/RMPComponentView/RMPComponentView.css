@@ -58,14 +58,14 @@
 
 /* Video */
 .SimpleVideo__componentContainer .component_githubLinkContainer, .ColourFlipper__componentContainer .component_githubLinkContainer{
-    background-color: #ffffff4f;
+    /* background-color: #ffffff4f; */
     z-index: 10;
 }
 
-.SimpleVideo__componentContainer .component_githubLinkContainer:hover, .ColourFlipper__componentContainer .component_githubLinkContainer{
+/* .SimpleVideo__componentContainer .component_githubLinkContainer:hover, .ColourFlipper__componentContainer .component_githubLinkContainer{
     background-color: white;
 
-}
+} */
 
 
 /* Counter */

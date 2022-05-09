@@ -18,16 +18,17 @@ export default function RMPComponentView(props) {
       x.tags.toLowerCase().includes(props.inputValue)
     )
     const mapComponents = filterComps.map((x,index) => {
-      let githubTest = x.githubIconColour === "light" ? githubLogoLight : githubLogoDark
+
+      let githubIconStyle = x.githubIconColour === "light" ? githubLogoLight : githubLogoDark
+
       return(
           <Col key={index} sm={12} lg={6} className={x.name + "__componentContainer position-relative"}>  
             <x.componentName /> 
             <div className='component_githubLinkContainer'>
               <div className='componentGithubLink'>
                 <a href={x.github} target="__top">
-                  <img alt="View code on github.com" src={githubTest} />
+                  <img alt="View code on github.com" src={githubIconStyle} />
                 </a>
-
               </div>
             </div>
           </Col>

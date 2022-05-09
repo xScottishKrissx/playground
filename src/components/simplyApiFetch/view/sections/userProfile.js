@@ -18,12 +18,12 @@ export default function UserProfile(props) {
 
 
   return (
-        <div className='simpleApiFetch__userInformationWrapper'>
+        <div className='simpleApiFetch__userInformationWrapper bg-dark text-white ps-3 pe-3'>
             
             <UserAvatarAndFollow picture={user.picture.large} firstName={user.name.first} lastName={user.name.last} age={user.dob.age} nat={user.nat} />
             <UserDescription password={user.login.password}/>
             <UserInformation nat={user.nat} location={user.location} firstName={user.name.first} lastName={user.name.last} joinDate={joinDate} />
-            <UserStats />
+            <UserStats age={user.dob.age}/>
             {/* <UserRelatedUsers /> */}
 
         </div>
