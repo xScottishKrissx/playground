@@ -16,6 +16,18 @@ import ColourFlipper from "../../colourFlipper/colourFlipper";
 import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 
 
+// Available Parameters
+//// [[Mandatory]] - Name 
+//// [[Mandatory]] - ComponentName
+//// [[Mandatory]] - Tags
+//// github - (link to github page for that project)
+//// iconColour - (light / dark - if the github/information logo needs to be black or white)
+//// information - (provide further context to project)
+////
+////
+////
+
+
 
 export const components = [
     {
@@ -23,14 +35,15 @@ export const components = [
      componentName: SimpleApiFetch ,
      tags:"api, fetch, then, response, json, bootstrap, conditional formatting, random number, math, .floor, catch, target, ref, state, effect, lifting state, lifting props, modulo,date, time, parse, toLocaleDateString",
      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simplyApiFetch",
-     githubIconColour:"light",
+     iconColour:"light",
      information:"Test Information"
     },
     {
       name:"SimpleCalculator",
       componentName:SimpleCalculator,
       tags:"useState hook, bootstrap, props, lifting state, toString, includes, if, parseFloat, conditional rendering,  " ,
-      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleCalculator"
+      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleCalculator",
+      information:"Test Information"
     },
 
     {
@@ -70,7 +83,7 @@ export const components = [
       componentName:SimpleVideo,
       tags:"useRef hook, useState hook, video, pause, play, bootstrap, conditional rendering" ,
       github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/videoBackground",
-      githubIconColour:"light"
+      iconColour:"light"
     },
 
     {
@@ -121,7 +134,7 @@ export const components = [
       componentName:ColourFlipper,
       tags:"Stateful, for loop, state, random, clipboard, bootstrap, material",
       github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/colourFlipper",
-      githubIconColour:"light"
+      iconColour:"light"
     },
 
 

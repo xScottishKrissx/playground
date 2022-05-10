@@ -1,12 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './RMPComponentView.css'
 
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import githubLogoDark  from './githubLogoDark.png'
-import githubLogoLight  from './githubLogoLight.png'
 
 import { components } from '../utilities/componentList'
 import RMPSearchComponents from '../RMPSearchComponents/RMPSearchComponents'
@@ -14,21 +12,24 @@ import GithubLink from '../utilities/githubLink'
 import TaskInformation from '../utilities/taskInformation'
 
 export default function RMPComponentView(props) {
-    
+
+
     const filterComps = components.filter(x => 
       x.name.toLowerCase().includes(props.inputValue) ||
       x.tags.toLowerCase().includes(props.inputValue)
     )
     const mapComponents = filterComps.map((x,index) => {
 
-      let githubIconStyle = x.githubIconColour === "light" ? githubLogoLight : githubLogoDark
-
       return(
           <Col key={index} sm={12} lg={6} className={x.name + "__componentContainer position-relative"}>  
             <x.componentName /> 
 
-            <GithubLink githubUrl={x.github} githubIconStyle={githubIconStyle}/>
-            <TaskInformation information={x.information}/>
+            <div className='componentItemButtonsContainer d-flex w-100 h-100'>
+              <GithubLink githubUrl={x.github} iconColour={x.iconColour}/>
+              <TaskInformation information={x.information} iconColour={x.iconColour}/>
+            </div>
+
+
 
           </Col>
       )

@@ -4,9 +4,9 @@
 }
 
 /* Moving Github logo to right */
-.SimpleAPIFetch__componentContainer .component_githubLinkContainer{
+.SimpleAPIFetch__componentContainer .componentItemButtonsContainer{
     left: auto;
-    right: 5px;
+    /* right: 5px; */
 }
 
 

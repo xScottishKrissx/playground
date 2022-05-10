@@ -1,8 +1,88 @@
+.componentItemButtonsContainer{
+    /* outline: 1px solid red; */
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+}
+
+.informationContainer{
+    background-color: #0000008c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* outline: 1px solid red; */
+    position: absolute;
+        left: 0;
+        top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 20;
+
+    animation: showInformationAnimation 0.5s;
+    animation-fill-mode: forwards;
+    transform-origin: 0px 0px;
+}
+
+/* @keyframes showInformationAnimation {
+    0%{
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    
+    25%{
+        transform: scaleX(1);
+    }
+    
+    40%{
+        opacity: 2;
+        transform: scaleX(1.1);
+    }
+    100%{
+        opacity: 2;
+        transform: scaleX(1);
+    }
+} */
+
+@keyframes showInformationAnimation {
+    0%{
+        opacity: 0;
+        /* transform: translateY(-50px) translateX(-50px); */
+        transform: scale(0);
+        
+    }
+
+    100%{
+        opacity: 2;
+        /* transform: translateY(0) translateX(0); */
+        transform: scale(1);
+    }
+    
+
+}
+
+
+.informationContainer__background{
+    background-color: #0000008c;
+    cursor: pointer;
+    opacity: 0.5;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.informationContainer__content{
+    cursor:default;
+    /* outline: 1px solid red; */
+    background-color: white;
+    z-index: 30;
+}
+
 .component_githubLinkContainer{
     /* background-color: black; */
     /* display: flex; */
     /* align-items: flex-start; */
-    position: absolute;
+    /* position: absolute; */
     top: 0;
     left: 0%;
     /* height: 100%; */
