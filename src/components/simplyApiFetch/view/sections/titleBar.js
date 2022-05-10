@@ -9,7 +9,7 @@ export default function TitleBar(props) {
             {/* Title */}
             <div className='simpleApiFetch__viewContainerTitle bg-dark text-white d-flex align-items-center p-1 position-absolute top-0 w-100'>
 
-            <div title="Click for a new person" role="button" onClick={props.getNewUser} className='ms-3 me-3'>
+            <div title="Click for a new person" role="button" onClick={props.getNewUser} className='ms-3 me-3 setZIndex'>
                <span ><span className="material-icons">autorenew</span></span> 
             </div>
 

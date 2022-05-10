@@ -1,112 +1,12 @@
-.componentItemButtonsContainer{
-    /* outline: 1px solid red; */
-    position: absolute;
-    top: 0;
-    left: 0;
-
-
-}
-
-.informationContainer{
-    background-color: #0000008c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* outline: 1px solid red; */
-    position: absolute;
-        left: 0;
-        top: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 20;
-
-    animation: showInformationAnimation 0.5s;
-    animation-fill-mode: forwards;
-    transform-origin: 0px 0px;
-}
-
-/* @keyframes showInformationAnimation {
-    0%{
-        opacity: 0;
-        transform: scaleX(0);
-    }
-    
-    25%{
-        transform: scaleX(1);
-    }
-    
-    40%{
-        opacity: 2;
-        transform: scaleX(1.1);
-    }
-    100%{
-        opacity: 2;
-        transform: scaleX(1);
-    }
-} */
-
-@keyframes showInformationAnimation {
-    0%{
-        opacity: 0;
-        /* transform: translateY(-50px) translateX(-50px); */
-        transform: scale(0);
-        
-    }
-
-    100%{
-        opacity: 2;
-        /* transform: translateY(0) translateX(0); */
-        transform: scale(1);
-    }
-    
-
-}
-
-
-.informationContainer__background{
-    background-color: #0000008c;
-    cursor: pointer;
-    opacity: 0.5;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-}
-.informationContainer__content{
-    cursor:default;
-    /* outline: 1px solid red; */
-    background-color: white;
-    z-index: 30;
-}
-
-.component_githubLinkContainer{
-    /* background-color: black; */
-    /* display: flex; */
-    /* align-items: flex-start; */
-    /* position: absolute; */
-    top: 0;
-    left: 0%;
-    /* height: 100%; */
-    /* width: 100%; */
-    z-index: 0;
-}
-
-.componentGithubLink{
-    /* background-color: white; */
-    /* outline: 1px solid red; */
-    padding: 5px;
-}
-
-
-
-.componentGithubLink img{
+/************************************************* githublink.js + taskInformation*/
+.componentItemButtonIconContainer{ z-index: 0; }
+.componentItemButtonIcon img{
     opacity: 0.25;
     width: 25px;
     z-index: 20;
-
-    /* transform: rotate(0) */
 }
 
-.componentGithubLink img:hover{
+.componentItemButtonIcon img:hover{
     cursor: pointer;
     opacity: 2;
     animation: githubAnimation 1s;
@@ -114,38 +14,42 @@
 }
 
 @keyframes githubAnimation{
+    0%{ transform: rotate(0deg) }
+    25%{ transform: rotate(20deg) }
+    50%{ transform: rotate(-20deg) }
+    75%{ transform: rotate(20deg) }
+    100%{ transform: rotate(0deg) }
+}
+
+/************************************************* taskInformation.js */
+.informationContainer{
+    z-index: 20;
+    animation: showInformationAnimation 0.5s;
+    animation-fill-mode: forwards;
+    transform-origin: 0px 0px;
+}
+
+@keyframes showInformationAnimation {
     0%{
-        transform: rotate(0deg)
+        opacity: 0;
+        transform: scale(0);
     }
-    25%{
-        transform: rotate(20deg)
-    }
-
-    50%{
-        transform: rotate(-20deg)
-    }
-
-    75%{
-        transform: rotate(20deg)
-    }
-
     100%{
-        transform: rotate(0deg)
+        opacity: 2;
+        transform: scale(1);
     }
 }
 
-/* Component Specific Github Link Styles */
+.informationContainer__background{ cursor: pointer; }
+.informationContainer__content{
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #00000040;
+    cursor:default;
+    z-index: 30;
+}
 
 /* Video */
-.SimpleVideo__componentContainer .component_githubLinkContainer, .ColourFlipper__componentContainer .component_githubLinkContainer{
-    /* background-color: #ffffff4f; */
+.SimpleVideo__componentContainer .componentItemButtonIconContainer, .ColourFlipper__componentContainer .componentItemButtonIconContainer{
     z-index: 10;
 }
 
-/* .SimpleVideo__componentContainer .component_githubLinkContainer:hover, .ColourFlipper__componentContainer .component_githubLinkContainer{
-    background-color: white;
-
-} */
-
-
-/* Counter */

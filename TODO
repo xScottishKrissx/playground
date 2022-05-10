@@ -168,17 +168,23 @@ Javascript:
                   ......Related Users
             ✔ Bootstrapify css @done(18:39 - 09/05/22)
 
-  ☐ covid-19 dashboard using api
+  
 
   RPM Pause:
     ✔ Convert github link to separate component and then... @done(11:07 - 10/05/22)
     ☐ ...add and information button, near the github link, that provides further context for each of the tasks.
       ..this could be in the form of a simple modal that can be open and closed using the information button
-      ☐ added the functionality, now just need to style
+      ✔ added the functionality, now just need to style @done(17:32 - 10/05/22)
+      ✔ add information content to component list. @done(17:32 - 10/05/22)
+      ✔ move buttons to right for simpleAPi @done(17:32 - 10/05/22)
       ToDo:
-        ☐ Change the css names for the new componentItemButtonsContainer
+        ✔ Change the css names for the new componentItemButtonsContainer @done(17:49 - 10/05/22)
           ..the github part in the information button for example.
-
+          ✔ Bootstrapify css @done(18:06 - 10/05/22)
+      ☐ Uploading...
+  
+  ☐ covid-19 dashboard using api
+  ☐ Drag and Drop functionality
   ☐ rock paper scissor
   ☐ simon game
   ☐ platformer game - more of a watch thing

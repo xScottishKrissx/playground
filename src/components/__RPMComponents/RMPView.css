@@ -24,6 +24,8 @@
 
 }
 
+.setZIndex{ z-index: 10;}
+
 @keyframes aniLaunch {
   0%{
     background-color: white;
@@ -46,3 +48,5 @@
     opacity:0.5
   }
 }
+
+/* RMP Component  */

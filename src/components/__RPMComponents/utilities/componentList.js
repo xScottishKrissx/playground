@@ -36,28 +36,30 @@ export const components = [
      tags:"api, fetch, then, response, json, bootstrap, conditional formatting, random number, math, .floor, catch, target, ref, state, effect, lifting state, lifting props, modulo,date, time, parse, toLocaleDateString",
      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simplyApiFetch",
      iconColour:"light",
-     information:"Test Information"
+     information:"Simple API Fetch is a task designed to re-introduce myself to .fetch and API. The task was to replicate a twitter profile using information provided by the randomuser.me API. Each time you press the refresh button at the top left, new data from the api is rendered to the page.",
     },
     {
       name:"SimpleCalculator",
       componentName:SimpleCalculator,
       tags:"useState hook, bootstrap, props, lifting state, toString, includes, if, parseFloat, conditional rendering,  " ,
       github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleCalculator",
-      information:"Test Information"
+      information:"Simple Calculator is my first ever attempt at creating a calculator in javascript (never mind react). I followed a number of tutorials but for the most part I worked my through the work doing what I though was right. It's not capable of anything advanced mostly because I'm not capable of advanced maths. I have no idea what most of the stuff on a calculator does so I, more or less, did everything I was capable of."
     },
 
     {
       name:"Slider",
       componentName:Slider,
       tags:"useEffect hook, useState hook, useRef hook, setInterval, addEventListener, resize, client height, clearInterval, if, map, image, bootstrap, " ,
-      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleSlider"
+      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleSlider",
+      information:"A very simple 2 button image slider that moves back and forwards though 3 images. Not a lot to say about this other that it's my first actual slider i've done from scratch. It's a lot easier in react than vanilla Js but I'm still quite happy with the results. I want to build on this at some point with a more advanced version so, if you're from the future, this is where it all began."
     },
 
     {
       name:"SimpleTodo",
       componentName:SimpleTodo,
       tags:"useState hook, useEffect hook, functional, local storage, json, parse, getItem,toggle, push, splice, setItem, conditional rendering, classList, bootstrap, lifting state, forwardRef,props, lifting props," ,
-      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleTodo"
+      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleTodo",
+      information:"This is simple to do list that lets you add, edit and remove tasks to mimic a simple CRUD."
     },
 
     {

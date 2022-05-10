@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import './RMPComponentView.css'
 
@@ -8,11 +8,12 @@ import Col from 'react-bootstrap/Col'
 
 import { components } from '../utilities/componentList'
 import RMPSearchComponents from '../RMPSearchComponents/RMPSearchComponents'
-import GithubLink from '../utilities/githubLink'
-import TaskInformation from '../utilities/taskInformation'
+import GithubLink from './RMPComonentItemOverlayButtons/githubLink'
+import TaskInformation from './RMPComonentItemOverlayButtons/taskInformation'
 
 export default function RMPComponentView(props) {
 
+   
 
     const filterComps = components.filter(x => 
       x.name.toLowerCase().includes(props.inputValue) ||
@@ -21,12 +22,12 @@ export default function RMPComponentView(props) {
     const mapComponents = filterComps.map((x,index) => {
 
       return(
-          <Col key={index} sm={12} lg={6} className={x.name + "__componentContainer position-relative"}>  
+          <Col key={index} sm={12} lg={6} className={x.name + "__componentContainer position-relative "}>  
             <x.componentName /> 
 
-            <div className='componentItemButtonsContainer d-flex w-100 h-100'>
+            <div className='componentItemButtonsContainer d-flex w-100 top-0 left-0 position-absolute'>
               <GithubLink githubUrl={x.github} iconColour={x.iconColour}/>
-              <TaskInformation information={x.information} iconColour={x.iconColour}/>
+              <TaskInformation  name={x.name} information={x.information} iconColour={x.iconColour} tags={x.tags}/>
             </div>
 
 
