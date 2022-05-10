@@ -170,8 +170,10 @@ Javascript:
 
   ☐ covid-19 dashboard using api
 
-  RPM:
-    ☐ An information button that provides further context for each of the tasks.
+  RPM Pause:
+    ✔ Convert github link to separate component and then... @done(11:07 - 10/05/22)
+    ☐ ...add and information button, near the github link, that provides further context for each of the tasks.
+      ..this could be in the form of a simple modal that can be open and closed using the information button
 
   ☐ rock paper scissor
   ☐ simon game

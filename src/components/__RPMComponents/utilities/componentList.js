@@ -23,7 +23,8 @@ export const components = [
      componentName: SimpleApiFetch ,
      tags:"api, fetch, then, response, json, bootstrap, conditional formatting, random number, math, .floor, catch, target, ref, state, effect, lifting state, lifting props, modulo,date, time, parse, toLocaleDateString",
      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simplyApiFetch",
-     githubIconColour:"light"
+     githubIconColour:"light",
+     information:"Test Information"
     },
     {
       name:"SimpleCalculator",

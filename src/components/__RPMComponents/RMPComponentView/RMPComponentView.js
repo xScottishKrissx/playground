@@ -10,6 +10,8 @@ import githubLogoLight  from './githubLogoLight.png'
 
 import { components } from '../utilities/componentList'
 import RMPSearchComponents from '../RMPSearchComponents/RMPSearchComponents'
+import GithubLink from '../utilities/githubLink'
+import TaskInformation from '../utilities/taskInformation'
 
 export default function RMPComponentView(props) {
     
@@ -24,13 +26,10 @@ export default function RMPComponentView(props) {
       return(
           <Col key={index} sm={12} lg={6} className={x.name + "__componentContainer position-relative"}>  
             <x.componentName /> 
-            <div className='component_githubLinkContainer'>
-              <div className='componentGithubLink'>
-                <a href={x.github} target="__top">
-                  <img alt="View code on github.com" src={githubIconStyle} />
-                </a>
-              </div>
-            </div>
+
+            <GithubLink githubUrl={x.github} githubIconStyle={githubIconStyle}/>
+            <TaskInformation information={x.information}/>
+
           </Col>
       )
     })
