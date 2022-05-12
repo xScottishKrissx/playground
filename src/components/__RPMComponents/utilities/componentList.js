@@ -14,6 +14,7 @@ import ReviewCarousel from "../../reviewCarousel/reviewCarousel";
 import Counter from "../../counter/counter";
 import ColourFlipper from "../../colourFlipper/colourFlipper";
 import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
+import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 
 
 // Available Parameters
@@ -31,6 +32,14 @@ import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 
 export const components = [
     {
+      name:"Covid19Dashboard",
+      componentName:Covid19Dashboard,
+      tags:"fetch, api",
+      github:"",
+      iconColour:"light",
+      information:""
+    },
+    {
      name:"SimpleAPIFetch",
      componentName: SimpleApiFetch ,
      tags:"api, fetch, then, response, json, bootstrap, conditional formatting, random number, math, .floor, catch, target, ref, state, effect, lifting state, lifting props, modulo,date, time, parse, toLocaleDateString",
@@ -43,7 +52,7 @@ export const components = [
       componentName:SimpleCalculator,
       tags:"useState hook, bootstrap, props, lifting state, toString, includes, if, parseFloat, conditional rendering,  " ,
       github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleCalculator",
-      information:"Simple Calculator is my first ever attempt at creating a calculator in javascript (never mind react). I followed a number of tutorials but for the most part I worked my through the work doing what I though was right. It's not capable of anything advanced mostly because I'm not capable of advanced maths. I have no idea what most of the stuff on a calculator does so I, more or less, did everything I was capable of."
+      information:"Simple Calculator is my first ever attempt at creating a calculator in javascript (never mind react). I followed a number of tutorials but for the most part I worked my through the work doing what I thought was right."
     },
 
     {

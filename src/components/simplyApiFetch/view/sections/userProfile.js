@@ -8,6 +8,7 @@ import UserStats from './userProfile/userStats'
 export default function UserProfile(props) {
 
   const user = props.user
+  
 
   //   Date
   const dateOptions = { year: 'numeric', month: 'long', }

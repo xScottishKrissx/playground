@@ -8,8 +8,8 @@ import Col from 'react-bootstrap/Col'
 
 import { components } from '../utilities/componentList'
 import RMPSearchComponents from '../RMPSearchComponents/RMPSearchComponents'
-import GithubLink from './RMPComonentItemOverlayButtons/githubLink'
-import TaskInformation from './RMPComonentItemOverlayButtons/taskInformation'
+import GithubLink from './RMPComponentItemOverlayButtons/githubLink'
+import TaskInformation from './RMPComponentItemOverlayButtons/taskInformation'
 
 export default function RMPComponentView(props) {
 
