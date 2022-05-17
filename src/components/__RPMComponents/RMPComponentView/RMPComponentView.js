@@ -20,9 +20,9 @@ export default function RMPComponentView(props) {
       x.tags.toLowerCase().includes(props.inputValue)
     )
     const mapComponents = filterComps.map((x,index) => {
-
+      let componentSize = x.size === "wide" ? 12 : 6
       return(
-          <Col key={index} sm={12} lg={6} className={x.name + "__componentContainer position-relative "}>  
+          <Col key={index} sm={12} lg={componentSize} className={x.name + "__componentContainer position-relative "}>  
             <x.componentName /> 
 
             <div className='componentItemButtonsContainer d-flex w-100 top-0 left-0 position-absolute'>

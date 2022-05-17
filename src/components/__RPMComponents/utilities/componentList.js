@@ -24,7 +24,7 @@ import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 //// github - (link to github page for that project)
 //// iconColour - (light / dark - if the github/information logo needs to be black or white)
 //// information - (provide further context to project)
-////
+//// size - accepted parameter - wide (changes bootstrap lg from 6(50%) to 12(full width))
 ////
 ////
 
@@ -37,7 +37,8 @@ export const components = [
       tags:"fetch, api",
       github:"",
       iconColour:"light",
-      information:""
+      information:"",
+      size:"wide"
     },
     {
      name:"SimpleAPIFetch",

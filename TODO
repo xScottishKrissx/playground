@@ -184,11 +184,19 @@ Javascript:
       ✔ Uploading... @done(18:13 - 10/05/22)
   
   covid-19 dashboard using api:
+    Inspiration..
+      https://www.freecodecamp.org/news/8-reactjs-project-ideas-to-start-learning-by-doing/
+    
     Goals:
+      Target - https://coronavirus.jhu.edu/map.html
       ☐ Primary - A searchable resource for finding information about covid 19 info per country
       ☐ Primary = Ability to view information via a map
       ☐ Secondary - Using search to instanstly filter out countries
       ☐ Secondary - Ability to mark countrys for tracking(like a favourites button)
+
+      ✔ Adjust size of project area to allow for wider/taller projects. @done(15:16 - 17/05/22)
+        ..probably another new field in the component list file.
+        ..yup, added a size field in component list and added a size check in RMPComponentView to check for size.
 
     Step 1: Find an Api:
       ☐ This is harder that i expected. The UK gov just returns a 500 internal server error.
