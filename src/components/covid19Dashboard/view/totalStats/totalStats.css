@@ -1,0 +1,10 @@
+.totalStats__wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.totalStats__wrapper div{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+}

@@ -27,7 +27,7 @@ export default function Covid19DashboardView(props) {
           
           <>
             <div style={slideWrapperPosition} className='slideWrapper'>
-                <TotalStats />
+                <TotalStats data={props.globalData} />
                 <Map />
                 <Search testMessage={props.testMessage} data={data} setInput={getInput}/>
             </div>

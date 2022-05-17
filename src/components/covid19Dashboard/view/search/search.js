@@ -12,8 +12,9 @@ export default function Search(props) {
     }
 
     const data = props.data
+    // console.log(data)
 
-
+// console.log(props.testMessage)
   return (
     <div className='slide s3'>
         <h2>Covid 19 Data</h2>
@@ -24,10 +25,16 @@ export default function Search(props) {
             </div>
 
             <div>
-                {props.testMessage ? <p>Enter valid search term</p> : 
+                {!data ? <p>Dont do anything</p>
+
+                :
+
+                props.testMessage ? <p>Enter valid search term</p> : 
                 
                 <p>Name: {data.country} - Case Rate: {data.casesPerOneMillion}</p>
-                }
+                
+            }
+
             </div>
     </div>
   )
