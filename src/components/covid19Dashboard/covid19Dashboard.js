@@ -40,12 +40,23 @@ export default function Covid19Dashboard() {
                 return result.json()
             })
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setInfo(data)
                 setLoading(false)
                 
             })
             .catch(error => console.log(error))
+    
+        const endPoint2 = "https://disease.sh/v3/covid-19/historical/all?lastdays=30"
+        fetch(endPoint2)
+            .then(result => {
+                return result.json()
+            })
+            .then(data => {
+                // console.log(data)
+                const sum = [data.cases].reduce((partialSum,a) => partialSum + a,0)
+                // console.log(sum)
+            })
 
     },[input, getCountry])
 
@@ -58,15 +69,47 @@ export default function Covid19Dashboard() {
         setInput(tempRef.current.value)
     }
 
+    // Controls
+    const [startingPos,setPos] = useState(0)
+    const [count, setCount] = useState(1)
+    let currentCount = count
+    const next = () => {
+        
+        if(count === 3){
+            setPos(0)
+            setCount(1)
+            return
+        }
+        currentCount++
+        setCount(currentCount)
+        setPos(startingPos - 100)
+    }
+
+    const prev = () => {
+
+        if(count === 1){
+            setPos(-200)
+            setCount(3)
+            return
+        }
+        currentCount--
+        setCount(currentCount)
+        setPos(startingPos + 100)
+    }
+
+    const slideWrapperPosition = { transform: "translateX(" + startingPos + '%)'}
+
   return (
-    <div>
+    <div className='covid19DashboardContainer'>
         {/* {loading ? <p>Loading</p> : <View data={apiData} startingCountry={startingCountry} />} */}
 
         {loading ? <p>Loading</p>
         
         :
-        <div>
-            <h2>Covid 19 Data</h2>
+        
+        <>
+        <div style={slideWrapperPosition} className='slideWrapper'>
+            {/* <h2>Covid 19 Data</h2>
             <div>
                 <form>
                     <input ref={tempRef} placeholder='search...' onChange={()=>getInput()}/>
@@ -78,9 +121,20 @@ export default function Covid19Dashboard() {
                 
                 <p>Name: {apiData.country} - Case Rate: {apiData.casesPerOneMillion}</p>
                 }
-                
-            </div>
+            </div> */}
+            <div className='slide s1'>Slide 1</div>
+            <div className='slide s2'>Slide 2</div>
+            <div className='slide s3'>Slide 3</div>
         </div>
+
+        
+        <div className='buttonWrapper'>
+            <button onClick={()=>next()}>Next</button>
+            <button onClick={()=>prev()}>Prev</button>
+        </div>
+        </>
+
+        
     
     }
 

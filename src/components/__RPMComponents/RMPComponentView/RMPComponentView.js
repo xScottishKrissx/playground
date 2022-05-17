@@ -13,12 +13,11 @@ import TaskInformation from './RMPComponentItemOverlayButtons/taskInformation'
 
 export default function RMPComponentView(props) {
 
-   
-
     const filterComps = components.filter(x => 
       x.name.toLowerCase().includes(props.inputValue) ||
       x.tags.toLowerCase().includes(props.inputValue)
     )
+
     const mapComponents = filterComps.map((x,index) => {
       let componentSize = x.size === "wide" ? 12 : 6
       return(

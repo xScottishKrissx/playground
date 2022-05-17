@@ -34,9 +34,9 @@ export const components = [
     {
       name:"Covid19Dashboard",
       componentName:Covid19Dashboard,
-      tags:"fetch, api",
+      tags:"fetch, api, slider, then, state",
       github:"",
-      iconColour:"light",
+      iconColour:"dark",
       information:"",
       size:"wide"
     },
