@@ -220,6 +220,8 @@ Javascript:
         ✔ Total Deaths @done(12:55 - 18/05/22)
         ✔ Total Vaccines @done(12:55 - 18/05/22)
         ☐ 28 Day Cases
+          ..not sure this is possible/practical. The data in the api doesn't seem to include this.
+          .. the option would be to add up all of the countries registered cases today which seems like it not a good use of performance.WIll probably give it a crack anyway.
         ☐ 28 Day Deaths
         ☐ 28 Day Vaccines
         ☐ Cases / Deaths by countru

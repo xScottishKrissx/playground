@@ -6,7 +6,7 @@ export default function TotalStats(props) {
   const data = props.data
   const vaccineData = props.vaccineData
 
-  console.log(props.data)
+  // console.log(props.data)
 
   const getTotalCasesFromData = Object.entries(data.cases).reverse()[0][1]
   const totalCases = numberWithCommas(getTotalCasesFromData)
@@ -16,6 +16,9 @@ export default function TotalStats(props) {
 
   const getTotalVaccinesFromData = Object.entries(vaccineData).reverse()[0][1]
   const totalVaccines = numberWithCommas(getTotalVaccinesFromData)
+
+  const countryData = props.countryData
+  // console.log(data)
 
 
 // For adding objects within an array
