@@ -211,7 +211,8 @@ Javascript:
       ✔ How about incorporating the simple slider ui here, having 3 different slides for each of the content @done(16:17 - 17/05/22)
         1.. for the stats, 2.. for the map, 3.. for the graphs
       ☐ Figure out how to add data in array together
-      ☐ Having multiple fetches is probably not the best, figure out how to make a single function that fetches all URLS needed without having 40+ lines of code very similiar lines of code.
+      ✔ Having multiple fetches is probably not the best, figure out how to make a single function that fetches all URLS needed without having 40+ lines of code very similiar lines of code. @done(13:11 - 18/05/22)
+        ✔ Pretty simply solved by using the Promise.all method. @done(13:11 - 18/05/22)
 
       Todo:
         UI..

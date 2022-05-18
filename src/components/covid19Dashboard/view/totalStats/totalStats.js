@@ -7,7 +7,7 @@ export default function TotalStats(props) {
   const vaccineData = props.vaccineData
 
   console.log(props.data)
-  
+
   const getTotalCasesFromData = Object.entries(data.cases).reverse()[0][1]
   const totalCases = numberWithCommas(getTotalCasesFromData)
 

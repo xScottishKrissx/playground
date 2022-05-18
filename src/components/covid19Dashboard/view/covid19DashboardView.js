@@ -7,6 +7,7 @@ import Search from './search/search'
 import TotalStats from './totalStats/totalStats'
 
 export default function Covid19DashboardView(props) {
+  // console.log("Render")
     // Form Input
     const getInput = (x) =>{ props.setInput(x) }
     
