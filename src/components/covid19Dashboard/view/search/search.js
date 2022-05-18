@@ -25,7 +25,7 @@ export default function Search(props) {
             </div>
 
             <div>
-                {!data ? <p>Dont do anything</p>
+                {!data ? <p>Loading</p>
 
                 :
 

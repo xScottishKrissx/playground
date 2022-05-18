@@ -8,9 +8,11 @@ import Covid19DashboardView from './view/covid19DashboardView'
 export default function Covid19Dashboard() {
     const [apiData, setInfo] = useState(null)
     const [globalData, setGlobalData] = useState(null)
+    const [vaccineData, setVaccineData] = useState(null)
+
     const [loading, setLoading] = useState(true)
 
-    const [testMessage, setTestMessage] = useState(false)
+    const [dataOk, setDataOk] = useState(false)
 
     const [input,setInput] = useState()
 
@@ -24,15 +26,14 @@ export default function Covid19Dashboard() {
 
         const handle404 = (response) =>{
                 if(response.status === 404){
-                    setTestMessage(true)
+                    setDataOk(true)
                 }else{
-                    setTestMessage(false)
+                    setDataOk(false)
                 }
         }
 
         // Reference
         // const endpoint = "https://disease.sh/v3/covid-19/historical/all?lastdays=all"
-        // const endpoint = "https://api.randomuser.me/?results=20"
         
         // Data Point By Country
         const endpoint = "https://disease.sh/v3/covid-19/countries/" + getCountry
@@ -66,6 +67,18 @@ export default function Covid19Dashboard() {
                 // console.log(sum)
             })
 
+        const getVaccineInfo = "https://disease.sh/v3/covid-19/vaccine/coverage"
+        fetch(getVaccineInfo)
+            .then(result => {
+                handle404(result)
+                return(result.json())
+            })
+            .then(data => {
+                setVaccineData(data)
+                setLoading(false)
+            })
+
+
     },[input, getCountry])
 
 
@@ -75,9 +88,10 @@ export default function Covid19Dashboard() {
             // View.js
             data={apiData} 
             globalData={globalData}
+            vaccineData={vaccineData}
             loading={loading} 
             // Search.js
             setInput={setInputState} 
-            testMessage={testMessage}/>)
+            dataOk={dataOk}/>)
   
 }
