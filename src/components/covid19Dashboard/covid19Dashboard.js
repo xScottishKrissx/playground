@@ -23,7 +23,7 @@ export default function Covid19Dashboard() {
     useEffect(()=>{
 
     const dataByCountry = "https://disease.sh/v3/covid-19/countries/" + getCountry
-    const dataByGlobeTotal = "https://disease.sh/v3/covid-19/historical/all?lastDays=30"
+    const dataByGlobeTotal = "https://disease.sh/v3/covid-19/all"
     const dataByGlobalVaccine = "https://disease.sh/v3/covid-19/vaccine/coverage"
     const dataByAllCovid = "https://disease.sh/v3/covid-19/all"
 
