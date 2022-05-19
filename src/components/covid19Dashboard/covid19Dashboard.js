@@ -38,7 +38,7 @@ export default function Covid19Dashboard() {
     )
     .then(data => {
         setData({countryData:data[0], globalData: data[1], vaccineData:data[2]})
-        console.log(data[3])
+        // console.log(data[0])
         setLoading(false)  
     })
     .catch(error => console.log(error), setLoading(true))
@@ -48,12 +48,14 @@ export default function Covid19Dashboard() {
     // console.log(data.globalData)
 
     const setInputState = (x) =>{ setInput(x) }
+    // Destructuring
+    const {countryData, globalData, vaccineData} = data
     return (
         <Covid19DashboardView 
             // View.js
-            data={data.countryData} 
-            globalData={data.globalData}
-            vaccineData={data.vaccineData}
+            countryData={countryData} 
+            globalData={globalData}
+            vaccineData={vaccineData}
             loading={loading} 
             // Search.js
             setInput={setInputState} 

@@ -1,13 +1,15 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import L from 'leaflet'
 import './map.css'
 
 import {MapContainer, TileLayer, Marker, Popup} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'
+import { map } from 'leaflet';
 
 
 
-export default function Covid19Map() {
+export default function Covid19Map(props) {
+  // console.log(props.countryData)
 
   // Fixes the broken icon for the marker
   delete L.Icon.Default.prototype.__getIconUrl;
@@ -18,12 +20,20 @@ export default function Covid19Map() {
   })
   //end of fix
 
-  const location = [55.8252,-4.1995]
-  const zoom = 12
+  const location = [55.8130,-4.3424]
+  const zoom = 10
+
+  const mapRef = useRef()
+  // console.log(mapRef)
+  // Destructuring
+  const { current = {} } = mapRef
+
+  
+
 
   return (
     <div className='slide s2'>
-      <MapContainer center={location} zoom={zoom}>
+      <MapContainer ref={mapRef} center={location} zoom={zoom}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <Marker position={location}>
           <Popup>

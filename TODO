@@ -226,6 +226,16 @@ Javascript:
            .. might also be useful for searching the map
 
           ☐ Look up destructuring in Js/React
+            ..https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0
+            ☐ Ok its not that complicated. It's just a simpler way of getting information from an array.
+            ☐ For example, instead of doing something 
+              const name = props.name
+              const id = props.id
+              const age = props.id
+            ☐ you can do..
+              const {name, id, age} = props
+            ☐ and just use name, id and age without the props. part.
+          ☐ So, be sure to change this in the covid 19 dashboard and to use this moving forward.
 
         ☐ Graphs
       
@@ -233,6 +243,8 @@ Javascript:
           ..they work but the current styling can be improved.
 
   ☐ Drag and Drop functionality
+  ☐ Something with react leaflet and maps
+        ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
   ☐ rock paper scissor
   ☐ simon game
   ☐ platformer game - more of a watch thing

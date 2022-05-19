@@ -16,21 +16,21 @@ export default function Covid19DashboardView(props) {
     const slideWrapperPosition = { transform: "translateX(" + position + '%)'}
     const setPositionState = (x) =>{ setPos(x)}
 
+    const {loading, globalData, countryData, vaccineData, testMessage} = props
 
-    const data = props.data
     return (
         <div className='covid19DashboardContainer'>
           {/* {loading ? <p>Loading</p> : <View data={apiData} startingCountry={startingCountry} />} */}
 
-          {props.loading ? <p>Loading</p>
+          {loading ? <p>Loading</p>
           
           :
           
           <>
             <div style={slideWrapperPosition} className='slideWrapper'>
-                <TotalStats data={props.globalData} countryData={data} vaccineData={props.vaccineData}/>
-                <Covid19Map />
-                <Search testMessage={props.testMessage} data={data} setInput={getInput}/>
+                <TotalStats data={globalData} countryData={countryData} vaccineData={vaccineData}/>
+                <Covid19Map countryData={countryData} />
+                <Search testMessage={testMessage} data={countryData} setInput={getInput}/>
             </div>
             <ControlButtons setPos={setPositionState} position={position}/>
           </>

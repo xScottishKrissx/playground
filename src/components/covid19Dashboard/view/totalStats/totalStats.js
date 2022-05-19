@@ -8,7 +8,7 @@ export default function TotalStats(props) {
   // const data = props.data
   const vaccineData = props.vaccineData
   // console.log(vaccineData)
-  console.log(props.data)
+  // console.log(props.data)
 
 
 
@@ -36,6 +36,32 @@ export default function TotalStats(props) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
+  
+  console.log(props.data)
+  const {
+      todayCases, 
+      cases,
+      casesPerOneMillion, 
+      todayDeaths, 
+      deaths, 
+      deathsPerOneMillion, 
+      todayRecovered,
+      recovered,
+      recoveredPerOneMillion,
+      tests,
+      testsPerOneMillion,
+      critical,
+      criticalPerOneMillion,
+      active,
+      activePerOneMillion,
+      updated
+    } = props.data
+
+
+  const thing = ({
+
+  })
+
   return (
   <>
       {!props.data ? <h1>Loading</h1> 
@@ -51,51 +77,51 @@ export default function TotalStats(props) {
             <Col id="cases">
                 <div>
                   <div>Todays Cases </div>
-                  <div>{numberWithCommas(props.data.todayCases)}</div>
+                  <div>{numberWithCommas(todayCases)}</div>
                 </div> 
 
                 <div>
                   <div>Total Cases</div> 
-                  <div>{numberWithCommas(props.data.cases)}</div>
+                  <div>{numberWithCommas(cases)}</div>
                 </div> 
 
                 <div>
                   <div>Cases Per Million: </div>
-                  <div>{numberWithCommas(props.data.casesPerOneMillion)}</div>
+                  <div>{numberWithCommas(casesPerOneMillion)}</div>
                 </div>  
             </Col>
 
             <Col id="deaths">
               <div>
                 <div>Todays Deaths</div>
-                <div>{numberWithCommas(props.data.todayDeaths)}</div>
+                <div>{numberWithCommas(todayDeaths)}</div>
               </div>
 
               <div>
                 <div>Total Deaths</div> 
-                <div>{numberWithCommas(props.data.deaths)}</div>
+                <div>{numberWithCommas(deaths)}</div>
               </div>
 
               <div>
                 <div>Deaths per Million</div>
-                <div>{numberWithCommas(props.data.deathsPerOneMillion)}</div>
+                <div>{numberWithCommas(deathsPerOneMillion)}</div>
               </div>
             </Col>
                     
             <Col id="recovered">
               <div>
                 <div>Today Recovered</div> 
-                <div>{numberWithCommas(props.data.todayRecovered)}</div>
+                <div>{numberWithCommas(todayRecovered)}</div>
               </div>
 
               <div>
                 <div>Total Recovered</div>
-                <div>{numberWithCommas(props.data.recovered)}</div>
+                <div>{numberWithCommas(recovered)}</div>
               </div>
 
               <div>
                 <div>recovered per million</div>
-                <div>{numberWithCommas(props.data.recoveredPerOneMillion)}</div>
+                <div>{numberWithCommas(recoveredPerOneMillion)}</div>
               </div>
             </Col>
 
@@ -106,36 +132,36 @@ export default function TotalStats(props) {
           <Col id="tests">        
               <div>
                 <div>Total Tests</div>
-                <div>{numberWithCommas(props.data.tests)}</div>
+                <div>{numberWithCommas(tests)}</div>
               </div>
 
               <div>
                 <div>Test Per Million</div> 
-                <div>{numberWithCommas(props.data.testsPerOneMillion)}</div>
+                <div>{numberWithCommas(testsPerOneMillion)}</div>
               </div>
             </Col>
             
             <Col id="critical">
               <div>
                 <div>Critical:</div> 
-                <div>{numberWithCommas(props.data.critical)}</div>
+                <div>{numberWithCommas(critical)}</div>
               </div>
 
               <div>
                 <div>Critical Per Million:</div> 
-                <div>{numberWithCommas(props.data.criticalPerOneMillion)}</div>
+                <div>{numberWithCommas(criticalPerOneMillion)}</div>
               </div> 
             </Col>
 
             <Col id="active">
               <div>
                 <div>Total Active</div> 
-                <div>{numberWithCommas(props.data.active)}</div>
+                <div>{numberWithCommas(active)}</div>
               </div>
 
               <div>
                 <div>Active Per Mil</div>
-                <div>{numberWithCommas(props.data.activePerOneMillion)}</div>
+                <div>{numberWithCommas(activePerOneMillion)}</div>
               </div>
             </Col>
             
@@ -152,7 +178,7 @@ export default function TotalStats(props) {
               </div>
             </Col>
           </Row>
-          <p>Updated: {props.data.updated}</p>
+          <p>Updated: {updated}</p>
         </div>
       </div> 
     }
