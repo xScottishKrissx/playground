@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 
 import ControlButtons from './buttons/buttons'
-import Map from './map/map'
+import Covid19Map from './map/map'
 import Search from './search/search'
 import TotalStats from './totalStats/totalStats'
 
@@ -29,7 +29,7 @@ export default function Covid19DashboardView(props) {
           <>
             <div style={slideWrapperPosition} className='slideWrapper'>
                 <TotalStats data={props.globalData} countryData={data} vaccineData={props.vaccineData}/>
-                <Map />
+                <Covid19Map />
                 <Search testMessage={props.testMessage} data={data} setInput={getInput}/>
             </div>
             <ControlButtons setPos={setPositionState} position={position}/>

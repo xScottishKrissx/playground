@@ -215,17 +215,18 @@ Javascript:
         ✔ Pretty simply solved by using the Promise.all method. @done(13:11 - 18/05/22)
 
       Todo:
-        UI..
-        ✔ Total Cases @done(12:55 - 18/05/22)
-        ✔ Total Deaths @done(12:55 - 18/05/22)
-        ✔ Total Vaccines @done(12:55 - 18/05/22)
-        ☐ 28 Day Cases
-          ..not sure this is possible/practical. The data in the api doesn't seem to include this.
-          .. the option would be to add up all of the countries registered cases today which seems like it not a good use of performance.WIll probably give it a crack anyway.
-        ☐ 28 Day Deaths
-        ☐ 28 Day Vaccines
-        ☐ Cases / Deaths by countru
+        UI.. 
+        ✔ Global Stats Info @done(13:30 - 19/05/22)
         ☐ Map
+          ☐ Learn how to integrate maps
+          ..https://egghead.io/lessons/react-add-geojson-location-data-to-a-map-using-markers-and-popups-in-react-leaflet
+           .. very relevant to what I want
+
+           ..https://egghead.io/lessons/react-add-placename-location-search-to-react-leaflet-with-esri-leaflet-geocoder
+           .. might also be useful for searching the map
+
+          ☐ Look up destructuring in Js/React
+
         ☐ Graphs
       
         ☐ Style / reformat buttons
