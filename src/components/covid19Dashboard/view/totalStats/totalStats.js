@@ -37,7 +37,7 @@ export default function TotalStats(props) {
   }
 
   
-  console.log(props.data)
+  // console.log(props.data)
   const {
       todayCases, 
       cases,
@@ -58,9 +58,7 @@ export default function TotalStats(props) {
     } = props.data
 
 
-  const thing = ({
 
-  })
 
   return (
   <>

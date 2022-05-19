@@ -186,6 +186,10 @@ Javascript:
   covid-19 dashboard using api:
     Inspiration..
       https://www.freecodecamp.org/news/8-reactjs-project-ideas-to-start-learning-by-doing/
+    React Leaflet
+      https://react-leaflet.js.org/
+    Leaflet
+      https://leafletjs.com/
     
     Goals:
       Target - https://coronavirus.jhu.edu/map.html
@@ -214,28 +218,40 @@ Javascript:
       ✔ Having multiple fetches is probably not the best, figure out how to make a single function that fetches all URLS needed without having 40+ lines of code very similiar lines of code. @done(13:11 - 18/05/22)
         ✔ Pretty simply solved by using the Promise.all method. @done(13:11 - 18/05/22)
 
-      Todo:
-        UI.. 
-        ✔ Global Stats Info @done(13:30 - 19/05/22)
-        ☐ Map
-          ☐ Learn how to integrate maps
-          ..https://egghead.io/lessons/react-add-geojson-location-data-to-a-map-using-markers-and-popups-in-react-leaflet
-           .. very relevant to what I want
+        Todo:
+          UI.. 
+          ✔ Global Stats Info @done(13:30 - 19/05/22)
+          ☐ Map
+            ☐ Learn how to integrate maps
+            
+            ..https://egghead.io/lessons/react-add-geojson-location-data-to-a-map-using-markers-and-popups-in-react-leaflet
+            .. very relevant to what I want
+            .. i think it's out of date, but a good starting point
 
-           ..https://egghead.io/lessons/react-add-placename-location-search-to-react-leaflet-with-esri-leaflet-geocoder
-           .. might also be useful for searching the map
+            ..https://egghead.io/lessons/react-add-placename-location-search-to-react-leaflet-with-esri-leaflet-geocoder
+            .. might also be useful for searching the map
+            .. i think it's out of date, but a good starting point
 
-          ☐ Look up destructuring in Js/React
-            ..https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0
-            ☐ Ok its not that complicated. It's just a simpler way of getting information from an array.
-            ☐ For example, instead of doing something 
-              const name = props.name
-              const id = props.id
-              const age = props.id
-            ☐ you can do..
-              const {name, id, age} = props
-            ☐ and just use name, id and age without the props. part.
-          ☐ So, be sure to change this in the covid 19 dashboard and to use this moving forward.
+            ☐ Look up destructuring in Js/React
+              ..https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0
+              ☐ Ok its not that complicated. It's just a simpler way of getting information from an array.
+              ☐ For example, instead of doing something 
+                const name = props.name
+                const id = props.id
+                const age = props.id
+              ☐ you can do..
+                const {name, id, age} = props
+              ☐ and just use name, id and age without the props. part.
+            ☐ So, be sure to change this in the covid 19 dashboard and to use this moving forward.
+
+            ☐ Format Tooltips
+            ☐ Format markers
+
+
+
+
+
+
 
         ☐ Graphs
       
@@ -245,6 +261,7 @@ Javascript:
   ☐ Drag and Drop functionality
   ☐ Something with react leaflet and maps
         ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
+        .. i think this is out of date.
   ☐ rock paper scissor
   ☐ simon game
   ☐ platformer game - more of a watch thing

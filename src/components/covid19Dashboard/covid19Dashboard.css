@@ -27,12 +27,12 @@
 }
 
 .s1{
-    transform: translateX(0%);
+    transform: translateX(100%);
     /* background-color: red; */
 }
 
 .s2{
-    transform: translateX(100%);
+    transform: translateX(0%);
     /* background-color: green; */
 }
 
