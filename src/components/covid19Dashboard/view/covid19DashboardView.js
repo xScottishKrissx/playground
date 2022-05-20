@@ -9,7 +9,7 @@ import TotalStats from './totalStats/totalStats'
 export default function Covid19DashboardView(props) {
   // console.log("Render")
     // Form Input
-    const getInput = (x) =>{ props.setInput(x) }
+    // const getInput = (x) =>{ props.setInput(x) }
     
     // Controls
     const [position,setPos] = useState(0)
@@ -18,6 +18,8 @@ export default function Covid19DashboardView(props) {
 
     const {loading, globalData, countryData, vaccineData, testMessage} = props
 
+    // console.log(props)
+  
     return (
         <div className='covid19DashboardContainer'>
           {/* {loading ? <p>Loading</p> : <View data={apiData} startingCountry={startingCountry} />} */}
@@ -30,12 +32,17 @@ export default function Covid19DashboardView(props) {
             <div style={slideWrapperPosition} className='slideWrapper'>
                 <TotalStats data={globalData} countryData={countryData} vaccineData={vaccineData}/>
                 <Covid19Map countryData={countryData} />
-                <Search testMessage={testMessage} data={countryData} setInput={getInput}/>
+                <Search 
+                  testMessage={testMessage} 
+                  data={countryData} 
+                  // setInput={getInput}
+                  />
+                
             </div>
             <ControlButtons setPos={setPositionState} position={position}/>
           </>
 
-      }
+    }
       </div>
     )
 }

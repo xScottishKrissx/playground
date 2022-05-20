@@ -24,30 +24,32 @@ export default function Covid19Map(props) {
   const zoom = 4
 
   const mapRef = useRef()
+  // const {countryData} = props
   const {countryData} = props
-  console.log(countryData[0])
+  // console.log(countryData[0])
 
   return (
     <div className='slide s2'>
       <MapContainer ref={mapRef} center={location} zoom={zoom} zoomControl={false}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
-        <ZoomControl position='bottomleft' zoomInText='in' zoomOutText='out'/>
+        <ZoomControl position='bottomleft' />
         {/* <Marker position={location}></Marker> */}
-        
+
         {countryData.map((x,index) => {
           return(
-            <>
+            <span key={index}>
             
-            <Marker key={index} position={[x.countryInfo.lat, x.countryInfo.long]}>
+            <Marker  position={[x.countryInfo.lat, x.countryInfo.long]}>
 
-            <Tooltip direction='top' offset={[-15,-15]}  position={[x.countryInfo.lat, x.countryInfo.long]}>
-              <p>{x.country}</p>
-              <p>Cases: {x.cases}</p>
-              <p>Deaths: {x.deaths}</p>
-            </Tooltip>
+              <Tooltip  direction='top' offset={[-15,-15]}  position={[x.countryInfo.lat, x.countryInfo.long]}>
+                <p>{x.country}</p>
+                <p>Cases: {x.cases}</p>
+                <p>Deaths: {x.deaths}</p>
+
+              </Tooltip>
 
             </Marker>
-            </>
+            </span>
           )
         })}
       </MapContainer>
