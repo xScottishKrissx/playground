@@ -33,13 +33,13 @@ import simpleChart from "../../simpleCharts/simpleChart";
 
 export const components = [
     {
-      name:"Covid19Dashboard",
+      name:"SimpleChart",
       componentName:simpleChart,
       tags:"chart.js",
       github:"",
       iconColour:"dark",
       information:"",
-      size:""
+      size:"wide"
     },
     {
       name:"Covid19Dashboard",
