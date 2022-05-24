@@ -253,6 +253,7 @@ Javascript:
             ☐ The 3 slides(covodi9DashboardView.js) can be mapped similiar to the component list. This will let me dynamically add more slides with relevant css, without needing to manually adjust in the css file.
             ☐ The map is just a mess on smaller windows.
         ☐ Graphs
+          ☐ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library
       
         ☐ Style / reformat buttons
           ..they work but the current styling can be improved.

@@ -16,7 +16,7 @@ export default function Covid19DashboardView(props) {
     const slideWrapperPosition = { transform: "translateX(" + position + '%)'}
     const setPositionState = (x) =>{ setPos(x)}
 
-    const {loading, globalData, countryData, vaccineData, testMessage} = props
+    const {loading, globalData, countryData, vaccineData, testMessage, covidTimeline} = props
 
     // console.log(props)
   
@@ -35,6 +35,7 @@ export default function Covid19DashboardView(props) {
                 <Search 
                   testMessage={testMessage} 
                   data={countryData} 
+                  covidTimeline={covidTimeline}
                   // setInput={getInput}
                   />
                 
