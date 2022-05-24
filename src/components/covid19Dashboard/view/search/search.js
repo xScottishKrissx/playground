@@ -24,7 +24,7 @@ export default function Search(props) {
 
     // console.log(covidTimeline)
     const filterCovidTimeline = covidTimeline.filter(x => x.country === getCountry)
-    console.log(filterCovidTimeline)
+    // console.log(filterCovidTimeline)
 
     const mapTimelineData = filterCovidTimeline.map((x,index) => {
         return(
@@ -36,17 +36,7 @@ export default function Search(props) {
         )
     })
 
-    // const labels = ["on1","two","tjree","four","five","six","seven"]
-    // const testData = {
-    // labels: labels,
-    // datasets: [{
-    //     label: 'My First Dataset',
-    //     data: [65, 59, 80, 81, 56, 55, 40],
-    //     fill: false,
-    //     borderColor: 'rgb(75, 192, 192)',
-    //     tension: 0.1
-    // }]
-    // };
+
 
 
   return (

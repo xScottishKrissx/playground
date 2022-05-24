@@ -15,6 +15,7 @@ import Counter from "../../counter/counter";
 import ColourFlipper from "../../colourFlipper/colourFlipper";
 import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
+import simpleChart from "../../simpleCharts/simpleChart";
 
 
 // Available Parameters
@@ -31,6 +32,15 @@ import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 
 
 export const components = [
+    {
+      name:"Covid19Dashboard",
+      componentName:simpleChart,
+      tags:"chart.js",
+      github:"",
+      iconColour:"dark",
+      information:"",
+      size:""
+    },
     {
       name:"Covid19Dashboard",
       componentName:Covid19Dashboard,
