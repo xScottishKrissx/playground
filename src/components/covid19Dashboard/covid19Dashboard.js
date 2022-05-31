@@ -24,7 +24,7 @@ export default function Covid19Dashboard() {
     const dataByGlobalVaccine = "https://disease.sh/v3/covid-19/vaccine/coverage"
     const dataCovidTimeline = "https://disease.sh/v3/covid-19/historical"
 
-    const test = "https://disease.sh/v3/covid-19/jhucsse"
+    const test = "https://disease.sh/v3/covid-19/countries"
 
     Promise.all([
         fetch(dataByCountry) ,

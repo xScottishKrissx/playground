@@ -32,6 +32,15 @@ import simpleChart from "../../simpleCharts/simpleChart";
 
 
 export const components = [
+  {
+    name:"Covid19Dashboard",
+    componentName:Covid19Dashboard,
+    tags:"fetch, api, slider, then, state",
+    github:"",
+    iconColour:"dark",
+    information:"",
+    size:"wide"
+  },
     {
       name:"SimpleChart",
       componentName:simpleChart,
@@ -41,15 +50,6 @@ export const components = [
       information:"Simple charts is my first crack at the Chart.js and react-chartjs-2 library, using data from disease.sh to output vaccination data. It was a basic task but very useful to me in understanding the basics of working with graphs and charts with react.js.",
       size:"wide"
     },
-    // {
-    //   name:"Covid19Dashboard",
-    //   componentName:Covid19Dashboard,
-    //   tags:"fetch, api, slider, then, state",
-    //   github:"",
-    //   iconColour:"dark",
-    //   information:"",
-    //   size:"wide"
-    // },
     {
      name:"SimpleAPIFetch",
      componentName: SimpleApiFetch ,

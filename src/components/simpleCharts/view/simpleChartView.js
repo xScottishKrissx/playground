@@ -8,10 +8,10 @@ import { Row, Col } from 'react-bootstrap'
 export default function SimpleChartView(props) {
 
     const {data} = props
-    console.log(props)
+    // console.log(props)
 
     // Global Data
-    const [userData, setUserData] = useState({
+    const [userData] = useState({
         // X Axis
         labels:data.globalData.map((x) => x.date),
         datasets:[{
@@ -24,7 +24,7 @@ export default function SimpleChartView(props) {
     })
 
     // UK Data
-    const [ukData, setUKData] = useState({
+    const [ukData] = useState({
       labels:data.ukData.map((x) => x.date),
       datasets:[{
         label:"Cumulative Vaccines in United Kingdom(Last 30 Days)",

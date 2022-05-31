@@ -1,6 +1,8 @@
 import React from 'react'
 import { useRef,useState } from 'react'
-import LineChart from './LineChart'
+import { Line } from 'react-chartjs-2'
+
+// import LineChart from './LineChart'
 
 
 export default function Search(props) {
@@ -20,18 +22,29 @@ export default function Search(props) {
 
 
     // Graphs
- 
-
     // console.log(covidTimeline)
-    const filterCovidTimeline = covidTimeline.filter(x => x.country === getCountry)
-    // console.log(filterCovidTimeline)
+    const filterCovidTimeline = covidTimeline.filter(x => x.country === getCountry && x.province === null)
+    const getTimelineData = filterCovidTimeline[0].timeline
+    // console.log(getTimelineData)
+
+    let getCasesFromTimeline = Object.entries(getTimelineData.cases).map(([date,number]) => ({date, number}))
+    // console.log(getCasesFromTimeline)
+
+    const [chartData] = useState({
+        labels:getCasesFromTimeline.map((x) => x.date),
+        datasets:[{
+            label:"Cases (Past 30 Days)",
+            data:getCasesFromTimeline.map((x) => x.number),
+            backgroundColor:"red"
+        }]
+    })
 
     const mapTimelineData = filterCovidTimeline.map((x,index) => {
         return(
             <div key={index}>
                 <p>{!x.province ? x.country : x.province}</p>
                 <p></p>
-                {/* <LineChart data={} /> */}
+                <Line data={chartData} />
             </div>
         )
     })
@@ -61,7 +74,9 @@ export default function Search(props) {
                         
                     }
                     
-                    {mapTimelineData}
+                    {/* Graphs - Timeline Data */}
+                    {mapTimelineData.length < 1 ? <p>Chart Unavailable</p> : mapTimelineData}
+                    
 
                     </div>
             </div>

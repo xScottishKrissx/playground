@@ -252,14 +252,28 @@ Javascript:
             ☐ Search for country and fly to it.
             ☐ The 3 slides(covodi9DashboardView.js) can be mapped similiar to the component list. This will let me dynamically add more slides with relevant css, without needing to manually adjust in the css file.
             ☐ The map is just a mess on smaller windows.
-        ✔ Graphs @done(16:27 - 31/05/22)
+          
+        ☐ Graphs (search.js)
+          Goal:
+            ☐ You can search a country and get a chart visualising various pieces of data from that country
+            Notes
+              .. The API data isn't laid out exactly how I would like it with differences in how country data is reported eg. USA gets 1 array for 50 states, Canada gets 15 arrays for each of its provinces and the UK gets arrays for all of its overseas territories and dependencies but NOT the 4 countries that make up the UK.
+              .. Short of figuring out a way of adding value in arrays to other arrays, I am just going to accept I can't have graphs for all countries that list data like this.
+          
+          Todo:
+            ☐ 2 sections
+              ☐ 1st Section - Search Box - Latest Data
+              ☐ 2nd Section - Graphs - Timeline Data
+            
+              
+
           ✔ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library @done(16:27 - 31/05/22)
           SimpleChart Side Project:
             ✔ Should use a fetch @done(16:27 - 31/05/22)
             ✔ Be very simple, this is just to help with the covid19 dashboard. @done(16:27 - 31/05/22)
               ✔ It is actually very simple and I was able to get good progress but Destiny 2 new season hype is too distracting @done(16:27 - 31/05/22)
               ✔ Nothing too complicated here, you just need to get the data into the right format and it's plug and play. @done(16:28 - 31/05/22)
-
+          
       
         ☐ Style / reformat buttons
           ..they work but the current styling can be improved.
