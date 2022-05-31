@@ -252,12 +252,13 @@ Javascript:
             ☐ Search for country and fly to it.
             ☐ The 3 slides(covodi9DashboardView.js) can be mapped similiar to the component list. This will let me dynamically add more slides with relevant css, without needing to manually adjust in the css file.
             ☐ The map is just a mess on smaller windows.
-        ☐ Graphs
-          ☐ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library
+        ✔ Graphs @done(16:27 - 31/05/22)
+          ✔ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library @done(16:27 - 31/05/22)
           SimpleChart Side Project:
-            ☐ Should use a fetch
-            ☐ Be very simple, this is just to help with the covid19 dashboard.
-              ☐ It is actually very simple and I was able to get good progress but Destiny 2 new season hype is too distracting
+            ✔ Should use a fetch @done(16:27 - 31/05/22)
+            ✔ Be very simple, this is just to help with the covid19 dashboard. @done(16:27 - 31/05/22)
+              ✔ It is actually very simple and I was able to get good progress but Destiny 2 new season hype is too distracting @done(16:27 - 31/05/22)
+              ✔ Nothing too complicated here, you just need to get the data into the right format and it's plug and play. @done(16:28 - 31/05/22)
 
       
         ☐ Style / reformat buttons

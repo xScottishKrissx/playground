@@ -35,21 +35,21 @@ export const components = [
     {
       name:"SimpleChart",
       componentName:simpleChart,
-      tags:"chart.js",
-      github:"",
+      tags:"chart.js, react-chartjs-2 bootstrap, useState, useEffect, promise, fetch, json, then, object, entries, map, conditional formatting, graphs, datasets, line chart, bar chart, api,",
+      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleCharts",
       iconColour:"dark",
-      information:"",
+      information:"Simple charts is my first crack at the Chart.js and react-chartjs-2 library, using data from disease.sh to output vaccination data. It was a basic task but very useful to me in understanding the basics of working with graphs and charts with react.js.",
       size:"wide"
     },
-    {
-      name:"Covid19Dashboard",
-      componentName:Covid19Dashboard,
-      tags:"fetch, api, slider, then, state",
-      github:"",
-      iconColour:"dark",
-      information:"",
-      size:"wide"
-    },
+    // {
+    //   name:"Covid19Dashboard",
+    //   componentName:Covid19Dashboard,
+    //   tags:"fetch, api, slider, then, state",
+    //   github:"",
+    //   iconColour:"dark",
+    //   information:"",
+    //   size:"wide"
+    // },
     {
      name:"SimpleAPIFetch",
      componentName: SimpleApiFetch ,
