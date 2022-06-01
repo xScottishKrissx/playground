@@ -5,8 +5,9 @@ import {Row, Col} from 'react-bootstrap'
 
 export default function Graph(props) {
 
-    const {data} = props
+    const {data, countryVaccine} = props
     const getTimelineData = data[0].timeline
+    // console.log(data)
     
     let getCasesFromTimeline = Object.entries(getTimelineData.cases).map(([date,number]) => ({date, number}))
     const [chartData] = useState({
@@ -28,19 +29,31 @@ export default function Graph(props) {
         }]
     })
 
+    const getVaccineData = countryVaccine[0].timeline
+    let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
+    const [vaccineData] = useState({
+        labels:getVaccineTimeline.map((x) => x.date),
+        datasets:[{
+            label:"Vaccine Total (Past 30 Days)",
+            data:getVaccineTimeline.map((x) => x.number),
+            backgroundColor:"green"
+        }]
+    })
+
 
     return (
-        <div>
-            Graphs
+        <div className='covid19Dashboard__graphContainer p-4'>
             <Row className='d-flex' lg={12}>
-                <Col lg={6}>
+                <Col lg={4}>
                     <Line data={chartData} />
                 </Col>
-                <Col lg={6} >
+                <Col lg={4} >
                     <Line data={deathData} />
                 </Col>
+                <Col lg={4} >
+                    <Line data={vaccineData} />
+                </Col>
             </Row>
-            {/* {mapTimelineData} */}
         </div>
     )
 }

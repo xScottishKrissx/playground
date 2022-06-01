@@ -1,0 +1,29 @@
+
+
+
+.covid19Dashboard__latestContainer{
+    
+}
+
+.locationInfo{
+    display: flex;
+    align-items: center;
+}
+.locationInfo > span{
+
+}
+.locationInfo span img{
+    width: 30px;
+    border-radius: 10px;
+    margin-right: 5px;
+}
+
+#locationInfo__population{
+
+}
+
+
+
+
+/*  */
+

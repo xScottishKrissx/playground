@@ -1,6 +1,6 @@
 import React from 'react'
 import { useRef,useState } from 'react'
-import { Line } from 'react-chartjs-2'
+// import { Line } from 'react-chartjs-2'
 import Graph from './graphs/graph'
 import Latest from './latest/latest'
 
@@ -19,14 +19,18 @@ export default function Search(props) {
         setInput(searchBoxRef.current.value)
     }
 
-    const {data, covidTimeline} = props
-    const filterCountry = data.filter(x => x.country === getCountry)
+    const {data, covidTimeline, vaccineData, countryVaccine} = props
+    // console.log(countryVaccine)
+    // const filterCountry = data.filter(x => x.country === getCountry)
 
 
     // Graphs
     // console.log(covidTimeline)
     const filterCovidTimeline = covidTimeline.filter(x => x.country === getCountry && x.province === null)
+    const filterCountryVaccine = countryVaccine.filter(x => x.country === getCountry)
     // console.log(filterCovidTimeline)
+    // console.log(data)
+    console.log(getCountry)
   return (
             <div className='slide s3'>
                 <h2>Covid 19 Data</h2>
@@ -34,27 +38,21 @@ export default function Search(props) {
                         <form>
                             <input ref={searchBoxRef} placeholder='search...' onChange={()=>getInput()}/>
                         </form>
-
-                        
                     </div>
 
                     <div>
-                        {!data ? <p>Loading</p>
-
+                        {!data  ? 
+                            <p>Loading Search Results...</p>
                         :
-
-                        // filterCountry.length < 1 ? <p>Enter valid search term</p> : 
-                        // // Well this needs to be better
-                        // <p>Name: {filterCountry[0]?.country} - Cases Per 1 Million: {filterCountry[0]?.casesPerOneMillion}</p>
-                        <Latest data={data} country={getCountry} />
-                    }
+                            <Latest data={data} country={getCountry} countryVaccine={filterCountryVaccine}/>
+                        }
                     
                     
                     {/* Graphs - Timeline Data */}
                     {filterCovidTimeline.length < 1 ? 
-                        <p>Graph Not Available</p> 
+                        <p>*Graph not available</p> 
                         : 
-                        <Graph data={filterCovidTimeline}/>
+                        <Graph data={filterCovidTimeline} countryVaccine={filterCountryVaccine}/>
                     }
 
                     </div>
