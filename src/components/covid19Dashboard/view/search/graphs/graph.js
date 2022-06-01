@@ -6,6 +6,7 @@ import {Row, Col} from 'react-bootstrap'
 export default function Graph(props) {
 
     const {data, countryVaccine} = props
+    
     const getTimelineData = data[0].timeline
     // console.log(data)
     

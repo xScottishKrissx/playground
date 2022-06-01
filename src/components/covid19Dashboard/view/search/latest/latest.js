@@ -92,6 +92,8 @@ export default function Latest(props) {
                     <div>Population: {numberWithCommas(population)}</div>
                 </Col>
             </Row>
+
+            
             
         </div>
     )

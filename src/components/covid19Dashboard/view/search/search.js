@@ -20,17 +20,12 @@ export default function Search(props) {
     }
 
     const {data, covidTimeline, vaccineData, countryVaccine} = props
-    // console.log(countryVaccine)
-    // const filterCountry = data.filter(x => x.country === getCountry)
-
 
     // Graphs
     // console.log(covidTimeline)
     const filterCovidTimeline = covidTimeline.filter(x => x.country === getCountry && x.province === null)
     const filterCountryVaccine = countryVaccine.filter(x => x.country === getCountry)
-    // console.log(filterCovidTimeline)
-    // console.log(data)
-    console.log(getCountry)
+
   return (
             <div className='slide s3'>
                 <h2>Covid 19 Data</h2>
@@ -44,7 +39,10 @@ export default function Search(props) {
                         {!data  ? 
                             <p>Loading Search Results...</p>
                         :
+                            
                             <Latest data={data} country={getCountry} countryVaccine={filterCountryVaccine}/>
+                            
+                            
                         }
                     
                     

@@ -266,7 +266,9 @@ Javascript:
                 ☐ Add more info and format
               ☐ 2nd Section - Graphs - Timeline Data
                   ☐ Add more info and format 
-            ☐ There's a lot of conditional operation going on. I think it's all necessary because of the variety and quality of data i have, but it's still a bit complicated at certain points as to what is being shown and what isn't.
+            ✔ There's a lot of conditional operation going on. I think it's all necessary because of the variety and quality of data i have, but it's still a bit complicated at certain points as to what is being shown and what isn't. @done(17:41 - 01/06/22)
+            ☐ I need to move the graphs into latest.js because that's where it should be. You will never get a graph without a country which is determined in the lasest stats file.
+              ☐ I'm realising my file structure is a bit of a mess. I think i need to do a bit of reorganising. The current search.js should be a container for a latest.js file(renamed to searchView.js) that contains the current latest.js and the graph.js components.
               
 
           ✔ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library @done(16:27 - 31/05/22)
