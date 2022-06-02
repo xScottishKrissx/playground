@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import './latest.css'
 import loadingGif from '../../../assets/loading.gif'
+import Graph from '../graphs/graph';
 export default function Latest(props) {    
 
     // const [loading, setLoading] = useState()
@@ -10,14 +11,14 @@ export default function Latest(props) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     }
 
-    const {data,country, countryVaccine} = props
+    const {data,country, countryVaccine, covidTimeline} = props
     const filterCountry = data.filter(x => x.country === country)
     const getCountry = filterCountry[0]
     // console.log(filterCountry[0])
 
     // Don't return anything while user is typing
     if(!getCountry)return (
-        <h1>searching for a match...  <img src={loadingGif} /></h1>
+        <h1>searching for a match...  <img alt="results are loading" src={loadingGif} /></h1>
     )
     
     const {
@@ -36,7 +37,7 @@ export default function Latest(props) {
         criticalPerOneMillion,
         active,
         activePerOneMillion,
-        updated,
+        // updated,
         population,
         countryInfo,
         continent
@@ -57,7 +58,7 @@ export default function Latest(props) {
                 <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span>
                 {/* &gt;        */}
                 <span className='fs-3' > 
-                    <img src={flag} /> 
+                    <img alt={"Flag of " + country} src={flag} /> 
                     {country} 
                 </span>
                 
@@ -93,7 +94,12 @@ export default function Latest(props) {
                 </Col>
             </Row>
 
-            
+
+            {covidTimeline.length < 1 ? 
+                <p>*Graph not available</p> 
+                : 
+                <Graph data={covidTimeline} countryVaccine={countryVaccine}/>
+            }
             
         </div>
     )

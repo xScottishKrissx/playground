@@ -1,7 +1,7 @@
 import React from 'react'
 import { useRef,useState } from 'react'
 // import { Line } from 'react-chartjs-2'
-import Graph from './graphs/graph'
+// import Graph from './graphs/graph'
 import Latest from './latest/latest'
 
 // import LineChart from './LineChart'
@@ -19,7 +19,7 @@ export default function Search(props) {
         setInput(searchBoxRef.current.value)
     }
 
-    const {data, covidTimeline, vaccineData, countryVaccine} = props
+    const {data, covidTimeline, countryVaccine} = props
 
     // Graphs
     // console.log(covidTimeline)
@@ -40,18 +40,24 @@ export default function Search(props) {
                             <p>Loading Search Results...</p>
                         :
                             
-                            <Latest data={data} country={getCountry} countryVaccine={filterCountryVaccine}/>
+                            <Latest 
+                                data={data} 
+                                country={getCountry} 
+                                countryVaccine={filterCountryVaccine}
+                                // Graph
+                                covidTimeline={filterCovidTimeline}
+                            />
                             
                             
                         }
                     
                     
                     {/* Graphs - Timeline Data */}
-                    {filterCovidTimeline.length < 1 ? 
+                    {/* {filterCovidTimeline.length < 1 ? 
                         <p>*Graph not available</p> 
                         : 
                         <Graph data={filterCovidTimeline} countryVaccine={filterCountryVaccine}/>
-                    }
+                    } */}
 
                     </div>
             </div>
