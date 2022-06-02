@@ -1,13 +1,9 @@
 import React from 'react'
 import { useRef,useState } from 'react'
 import './search.css'
-// import { Line } from 'react-chartjs-2'
-// import Graph from './graphs/graph'
+
 import Latest from './latest/latest'
 import Loading from '../loading'
-
-// import LineChart from './LineChart'
-
 
 export default function Search(props) {
     const searchBoxRef = useRef()

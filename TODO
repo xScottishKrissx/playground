@@ -275,12 +275,14 @@ Javascript:
               ✔ Improve the loading gif @done(17:57 - 02/06/22)
                 ✔ ..by getting a better image @done(17:57 - 02/06/22)
                 ✔ ..by spinning off into its own component. @done(17:44 - 02/06/22)
-              ☐ Improve performance on smaller windows
+              ✔ Improve performance on smaller windows @done(18:05 - 02/06/22)
                 ✔ ..Desktop is fine @done(17:29 - 02/06/22)
-                ☐ ..tablet
-                  ☐ the disclaimer gets lost at the bottom of the page
-                ☐ ..mobile is fine as long as the dislcaimer gets fixed
+                ✔ ..tablet @done(18:05 - 02/06/22)
+                  ✔ the disclaimer gets lost at the bottom of the page @done(18:05 - 02/06/22)
+                ✔ ..mobile is fine as long as the dislcaimer gets fixed @done(18:05 - 02/06/22)
               ☐ Add an updated field to the slide
+              ✔ the latest stats display should have it's own component @done(18:17 - 02/06/22)
+                .. it's taking a lot of space
 
           ✔ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library @done(16:27 - 31/05/22)
           SimpleChart Side Project:

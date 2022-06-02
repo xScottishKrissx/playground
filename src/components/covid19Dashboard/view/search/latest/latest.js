@@ -1,15 +1,10 @@
 import React from 'react'
-import { Row, Col } from 'react-bootstrap'
+
 import './latest.css'
 import Graph from '../graphs/graph';
 import Loading from '../../loading';
+import LatestStatsDisplay from './latestStatsDisplay/latestStatsDisplay';
 export default function Latest(props) {    
-
-    // const [loading, setLoading] = useState()
-
-    function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
 
     const {data,country, countryVaccine, covidTimeline} = props
     const filterCountry = data.filter(x => x.country === country)
@@ -21,34 +16,10 @@ export default function Latest(props) {
     // Don't return anything while user is typing
     if(!getCountry) return  <Loading content="searching for a match..."/>;
     
-    const {
-        todayCases, 
-        cases,
-        casesPerOneMillion, 
-        todayDeaths, 
-        deaths, 
-        deathsPerOneMillion, 
-        todayRecovered,
-        recovered,
-        recoveredPerOneMillion,
-        tests,
-        testsPerOneMillion,
-        critical,
-        criticalPerOneMillion,
-        active,
-        activePerOneMillion,
-        population,
-        continent,
-        countryInfo,
-        updated
-    } = getCountry
-
+    const {continent, countryInfo, updated } = getCountry
     const {flag} = countryInfo
     console.log(updated)
 
-    const getVaccineData = countryVaccine[0].timeline
-    let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
-    const totalVaccines = getVaccineTimeline.reverse()[0].number
 
     // Converting object array to be used for map
     // const getThing = Object.entries(getCountry).map(([point1, point2]) => ({point1, point2}))
@@ -63,142 +34,16 @@ export default function Latest(props) {
     
     return (
         <div className='covid19Dashboard__latestContainer'>
-            
-            
-        
+
             <div className='locationInfo'>
                 <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span>
-                {/* &gt;        */}
                 <span className='fs-3' > 
                     <img alt={"Flag of " + country} src={flag} /> 
                     {country} 
                 </span>
-                
             </div>
 
-            <Row className='latestStatsDisplay text-center align-items-center'>
-                <Col lg={6}>
-                    
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
-                                <h6>Todays Case</h6> 
-                                <p>{numberWithCommas(todayCases)}</p>
-                            </div>
-                            <div>
-                                <h6>Total Cases </h6>
-                                <p>{numberWithCommas(cases)}</p>
-                            </div>
-
-                            <div>
-                                <h6>Cases Per Million</h6> 
-                                <p>{numberWithCommas(casesPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-
-                    
-                    <Col>
-
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
-                                <h6>Todays Deaths</h6> 
-                                <p>{numberWithCommas(todayDeaths)}</p>
-                            </div>
-                            <div>
-                                <h6>Total Deaths</h6> 
-                                <p>{numberWithCommas(deaths)}</p>
-                            </div>
-
-                            <div>
-                                <h6>Deaths Per Million</h6>
-                                <p>{numberWithCommas(deathsPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-                    
-                    <Col>                    
-
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
-                                <h6>Recovered Today</h6> 
-                                <p>{numberWithCommas(todayRecovered)}</p>
-                            </div>
-
-                            <div>
-                                <h6>Total Recovered</h6>
-                                <p>{numberWithCommas(recovered)}</p>
-                            </div>
-
-                            <div>
-                                <h6>Recovered Per Million</h6> 
-                                <p>{numberWithCommas(recoveredPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-
-
-                </Col>
-                
-                <Col lg={6}>
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
-                                <h6>Total Tests </h6>
-                                <p>{numberWithCommas(tests)}</p>
-                            </div>
-
-                            <div>
-                                <h6>Tests Per Million</h6>
-                                <p>{numberWithCommas(testsPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
-                                <h6>Critical </h6>
-                                <p>{numberWithCommas(critical)}</p>
-                            </div>
-                            <div>
-                                <h6>Critical Per Million</h6> 
-                                <p>{numberWithCommas(criticalPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
-                                <h6>Active</h6>
-                                <p>{numberWithCommas(active)}</p>
-                            </div>
-
-                            <div>
-                                <h6>Active Per Million</h6>
-                                <p>{numberWithCommas(activePerOneMillion)}</p>
-                            </div> 
-                        </div>
-                    </Col>
-
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
-                                <h6>Total Vaccines</h6> 
-                                <p>{numberWithCommas(totalVaccines)}</p>
-                            </div>
-
-                            <div>
-                                <h6>Population</h6>
-                                <p>{numberWithCommas(population)}</p>
-                            </div> 
-                        </div>
-                    </Col>
-
-                </Col>
-            </Row>
-
+            <LatestStatsDisplay data={data} country={country} countryVaccine={countryVaccine}/>
 
             {covidTimeline.length < 1 ? 
                 <p className='ps-2 text-muted'>Graph not available</p> 
@@ -206,7 +51,7 @@ export default function Latest(props) {
                 <Graph data={covidTimeline} countryVaccine={countryVaccine}/>
             }
 
-            <div>
+            <div className='latestStats__disclaimer'>
                 <h6 className='ps-2 text-muted'>Disclaimer</h6>
                 <p className='text-muted fs-6 ps-3 pe-3'>Countries submit their data at different times, formats and level of detail. This is why certain countries will report 0 cases(despite their still being cases) and some countries don't have graphs. </p>
             </div>
