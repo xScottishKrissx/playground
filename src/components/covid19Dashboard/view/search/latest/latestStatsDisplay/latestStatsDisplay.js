@@ -17,7 +17,7 @@ export default function LatestStatsDisplay(props) {
 
     // Don't return anything while user is typing
     if(!getCountry) return  <Loading content="searching for a match..."/>;
-    
+
     const {
         todayCases, 
         cases,
@@ -41,6 +41,8 @@ export default function LatestStatsDisplay(props) {
     const getVaccineData = countryVaccine[0].timeline
     let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
     const totalVaccines = getVaccineTimeline.reverse()[0].number
+
+    
 
   return (
     <Row className='latestStatsDisplay text-center align-items-center'>
