@@ -1,8 +1,8 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import './latest.css'
-import loadingGif from '../../../assets/loading.gif'
 import Graph from '../graphs/graph';
+import Loading from '../../loading';
 export default function Latest(props) {    
 
     // const [loading, setLoading] = useState()
@@ -19,12 +19,7 @@ export default function Latest(props) {
 
 
     // Don't return anything while user is typing
-    if(!getCountry)return (
-        <div className='searchResultsLoading'>
-            <p>searching for a match... </p>
-            <img alt="results are loading" src={loadingGif} />
-        </div>
-    )
+    if(!getCountry) return  <Loading content="searching for a match..."/>;
     
     const {
         todayCases, 
@@ -44,11 +39,13 @@ export default function Latest(props) {
         activePerOneMillion,
         population,
         continent,
-        countryInfo
+        countryInfo,
+        updated
     } = getCountry
 
     const {flag} = countryInfo
-    
+    console.log(updated)
+
     const getVaccineData = countryVaccine[0].timeline
     let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
     const totalVaccines = getVaccineTimeline.reverse()[0].number

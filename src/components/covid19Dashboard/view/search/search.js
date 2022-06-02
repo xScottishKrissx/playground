@@ -4,6 +4,7 @@ import './search.css'
 // import { Line } from 'react-chartjs-2'
 // import Graph from './graphs/graph'
 import Latest from './latest/latest'
+import Loading from '../loading'
 
 // import LineChart from './LineChart'
 
@@ -30,6 +31,7 @@ export default function Search(props) {
   return (
             <div className='slide s3'>
                     
+                    {/* Search.js header */}
                     <div className='searchInputArea d-flex align-items-center'>
                         <h2 className='ms-3 me-3'>Country Lookup</h2>
                         <form className='w-100'>
@@ -37,11 +39,11 @@ export default function Search(props) {
                         </form>
                     </div>
 
+                    {/* Search.js content  */}
                     <div className='searchResultsArea'>
                         {!data  ? 
-                            <p>Loading Search Results...</p>
+                            <Loading content="loading search results..." />
                         :
-                            
                             <Latest 
                                 data={data} 
                                 country={getCountry} 
@@ -49,18 +51,7 @@ export default function Search(props) {
                                 // Graph
                                 covidTimeline={filterCovidTimeline}
                             />
-                            
-                            
                         }
-                    
-                    
-                    {/* Graphs - Timeline Data */}
-                    {/* {filterCovidTimeline.length < 1 ? 
-                        <p>*Graph not available</p> 
-                        : 
-                        <Graph data={filterCovidTimeline} countryVaccine={filterCountryVaccine}/>
-                    } */}
-
                     </div>
             </div>
   )

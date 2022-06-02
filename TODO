@@ -213,19 +213,19 @@ Javascript:
     Step 2: Draw the rest of the rabbit:
       ✔ The data is constantly being called, how do i call it once? @done(11:15 - 12/05/22)
         .. add an empty dependency array in the use effect --> []
-      ☐ console logging the data will return an error
-      ☐ You can't map an object with a single value, that will return an error
+      console logging the data will return an error
+      You can't map an object with a single value, that will return an error
       ✔ How about incorporating the simple slider ui here, having 3 different slides for each of the content @done(16:17 - 17/05/22)
         1.. for the stats, 2.. for the map, 3.. for the graphs
-      ☐ Figure out how to add data in array together
+      Figure out how to add data in array together
       ✔ Having multiple fetches is probably not the best, figure out how to make a single function that fetches all URLS needed without having 40+ lines of code very similiar lines of code. @done(13:11 - 18/05/22)
         ✔ Pretty simply solved by using the Promise.all method. @done(13:11 - 18/05/22)
 
         Todo:
           UI.. 
           ✔ Global Stats Info @done(13:30 - 19/05/22)
-          ☐ Map
-            ☐ Learn how to integrate maps
+          Map:
+            ✔ Learn how to integrate maps @done(17:23 - 02/06/22)
             
             ..https://egghead.io/lessons/react-add-geojson-location-data-to-a-map-using-markers-and-popups-in-react-leaflet
             .. very relevant to what I want
@@ -235,18 +235,18 @@ Javascript:
             .. might also be useful for searching the map
             .. i think it's out of date, but a good starting point
 
-            ☐ Look up destructuring in Js/React
+            ✔ Look up destructuring in Js/React @done(17:23 - 02/06/22)
               ..https://medium.com/@lcriswell/destructuring-props-in-react-b1c295005ce0
-              ☐ Ok its not that complicated. It's just a simpler way of getting information from an array.
-              ☐ For example, instead of doing something 
+              Ok its not that complicated. It's just a simpler way of getting information from an array.
+              For example, instead of doing something 
                 const name = props.name
                 const id = props.id
                 const age = props.id
-              ☐ you can do..
+              you can do..
                 const {name, id, age} = props
-              ☐ and just use name, id and age without the props. part.
-            ☐ So, be sure to change this in the covid 19 dashboard and to use this moving forward.
-            ☐ THe search box needs to be reworked. The data can be downloaded and loaded inside the search.js component rather than being set in the main Covid19Dashboard
+              and just use name, id and age without the props. part.
+            So, be sure to change this in the covid 19 dashboard and to use this moving forward.
+            ✔ THe search box needs to be reworked. The data can be downloaded and loaded inside the search.js component rather than being set in the main Covid19Dashboard @done(17:23 - 02/06/22)
             ☐ Format Tooltips
             ☐ Format markers
             ☐ Search for country and fly to it.
@@ -255,24 +255,32 @@ Javascript:
           
         ☐ Graphs (search.js)
           Goal:
-            ☐ You can search a country and get a chart visualising various pieces of data from that country
+            ✔ You can search a country and get a chart visualising various pieces of data from that country @done(17:24 - 02/06/22)
             Notes
               .. The API data isn't laid out exactly how I would like it with differences in how country data is reported eg. USA gets 1 array for 50 states, Canada gets 15 arrays for each of its provinces and the UK gets arrays for all of its overseas territories and dependencies but NOT the 4 countries that make up the UK.
               .. Short of figuring out a way of adding value in arrays to other arrays, I am just going to accept I can't have graphs for all countries that list data like this.
-          
-          Todo:
-            ☐ 2 sections
-              ✔ 1st Section - Search Box - Latest Data @done(17:22 - 02/06/22)
-                ✔ Add more info and format @done(17:22 - 02/06/22)
-                ✔ Not sure how to style this area, i am thinking about a similiar style to the total stats page but smaller more compact version. @done(17:22 - 02/06/22)
-                ✔ There's a lot of data here which is a bit of a pain to work with so I tried using a map. This get this information onto the page quickly but I have no way of customising the display. The information is displayed the way it leaves the array. I want to be able separate elements into sections and the map is to strict for this. I could probably create a number of filters to check for the correct "thing" to separate between deaths, cases, recovered etc but at that point it is probably just more efficient to hardcode all of the divs like I was doing. Which is what I am going to do. @done(17:22 - 02/06/22)
-                ✔ I am pretty happy with the latest stats section overall. @done(17:22 - 02/06/22)
-              ✔ 2nd Section - Graphs - Timeline Data @done(17:22 - 02/06/22)
+
+              ✔ 2 sections @done(17:30 - 02/06/22)
+                ✔ 1st Section - Search Box - Latest Data @done(17:22 - 02/06/22)
                   ✔ Add more info and format @done(17:22 - 02/06/22)
-            ✔ There's a lot of conditional operation going on. I think it's all necessary because of the variety and quality of data i have, but it's still a bit complicated at certain points as to what is being shown and what isn't. @done(17:41 - 01/06/22)
-            ✔ I need to move the graphs into latest.js because that's where it should be. You will never get a graph without a country which is determined in the lasest stats file. @done(13:19 - 02/06/22)
-              ✔ I'm realising my file structure is a bit of a mess. I think i need to do a bit of reorganising. The current search.js should be a container for a latest.js file(renamed to searchView.js) that contains the current latest.js and the graph.js components. @done(13:19 - 02/06/22)
+                  ✔ Not sure how to style this area, i am thinking about a similiar style to the total stats page but smaller more compact version. @done(17:22 - 02/06/22)
+                  ✔ There's a lot of data here which is a bit of a pain to work with so I tried using a map. This get this information onto the page quickly but I have no way of customising the display. The information is displayed the way it leaves the array. I want to be able separate elements into sections and the map is to strict for this. I could probably create a number of filters to check for the correct "thing" to separate between deaths, cases, recovered etc but at that point it is probably just more efficient to hardcode all of the divs like I was doing. Which is what I am going to do. @done(17:22 - 02/06/22)
+                  ✔ I am pretty happy with the latest stats section overall. @done(17:22 - 02/06/22)
+                ✔ 2nd Section - Graphs - Timeline Data @done(17:22 - 02/06/22)
+                    ✔ Add more info and format @done(17:22 - 02/06/22)
+              ✔ There's a lot of conditional operation going on. I think it's all necessary because of the variety and quality of data i have, but it's still a bit complicated at certain points as to what is being shown and what isn't. @done(17:41 - 01/06/22)
+              ✔ I need to move the graphs into latest.js because that's where it should be. You will never get a graph without a country which is determined in the lasest stats file. @done(13:19 - 02/06/22)
+                ✔ I'm realising my file structure is a bit of a mess. I think i need to do a bit of reorganising. The current search.js should be a container for a latest.js file(renamed to searchView.js) that contains the current latest.js and the graph.js components. @done(13:19 - 02/06/22)
               
+              ✔ Improve the loading gif @done(17:57 - 02/06/22)
+                ✔ ..by getting a better image @done(17:57 - 02/06/22)
+                ✔ ..by spinning off into its own component. @done(17:44 - 02/06/22)
+              ☐ Improve performance on smaller windows
+                ✔ ..Desktop is fine @done(17:29 - 02/06/22)
+                ☐ ..tablet
+                  ☐ the disclaimer gets lost at the bottom of the page
+                ☐ ..mobile is fine as long as the dislcaimer gets fixed
+              ☐ Add an updated field to the slide
 
           ✔ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library @done(16:27 - 31/05/22)
           SimpleChart Side Project:
