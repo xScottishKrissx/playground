@@ -20,7 +20,10 @@ export default function Latest(props) {
 
     // Don't return anything while user is typing
     if(!getCountry)return (
-        <h1>searching for a match...  <img alt="results are loading" src={loadingGif} /></h1>
+        <div className='searchResultsLoading'>
+            <p>searching for a match... </p>
+            <img alt="results are loading" src={loadingGif} />
+        </div>
     )
     
     const {
@@ -40,10 +43,11 @@ export default function Latest(props) {
         active,
         activePerOneMillion,
         population,
-        continent
+        continent,
+        countryInfo
     } = getCountry
 
-    // const {flag} = countryInfo
+    const {flag} = countryInfo
     
     const getVaccineData = countryVaccine[0].timeline
     let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
@@ -69,7 +73,7 @@ export default function Latest(props) {
                 <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span>
                 {/* &gt;        */}
                 <span className='fs-3' > 
-                    {/* <img alt={"Flag of " + country} src={flag} />  */}
+                    <img alt={"Flag of " + country} src={flag} /> 
                     {country} 
                 </span>
                 
@@ -78,13 +82,12 @@ export default function Latest(props) {
             <Row className='latestStatsDisplay text-center align-items-center'>
                 <Col lg={6}>
                     
-                    <Col id="latestCases">
-                        <div>
-                            <h6>Todays Case</h6> 
-                            <p>{numberWithCommas(todayCases)}</p>
-                        </div>
-
+                    <Col>
                         <div className='d-flex align-items-center justify-content-evenly'>
+                            <div>
+                                <h6>Todays Case</h6> 
+                                <p>{numberWithCommas(todayCases)}</p>
+                            </div>
                             <div>
                                 <h6>Total Cases </h6>
                                 <p>{numberWithCommas(cases)}</p>
@@ -98,13 +101,13 @@ export default function Latest(props) {
                     </Col>
 
                     
-                    <Col id="latestDeaths">
-                        <div>
-                            <h6>Todays Deaths</h6> 
-                            <p>{numberWithCommas(todayDeaths)}</p>
-                        </div>
+                    <Col>
 
                         <div className='d-flex align-items-center justify-content-evenly'>
+                            <div>
+                                <h6>Todays Deaths</h6> 
+                                <p>{numberWithCommas(todayDeaths)}</p>
+                            </div>
                             <div>
                                 <h6>Total Deaths</h6> 
                                 <p>{numberWithCommas(deaths)}</p>
@@ -118,12 +121,13 @@ export default function Latest(props) {
                     </Col>
                     
                     <Col>                    
-                        <div>
-                            <h6>Recovered Today</h6> 
-                            <p>{numberWithCommas(todayRecovered)}</p>
-                        </div>
 
                         <div className='d-flex align-items-center justify-content-evenly'>
+                            <div>
+                                <h6>Recovered Today</h6> 
+                                <p>{numberWithCommas(todayRecovered)}</p>
+                            </div>
+
                             <div>
                                 <h6>Total Recovered</h6>
                                 <p>{numberWithCommas(recovered)}</p>
@@ -143,7 +147,7 @@ export default function Latest(props) {
                     <Col>
                         <div className='d-flex align-items-center justify-content-evenly'>
                             <div>
-                                <h6>Total Tests: </h6>
+                                <h6>Total Tests </h6>
                                 <p>{numberWithCommas(tests)}</p>
                             </div>
 
@@ -157,7 +161,7 @@ export default function Latest(props) {
                     <Col>
                         <div className='d-flex align-items-center justify-content-evenly'>
                             <div>
-                                <h6>Critical: </h6>
+                                <h6>Critical </h6>
                                 <p>{numberWithCommas(critical)}</p>
                             </div>
                             <div>
@@ -194,27 +198,21 @@ export default function Latest(props) {
                             </div> 
                         </div>
                     </Col>
-    
-                    
-                        
-
-                    
-
-
-
-                    
-
-
 
                 </Col>
             </Row>
 
 
             {covidTimeline.length < 1 ? 
-                <p>*Graph not available</p> 
+                <p className='ps-2 text-muted'>Graph not available</p> 
                 : 
                 <Graph data={covidTimeline} countryVaccine={countryVaccine}/>
             }
+
+            <div>
+                <h6 className='ps-2 text-muted'>Disclaimer</h6>
+                <p className='text-muted fs-6 ps-3 pe-3'>Countries submit their data at different times, formats and level of detail. This is why certain countries will report 0 cases(despite their still being cases) and some countries don't have graphs. </p>
+            </div>
             
         </div>
     )

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useRef,useState } from 'react'
+import './search.css'
 // import { Line } from 'react-chartjs-2'
 // import Graph from './graphs/graph'
 import Latest from './latest/latest'
@@ -28,14 +29,15 @@ export default function Search(props) {
 
   return (
             <div className='slide s3'>
-                <h2>Covid 19 Data</h2>
-                    <div>
-                        <form>
-                            <input ref={searchBoxRef} placeholder='search...' onChange={()=>getInput()}/>
+                    
+                    <div className='searchInputArea d-flex align-items-center'>
+                        <h2 className='ms-3 me-3'>Country Lookup</h2>
+                        <form className='w-100'>
+                            <input className='w-100' ref={searchBoxRef} placeholder='search...' onChange={()=>getInput()}/>
                         </form>
                     </div>
 
-                    <div>
+                    <div className='searchResultsArea'>
                         {!data  ? 
                             <p>Loading Search Results...</p>
                         :

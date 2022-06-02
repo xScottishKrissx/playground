@@ -22,15 +22,19 @@
 
 }
 
-.latestStatsDisplay > div > .col > div{
-    /* outline: none !important */
+.latestStatsDisplay > div > .col {
     margin-bottom: 10px;
 }
-
+.latestStatsDisplay > div > .col > div{
+    outline: none !important;
+    
+}
 .latestStatsDisplay > div > .col > div > h6, 
 .latestStatsDisplay > div > .col > div > div > h6{
     color: grey;
     margin: 0;
+    min-width: 150px;
+    /* outline: 1px solid; */
 }
 
 
@@ -42,3 +46,28 @@
 
 /*  */
 
+/* covid19Dashboard__graphContainer p-4 */
+@media screen and (max-width:768px){
+
+    .latestStatsDisplay > div > .col > div{
+        outline: none !important;
+        flex-wrap: wrap;
+    }
+
+    .covid19Dashboard__graphContainer{
+        display: none;
+    }
+}
+
+/* Loading */
+
+.searchResultsLoading{
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    /* outline: 1px solid red; */
+}
+
+.searchResultsLoading p{
+    font-size: 1.5rem;
+}

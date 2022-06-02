@@ -1,0 +1,30 @@
+.searchInputArea{
+border-bottom:1px solid #ffffff1a ;
+}
+
+.searchInputArea h2{
+    font-size: 1.75rem;
+    margin: 0;
+        /* margin-right: 10px; */
+        /* margin-left: 10px; */
+    /* text-align: center; */
+    white-space: nowrap;
+}
+
+.searchInputArea form{
+
+}
+
+.searchInputArea form input{
+    background-color: #2a2e32;
+    border: none !important;
+    color: white;
+    height: 60px;
+}
+
+.searchInputArea form :focus-visible{
+    border: 0px;
+    outline: 0px ;
+}
+
+

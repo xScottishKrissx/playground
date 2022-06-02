@@ -45,13 +45,13 @@ export default function Graph(props) {
     return (
         <div className='covid19Dashboard__graphContainer p-4'>
             <Row className='d-flex' lg={12}>
-                <Col lg={4}>
+                <Col md={4} sm={12}>
                     <Line data={chartData} />
                 </Col>
-                <Col lg={4} >
+                <Col md={4} sm={12}>
                     <Line data={deathData} />
                 </Col>
-                <Col lg={4} >
+                <Col md={4} sm={12}>
                     <Line data={vaccineData} />
                 </Col>
             </Row>
