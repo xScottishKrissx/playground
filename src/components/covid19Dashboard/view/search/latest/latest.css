@@ -22,8 +22,23 @@
 
 }
 
+.latestStatsDisplay > div > .col > div{
+    /* outline: none !important */
+    margin-bottom: 10px;
+}
+
+.latestStatsDisplay > div > .col > div > h6, 
+.latestStatsDisplay > div > .col > div > div > h6{
+    color: grey;
+    margin: 0;
+}
 
 
+.latestStatsDisplay > div > .col > div > p, 
+.latestStatsDisplay > div > .col > div > div > p{
+    color: white;
+    margin: 0;
+}
 
 /*  */
 

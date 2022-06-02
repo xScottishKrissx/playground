@@ -264,11 +264,13 @@ Javascript:
             ☐ 2 sections
               ☐ 1st Section - Search Box - Latest Data
                 ☐ Add more info and format
+                ☐ Not sure how to style this area, i am thinking about a similiar style to the total stats page but smaller more compact version.
+                ☐ There's a lot of data here which is a bit of a pain to work with so I tried using a map. This get this information onto the page quickly but I have no way of customising the display. The information is displayed the way it leaves the array. I want to be able separate elements into sections and the map is to strict for this. I could probably create a number of filters to check for the correct "thing" to separate between deaths, cases, recovered etc but at that point it is probably just more efficient to hardcode all of the divs like I was doing. Which is what I am going to do.
               ☐ 2nd Section - Graphs - Timeline Data
                   ☐ Add more info and format 
             ✔ There's a lot of conditional operation going on. I think it's all necessary because of the variety and quality of data i have, but it's still a bit complicated at certain points as to what is being shown and what isn't. @done(17:41 - 01/06/22)
-            ☐ I need to move the graphs into latest.js because that's where it should be. You will never get a graph without a country which is determined in the lasest stats file.
-              ☐ I'm realising my file structure is a bit of a mess. I think i need to do a bit of reorganising. The current search.js should be a container for a latest.js file(renamed to searchView.js) that contains the current latest.js and the graph.js components.
+            ✔ I need to move the graphs into latest.js because that's where it should be. You will never get a graph without a country which is determined in the lasest stats file. @done(13:19 - 02/06/22)
+              ✔ I'm realising my file structure is a bit of a mess. I think i need to do a bit of reorganising. The current search.js should be a container for a latest.js file(renamed to searchView.js) that contains the current latest.js and the graph.js components. @done(13:19 - 02/06/22)
               
 
           ✔ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library @done(16:27 - 31/05/22)
