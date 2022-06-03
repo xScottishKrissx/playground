@@ -281,6 +281,7 @@ Javascript:
                   ✔ the disclaimer gets lost at the bottom of the page @done(18:05 - 02/06/22)
                 ✔ ..mobile is fine as long as the dislcaimer gets fixed @done(18:05 - 02/06/22)
               ✔ Add an updated field to the slide @done(18:29 - 02/06/22)
+                ☐ create a component for this
               ✔ the latest stats display should have it's own component @done(18:17 - 02/06/22)
                 .. it's taking a lot of space
 

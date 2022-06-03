@@ -3,6 +3,7 @@ import React from 'react'
 import './totalStats.css'
 
 import { Container, Row, Col } from 'react-bootstrap'
+import Updated from '../updated'
 
 export default function TotalStats(props) {
   // const data = props.data
@@ -176,7 +177,8 @@ export default function TotalStats(props) {
               </div>
             </Col>
           </Row>
-          <p>Updated: {updated}</p>
+          {/* <p>Updated: {updated}</p> */}
+          <p className='text-muted ps-3'>Updated: <Updated updated={updated} /></p>
         </div>
       </div> 
     }

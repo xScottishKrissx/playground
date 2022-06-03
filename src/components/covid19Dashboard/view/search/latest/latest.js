@@ -4,6 +4,7 @@ import './latest.css'
 import Graph from '../graphs/graph';
 import Loading from '../../loading';
 import LatestStatsDisplay from './latestStatsDisplay/latestStatsDisplay';
+import Updated from '../../updated';
 export default function Latest(props) {    
 
     const {data,country, countryVaccine, covidTimeline} = props
@@ -21,11 +22,11 @@ export default function Latest(props) {
     // console.log(updated)
 
 
-    // Updated
-    const dateOptions = {hour:"numeric", minute:"numeric", day:"numeric", year: 'numeric', month: 'long', }
-    let myDate = new Date(updated)
-    const joinDate = myDate.toLocaleDateString('en-GB', dateOptions)
-    // console.log(joinDate)
+    // // Updated
+    // const dateOptions = {hour:"numeric", minute:"numeric", day:"numeric", year: 'numeric', month: 'long', }
+    // let myDate = new Date(updated)
+    // const joinDate = myDate.toLocaleDateString('en-GB', dateOptions)
+    // // console.log(joinDate)
 
 
 
@@ -49,7 +50,8 @@ export default function Latest(props) {
                     <img alt={"Flag of " + country} src={flag} /> 
                     {country}
                 </span>
-            <span className='ms-5 fs-6 text-muted'>Updated: {joinDate}</span>
+            
+            <span className='ms-5 fs-6 text-muted'>Updated: <Updated updated={updated} /></span> 
             </div>
 
             <LatestStatsDisplay data={data} country={country} countryVaccine={countryVaccine}/>
