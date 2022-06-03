@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState } from 'react';
 
 import './latest.css'
 import Graph from '../graphs/graph';
@@ -7,7 +8,10 @@ import LatestStatsDisplay from './latestStatsDisplay/latestStatsDisplay';
 import Updated from '../../updated';
 export default function Latest(props) {    
 
-    const {data,country, countryVaccine, covidTimeline} = props
+
+    const [isFav, setFav] = useState(props.currentDefault)
+
+    const {data,country, countryVaccine, covidTimeline, setNewCountry} = props
     const filterCountry = data.filter(x => x.country === country)
     const getCountry = filterCountry[0]
     // Deleting an object from object array
@@ -19,16 +23,6 @@ export default function Latest(props) {
     
     const {continent, countryInfo, updated } = getCountry
     const {flag} = countryInfo
-    // console.log(updated)
-
-
-    // // Updated
-    // const dateOptions = {hour:"numeric", minute:"numeric", day:"numeric", year: 'numeric', month: 'long', }
-    // let myDate = new Date(updated)
-    // const joinDate = myDate.toLocaleDateString('en-GB', dateOptions)
-    // // console.log(joinDate)
-
-
 
     // Converting object array to be used for map
     // const getThing = Object.entries(getCountry).map(([point1, point2]) => ({point1, point2}))
@@ -41,14 +35,32 @@ export default function Latest(props) {
     //     )
     // })
     
+    const setNewDefault = () =>{ 
+        setNewCountry(country) 
+        setFav(country)
+    }
+
+
+
+    // console.log(country, props.currentDefault)
+
     return (
         <div className='covid19Dashboard__latestContainer'>
 
             <div className='locationInfo'>
                 <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span>
-                <span className='fs-3' > 
-                    <img alt={"Flag of " + country} src={flag} /> 
-                    {country}
+                <span className='countryName fs-3' > 
+
+                    <button onClick={setNewDefault}>
+                        {isFav === country ? 
+                            <span class="material-icons">star</span> : 
+                            <span class="material-icons">star_border</span>
+                        }
+                    </button>
+
+
+                    <span className='ms-1'>{country}</span>
+                    {/* <img alt={"Flag of " + country} src={flag} />  */}
                 </span>
             
             <span className='ms-5 fs-6 text-muted'>Updated: <Updated updated={updated} /></span> 

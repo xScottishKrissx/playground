@@ -281,9 +281,14 @@ Javascript:
                   ✔ the disclaimer gets lost at the bottom of the page @done(18:05 - 02/06/22)
                 ✔ ..mobile is fine as long as the dislcaimer gets fixed @done(18:05 - 02/06/22)
               ✔ Add an updated field to the slide @done(18:29 - 02/06/22)
-                ☐ create a component for this
+                ✔ create a component for this @done(15:36 - 03/06/22)
               ✔ the latest stats display should have it's own component @done(18:17 - 02/06/22)
                 .. it's taking a lot of space
+              ☐ The ability to change the starting country from the UK
+                .. i feel like this is pretty easily done using local storage.
+                  ..yup
+                  ☐ Added the button, now just to finish of styling
+              
 
           ✔ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library @done(16:27 - 31/05/22)
           SimpleChart Side Project:

@@ -6,15 +6,25 @@ import Latest from './latest/latest'
 import Loading from '../loading'
 
 export default function Search(props) {
+
+    // Local Storage
+    const usersFavCountry = localStorage.getItem("favCountry")
+    // console.log(usersFavCountry)
+
     const searchBoxRef = useRef()
     const [input,setInput] = useState()
 
+
     // Starting Country
-    const startingCountry = "UK"
+    const startingCountry = usersFavCountry || "UK"
     const getCountry =  input || startingCountry
 
     const getInput = () =>{
         setInput(searchBoxRef.current.value)
+    }
+
+    const setNewCountry = (x) => {
+        localStorage.setItem("favCountry", x)
     }
 
     const {data, covidTimeline, countryVaccine} = props
@@ -46,6 +56,8 @@ export default function Search(props) {
                                 countryVaccine={filterCountryVaccine}
                                 // Graph
                                 covidTimeline={filterCovidTimeline}
+                                setNewCountry={setNewCountry}
+                                currentDefault={startingCountry}
                             />
                         }
                     </div>
