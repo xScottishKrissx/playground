@@ -21,6 +21,20 @@
 #locationInfo__population{
 
 }
+#unstar{
+    opacity: 0.5;
+}
+#star{
+    animation: showStarAni 0.75s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes showStarAni{
+    0%{opacity: 0.5; transform: translateY(0);}
+    20%{transform: translateY(-5px);}
+    100%{opacity: 100; transform: translateY(0);}
+}
 
 .countryName{
     display: flex;

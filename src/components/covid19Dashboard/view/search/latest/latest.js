@@ -53,8 +53,8 @@ export default function Latest(props) {
 
                     <button onClick={setNewDefault}>
                         {isFav === country ? 
-                            <span class="material-icons">star</span> : 
-                            <span class="material-icons">star_border</span>
+                            <span id="star" className="material-icons">star</span> : 
+                            <span id="unstar" className="material-icons">star_border</span>
                         }
                     </button>
 
