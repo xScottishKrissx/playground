@@ -1,0 +1,11 @@
+.buttonWrapper button{
+    border: none;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+}
+
+.buttonWrapper button span{
+    width: 100px;
+    /* background-color: red; */
+}

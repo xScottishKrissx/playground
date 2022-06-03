@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
+
+import './buttons.css'
 export default function ControlButtons(props) {
 
         // Controls
@@ -31,8 +33,8 @@ export default function ControlButtons(props) {
 
   return (
     <div className='buttonWrapper'>
-        <button onClick={()=>next()}>Next</button>
-        <button onClick={()=>prev()}>Prev</button>
+        <button onClick={()=>prev()}><span class="material-icons">navigate_before</span></button>
+        <button onClick={()=>next()}><span class="material-icons">navigate_next</span></button>
     </div>
   )
 }

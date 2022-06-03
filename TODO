@@ -305,6 +305,7 @@ Javascript:
       
         ☐ Style / reformat buttons
           ..they work but the current styling can be improved.
+          ☐ first off all, swap them around. they're very annoying to use
 
   ☐ Drag and Drop functionality
   ☐ Something with react leaflet and maps

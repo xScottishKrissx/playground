@@ -34,7 +34,7 @@ export default function Search(props) {
     const filterCovidTimeline = covidTimeline.filter(x => 
         x.country.toLowerCase() === getCountry.toLowerCase()
         && x.province === null)
-    console.log(filterCovidTimeline)
+    // console.log(filterCovidTimeline)
 
     const filterCountryVaccine = countryVaccine.filter(x => x.country.toLowerCase() === getCountry.toLowerCase())
 
