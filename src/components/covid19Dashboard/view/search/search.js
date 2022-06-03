@@ -31,8 +31,12 @@ export default function Search(props) {
 
     // Graphs
     // console.log(covidTimeline)
-    const filterCovidTimeline = covidTimeline.filter(x => x.country === getCountry && x.province === null)
-    const filterCountryVaccine = countryVaccine.filter(x => x.country === getCountry)
+    const filterCovidTimeline = covidTimeline.filter(x => 
+        x.country.toLowerCase() === getCountry.toLowerCase()
+        && x.province === null)
+    console.log(filterCovidTimeline)
+
+    const filterCountryVaccine = countryVaccine.filter(x => x.country.toLowerCase() === getCountry.toLowerCase())
 
   return (
             <div className='slide s3'>

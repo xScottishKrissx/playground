@@ -12,14 +12,14 @@ export default function Latest(props) {
     const [isFav, setFav] = useState(props.currentDefault)
 
     const {data,country, countryVaccine, covidTimeline, setNewCountry} = props
-    const filterCountry = data.filter(x => x.country === country)
+    const filterCountry = data.filter(x => x.country.toLowerCase() === country.toLowerCase())
     const getCountry = filterCountry[0]
     // Deleting an object from object array
     // delete getCountry.countryInfo
 
 
     // Don't return anything while user is typing
-    if(!getCountry) return  <Loading content="searching for a match..."/>;
+    if(!getCountry) return  <Loading content="latest js..."/>;
     
     const {continent, countryInfo, updated } = getCountry
     const {flag} = countryInfo
@@ -52,14 +52,14 @@ export default function Latest(props) {
                 <span className='countryName fs-3' > 
 
                     <button onClick={setNewDefault}>
-                        {isFav === country ? 
+                        {isFav.toLowerCase() === country.toLowerCase() ? 
                             <span id="star" className="material-icons">star</span> : 
                             <span id="unstar" className="material-icons">star_border</span>
                         }
                     </button>
 
 
-                    <span className='ms-1'>{country}</span>
+                    <span className='ms-1'>{country.toUpperCase()}</span>
                     {/* <img alt={"Flag of " + country} src={flag} />  */}
                 </span>
             

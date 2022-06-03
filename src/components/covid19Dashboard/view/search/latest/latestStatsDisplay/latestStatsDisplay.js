@@ -12,11 +12,11 @@ export default function LatestStatsDisplay(props) {
 
     const {data, country, countryVaccine} = props
 
-    const filterCountry = data.filter(x => x.country === country)
+    const filterCountry = data.filter(x => x.country.toLowerCase() === country.toLowerCase())
     const getCountry = filterCountry[0]
 
     // Don't return anything while user is typing
-    if(!getCountry) return  <Loading content="searching for a match..."/>;
+    if(!getCountry) return  <Loading content="latest stats display..."/>;
 
     const {
         todayCases, 
