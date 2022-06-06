@@ -33,8 +33,8 @@ export default function ControlButtons(props) {
 
   return (
     <div className='buttonWrapper'>
-        <button onClick={()=>prev()}><span class="material-icons">navigate_before</span></button>
-        <button onClick={()=>next()}><span class="material-icons">navigate_next</span></button>
+        <button onClick={()=>prev()}><span className="material-icons">navigate_before</span></button>
+        <button onClick={()=>next()}><span className="material-icons">navigate_next</span></button>
     </div>
   )
 }

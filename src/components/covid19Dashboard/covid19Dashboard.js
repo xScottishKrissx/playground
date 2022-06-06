@@ -26,7 +26,7 @@ export default function Covid19Dashboard() {
     const dataByGlobalVaccine = "https://disease.sh/v3/covid-19/vaccine/coverage"
     const dataByCountryVaccine = "https://disease.sh/v3/covid-19/vaccine/coverage/countries"
 
-    const test = "https://disease.sh/v3/covid-19/vaccine/coverage/countries"
+    // const test = "https://disease.sh/v3/covid-19/vaccine/coverage/countries"
 
     Promise.all([
         fetch(dataByCountry) ,

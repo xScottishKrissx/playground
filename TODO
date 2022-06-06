@@ -303,9 +303,9 @@ Javascript:
               ✔ Nothing too complicated here, you just need to get the data into the right format and it's plug and play. @done(16:28 - 31/05/22)
           
       
-        ☐ Style / reformat buttons
+        ✔ Style / reformat buttons @done(16:03 - 06/06/22)
           ..they work but the current styling can be improved.
-          ☐ first off all, swap them around. they're very annoying to use
+          ✔ first off all, swap them around. they're very annoying to use @done(16:03 - 06/06/22)
 
   ☐ Drag and Drop functionality
   ☐ Something with react leaflet and maps

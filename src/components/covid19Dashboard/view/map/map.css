@@ -5,3 +5,65 @@
 /* .s2 div{
     height: 100%;
 } */
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip{
+    background-color: red !important;
+}
+
+
+.leaflet-popup{
+    background-color: red;
+}
+
+/* Information Panel */
+.map__informationPanelWrapper{
+    background-color: black;
+    color: white;
+    display: flex;
+        align-items: center;
+        justify-content: center;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    animation: informationPanelShow .25s;
+    
+}
+
+@keyframes informationPanelShow{
+    0%{
+        opacity: 0;
+        transform: translateY(-1000px);
+    }
+
+    100%{
+        opacity: 1.0;
+        transform: translateY(0);
+    }
+}
+
+.map__informationPanelContent{
+background-color: black;
+    
+}
+/* Tablet */
+@media screen and (min-width:768px){
+    .map__informationPanelWrapper{
+        background-color: #0000006b;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width:992px){
+    .map__informationPanelWrapper{
+        background-color: black;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-left: 50px;
+        width: 40%;
+            max-width: 350px;
+    }
+    .map__informationPanelContent{
+        margin: 20px;
+    }
+}

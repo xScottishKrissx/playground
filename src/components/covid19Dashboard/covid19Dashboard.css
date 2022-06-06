@@ -32,12 +32,12 @@
 }
 
 .s2{
-    transform: translateX(200%);
+    transform: translateX(0%);
     /* background-color: green; */
 }
 
 .s3{
-    transform: translateX(0%);
+    transform: translateX(200%);
     /* background-color: blue; */
 }
 
