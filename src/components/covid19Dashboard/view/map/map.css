@@ -17,7 +17,7 @@
 
 /* Information Panel */
 .map__informationPanelWrapper{
-    background-color: black;
+    background-color: #2a2e32;
     color: white;
     display: flex;
         align-items: center;
@@ -43,7 +43,7 @@
 }
 
 .map__informationPanelContent{
-background-color: black;
+    background-color: #2a2e32;
     
 }
 /* Tablet */
@@ -56,7 +56,7 @@ background-color: black;
 /* Desktop */
 @media screen and (min-width:992px){
     .map__informationPanelWrapper{
-        background-color: black;
+        background-color: #2a2e32;
         align-items: flex-start;
         justify-content: flex-start;
         margin-left: 50px;

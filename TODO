@@ -248,7 +248,11 @@ Javascript:
             So, be sure to change this in the covid 19 dashboard and to use this moving forward.
             ✔ THe search box needs to be reworked. The data can be downloaded and loaded inside the search.js component rather than being set in the main Covid19Dashboard @done(17:23 - 02/06/22)
             ☐ Format Tooltips
+              ☐ I created a custom panel, now i just need to populate with information and style.
+
             ☐ Format markers
+              ☐ When you click on a marker and panel appears, the map should recenter to specifc position, keeping the country you just clicked on in frame.
+
             ☐ Search for country and fly to it.
             ☐ The 3 slides(covodi9DashboardView.js) can be mapped similiar to the component list. This will let me dynamically add more slides with relevant css, without needing to manually adjust in the css file.
             ☐ The map is just a mess on smaller windows.
@@ -307,18 +311,34 @@ Javascript:
           ..they work but the current styling can be improved.
           ✔ first off all, swap them around. they're very annoying to use @done(16:03 - 06/06/22)
 
+        ☐ Clicking on a marker should automatically fill the search.js field with that country.
+
+
+          
   ☐ Drag and Drop functionality
   ☐ Something with react leaflet and maps
-        ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
-        .. i think this is out of date.
+  ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
+  .. i think this is out of date.
   ☐ rock paper scissor
   ☐ simon game
   ☐ platformer game - more of a watch thing
   ☐ js flappy bird game
   ☐ various js games
+          
+          
+Things to Look into:
+  ☐ Investigate React Context
+  https://levelup.gitconnected.com/5-concepts-that-will-make-you-a-better-react-developer-4d0b56e031e7?source=social.tw 
+  ☐ React Portals
+  ☐ Higher Order Components
+  ☐ React Suspense
+  ☐ Lazy Loading Code
+  ☐ Data fetching with React Suspense
+  ☐ useMemo() 
+  ☐ useCallback()
+  ☐ useEvent()
 
-  
-React:
+React Projects:
   ☐ react tic tac toe
   ☐ tetris using react  hooks
   ☐ birthday reminder app

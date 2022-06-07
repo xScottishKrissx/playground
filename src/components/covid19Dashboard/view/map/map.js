@@ -7,6 +7,7 @@ import 'leaflet/dist/leaflet.css'
 import { map } from 'leaflet';
 
 import nationalParks from './nationalParks.json'
+import InformationPanel from './informationPanel/informationPanel';
 
 export default function Covid19Map(props) {
   // console.log(props.countryData)
@@ -36,7 +37,7 @@ export default function Covid19Map(props) {
     setCountryInfo(x)
     setPanelVisible(true)
    }
-   console.log(countryInfo)
+
   const hideCustomTooltip = () =>{ setPanelVisible(false) }
 
   return (
@@ -46,19 +47,7 @@ export default function Covid19Map(props) {
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <ZoomControl position='bottomleft' />
 
-
-        {showPanel ? 
-            <div className='map__informationPanelWrapper'>
-              <div className='map__informationPanelContent'>
-                <h1>Information Panel</h1>
-                {countryInfo.country}
-                <button onClick={hideCustomTooltip}>Close Panel</button>
-              </div>
-              
-            </div>
-            : 
-            null
-        }
+        <InformationPanel showPanel={showPanel} countryInfo={countryInfo} hideCustomTooltip={hideCustomTooltip}/>
 
         {countryData.map((x,index) => {
           return(

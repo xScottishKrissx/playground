@@ -1,0 +1,39 @@
+/* Universal Rules */
+.map__informationPanelContent{
+    padding: 20px;
+    width: 100%;
+}
+.informationPanel__stats{
+    /* outline: 1px solid white; */
+}
+
+.informationPanel__statsSection{
+    outline: 1px solid grey;
+    margin-bottom: 5px;
+}
+.informationPanel__infoHeader{
+    color: grey;
+    margin-right: 10px;
+}
+
+
+
+
+
+/* Single Item Row */
+.informationPanel__singleItemRow{
+
+}
+    .informationPanel__singleItemRow .informationPanel__infoHeader{
+        font-size: 1.5rem;
+    }
+    .informationPanel__singleItemRow .informationPanel__infoNumber{
+        font-size: 2rem;
+    }
+
+/* Double Item Row */
+.informationPanel__doubleItemRow{
+    display: flex;
+        justify-content: space-evenly;
+}
+
