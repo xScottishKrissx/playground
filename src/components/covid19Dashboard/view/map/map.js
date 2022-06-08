@@ -26,7 +26,7 @@ export default function Covid19Map(props) {
 
   const mapRef = useRef()
   // const {countryData} = props
-  const {countryData} = props
+  const {countryData, countryVaccine} = props
   // console.log(countryData[0])
 
 
@@ -47,7 +47,7 @@ export default function Covid19Map(props) {
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <ZoomControl position='bottomleft' />
 
-        <InformationPanel showPanel={showPanel} countryInfo={countryInfo} hideCustomTooltip={hideCustomTooltip}/>
+        <InformationPanel showPanel={showPanel} countryVaccine={countryVaccine} countryInfo={countryInfo} hideCustomTooltip={hideCustomTooltip}/>
 
         {countryData.map((x,index) => {
           return(

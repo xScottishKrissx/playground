@@ -337,6 +337,8 @@ Things to Look into:
   ☐ useMemo() 
   ☐ useCallback()
   ☐ useEvent()
+  ☐ vite(replacement for Create-react-app)
+    https://liaogg.medium.com/build-your-next-react-app-with-vite-part-2-6d51b58561c8
 
 React Projects:
   ☐ react tic tac toe

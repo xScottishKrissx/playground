@@ -32,7 +32,7 @@ export default function Covid19DashboardView(props) {
           <>
             <div style={slideWrapperPosition} className='slideWrapper'>
                 <TotalStats data={globalData} countryData={countryData} vaccineData={vaccineData}/>
-                <Covid19Map countryData={countryData} />
+                <Covid19Map countryData={countryData} countryVaccine={countryVaccine}/>
                 <Search 
                   testMessage={testMessage} 
                   data={countryData} 
