@@ -51,7 +51,7 @@ export default function Covid19Map(props) {
 
         {countryData.map((x,index) => {
           return(
-            <span key={index}>
+            <span className={x.country} key={index}>
               <Marker 
                 eventHandlers={{ click: (e) =>{ toggleInfoPanel(x) } }} 
                 position={[x.countryInfo.lat, x.countryInfo.long]}>

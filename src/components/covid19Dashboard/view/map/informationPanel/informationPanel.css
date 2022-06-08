@@ -46,11 +46,13 @@
         }
 
 /* Single Item Row */
-.informationPanel__singleItemRow{
-
+.informationPanel__singleItemRow{   
+    display: flex;
+        align-items: center;
 }
     .informationPanel__singleItemRow .informationPanel__infoHeader{
         font-size: 1.2rem;
+        padding-left: 5px;
     }
     .informationPanel__singleItemRow .informationPanel__infoNumber{
         font-size: 2rem;
@@ -63,4 +65,25 @@
 }
 .informationPanel__doubleItemRow > div{
     min-width: 175px;
+}
+
+
+@media screen and (min-width:992px){
+    .informationPanel__doubleItemRow > div{
+        min-width: 100px;
+    }
+    .latestStats__disclaimer p{
+        font-size: 12px;
+    }
+
+    .informationPanel__mainHeader h2{
+        font-size: 1.5rem;
+    }
+
+    .informationPanel__singleItemRow .informationPanel__infoHeader{
+        font-size: 0.8rem;
+    }
+    .informationPanel__singleItemRow .informationPanel__infoNumber{
+        font-size: 1.8rem;
+    }
 }

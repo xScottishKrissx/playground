@@ -64,6 +64,6 @@
             max-width: 350px;
     }
     .map__informationPanelContent{
-        margin: 20px;
+        /* margin: 20px; */
     }
 }
