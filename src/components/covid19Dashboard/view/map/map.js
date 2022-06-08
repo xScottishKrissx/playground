@@ -1,8 +1,8 @@
-import React, {useRef, useState} from 'react'
+import React, {useRef, useState, useEffect} from 'react'
 import L from 'leaflet'
 import './map.css'
 
-import {MapContainer, TileLayer, Marker, Popup,ZoomControl, Tooltip} from 'react-leaflet';
+import {useMap, MapContainer, TileLayer, Marker, Popup,ZoomControl, Tooltip} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'
 import { map } from 'leaflet';
 
@@ -11,6 +11,8 @@ import InformationPanel from './informationPanel/informationPanel';
 
 export default function Covid19Map(props) {
   // console.log(props.countryData)
+
+
 
   // Fixes the broken icon for the marker
   delete L.Icon.Default.prototype.__getIconUrl;
@@ -29,31 +31,38 @@ export default function Covid19Map(props) {
   const {countryData, countryVaccine} = props
   // console.log(countryData[0])
 
-
+// console.log(map)
   // custom tooltip
   const [showPanel, setPanelVisible] = useState(false)
   const [countryInfo, setCountryInfo] = useState()
-  const toggleInfoPanel = (x) =>{ 
+  const toggleInfoPanel = (x,lat,lng) =>{ 
     setCountryInfo(x)
     setPanelVisible(true)
+    mapRef.current.setView(new L.LatLng(lat, lng), zoom);
+
+    
    }
+
+
+   console.log(mapRef)
 
   const hideCustomTooltip = () =>{ setPanelVisible(false) }
 
   return (
     <div className='slide s2'>
-      <MapContainer ref={mapRef} center={location} zoom={zoom} zoomControl={false}>
+      <MapContainer ref={mapRef} center={location} zoom={zoom} zoomControl={false} >
 
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
+        <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <ZoomControl position='bottomleft' />
 
         <InformationPanel showPanel={showPanel} countryVaccine={countryVaccine} countryInfo={countryInfo} hideCustomTooltip={hideCustomTooltip}/>
 
         {countryData.map((x,index) => {
+         
           return(
             <span className={x.country} key={index}>
               <Marker 
-                eventHandlers={{ click: (e) =>{ toggleInfoPanel(x) } }} 
+                eventHandlers={{ click: (e) =>{ toggleInfoPanel(x,x.countryInfo.lat,x.countryInfo.long) } }} 
                 position={[x.countryInfo.lat, x.countryInfo.long]}>
               </Marker>
             </span>

@@ -11,7 +11,7 @@ export default function InformationPanel(props) {
 
     
     if(countryInfo === undefined) return
-    
+
     const {
         country, 
         todayCases, 
@@ -28,11 +28,12 @@ export default function InformationPanel(props) {
 
     
 //   Get vaccine data for country
-    let getCountryVaccineInfo;
-    const mapThing = countryVaccine.map(x => { if(x.country === country) getCountryVaccineInfo = x })
-    const getVaccineData = getCountryVaccineInfo.timeline
-    let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
-    const totalVaccines = getVaccineTimeline.reverse()[0].number
+    // let getCountryVaccineInfo;
+    // const mapThing = countryVaccine.map(x => { if(x.country === country) getCountryVaccineInfo = x })
+    // console.log(getVaccineData)
+    // const getVaccineData = getCountryVaccineInfo.timeline
+    // let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
+    // const totalVaccines = getVaccineTimeline.reverse()[0].number
     
   return (
 
@@ -142,7 +143,7 @@ export default function InformationPanel(props) {
 
                         <div className='informationPanel__singleItemRow'>
                             <span className='informationPanel__infoHeader'>Vaccinations</span> 
-                            <span className='informationPanel__infoNumber'>{numberWithCommas(totalVaccines)}</span>
+                            {/* <span className='informationPanel__infoNumber'>{numberWithCommas(totalVaccines)}</span> */}
                         </div>
 
                     </div>
