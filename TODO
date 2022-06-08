@@ -249,7 +249,7 @@ Javascript:
             ✔ THe search box needs to be reworked. The data can be downloaded and loaded inside the search.js component rather than being set in the main Covid19Dashboard @done(17:23 - 02/06/22)
             ✔ Format Tooltips @done(15:31 - 08/06/22)
               ✔ I created a custom panel, now i just need to populate with information and style. @done(15:31 - 08/06/22)
-              ☐ Handle no vaccination data error in informationpanel.js
+              ✔ Handle no vaccination data error in informationpanel.js @done(16:47 - 08/06/22)
 
             ✔ Format markers @done(16:18 - 08/06/22)
               ✔ When you click on a marker and panel appears, the map should recenter to specifc position, keeping the country you just clicked on in frame. @done(16:18 - 08/06/22)

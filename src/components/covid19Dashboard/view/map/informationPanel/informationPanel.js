@@ -8,7 +8,7 @@ export default function InformationPanel(props) {
       }
 
     const {countryInfo, hideInformationPanel, showPanel, countryVaccine} = props
-
+    //  console.log(countryVaccine) 
     
     if(countryInfo === undefined) return
 
@@ -28,11 +28,17 @@ export default function InformationPanel(props) {
 
     
 //   Get vaccine data for country
-    let getCountryVaccineInfo;
-    const mapThing = countryVaccine.map(x => { if(x.country === country) getCountryVaccineInfo = x })
-    const getVaccineData = getCountryVaccineInfo.timeline
-    let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
-    const totalVaccines = getVaccineTimeline.reverse()[0].number
+    let getCountryVaccineInfo, totalVaccines;
+
+    const mapThing = countryVaccine.map(x => { if(x.country === country) {getCountryVaccineInfo = x } })
+    if(!getCountryVaccineInfo){
+        // In case any nation doesn't upload vaccination data(e.g. north korea)
+        totalVaccines = "n/a"
+    }else{
+        const getVaccineData = getCountryVaccineInfo.timeline
+        let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
+        totalVaccines = getVaccineTimeline.reverse()[0].number
+    }
     
   return (
 
@@ -58,7 +64,7 @@ export default function InformationPanel(props) {
                     <div className='informationPanel__statsSection'>
 
                         <div className='informationPanel__singleItemRow'>
-                            <span className='informationPanel__infoHeader'>Cases</span> 
+                            <span className='informationPanel__infoHeader'>Todays Cases</span> 
                             <span className='informationPanel__infoNumber'>{numberWithCommas(todayCases)}</span>
                         </div>
 
@@ -82,7 +88,7 @@ export default function InformationPanel(props) {
                     <div className='informationPanel__statsSection'>
 
                         <div className='informationPanel__singleItemRow'>
-                            <span className='informationPanel__infoHeader'>Critical</span> 
+                            <span className='informationPanel__infoHeader'>Current Critical</span> 
                             <span className='informationPanel__infoNumber'>{numberWithCommas(critical)}</span>
                         </div>
 
@@ -108,7 +114,7 @@ export default function InformationPanel(props) {
                     <div className='informationPanel__statsSection'>
 
                         <div className='informationPanel__singleItemRow'>
-                            <span className='informationPanel__infoHeader'>Deaths</span> 
+                            <span className='informationPanel__infoHeader'>Todays Deaths</span> 
                             <span className='informationPanel__infoNumber'>{numberWithCommas(todayDeaths)}</span>
                         </div>
 
@@ -142,7 +148,7 @@ export default function InformationPanel(props) {
 
                         <div className='informationPanel__singleItemRow'>
                             <span className='informationPanel__infoHeader'>Vaccinations</span> 
-                            {/* <span className='informationPanel__infoNumber'>{numberWithCommas(totalVaccines)}</span> */}
+                            <span className='informationPanel__infoNumber'>{numberWithCommas(totalVaccines)}</span>
                         </div>
 
                     </div>

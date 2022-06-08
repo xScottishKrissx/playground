@@ -47,10 +47,15 @@ export default function Covid19Map(props) {
         <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <ZoomControl position='bottomleft' />
 
-        <InformationPanel showPanel={showPanel} countryVaccine={countryVaccine} countryInfo={countryInfo} hideInformationPanel={hideInformationPanel}/>
+        <InformationPanel 
+          showPanel={showPanel} 
+          countryVaccine={countryVaccine} 
+          countryInfo={countryInfo} 
+          hideInformationPanel={hideInformationPanel}
+        />
 
         <Markers countryData={countryData} toggleInfoPanel={toggleInfoPanel}/>
-        
+
       </MapContainer>
     </div>
   )
