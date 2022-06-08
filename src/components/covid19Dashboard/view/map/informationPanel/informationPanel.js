@@ -7,7 +7,7 @@ export default function InformationPanel(props) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
 
-    const {countryInfo, hideCustomTooltip, showPanel, countryVaccine} = props
+    const {countryInfo, hideInformationPanel, showPanel, countryVaccine} = props
 
     
     if(countryInfo === undefined) return
@@ -28,12 +28,11 @@ export default function InformationPanel(props) {
 
     
 //   Get vaccine data for country
-    // let getCountryVaccineInfo;
-    // const mapThing = countryVaccine.map(x => { if(x.country === country) getCountryVaccineInfo = x })
-    // console.log(getVaccineData)
-    // const getVaccineData = getCountryVaccineInfo.timeline
-    // let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
-    // const totalVaccines = getVaccineTimeline.reverse()[0].number
+    let getCountryVaccineInfo;
+    const mapThing = countryVaccine.map(x => { if(x.country === country) getCountryVaccineInfo = x })
+    const getVaccineData = getCountryVaccineInfo.timeline
+    let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
+    const totalVaccines = getVaccineTimeline.reverse()[0].number
     
   return (
 
@@ -46,7 +45,7 @@ export default function InformationPanel(props) {
                 <div className='informationPanel__header'>
                     <div className='informationPanel__mainHeader'>
                         <h2>Information Panel</h2>
-                        <button onClick={hideCustomTooltip}><span className="material-icons">close</span></button>
+                        <button onClick={hideInformationPanel}><span className="material-icons">close</span></button>
                     </div>
                     
                     <h2 className='informationPanel__countryName'>{country}</h2>

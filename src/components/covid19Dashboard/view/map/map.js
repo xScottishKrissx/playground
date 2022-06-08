@@ -1,16 +1,16 @@
-import React, {useRef, useState, useEffect} from 'react'
+import React, {useRef, useState, } from 'react'
 import L from 'leaflet'
 import './map.css'
 
-import {useMap, MapContainer, TileLayer, Marker, Popup,ZoomControl, Tooltip} from 'react-leaflet';
+import {MapContainer, TileLayer, Marker, ZoomControl, } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'
 import { map } from 'leaflet';
 
-import nationalParks from './nationalParks.json'
 import InformationPanel from './informationPanel/informationPanel';
+import Markers from './informationPanel/markers/markers';
 
 export default function Covid19Map(props) {
-  // console.log(props.countryData)
+
 
 
 
@@ -23,30 +23,22 @@ export default function Covid19Map(props) {
   })
   //end of fix
 
+  // Setting up the map
   const location = [55.8130,-4.3424]
   const zoom = 4
-
   const mapRef = useRef()
-  // const {countryData} = props
   const {countryData, countryVaccine} = props
-  // console.log(countryData[0])
 
-// console.log(map)
-  // custom tooltip
+  // information panel
   const [showPanel, setPanelVisible] = useState(false)
   const [countryInfo, setCountryInfo] = useState()
   const toggleInfoPanel = (x,lat,lng) =>{ 
     setCountryInfo(x)
     setPanelVisible(true)
     mapRef.current.setView(new L.LatLng(lat, lng), zoom);
-
-    
    }
+  const hideInformationPanel = () =>{ setPanelVisible(false) }
 
-
-   console.log(mapRef)
-
-  const hideCustomTooltip = () =>{ setPanelVisible(false) }
 
   return (
     <div className='slide s2'>
@@ -55,20 +47,10 @@ export default function Covid19Map(props) {
         <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <ZoomControl position='bottomleft' />
 
-        <InformationPanel showPanel={showPanel} countryVaccine={countryVaccine} countryInfo={countryInfo} hideCustomTooltip={hideCustomTooltip}/>
+        <InformationPanel showPanel={showPanel} countryVaccine={countryVaccine} countryInfo={countryInfo} hideInformationPanel={hideInformationPanel}/>
 
-        {countryData.map((x,index) => {
-         
-          return(
-            <span className={x.country} key={index}>
-              <Marker 
-                eventHandlers={{ click: (e) =>{ toggleInfoPanel(x,x.countryInfo.lat,x.countryInfo.long) } }} 
-                position={[x.countryInfo.lat, x.countryInfo.long]}>
-              </Marker>
-            </span>
-          )
-
-        })}
+        <Markers countryData={countryData} toggleInfoPanel={toggleInfoPanel}/>
+        
       </MapContainer>
     </div>
   )
