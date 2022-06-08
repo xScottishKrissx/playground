@@ -1,5 +1,7 @@
 import React from 'react'
 import './informationPanel.css'
+import { useState } from 'react';
+import FavCountryView from '../../favCountryView';
 
 export default function InformationPanel(props) {
 
@@ -7,8 +9,12 @@ export default function InformationPanel(props) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
 
+// Set a new favourite country
+      const setNewCountry = (x) => {
+          localStorage.setItem("favCountry", x)
+      }
+
     const {countryInfo, hideInformationPanel, showPanel, countryVaccine} = props
-    //  console.log(countryVaccine) 
     
     if(countryInfo === undefined) return
 
@@ -39,7 +45,8 @@ export default function InformationPanel(props) {
         let getVaccineTimeline = Object.entries(getVaccineData).map(([date,number]) => ({date, number}))
         totalVaccines = getVaccineTimeline.reverse()[0].number
     }
-    
+
+
   return (
 
     <>
@@ -54,7 +61,10 @@ export default function InformationPanel(props) {
                         <button onClick={hideInformationPanel}><span className="material-icons">close</span></button>
                     </div>
                     
-                    <h2 className='informationPanel__countryName'>{country}</h2>
+                    <span className='countryName fs-3'>
+                        <FavCountryView country={country} />
+                        <span onClick={()=>setNewCountry(country)} className='informationPanel__countryName ms-1'>{country}</span>
+                    </span>
                 </div>
 
 
@@ -145,15 +155,14 @@ export default function InformationPanel(props) {
                     </div>
     {/* Vaccinations Section */}
                     <div className='informationPanel__statsSection'>
-
                         <div className='informationPanel__singleItemRow'>
                             <span className='informationPanel__infoHeader'>Vaccinations</span> 
                             <span className='informationPanel__infoNumber'>{numberWithCommas(totalVaccines)}</span>
                         </div>
-
                     </div>
 
                 </div>
+
     {/* Disclaimer */}
             <div className='latestStats__disclaimer'>
                 <h6 className='ps-2 text-muted'>Disclaimer</h6>

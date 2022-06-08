@@ -6,10 +6,11 @@ import Graph from '../graphs/graph';
 import Loading from '../../loading';
 import LatestStatsDisplay from './latestStatsDisplay/latestStatsDisplay';
 import Updated from '../../updated';
+import FavCountryView from '../../favCountryView';
 export default function Latest(props) {    
 
 
-    const [isFav, setFav] = useState(props.currentDefault)
+    // const [isFav, setFav] = useState(props.currentDefault)
 
     const {data,country, countryVaccine, covidTimeline, setNewCountry} = props
     const filterCountry = data.filter(x => x.country.toLowerCase() === country.toLowerCase())
@@ -35,10 +36,10 @@ export default function Latest(props) {
     //     )
     // })
     
-    const setNewDefault = () =>{ 
-        setNewCountry(country) 
-        setFav(country)
-    }
+    // const setNewDefault = () =>{ 
+    //     setNewCountry(country) 
+    //     setFav(country)
+    // }
 
 
 
@@ -50,17 +51,8 @@ export default function Latest(props) {
             <div className='locationInfo'>
                 <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span>
                 <span className='countryName fs-3' > 
-
-                    <button onClick={setNewDefault}>
-                        {isFav.toLowerCase() === country.toLowerCase() ? 
-                            <span id="star" className="material-icons">star</span> : 
-                            <span id="unstar" className="material-icons">star_border</span>
-                        }
-                    </button>
-
-
+                    <FavCountryView country={country}/>
                     <span className='ms-1'>{country.toUpperCase()}</span>
-                    {/* <img alt={"Flag of " + country} src={flag} />  */}
                 </span>
             
             <span className='ms-5 fs-6 text-muted'>Updated: <Updated updated={updated} /></span> 
