@@ -24,9 +24,9 @@ export default function Covid19Map(props) {
   // Setting up the map
   // setting the center on the current favourite country if the user has changed from the default
   const usersFavCountry = localStorage.getItem("favCountry") || "UK"
-  const favCountryLat = parseInt(localStorage.getItem("lat"))
-  const favCountryLong = parseInt(localStorage.getItem("long"))
-  const location =  [favCountryLat, favCountryLong] || [55.8130,-4.3424]
+  const favCountryLat = parseInt(localStorage.getItem("lat")) || 55.8130
+  const favCountryLong = parseInt(localStorage.getItem("long")) || -4.3424
+  const location =  [favCountryLat, favCountryLong]
 
   
   
