@@ -23,6 +23,7 @@ export default function Covid19Map(props) {
 
   // Setting up the map
   // setting the center on the current favourite country if the user has changed from the default
+  const usersFavCountry = localStorage.getItem("favCountry") || "UK"
   const favCountryLat = parseInt(localStorage.getItem("lat"))
   const favCountryLong = parseInt(localStorage.getItem("long"))
   const location =  [favCountryLat, favCountryLong] || [55.8130,-4.3424]
@@ -36,14 +37,20 @@ export default function Covid19Map(props) {
   // information panel
   const [showPanel, setPanelVisible] = useState(false)
   const [countryInfo, setCountryInfo] = useState()
+  const [updateMarkerState, setUpdatedMarker] = useState()
   const toggleInfoPanel = (x,lat,lng) =>{ 
     setCountryInfo(x)
+    // setTest(x.country)
+    // console.log(x.country)
     setPanelVisible(true)
     mapRef.current.setView(new L.LatLng(lat, lng), zoom);
   }
   const hideInformationPanel = () =>{ setPanelVisible(false) }
+  const updateMarker = (x) =>{ setUpdatedMarker(x) }
   
   const {countryData, countryVaccine} = props
+
+ 
 
   return (
     <div className='slide s2'>
@@ -57,9 +64,17 @@ export default function Covid19Map(props) {
           countryVaccine={countryVaccine} 
           countryData={countryInfo} 
           hideInformationPanel={hideInformationPanel}
+
+          updateMarker={updateMarker}
         />
 
-        <Markers countryData={countryData} toggleInfoPanel={toggleInfoPanel} location={location} />
+        <Markers 
+          countryData={countryData} 
+          toggleInfoPanel={toggleInfoPanel} 
+          location={location} 
+          favCountry={usersFavCountry}
+          // updateMarkerState={updateMarkerState}
+          />
 
       </MapContainer>
     </div>

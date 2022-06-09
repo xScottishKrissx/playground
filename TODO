@@ -257,8 +257,11 @@ Javascript:
             ☐ Search for country and fly to it.
             ✔ Ability mark a country as a favorite for the search.js page @done(14:02 - 09/06/22)
             ✔ Your favourite country should be automatically centred on the map @done(14:02 - 09/06/22)
-            ☐ The marker showing your fav country should be distinguisable from the rest
-                ☐ I've figured out how to change the marker colour, now to update when changing the favoured country
+            ✔ The marker showing your fav country should be distinguisable from the rest @done(17:48 - 09/06/22)
+                ✔ I've figured out how to change the marker colour, now to update when changing the favoured country @done(17:48 - 09/06/22)
+                  ✔ I can get the marker changing, but there's a delay until state updates. @done(17:48 - 09/06/22)
+                  ✔ Did it. The solution was to update the map state from the FavCountryView component so that clicking the star would actually be registered in the markers.js file @done(17:48 - 09/06/22)
+                  
             ☐ The 3 slides(covodi9DashboardView.js) can be mapped similiar to the component list. This will let me dynamically add more slides with relevant css, without needing to manually adjust in the css file.
 
             ✔ The map is just a mess on smaller windows. @done(15:31 - 08/06/22)

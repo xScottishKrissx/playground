@@ -14,7 +14,7 @@ export default function InformationPanel(props) {
           localStorage.setItem("favCountry", x)
       }
 
-    const {countryData, hideInformationPanel, showPanel, countryVaccine} = props
+    const {countryData, hideInformationPanel, showPanel, countryVaccine, updateMarker} = props
     
     if(countryData === undefined) return
 
@@ -66,7 +66,7 @@ export default function InformationPanel(props) {
                     </div>
                     
                     <span className='countryName fs-3'>
-                        <FavCountryView country={country} lat={lat} long={long}  />
+                        <FavCountryView country={country} lat={lat} long={long} updateMarker={updateMarker} />
                         <span onClick={()=>setNewCountry(country)} className='informationPanel__countryName ms-1'>{country}</span>
                     </span>
                 </div>
