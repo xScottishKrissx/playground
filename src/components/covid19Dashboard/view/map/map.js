@@ -19,7 +19,7 @@ export default function Covid19Map(props) {
     shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
   })
   //end of fix
-
+// console.log(L)
 
   // Setting up the map
   // setting the center on the current favourite country if the user has changed from the default
@@ -27,8 +27,11 @@ export default function Covid19Map(props) {
   const favCountryLong = parseInt(localStorage.getItem("long"))
   const location =  [favCountryLat, favCountryLong] || [55.8130,-4.3424]
 
+  
+  
   const zoom = 4
   const mapRef = useRef()
+
   
   // information panel
   const [showPanel, setPanelVisible] = useState(false)
@@ -56,7 +59,7 @@ export default function Covid19Map(props) {
           hideInformationPanel={hideInformationPanel}
         />
 
-        <Markers countryData={countryData} toggleInfoPanel={toggleInfoPanel}/>
+        <Markers countryData={countryData} toggleInfoPanel={toggleInfoPanel} location={location} />
 
       </MapContainer>
     </div>

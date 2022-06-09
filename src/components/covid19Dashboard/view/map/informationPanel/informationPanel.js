@@ -34,6 +34,7 @@ export default function InformationPanel(props) {
     } = countryData
     // console.log(countryData)
 
+    // Country location for favourite button
     const {lat, long} = countryInfo
     
 //   Get vaccine data for country
@@ -65,7 +66,7 @@ export default function InformationPanel(props) {
                     </div>
                     
                     <span className='countryName fs-3'>
-                        <FavCountryView country={country} lat={lat} long={long} countryLocation={[lat,long]} />
+                        <FavCountryView country={country} lat={lat} long={long}  />
                         <span onClick={()=>setNewCountry(country)} className='informationPanel__countryName ms-1'>{country}</span>
                     </span>
                 </div>

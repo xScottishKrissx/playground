@@ -9,7 +9,6 @@ import { useState } from 'react'
 export default function FavCountryView(props) {
 
     // localStorage.clear()
-
     const {country, lat, long} = props
     const usersFavCountry = localStorage.getItem("favCountry") || "UK"
     // const startingCountry = usersFavCountry || "UK"
@@ -22,9 +21,10 @@ export default function FavCountryView(props) {
         // This exists only to force the component to re-render in order to update the star on page
         forceUpdate(value => value + 1)        
     }
-
+    
     const setNewCountry = (x) => { 
-        localStorage.setItem("favCountry", x) 
+        console.log("Hello?")
+        localStorage.setItem("favCountry" , x)
         localStorage.setItem("lat" , lat)
         localStorage.setItem("long", long)
     }

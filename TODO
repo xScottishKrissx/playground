@@ -258,7 +258,7 @@ Javascript:
             ✔ Ability mark a country as a favorite for the search.js page @done(14:02 - 09/06/22)
             ✔ Your favourite country should be automatically centred on the map @done(14:02 - 09/06/22)
             ☐ The marker showing your fav country should be distinguisable from the rest
-
+                ☐ I've figured out how to change the marker colour, now to update when changing the favoured country
             ☐ The 3 slides(covodi9DashboardView.js) can be mapped similiar to the component list. This will let me dynamically add more slides with relevant css, without needing to manually adjust in the css file.
 
             ✔ The map is just a mess on smaller windows. @done(15:31 - 08/06/22)
