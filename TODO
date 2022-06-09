@@ -255,8 +255,9 @@ Javascript:
               ✔ When you click on a marker and panel appears, the map should recenter to specifc position, keeping the country you just clicked on in frame. @done(16:18 - 08/06/22)
 
             ☐ Search for country and fly to it.
-            ☐ Ability mark a country as a favorite for the search.js page
-            ☐ Your favourite country should be automatically centred on the map
+            ✔ Ability mark a country as a favorite for the search.js page @done(14:02 - 09/06/22)
+            ✔ Your favourite country should be automatically centred on the map @done(14:02 - 09/06/22)
+            ☐ The marker showing your fav country should be distinguisable from the rest
 
             ☐ The 3 slides(covodi9DashboardView.js) can be mapped similiar to the component list. This will let me dynamically add more slides with relevant css, without needing to manually adjust in the css file.
 

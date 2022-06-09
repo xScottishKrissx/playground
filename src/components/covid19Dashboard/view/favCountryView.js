@@ -1,18 +1,20 @@
 import React from 'react'
 import { useState } from 'react'
 
-
+// Rules
+// 2 Props Needed
+// 1 - A country
+// 2 - That countries coordinates - [latitude, longitude]
 
 export default function FavCountryView(props) {
 
     // localStorage.clear()
 
-    const country = props.country
+    const {country, lat, long} = props
     const usersFavCountry = localStorage.getItem("favCountry") || "UK"
     // const startingCountry = usersFavCountry || "UK"
     const [updateStateOnStarClick, forceUpdate] = useState(0)
-
-
+    
     // Set a new default
     const setNewDefault = () =>{ 
         // console.log(country)
@@ -21,10 +23,12 @@ export default function FavCountryView(props) {
         forceUpdate(value => value + 1)        
     }
 
-    const setNewCountry = (x) => { localStorage.setItem("favCountry", x) }
-
-
-
+    const setNewCountry = (x) => { 
+        localStorage.setItem("favCountry", x) 
+        localStorage.setItem("lat" , lat)
+        localStorage.setItem("long", long)
+    }
+    
     return (
         <>
             

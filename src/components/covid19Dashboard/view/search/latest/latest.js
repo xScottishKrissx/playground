@@ -1,5 +1,4 @@
 import React from 'react'
-import { useState } from 'react';
 
 import './latest.css'
 import Graph from '../graphs/graph';
@@ -23,7 +22,7 @@ export default function Latest(props) {
     if(!getCountry) return  <Loading content="latest js..."/>;
     
     const {continent, countryInfo, updated } = getCountry
-    const {flag} = countryInfo
+    const {lat, long} = countryInfo
 
     // Converting object array to be used for map
     // const getThing = Object.entries(getCountry).map(([point1, point2]) => ({point1, point2}))
@@ -51,7 +50,7 @@ export default function Latest(props) {
             <div className='locationInfo'>
                 <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span>
                 <span className='countryName fs-3' > 
-                    <FavCountryView country={country}/>
+                    <FavCountryView country={country} lat={lat} long={long} />
                     <span className='ms-1'>{country.toUpperCase()}</span>
                 </span>
             

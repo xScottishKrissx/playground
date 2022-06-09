@@ -11,10 +11,7 @@ import Markers from './informationPanel/markers/markers';
 
 export default function Covid19Map(props) {
 
-
-
-
-  // Fixes the broken icon for the marker
+ // Fixes the broken icon for the marker
   delete L.Icon.Default.prototype.__getIconUrl;
   L.Icon.Default.mergeOptions({
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
@@ -23,12 +20,16 @@ export default function Covid19Map(props) {
   })
   //end of fix
 
+
   // Setting up the map
-  const location = [55.8130,-4.3424]
+  // setting the center on the current favourite country if the user has changed from the default
+  const favCountryLat = parseInt(localStorage.getItem("lat"))
+  const favCountryLong = parseInt(localStorage.getItem("long"))
+  const location =  [favCountryLat, favCountryLong] || [55.8130,-4.3424]
+
   const zoom = 4
   const mapRef = useRef()
-  const {countryData, countryVaccine} = props
-
+  
   // information panel
   const [showPanel, setPanelVisible] = useState(false)
   const [countryInfo, setCountryInfo] = useState()
@@ -36,9 +37,10 @@ export default function Covid19Map(props) {
     setCountryInfo(x)
     setPanelVisible(true)
     mapRef.current.setView(new L.LatLng(lat, lng), zoom);
-   }
+  }
   const hideInformationPanel = () =>{ setPanelVisible(false) }
-
+  
+  const {countryData, countryVaccine} = props
 
   return (
     <div className='slide s2'>
@@ -50,7 +52,7 @@ export default function Covid19Map(props) {
         <InformationPanel 
           showPanel={showPanel} 
           countryVaccine={countryVaccine} 
-          countryInfo={countryInfo} 
+          countryData={countryInfo} 
           hideInformationPanel={hideInformationPanel}
         />
 
