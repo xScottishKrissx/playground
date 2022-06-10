@@ -14,14 +14,13 @@ export default function Search(props) {
    
     // Searching for a country
     const [input,setInput] = useState()
-    // Starting Country
-    const startingCountry = usersFavCountry || "UK"
-    const getCountry =  input || startingCountry
-    
     // Passes the input from searchBox to getCountry which allows for results to be displayed.
     const getInput = (x) => setInput(x) 
-
-    // const setNewCountry = (x) =>  localStorage.setItem("favCountry", x) 
+    // Starting Country
+    const startingCountry = usersFavCountry || "UK"
+    // Use search results if they exist
+    const getCountry =  input || startingCountry
+    
 
     // Graphs
     const filterCovidTimeline = covidTimeline.filter(x => 
@@ -35,9 +34,6 @@ export default function Search(props) {
                     {/* Search.js header */}
                     <div className='searchInputArea d-flex align-items-center'>
                         <h2 className='ms-3 me-3'>Country Lookup</h2>
-                        {/* <form className='w-100'>
-                            <input className='w-100' ref={searchBoxRef} placeholder='search...' onChange={()=>getInput()}/>
-                        </form> */}
                         <SearchBox input={getInput}/>
                     </div>
 
@@ -53,7 +49,6 @@ export default function Search(props) {
                                 countryVaccine={filterCountryVaccine}
                                 // Graph
                                 covidTimeline={filterCovidTimeline}
-                                // setNewCountry={setNewCountry}
                                 currentDefault={startingCountry}
                             />
                         }
