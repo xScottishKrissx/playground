@@ -325,7 +325,8 @@ Javascript:
                 ✔ I've figured out how to allow for case insensitive matches but now there's an issue where spain, Spain, sPaiN and SPAIn are all different things and can be favourited. @done(18:05 - 03/06/22)
                   ✔ I have solved this be converting everything to lower case when being compared and then displaying the country name in upper case. This has solved the issue. @done(18:05 - 03/06/22)
 
-
+            ☐ In general i think being able to see the increase in cases from the previous 2 days would be quite useful
+            .. sum (today - yesterday) = increase in cases
           ✔ I think i need to take a step back and start from the basics. Im trying to shoehorn chart.js into my project without actually knowing how it fully works. Instead of using the covid data, i will create a small mini side project to help me get to grips with the library @done(16:27 - 31/05/22)
           SimpleChart Side Project:
             ✔ Should use a fetch @done(16:27 - 31/05/22)
@@ -338,7 +339,7 @@ Javascript:
           ..they work but the current styling can be improved.
           ✔ first off all, swap them around. they're very annoying to use @done(16:03 - 06/06/22)
 
-        ☐ Clicking on a marker should automatically fill the search.js field with that country.
+
 
 
           

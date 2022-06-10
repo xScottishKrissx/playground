@@ -2,9 +2,9 @@ import React, {useRef, useState, } from 'react'
 import L from 'leaflet'
 import './map.css'
 
-import {MapContainer, TileLayer, Marker, ZoomControl, } from 'react-leaflet';
+import {MapContainer, TileLayer, ZoomControl, } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css'
-import { map } from 'leaflet';
+// import { map } from 'leaflet';
 
 import InformationPanel from './informationPanel/informationPanel';
 import Markers from './informationPanel/markers/markers';
@@ -37,6 +37,7 @@ export default function Covid19Map(props) {
   
   // information panel
   // Markers
+  // eslint-disable-next-line no-unused-vars
   const [updateMarkerState, setUpdatedMarker] = useState()
 
   const toggleInfoPanel = (x,lat,long) =>{ 
@@ -89,7 +90,6 @@ export default function Covid19Map(props) {
           countryVaccine={countryVaccine} 
           countryData={countryInfo} 
           hideInformationPanel={hideInformationPanel}
-
           updateMarker={updateMarker}
         />
 

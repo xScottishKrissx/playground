@@ -1,5 +1,5 @@
 import React from 'react'
-import { useRef,useState } from 'react'
+import { useState } from 'react'
 import './search.css'
 
 import Latest from './latest/latest'

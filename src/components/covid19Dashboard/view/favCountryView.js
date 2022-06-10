@@ -12,6 +12,7 @@ export default function FavCountryView(props) {
     const {country, lat, long,updateMarker} = props
     const usersFavCountry = localStorage.getItem("favCountry") || "UK"
     // const startingCountry = usersFavCountry || "UK"
+    // eslint-disable-next-line no-unused-vars
     const [updateStateOnStarClick, forceUpdate] = useState(0)
     
     // Set a new default

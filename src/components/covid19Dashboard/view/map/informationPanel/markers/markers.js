@@ -1,6 +1,5 @@
 import React from 'react'
 import {Marker  } from 'react-leaflet';
-import { useState } from 'react';
 import L from 'leaflet'
 
 import './markers.css'
