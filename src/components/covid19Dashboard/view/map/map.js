@@ -27,7 +27,7 @@ export default function Covid19Map(props) {
   const favCountryLat = parseInt(localStorage.getItem("lat")) || 55.8130
   const favCountryLong = parseInt(localStorage.getItem("long")) || -4.3424
   const location =  [favCountryLat, favCountryLong]
-
+  console.log(location)
   
   
   const zoom = 4

@@ -12,13 +12,16 @@ export default function Markers(props) {
         iconRetinaUrl: require('../../../../assets/marker-icon-2x-gold.png'),
         iconUrl: require('../../../../assets/marker-icon-gold.png'),
         shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-        className: "markedAsFav"
+        // className: "markedAsFav"
+        // For some reason the Icon starts to the bottom right of where it should be, this corrects that and places the icon in it's exact position
+        iconAnchor: [15, 35],
     })
 
     const normalIcon = new L.icon({
         iconRetinaUrl: require('../../../../assets/marker-icon-2x-blue.png'),
         iconUrl: require('../../../../assets/marker-icon-blue.png'),
         shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+        iconAnchor: [15, 35],
     })
 
 
