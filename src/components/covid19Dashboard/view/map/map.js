@@ -9,6 +9,7 @@ import { map } from 'leaflet';
 import InformationPanel from './informationPanel/informationPanel';
 import Markers from './informationPanel/markers/markers';
 import SearchMap from './searchMap/searchMap';
+import ResetMap from './resetMap';
 
 export default function Covid19Map(props) {
   
@@ -41,7 +42,7 @@ export default function Covid19Map(props) {
   const toggleInfoPanel = (x,lat,lng) =>{ 
     setCountryInfo(x)
     setPanelVisible(true)
-    mapRef.current.setView(new L.LatLng(lat, lng), zoom);
+    mapRef.current.flyTo(new L.LatLng(lat, lng), zoom);
   }
   
   // InformationPanel
@@ -54,7 +55,8 @@ export default function Covid19Map(props) {
 // SearchMap
   // Click on a marker and set the view to the location of that marker.
   const goToCountry = (lat,long) =>{
-    mapRef.current.setView(new L.LatLng(lat, long), 5)
+    // mapRef.current.setView(new L.LatLng(lat, long), 5)
+    mapRef.current.flyTo(new L.LatLng(lat, long), 5)
   }
   
   // Disable the maps dragging feature while using the search box.
@@ -62,12 +64,21 @@ export default function Covid19Map(props) {
     if(x)mapRef.current.dragging.disable();
     if(!x)mapRef.current.dragging.enable();
   }
+  
+// Reset Map
+  // Set the map back to the current favourite and close the information panel if its open.
+  const resetMap = () =>{
+    mapRef.current.flyTo(new L.LatLng(favCountryLat,favCountryLong), zoom);
+    hideInformationPanel()
+  }
 
   return (
     <div className='slide s2'>
       <MapContainer ref={mapRef} center={location} zoom={zoom} zoomControl={false} >
 
         <SearchMap countryData={countryData} goToCountry={goToCountry} toggleDrag={toggleDrag} closePanel={hideInformationPanel}/>
+
+        <ResetMap resetMap={resetMap} />
 
         <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <ZoomControl position='bottomleft' />

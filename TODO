@@ -264,7 +264,7 @@ Javascript:
 
             ✔ Ability mark a country as a favorite for the search.js page @done(14:02 - 09/06/22)
             ✔ Your favourite country should be automatically centred on the map @done(14:02 - 09/06/22)
-              ☐ A button that resets the view back to your default
+              ✔ A button that resets the view back to your default @done(16:27 - 10/06/22)
 
             ✔ The marker showing your fav country should be distinguisable from the rest @done(17:48 - 09/06/22)
                 ✔ I've figured out how to change the marker colour, now to update when changing the favoured country @done(17:48 - 09/06/22)

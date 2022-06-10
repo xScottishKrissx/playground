@@ -11,7 +11,7 @@ export default function SearchBox(props) {
             {/* Map Search */}
             {showIcon ? 
                 <div className='searchIcon' onClick={closePanel}>
-                    <span className="material-icons">search</span>
+                    <span className="material-icons p-2">search</span>
                 </div> 
                 : null
             }
