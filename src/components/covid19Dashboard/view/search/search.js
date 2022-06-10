@@ -4,38 +4,29 @@ import './search.css'
 
 import Latest from './latest/latest'
 import Loading from '../loading'
+import SearchBox from '../searchBox'
 
 export default function Search(props) {
+    const {data, covidTimeline, countryVaccine} = props
 
     // Local Storage
     const usersFavCountry = localStorage.getItem("favCountry")
-    // console.log(usersFavCountry)
-
-    const searchBoxRef = useRef()
+   
+    // Searching for a country
     const [input,setInput] = useState()
-
-
     // Starting Country
     const startingCountry = usersFavCountry || "UK"
     const getCountry =  input || startingCountry
+    
+    // Passes the input from searchBox to getCountry which allows for results to be displayed.
+    const getInput = (x) => setInput(x) 
 
-    const getInput = () =>{
-        setInput(searchBoxRef.current.value)
-    }
-
-    const setNewCountry = (x) => {
-        localStorage.setItem("favCountry", x)
-    }
-
-    const {data, covidTimeline, countryVaccine} = props
+    // const setNewCountry = (x) =>  localStorage.setItem("favCountry", x) 
 
     // Graphs
-    // console.log(covidTimeline)
     const filterCovidTimeline = covidTimeline.filter(x => 
         x.country.toLowerCase() === getCountry.toLowerCase()
         && x.province === null)
-    // console.log(filterCovidTimeline)
-
     const filterCountryVaccine = countryVaccine.filter(x => x.country.toLowerCase() === getCountry.toLowerCase())
 
   return (
@@ -44,10 +35,12 @@ export default function Search(props) {
                     {/* Search.js header */}
                     <div className='searchInputArea d-flex align-items-center'>
                         <h2 className='ms-3 me-3'>Country Lookup</h2>
-                        <form className='w-100'>
+                        {/* <form className='w-100'>
                             <input className='w-100' ref={searchBoxRef} placeholder='search...' onChange={()=>getInput()}/>
-                        </form>
+                        </form> */}
+                        <SearchBox input={getInput}/>
                     </div>
+
 
                     {/* Search.js content  */}
                     <div className='searchResultsArea'>
@@ -60,7 +53,7 @@ export default function Search(props) {
                                 countryVaccine={filterCountryVaccine}
                                 // Graph
                                 covidTimeline={filterCovidTimeline}
-                                setNewCountry={setNewCountry}
+                                // setNewCountry={setNewCountry}
                                 currentDefault={startingCountry}
                             />
                         }
