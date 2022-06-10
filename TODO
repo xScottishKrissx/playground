@@ -259,7 +259,7 @@ Javascript:
               ☐ Yup, done it. Not that hard, just had to separate the search box into a new component and from there it was simple enough. I have the functionality in place...
               ☐ ... i just need to properly style the new component and integrate with the rest of the map
               ✔ Dragging in the search box drags the map which isn't ideal. @done(13:58 - 10/06/22)
-              ☐ The search button should close the information panel
+              ✔ The search button should close the information panel @done(16:07 - 10/06/22)
 
 
             ✔ Ability mark a country as a favorite for the search.js page @done(14:02 - 09/06/22)
