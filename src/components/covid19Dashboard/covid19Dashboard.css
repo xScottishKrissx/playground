@@ -43,10 +43,8 @@
 
 /* controls */
 .buttonWrapper{
-    display: flex;
-    justify-content: space-evenly;
-    /* position: absolute; */
-    /* bottom: 0; */
-    width: 100%;
-    z-index: 20;
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+    /* width: 100%; */
+    /* z-index: 20; */
 }

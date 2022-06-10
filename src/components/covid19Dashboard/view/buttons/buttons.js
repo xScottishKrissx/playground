@@ -32,7 +32,7 @@ export default function ControlButtons(props) {
         }
 
   return (
-    <div className='buttonWrapper'>
+    <div style={{zIndex:"20"}} className='buttonWrapper d-flex justify-space-evenly w-100'>
         <button onClick={()=>prev()}><span className="material-icons">navigate_before</span></button>
         <button onClick={()=>next()}><span className="material-icons">navigate_next</span></button>
     </div>
