@@ -11,6 +11,8 @@ import Markers from './informationPanel/markers/markers';
 import SearchMap from './searchMap/searchMap';
 
 export default function Covid19Map(props) {
+  
+  const {countryData, countryVaccine} = props
 
  // Fixes the broken icon for the marker
   delete L.Icon.Default.prototype.__getIconUrl;
@@ -28,39 +30,44 @@ export default function Covid19Map(props) {
   const favCountryLat = parseInt(localStorage.getItem("lat")) || 55.8130
   const favCountryLong = parseInt(localStorage.getItem("long")) || -4.3424
   const location =  [favCountryLat, favCountryLong]
-  console.log(location)
-  
-  
   const zoom = 4
   const mapRef = useRef()
 
   
   // information panel
-  const [showPanel, setPanelVisible] = useState(false)
-  const [countryInfo, setCountryInfo] = useState()
+  // Markers
   const [updateMarkerState, setUpdatedMarker] = useState()
+
   const toggleInfoPanel = (x,lat,lng) =>{ 
     setCountryInfo(x)
-    // setTest(x.country)
-    // console.log(x.country)
     setPanelVisible(true)
     mapRef.current.setView(new L.LatLng(lat, lng), zoom);
   }
+  
+  // InformationPanel
+  const [showPanel, setPanelVisible] = useState(false)
+  const [countryInfo, setCountryInfo] = useState()
+
   const hideInformationPanel = () =>{ setPanelVisible(false) }
   const updateMarker = (x) =>{ setUpdatedMarker(x) }
 
+// SearchMap
+  // Click on a marker and set the view to the location of that marker.
   const goToCountry = (lat,long) =>{
     mapRef.current.setView(new L.LatLng(lat, long), 5)
   }
   
-  const {countryData, countryVaccine} = props
-
+  // Disable the maps dragging feature while using the search box.
+  const toggleDrag = (x) =>{
+    if(x)mapRef.current.dragging.disable();
+    if(!x)mapRef.current.dragging.enable();
+  }
 
   return (
     <div className='slide s2'>
       <MapContainer ref={mapRef} center={location} zoom={zoom} zoomControl={false} >
 
-        <SearchMap countryData={countryData} goToCountry={goToCountry} />
+        <SearchMap countryData={countryData} goToCountry={goToCountry} toggleDrag={toggleDrag}/>
 
         <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <ZoomControl position='bottomleft' />

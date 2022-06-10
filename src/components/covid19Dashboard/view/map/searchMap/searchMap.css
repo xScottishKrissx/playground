@@ -1,14 +1,13 @@
 .searchMap{
-    background-color: grey;
+    background-color: #2a2e32;
     /* height: 200px; */
-    width: 260px;
     margin-top: 15px;
-    padding: m;
     margin-left: 15px;
-
-    outline: 1px solid red;
-    position: relative;
-    z-index: 10000000;
+    
+    outline: 1px solid #2a2e32;
+    position: absolute;
+    width: 260px;
+    z-index: 999;
 }
 
 .searchMap form{
@@ -16,6 +15,21 @@
 }
 
 .searchMap form input{
+    border: none;
     height: 50px;
     font-size: 1.5rem;
+}
+    .searchMap form input:focus-visible{
+        outline: none !important;
+    }
+
+.goToCountryButton{
+    background-color: limegreen;
+    cursor: pointer;
+    display: flex;
+        align-items: center;
+    font-size: 1rem;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }

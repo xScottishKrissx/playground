@@ -1,9 +1,11 @@
-import React, {useState} from 'react'
-import SearchBox from '../../searchBox'
+import React, {useState, useRef} from 'react'
+import SearchBox from '../../searchBox/searchBox'
 import './searchMap.css'
 
 export default function SearchMap(props) {
-    const {countryData, goToCountry} = props
+
+    const thing = useRef()
+    const {countryData, goToCountry, toggleDrag} = props
     // console.log(countryData)
 
 
@@ -15,15 +17,28 @@ export default function SearchMap(props) {
     const findCountry = countryData.filter(x => x.country.toLowerCase() === input.toLowerCase() )
     // console.log(findCountry[0])
 
+    
+    const handleClick = () =>{
+        goToCountry(findCountry[0].countryInfo.lat, findCountry[0].countryInfo.long)
+        setInput("")
+    }
+
+    // Disable the maps dragging feature while using the search box.
+    const handleDrag = (x) => toggleDrag(x) 
+
   return (
-      <div className='searchMap'>
-          <SearchBox input={getInput} />
-            {findCountry.length > 0 ? 
-                <span onClick={()=>goToCountry(findCountry[0].countryInfo.lat, findCountry[0].countryInfo.long)}>Result Found, GO!</span> 
-                : 
-                <span>...searching</span>
+      <div className='searchMap' onMouseDown={()=>handleDrag(true)} onMouseUp={()=>handleDrag(false)} ref={thing}>
+
+          <SearchBox input={getInput} showIcon={true} />
+
+        {findCountry.length > 0 ? 
+           <div className='goToCountryButton' onClick={handleClick}>
+               <span class="material-icons">visibility</span> Country located, View Now! 
+            </div> 
+            : 
+            <span></span>
             }
-          {/* <span>input: </span> */}
+  
       </div>
     )
   }

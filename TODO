@@ -258,8 +258,10 @@ Javascript:
               lets have a look
               ☐ Yup, done it. Not that hard, just had to separate the search box into a new component and from there it was simple enough. I have the functionality in place...
               ☐ ... i just need to properly style the new component and integrate with the rest of the map
-              ☐ Dragging in the search box drags the map which isn't ideal.
-              
+              ✔ Dragging in the search box drags the map which isn't ideal. @done(13:58 - 10/06/22)
+              ☐ The search button should close the information panel
+
+
             ✔ Ability mark a country as a favorite for the search.js page @done(14:02 - 09/06/22)
             ✔ Your favourite country should be automatically centred on the map @done(14:02 - 09/06/22)
               ☐ A button that resets the view back to your default

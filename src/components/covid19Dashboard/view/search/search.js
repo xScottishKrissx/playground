@@ -4,7 +4,7 @@ import './search.css'
 
 import Latest from './latest/latest'
 import Loading from '../loading'
-import SearchBox from '../searchBox'
+import SearchBox from '../searchBox/searchBox'
 
 export default function Search(props) {
     const {data, covidTimeline, countryVaccine} = props
