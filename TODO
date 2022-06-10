@@ -259,7 +259,7 @@ Javascript:
               Yup, done it. Not that hard, just had to separate the search box into a new component and from there it was simple enough. I have the functionality in place...
               ☐ ... i just need to properly style the new component and integrate with the rest of the map
               ✔ Dragging in the search box drags the map which isn't ideal. @done(13:58 - 10/06/22)
-                ☐ Same for double clicking
+                ✘ Same for double clicking @cancelled(17:25 - 10/06/22)
               ✔ The search button should close the information panel @done(16:07 - 10/06/22)
               
 
@@ -277,6 +277,11 @@ Javascript:
             ✔ The map is just a mess on smaller windows. @done(15:31 - 08/06/22)
               ..not a lot i can do about that really
 
+            ✔ There's an issue with the markers where clicking back and forward between the favorite and another marker will cause the markers to move positions. @done(17:45 - 10/06/22)
+              ✔ I have narrowed it down to the initial call in map.js where I set the favCountryLat and long. Removing the localstorage aspect stops the switching. I'm guessing Im not properly dealing the location somewhere in the dashboard. @done(17:45 - 10/06/22)
+              ✔ ...im not setting the lat into local storage anywhere. It also doesn't make sense as the issue is affecting ALL markers, this local storage is only for the favorite location data. @done(17:45 - 10/06/22)
+              ✔ FOUND IT. It's in toggleInfoPanel, the flyTo that moves the map to the correct positon near the marker. Why it's causing this issue im not sure but at least I know where to start. @done(17:45 - 10/06/22)
+              ✔ FIX. I changed the flyTo, to setView and that fixed the problem. I'm not bothered by either of these effects so this change causes minimal issue to me. @done(17:45 - 10/06/22)
 
           
         ☐ Graphs (search.js)

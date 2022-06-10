@@ -39,10 +39,10 @@ export default function Covid19Map(props) {
   // Markers
   const [updateMarkerState, setUpdatedMarker] = useState()
 
-  const toggleInfoPanel = (x,lat,lng) =>{ 
+  const toggleInfoPanel = (x,lat,long) =>{ 
     setCountryInfo(x)
     setPanelVisible(true)
-    mapRef.current.flyTo(new L.LatLng(lat, lng), zoom);
+    mapRef.current.setView(new L.LatLng(lat, long), zoom);
   }
   
   // InformationPanel
