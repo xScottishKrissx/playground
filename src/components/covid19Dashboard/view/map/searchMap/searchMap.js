@@ -33,7 +33,7 @@ export default function SearchMap(props) {
 
         {findCountry.length > 0 ? 
            <div className='goToCountryButton' onClick={handleClick}>
-               <span class="material-icons">visibility</span> Country located, View Now! 
+               <span className="material-icons">visibility</span> Country located, View Now! 
             </div> 
             : 
             <span></span>

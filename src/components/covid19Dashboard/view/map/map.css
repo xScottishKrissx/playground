@@ -66,4 +66,11 @@
 
 }
 
-
+/* Reset Map */
+.resetMap span{
+    background-color: #2a2e32;
+}
+/* Map Interactions */
+.mapInteractionContainer .searchMap{
+    outline: none;
+}

@@ -1,11 +1,11 @@
 .searchMap{
-    background-color: #2a2e32;
+    /* background-color: #2a2e32; */
     /* height: 200px; */
-    margin-top: 15px;
-    margin-left: 15px;
+    /* margin-top: 15px; */
+    /* margin-left: 15px; */
     
     outline: 1px solid #2a2e32;
-    position: absolute;
+    position: relative;
     width: 260px;
     z-index: 999;
 }
@@ -32,4 +32,27 @@
     padding-left: 10px;
     padding-bottom: 10px;
     padding-top: 10px;
+
+    animation: showButton .25s;
+    animation-fill-mode: forwards;
+
+    transform: translateY(-20px);
+    position: relative;
+    z-index: 800;
+}
+
+
+
+@keyframes showButton{
+    0%{
+        opacity: 0; 
+        transform: translateY(-20px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+    100%{
+        opacity: 2; 
+        transform: translateY(0px);
+    }
 }

@@ -76,10 +76,11 @@ export default function Covid19Map(props) {
     <div className='slide s2'>
       <MapContainer ref={mapRef} center={location} zoom={zoom} zoomControl={false} >
 
-        <SearchMap countryData={countryData} goToCountry={goToCountry} toggleDrag={toggleDrag} closePanel={hideInformationPanel}/>
-
-        <ResetMap resetMap={resetMap} />
-
+        <div className='mapInteractionContainer d-flex flex-column mt-4 ms-3 position-absolute'>
+          <SearchMap countryData={countryData} goToCountry={goToCountry} toggleDrag={toggleDrag} closePanel={hideInformationPanel}/>
+          <ResetMap resetMap={resetMap} />
+        </div>
+        
         <TileLayer  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
         <ZoomControl position='bottomleft' />
 
