@@ -67,8 +67,18 @@
 }
 
 /* Reset Map */
-.resetMap span{
+.resetMap {
+    /* background-color: #2a2e32; */
+    /* background-color: red; */
     background-color: #2a2e32;
+    margin-top: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 40px;
+}
+
+.resetMap img{
+    height: 30px;
 }
 /* Map Interactions */
 .mapInteractionContainer .searchMap{

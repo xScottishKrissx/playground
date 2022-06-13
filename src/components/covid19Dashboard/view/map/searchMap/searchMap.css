@@ -1,11 +1,15 @@
+.mapInteractionContainer{
+    /* background-color: blue; */
+}
 .searchMap{
-    /* background-color: #2a2e32; */
+    /* background-color: red; */
     /* height: 200px; */
     /* margin-top: 15px; */
     /* margin-left: 15px; */
     
     outline: 1px solid #2a2e32;
     position: relative;
+    /* height: 40px; */
     width: 260px;
     z-index: 999;
 }
@@ -16,7 +20,7 @@
 
 .searchMap form input{
     border: none;
-    height: 50px;
+    height: 40px;
     font-size: 1.5rem;
 }
     .searchMap form input:focus-visible{

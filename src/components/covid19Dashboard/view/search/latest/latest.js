@@ -48,6 +48,8 @@ export default function Latest(props) {
         return x
     }
 
+    // console.log(covidTimeline)
+
     return (
         <div className='covid19Dashboard__latestContainer'>
 
@@ -71,7 +73,7 @@ export default function Latest(props) {
 
             <div className='latestStats__disclaimer'>
                 <h6 className='ps-2 text-muted'>Disclaimer</h6>
-                <p className='text-muted fs-6 ps-3 pe-3'>Countries submit their data at different times, formats and level of detail. This is why certain countries will report 0 cases(despite their still being cases) and some countries don't have graphs. </p>
+                <p className='text-muted fs-6 ps-3 pe-3'>Countries submit their data at different times, formats and level of detail. This is why certain countries will report 0 cases(despite their still being cases) and some countries don't have graphs. While some countries will not fully report new data over the weekend. </p>
             </div>
             
         </div>

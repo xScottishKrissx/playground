@@ -37,8 +37,8 @@ export default function FavCountryView(props) {
             
             <button onClick={setNewDefault}>
                 {usersFavCountry.toLowerCase() === country.toLowerCase() ? 
-                    <span id="star" className="material-icons">star</span> : 
-                    <span id="unstar" className="material-icons">star_border</span>
+                    <span title="Your current favourite country" id="star" className="material-icons">star</span> : 
+                    <span title="Mark this country as your favourite for easier tracking" id="unstar" className="material-icons">star_border</span>
                 }
             </button>
         </>

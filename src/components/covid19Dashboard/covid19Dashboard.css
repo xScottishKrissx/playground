@@ -1,3 +1,6 @@
+.covid19DashboardContainer *{
+    /* outline: 1px solid red; */
+}
 .covid19DashboardContainer{
     /* background-color: grey; */
     background-color: #272b30;

@@ -41,8 +41,8 @@ export default function Graph(props) {
         }]
     })
 
-
     return (
+
         <div className='covid19Dashboard__graphContainer p-4'>
             <Row className='d-flex' lg={12}>
                 <Col md={4} sm={12}>
