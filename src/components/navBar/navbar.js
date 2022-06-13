@@ -48,21 +48,21 @@ export const Navbar = (props) =>{
 
 
 
-    // On Scroll Event, fix navbar
-    const handleScroll = () => {
-        if(!navbar.current) return
+    // // On Scroll Event, fix navbar
+    // const handleScroll = () => {
+    //     if(!navbar.current) return
         
-        const navbarHeight = navbar.current.getBoundingClientRect().height;       
+    //     const navbarHeight = navbar.current.getBoundingClientRect().height;       
 
-        if(window.scrollY > navbarHeight ) {
-           navbar.current.classList.add('fixMenu')
-        }else{
-            navbar.current.classList.remove('fixMenu')
-        }
+    //     if(window.scrollY > navbarHeight ) {
+    //        navbar.current.classList.add('fixMenu')
+    //     }else{
+    //         navbar.current.classList.remove('fixMenu')
+    //     }
         
-      };
+    //   };
   
-      window.addEventListener("scroll", handleScroll, { passive: true });
+    //   window.addEventListener("scroll", handleScroll, { passive: true });
     
     
 return(

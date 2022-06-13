@@ -266,7 +266,7 @@ Javascript:
             ✔ Ability mark a country as a favorite for the search.js page @done(14:02 - 09/06/22)
             ✔ Your favourite country should be automatically centred on the map @done(14:02 - 09/06/22)
               ✔ A button that resets the view back to your default @done(16:27 - 10/06/22)
-                ☐ I think the icon that represents the favourite and the reset button should be the same in style and colour.
+                ✔ I think the icon that represents the favourite and the reset button should be the same in style and colour. @done(17:25 - 13/06/22)
 
             ✔ The marker showing your fav country should be distinguisable from the rest @done(17:48 - 09/06/22)
                 ✔ I've figured out how to change the marker colour, now to update when changing the favoured country @done(17:48 - 09/06/22)
@@ -346,9 +346,45 @@ Javascript:
           ..they work but the current styling can be improved.
           ✔ first off all, swap them around. they're very annoying to use @done(16:03 - 06/06/22)
 
+    Final Polishing:
+      physical device - Pixel 3a, 2560x1440 165hz monitor
+      chrome virtual device - Pixel 5, iPhone SE, iPhone 12Pro, Samsung Galazy S8
+      browser - chrome, firefox, edge
+
+      Map View:
+        ☐ On mobile, can you pinch to zoom the map in and out?
+        ☐ Mobile -> Information panel is totally borked, fix the spacing here.
+        ☐ Mobile -> Information panel font size is ugly as hell
+        ☐ Mobile -> Perhaps, favouriting a country should happen after clicking anywhere in the name, rather than just the star which might be tricky to press
+        ☐ Mobile -> The markers are way too big and in the wrong place, might be an issue.
+        ☐ Mobile -> The loading dashboard signal should be in the middle of the page and in a column configuration
+      Global Stats:
+        ☐ Mobile -> Maybe increase the padding on the left and right as the bigger numbers are getting closer to the edges
+        ☐ Mobile -> There's a lot of white space at the bottom of the page.
+        ☐ Mobile -> The stats just look wonky, whats this about?
+      Search:
+        ☐ Mobile -> The title and the search bar are cramped, switch to flex column and change the colour of the search box to be sligtly easier to see.
+          ☐ I think this can be spread the area straight below as well, way overcrowded here.
+        ☐ Mobile -> Again, space around the borders is an issue here, especially in the updated string
+        ☐ Mobile -> The disclaimer is halfway off the bottom of the page.
+      
+      Browser Check:
+        ☐ Chrome
+        ☐ Firefox
+        ☐ Edge
+
+      Mobile Browser Check:
+        ☐ Chrome
+        ☐ Firefox
+        ☐ Edge
+
+        
 
 
 
+  RMP Polishing Break:
+    ☐ The website looks very rough on my phone, do a pass on everything and make tweaks where appropriate to fix any issues.
+    ✔ Remove the sticky navbar, just keep it in place. @done(17:56 - 13/06/22)
           
   ☐ Drag and Drop functionality
   ☐ Something with react leaflet and maps
