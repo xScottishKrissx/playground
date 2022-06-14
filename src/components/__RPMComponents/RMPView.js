@@ -22,7 +22,7 @@ export default function NewView() {
         <Navbar setInputState={setInputState} />
         
         {/* Display Content */}
-        <Container className=' mt-5'>
+        <Container className='mainRMPContainer mt-5'>
             
             <Row className='mb-3'> 
                 <Col sm={12} className="intro"> <IntroductionMessage /> </Col> 

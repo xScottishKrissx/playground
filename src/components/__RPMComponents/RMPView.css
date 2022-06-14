@@ -1,4 +1,4 @@
-.container > div > div{
+.mainRMPContainer > div > div{
     /* background-color: rgb(255, 255, 255); */
     box-shadow: 0px 0px 10px 0px #00000040;
     display: flex;
@@ -8,7 +8,7 @@
     /* outline: 1px solid #00000021; */
     padding: 30px;
   }
-  .container .row .col > div {
+  .mainRMPContainer .row .col > div {
     /* background-color: white; */
     outline: 1px solid rgb(170, 170, 170);
     margin: 0 auto;

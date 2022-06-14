@@ -19,7 +19,7 @@ border-bottom:1px solid #ffffff1a ;
     background-color: #2a2e32;
     border: none !important;
     color: white;
-    height: 45px;
+    height: 55px;
 }
 
 .searchInputArea form :focus-visible{
@@ -31,7 +31,7 @@ border-bottom:1px solid #ffffff1a ;
     /* outline: 1px solid red; */
     width: 90%;
     margin: 0 auto;
-        margin-bottom: 5px;
+        margin-bottom: 15px;
 }
 
 #locationInfo *{
@@ -92,12 +92,33 @@ border-bottom:1px solid #ffffff1a ;
 }
 
 /* Latest Stats Display */
-
-.latestStatsDisplay .col  .row{
+.latestStatsDisplay .row {
+    /* padding-top: 5px;
+    padding-bottom: 5px; */
+    text-align: center;
+}
+.latestStatsDisplay .row  .col{
     outline: none;
     padding: 0;
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     /* height: 100px; */
+    margin-bottom: 10px !important;
+    padding: 1px !important;
     min-height: 0;
+    outline: none !important;
+    width: 100% !important;
+    box-shadow: 0px 0px 10px 0px #00000085;
+}
+.latestStatsDisplay .row .col .col h6{
+    font-size: 0.75rem;
+}
+
+.latestStatsDisplay .row .col .col p{
+    font-size: 1rem;
+}
+
+.latestStatsDisplay .row .col .col h6, .latestStatsDisplay .row .col .col p{
+    padding: 0;
+    margin: 0;
 }

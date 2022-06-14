@@ -46,26 +46,26 @@ export default function LatestStatsDisplay(props) {
 
   return (
     <Container className='latestStatsDisplay'>
-                <Col>
+                <Row>
                     
                     
-                        <Row className=''>
-                            <Col >
+                        <Col lg={12} className=''>
+                            <Col sm={4}>
                                 <h6>Todays Case</h6> 
                                 <p>{numberWithCommas(todayCases)}</p>
                             </Col>
-                            <Col>
+                            <Col sm={4}>
                                 <h6>Total Cases </h6>
                                 <p>{numberWithCommas(cases)}</p>
                             </Col>
 
-                            <Col>
-                                <h6>Cases Per Million</h6> 
+                            <Col sm={4}>
+                                <h6>Cases /million</h6> 
                                 <p>{numberWithCommas(casesPerOneMillion)}</p>
                             </Col>
-                        </Row>
+                        </Col>
         
-                        <Row className=''>
+                        <Col lg={6} className=''>
                             <Col>
                                 <h6>Todays Deaths</h6> 
                                 <p>{numberWithCommas(todayDeaths)}</p>
@@ -76,10 +76,10 @@ export default function LatestStatsDisplay(props) {
                             </Col>
 
                             <Col>
-                                <h6>Deaths Per Million</h6>
+                                <h6>Deaths /million</h6>
                                 <p>{numberWithCommas(deathsPerOneMillion)}</p>
                             </Col>
-                        </Row>                   
+                        </Col>                   
                                                 
                         <Row className=''>
                             <Col>
@@ -93,7 +93,7 @@ export default function LatestStatsDisplay(props) {
                             </Col>
 
                             <Col>
-                                <h6>Recovered Per Million</h6> 
+                                <h6>Recovered /million</h6> 
                                 <p>{numberWithCommas(recoveredPerOneMillion)}</p>
                             </Col>
                         </Row>
@@ -105,7 +105,7 @@ export default function LatestStatsDisplay(props) {
                             </Col>
 
                             <Col>
-                                <h6>Tests Per Million</h6>
+                                <h6>Tests /million</h6>
                                 <p>{numberWithCommas(testsPerOneMillion)}</p>
                             </Col>
                         </Row>
@@ -116,7 +116,7 @@ export default function LatestStatsDisplay(props) {
                                 <p>{numberWithCommas(critical)}</p>
                             </Col>
                             <Col>
-                                <h6>Critical Per Million</h6> 
+                                <h6>Critical /million</h6> 
                                 <p>{numberWithCommas(criticalPerOneMillion)}</p>
                             </Col>
                         </Row>                    
@@ -128,7 +128,7 @@ export default function LatestStatsDisplay(props) {
                             </Col>
 
                             <Col>
-                                <h6>Active Per Million</h6>
+                                <h6>Active /million</h6>
                                 <p>{numberWithCommas(activePerOneMillion)}</p>
                             </Col> 
                         </Row>               
@@ -145,7 +145,7 @@ export default function LatestStatsDisplay(props) {
                             </Col> 
                         </Row>
                     
-                </Col>
+                </Row>
             </Container>
   )
 }
