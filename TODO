@@ -355,9 +355,10 @@ Javascript:
         ☐ On mobile, can you pinch to zoom the map in and out?
         ✔ Mobile -> Information panel is totally borked, fix the spacing here. @done(12:58 - 14/06/22)
         ✔ Mobile -> Information panel font size is ugly as hell @done(12:58 - 14/06/22)
-        ☐ Mobile -> Perhaps, favouriting a country should happen after clicking anywhere in the name, rather than just the star which might be tricky to press
+        ✔ Mobile -> Perhaps, favouriting a country should happen after clicking anywhere in the name, rather than just the star which might be tricky to press @done(13:19 - 14/06/22)
         ☐ Mobile -> The markers are way too big and in the wrong place, might be an issue.
-        ☐ Mobile -> The loading dashboard signal should be in the middle of the page and in a column configuration
+          ☐ Might be a virtual emulation issue
+        ✔ Mobile -> The loading dashboard signal should be in the middle of the page and in a column configuration @done(13:25 - 14/06/22)
       Global Stats:
         ☐ Mobile -> Maybe increase the padding on the left and right as the bigger numbers are getting closer to the edges
         ☐ Mobile -> There's a lot of white space at the bottom of the page.
@@ -377,7 +378,9 @@ Javascript:
         ☐ Chrome
         ☐ Firefox
         ☐ Edge
-
+      
+      ☐ Fill in tags
+      ☐ Fill in project description
         
 
 

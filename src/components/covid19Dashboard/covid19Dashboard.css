@@ -7,11 +7,17 @@
     color: white;
     display: flex;
         flex-direction: column;
+        justify-content: center;
     height: 100%;
         min-height: 700px;
     overflow: hidden;
     position: relative;
     width: 100%;
+}
+.covid19DashboardContainer .searchResultsLoading{
+    display: flex;
+        align-items: center;
+        flex-direction: column;
 }
 .slideWrapper{
     outline: 1px solid red;

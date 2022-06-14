@@ -25,7 +25,7 @@ export default function Covid19DashboardView(props) {
         <div className='covid19DashboardContainer'>
           {/* {loading ? <p>Loading</p> : <View data={apiData} startingCountry={startingCountry} />} */}
 
-          {loading ? <Loading content="loading dashboard..." />
+          {loading ? <Loading content="loading data" />
           
           :
           
