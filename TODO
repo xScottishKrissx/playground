@@ -353,8 +353,8 @@ Javascript:
 
       Map View:
         ☐ On mobile, can you pinch to zoom the map in and out?
-        ☐ Mobile -> Information panel is totally borked, fix the spacing here.
-        ☐ Mobile -> Information panel font size is ugly as hell
+        ✔ Mobile -> Information panel is totally borked, fix the spacing here. @done(12:58 - 14/06/22)
+        ✔ Mobile -> Information panel font size is ugly as hell @done(12:58 - 14/06/22)
         ☐ Mobile -> Perhaps, favouriting a country should happen after clicking anywhere in the name, rather than just the star which might be tricky to press
         ☐ Mobile -> The markers are way too big and in the wrong place, might be an issue.
         ☐ Mobile -> The loading dashboard signal should be in the middle of the page and in a column configuration
@@ -423,6 +423,14 @@ React Projects:
   ☐ stripe payment menu page
   ☐ shopping cart page
   ☐ cocktail search page
+  ☐ some kind of note taking app but optimised for code
+  ☐ my literature spreadsheet as an actual tool
 
 Typescript:
   ☐ Arkanoid Game
+
+Next.js:
+  ☐ 
+
+Gatsby:
+  ☐ 

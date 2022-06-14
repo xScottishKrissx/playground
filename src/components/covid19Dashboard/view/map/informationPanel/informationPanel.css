@@ -57,10 +57,18 @@
     display: flex;
         justify-content: space-evenly;
 }
-.informationPanel__doubleItemRow > div{
-    min-width: 175px;
-}
 
+@media screen and (max-width:768px){
+    .informationPanel__doubleItemRow > div{
+       display: flex;
+       flex-direction: column;
+    }
+
+    .informationPanel__singleItemRow .informationPanel__infoNumber{
+        font-size: 1.5rem;
+    }
+    
+}
 
 @media screen and (min-width:992px){
     .informationPanel__doubleItemRow > div{
