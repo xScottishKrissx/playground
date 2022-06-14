@@ -6,6 +6,8 @@ import Loading from '../../loading';
 import LatestStatsDisplay from './latestStatsDisplay/latestStatsDisplay';
 import Updated from '../../updated';
 import FavCountryView from '../../favCountryView';
+
+import { Row, Col } from 'react-bootstrap';
 export default function Latest(props) {    
 
 
@@ -53,14 +55,18 @@ export default function Latest(props) {
     return (
         <div className='covid19Dashboard__latestContainer'>
 
-            <div className='locationInfo'>
-                <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span>
-                <span className='countryName fs-3' > 
-                    <FavCountryView country={country} lat={lat} long={long} updateMarker={updateMarker}/>
-                </span>
+            <Row id="locationInfo">
+
+                    {/* <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span> */}
+                    <Row>
+                    <Col className='locationInfo__updated'>Updated: <Updated updated={updated} /></Col> 
+                        <Col className="locationInfo__continent" >{continent}</Col>
+                        <Col className="locationInfo__country" > 
+                            <FavCountryView country={country} lat={lat} long={long} updateMarker={updateMarker}/>
+                        </Col>
+                    </Row>
             
-            <span className='ms-5 fs-6 text-muted'>Updated: <Updated updated={updated} /></span> 
-            </div>
+            </Row>
 
             <LatestStatsDisplay data={data} country={country} countryVaccine={countryVaccine}/>
 

@@ -19,7 +19,7 @@ border-bottom:1px solid #ffffff1a ;
     background-color: #2a2e32;
     border: none !important;
     color: white;
-    height: 60px;
+    height: 45px;
 }
 
 .searchInputArea form :focus-visible{
@@ -27,4 +27,77 @@ border-bottom:1px solid #ffffff1a ;
     outline: 0px ;
 }
 
+#locationInfo{
+    /* outline: 1px solid red; */
+    width: 90%;
+    margin: 0 auto;
+        margin-bottom: 5px;
+}
 
+#locationInfo *{
+    /* outline: 1px solid white; */
+    /* width: auto; */
+}
+#locationInfo > .row{
+    border-bottom: 1px solid white;
+    margin: 0 auto;
+    display: flex;
+        align-items: center;
+        flex-direction: row;
+    /* margin-top: 5px; */
+    
+}
+
+.locationInfo__updated{
+    color: grey;
+    font-size: .75rem;
+    /* width: 100% !important; */
+    text-align: center;
+}
+.locationInfo__continent, .locationInfo__country{
+    font-size: 1rem;
+    padding: 0;
+    text-align: center;
+}
+.locationInfo__continent{
+    /* background-color: white; */
+    color: grey;
+    /* display: flex; */
+        /* align-items: center; */
+}
+
+.locationInfo__country{
+    font-size: 2rem;
+}
+
+
+
+@media screen and (max-width:768px) {
+    .searchInputArea{
+        flex-direction: column;
+    }
+    .searchInputArea h2{
+        padding: 5px;
+    }
+    .searchInputArea form{
+        outline: 1px solid grey;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+    }
+
+    .locationInfo{
+        /* flex-wrap: wrap; */
+    }
+}
+
+/* Latest Stats Display */
+
+.latestStatsDisplay .col  .row{
+    outline: none;
+    padding: 0;
+    display: flex;
+    /* align-items: center; */
+    /* height: 100px; */
+    min-height: 0;
+}

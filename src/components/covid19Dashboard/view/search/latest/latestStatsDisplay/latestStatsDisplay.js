@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Row, Col } from 'react-bootstrap'
+import { Container,Row, Col } from 'react-bootstrap'
 import Loading from '../../../loading';
 
 
@@ -45,127 +45,107 @@ export default function LatestStatsDisplay(props) {
     
 
   return (
-    <Row className='latestStatsDisplay text-center align-items-center'>
-                <Col lg={6}>
+    <Container className='latestStatsDisplay'>
+                <Col>
                     
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
+                    
+                        <Row className=''>
+                            <Col >
                                 <h6>Todays Case</h6> 
                                 <p>{numberWithCommas(todayCases)}</p>
-                            </div>
-                            <div>
+                            </Col>
+                            <Col>
                                 <h6>Total Cases </h6>
                                 <p>{numberWithCommas(cases)}</p>
-                            </div>
+                            </Col>
 
-                            <div>
+                            <Col>
                                 <h6>Cases Per Million</h6> 
                                 <p>{numberWithCommas(casesPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-
-                    
-                    <Col>
-
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
+                            </Col>
+                        </Row>
+        
+                        <Row className=''>
+                            <Col>
                                 <h6>Todays Deaths</h6> 
                                 <p>{numberWithCommas(todayDeaths)}</p>
-                            </div>
-                            <div>
+                            </Col>
+                            <Col>
                                 <h6>Total Deaths</h6> 
                                 <p>{numberWithCommas(deaths)}</p>
-                            </div>
+                            </Col>
 
-                            <div>
+                            <Col>
                                 <h6>Deaths Per Million</h6>
                                 <p>{numberWithCommas(deathsPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-                    
-                    <Col>                    
-
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
+                            </Col>
+                        </Row>                   
+                                                
+                        <Row className=''>
+                            <Col>
                                 <h6>Recovered Today</h6> 
                                 <p>{numberWithCommas(todayRecovered)}</p>
-                            </div>
+                            </Col>
 
-                            <div>
+                            <Col>
                                 <h6>Total Recovered</h6>
                                 <p>{numberWithCommas(recovered)}</p>
-                            </div>
+                            </Col>
 
-                            <div>
+                            <Col>
                                 <h6>Recovered Per Million</h6> 
                                 <p>{numberWithCommas(recoveredPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-
-
-                </Col>
-                
-                <Col lg={6}>
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
+                            </Col>
+                        </Row>
+                    
+                        <Row className=''>
+                            <Col>
                                 <h6>Total Tests </h6>
                                 <p>{numberWithCommas(tests)}</p>
-                            </div>
+                            </Col>
 
-                            <div>
+                            <Col>
                                 <h6>Tests Per Million</h6>
                                 <p>{numberWithCommas(testsPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
+                            </Col>
+                        </Row>
+                    
+                        <Row className=''>
+                            <Col>
                                 <h6>Critical </h6>
                                 <p>{numberWithCommas(critical)}</p>
-                            </div>
-                            <div>
+                            </Col>
+                            <Col>
                                 <h6>Critical Per Million</h6> 
                                 <p>{numberWithCommas(criticalPerOneMillion)}</p>
-                            </div>
-                        </div>
-                    </Col>
-
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
+                            </Col>
+                        </Row>                    
+                    
+                        <Row className=''>
+                            <Col>
                                 <h6>Active</h6>
                                 <p>{numberWithCommas(active)}</p>
-                            </div>
+                            </Col>
 
-                            <div>
+                            <Col>
                                 <h6>Active Per Million</h6>
                                 <p>{numberWithCommas(activePerOneMillion)}</p>
-                            </div> 
-                        </div>
-                    </Col>
-
-                    <Col>
-                        <div className='d-flex align-items-center justify-content-evenly'>
-                            <div>
+                            </Col> 
+                        </Row>               
+                    
+                        <Row className=''>
+                            <Col>
                                 <h6>Total Vaccines</h6> 
                                 <p>{numberWithCommas(totalVaccines)}</p>
-                            </div>
+                            </Col>
 
-                            <div>
+                            <Col>
                                 <h6>Population</h6>
                                 <p>{numberWithCommas(population)}</p>
-                            </div> 
-                        </div>
-                    </Col>
-
+                            </Col> 
+                        </Row>
+                    
                 </Col>
-            </Row>
+            </Container>
   )
 }
