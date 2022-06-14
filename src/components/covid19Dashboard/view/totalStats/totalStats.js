@@ -67,7 +67,7 @@ export default function TotalStats(props) {
 
       :
       <div className='slide s1 totalStats__wrapper'>
-        <h1 className='me-3 ms-3'>Global Stats</h1>
+        <h1 className='me-3 ms-3 mt-3'>Global Stats</h1>
         <div className='totalStats__statBoxContainer'>
 
 {/* Row 1 */}
@@ -142,12 +142,12 @@ export default function TotalStats(props) {
             
             <Col id="critical">
               <div>
-                <div>Critical:</div> 
+                <div>Critical</div> 
                 <div>{numberWithCommas(critical)}</div>
               </div>
 
               <div>
-                <div>Critical Per Million:</div> 
+                <div>Critical Per Million</div> 
                 <div>{numberWithCommas(criticalPerOneMillion)}</div>
               </div> 
             </Col>

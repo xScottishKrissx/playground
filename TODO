@@ -360,9 +360,9 @@ Javascript:
           ☐ Might be a virtual emulation issue
         ✔ Mobile -> The loading dashboard signal should be in the middle of the page and in a column configuration @done(13:25 - 14/06/22)
       Global Stats:
-        ☐ Mobile -> Maybe increase the padding on the left and right as the bigger numbers are getting closer to the edges
-        ☐ Mobile -> There's a lot of white space at the bottom of the page.
-        ☐ Mobile -> The stats just look wonky, whats this about?
+        ✔ Mobile -> Maybe increase the padding on the left and right as the bigger numbers are getting closer to the edges @done(13:44 - 14/06/22)
+        ✔ Mobile -> There's a lot of white space at the bottom of the page. @done(13:44 - 14/06/22)
+        ✔ Mobile -> The stats just look wonky, whats this about? @done(13:45 - 14/06/22)
       Search:
         ☐ Mobile -> The title and the search bar are cramped, switch to flex column and change the colour of the search box to be sligtly easier to see.
           ☐ I think this can be spread the area straight below as well, way overcrowded here.

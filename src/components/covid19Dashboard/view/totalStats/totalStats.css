@@ -44,16 +44,37 @@
     /* color: white !important; */
     color: #ffffff82;
     font-size: 0.75rem;
+    text-align: center;
 }
 
 .totalStats__statBoxContainer .row .col div div:nth-child(2){
     /* color: red !important; */
     font-size: 1.75rem;
     margin-bottom: 10px;
+    text-align: center
+
 } 
 
 @media screen and (max-width:768px){
+    .totalStats__statBoxContainer{
+        padding-left: 10px;
+        padding-right: 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        flex-direction: column;
+
+    }
+    .totalStats__statBoxContainer .row{
+        margin-bottom: 10px;
+    }
+    .totalStats__statBoxContainer .row .col{
+        outline: 1px solid #8080803d;
+    }
+
     .totalStats__statBoxContainer .row .col div div:nth-child(2){
-        font-size: 1.25rem;
+        font-size: 1rem;
     }
 }
