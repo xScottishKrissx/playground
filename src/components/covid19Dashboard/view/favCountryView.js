@@ -34,13 +34,13 @@ export default function FavCountryView(props) {
     
     return (
         <>
-            
-            <button onClick={setNewDefault}>
+            <div className='setFavCountry' onClick={setNewDefault}>
                 {usersFavCountry.toLowerCase() === country.toLowerCase() ? 
                     <span title="Your current favourite country" id="star" className="material-icons">star</span> : 
                     <span title="Mark this country as your favourite for easier tracking" id="unstar" className="material-icons">star_border</span>
                 }
-            </button>
+                <span className='ms-2'>{country}</span>
+            </div>
         </>
     )
 }

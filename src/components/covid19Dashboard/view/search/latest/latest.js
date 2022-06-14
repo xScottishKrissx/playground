@@ -57,7 +57,6 @@ export default function Latest(props) {
                 <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span>
                 <span className='countryName fs-3' > 
                     <FavCountryView country={country} lat={lat} long={long} updateMarker={updateMarker}/>
-                    <span className='ms-1'>{country.toUpperCase()}</span>
                 </span>
             
             <span className='ms-5 fs-6 text-muted'>Updated: <Updated updated={updated} /></span> 

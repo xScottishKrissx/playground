@@ -65,9 +65,8 @@ export default function InformationPanel(props) {
                         <button onClick={hideInformationPanel}><span className="material-icons">close</span></button>
                     </div>
                     
-                    <span className='countryName fs-3'>
+                    <span onClick={()=>setNewCountry(country)} className='countryName fs-3'>
                         <FavCountryView country={country} lat={lat} long={long} updateMarker={updateMarker} />
-                        <span onClick={()=>setNewCountry(country)} className='informationPanel__countryName ms-1'>{country}</span>
                     </span>
                 </div>
 

@@ -51,3 +51,23 @@
     /* width: 100%; */
     /* z-index: 20; */
 }
+
+.setFavCountry{
+    cursor: pointer;
+    display: flex;
+        align-items: center;
+    margin-bottom: 10px;
+    /* outline: 1px solid grey; */
+    width: 100%;
+}
+
+#star{
+    font-size: 1rem;
+    margin-left: 10px;
+    color: gold;
+}
+
+#unstar{
+    font-size: 1rem;
+    margin-left: 10px;
+}
