@@ -365,26 +365,28 @@ Javascript:
         ✔ Mobile -> The stats just look wonky, whats this about? @done(13:45 - 14/06/22)
       Search:
         ✔ Mobile -> The title and the search bar are cramped, switch to flex column and change the colour of the search box to be sligtly easier to see. @done(16:40 - 14/06/22)
-          ☐ I think this can be spread the area straight below as well, way overcrowded here.
-        ☐ Mobile -> Again, space around the borders is an issue here, especially in the updated string
-        ☐ Mobile -> The disclaimer is halfway off the bottom of the page.
-          ☐ I think i might need to redo this entire thing using a map. There's too many divs on page and I can probably remove things from the array easier than it is currently wrangling 40 different divs, cols and rows into a design.
-            ☐ Redo this.
-          ☐ Or is it?
-            ☐ ...maybe I just need to create better structure for the page.
-      
-      Browser Check:
-        ☐ Chrome
-        ☐ Firefox
-        ☐ Edge
+          ✔ I think this can be spread the area straight below as well, way overcrowded here. @done(17:22 - 15/06/22)
+        ✔ Mobile -> Again, space around the borders is an issue here, especially in the updated string @done(17:22 - 15/06/22)
+        ✔ Mobile -> The disclaimer is halfway off the bottom of the page. @done(17:22 - 15/06/22)
+          ✘ I think i might need to redo this entire thing using a map. There's too many divs on page and I can probably remove things from the array easier than it is currently wrangling 40 different divs, cols and rows into a design. @cancelled(17:22 - 15/06/22)
+            ✘ Redo this. @cancelled(17:22 - 15/06/22)
+          ✔ Or is it? @done(17:22 - 15/06/22)
+            ✔ ...maybe I just need to create better structure for the page. @done(17:22 - 15/06/22)
+      I think most of the initial polishing is complete, the next stage would be to get the dashboard onto the portfolio so i can test with a real mobile.
+      Build and test the Covid-19 Dashboard:
+        ☐ Fill in tags
+        ☐ Fill in project description
+        
+        Browser Check:
+          ☐ Chrome
+          ☐ Firefox
+          ☐ Edge
 
-      Mobile Browser Check:
-        ☐ Chrome
-        ☐ Firefox
-        ☐ Edge
+        Mobile Browser Check:
+          ☐ Chrome
+          ☐ Firefox
+          ☐ Edge
       
-      ☐ Fill in tags
-      ☐ Fill in project description
         
 
 
