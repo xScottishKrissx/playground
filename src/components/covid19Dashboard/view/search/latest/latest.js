@@ -60,10 +60,10 @@ export default function Latest(props) {
                     {/* <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span> */}
                     <Row>
                     <Col className='locationInfo__updated'>Updated: <Updated updated={updated} /></Col> 
-                        <Col className="locationInfo__continent" >{continent}</Col>
                         <Col className="locationInfo__country" > 
                             <FavCountryView country={country} lat={lat} long={long} updateMarker={updateMarker}/>
                         </Col>
+                        <Col className="locationInfo__continent" >{continent}</Col>
                     </Row>
             
             </Row>
