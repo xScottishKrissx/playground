@@ -1,24 +1,16 @@
 import React from 'react'
-
 import './latest.css'
 import Graph from '../graphs/graph';
 import Loading from '../../loading';
 import LatestStatsDisplay from './latestStatsDisplay/latestStatsDisplay';
-import Updated from '../../updated';
-import FavCountryView from '../../favCountryView';
+import LocationInfo from '../locationInfo/locationInfo';
 
-import { Row, Col } from 'react-bootstrap';
 export default function Latest(props) {    
 
-
-    // const [isFav, setFav] = useState(props.currentDefault)
 
     const {data,country, countryVaccine, covidTimeline, setNewCountry} = props
     const filterCountry = data.filter(x => x.country.toLowerCase() === country.toLowerCase())
     const getCountry = filterCountry[0]
-    // Deleting an object from object array
-    // delete getCountry.countryInfo
-
 
     // Don't return anything while user is typing
     if(!getCountry) return  <Loading content="latest js..."/>;
@@ -26,47 +18,16 @@ export default function Latest(props) {
     const {continent, countryInfo, updated } = getCountry
     const {lat, long} = countryInfo
 
-    // Converting object array to be used for map
-    // const getThing = Object.entries(getCountry).map(([point1, point2]) => ({point1, point2}))
-    // const mapThing = getThing.map(x => {
-    //     return(
-    //         <div>
-    //             <p>{x.point1}</p>
-    //             <p>{x.point2}</p>
-    //         </div>
-    //     )
-    // })
-    
-    // const setNewDefault = () =>{ 
-    //     setNewCountry(country) 
-    //     setFav(country)
-    // }
-
-
-
-    // console.log(country, props.currentDefault)
-    // Temporary while I work on the updating markers
-    const updateMarker = (x) =>{
-        return x
-    }
-
-    // console.log(covidTimeline)
-
     return (
         <div className='covid19Dashboard__latestContainer'>
 
-            <Row id="locationInfo">
-
-                    {/* <span className='fs-5 ms-3 me-2 text-muted' >{continent} &gt;</span> */}
-                    <Row>
-                    <Col className='locationInfo__updated'>Updated: <Updated updated={updated} /></Col> 
-                        <Col className="locationInfo__country" > 
-                            <FavCountryView country={country} lat={lat} long={long} updateMarker={updateMarker}/>
-                        </Col>
-                        <Col className="locationInfo__continent" >{continent}</Col>
-                    </Row>
-            
-            </Row>
+            <LocationInfo 
+                country={country} 
+                lat={lat} 
+                long={long} 
+                continent={continent} 
+                updated={updated}
+            />
 
             <LatestStatsDisplay data={data} country={country} countryVaccine={countryVaccine}/>
 
