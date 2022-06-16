@@ -391,9 +391,9 @@ Javascript:
           ✔ Edge @done(16:50 - 16/06/22)
 
         Mobile Browser Check:
-          ☐ Chrome
-          ☐ Firefox
-          ☐ Edge
+          ✔ Chrome @done(16:57 - 16/06/22)
+          ✔ Firefox @done(16:57 - 16/06/22)
+          ✔ Edge @done(16:57 - 16/06/22)
       
       ☐ Final Build
 
