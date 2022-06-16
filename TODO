@@ -387,7 +387,7 @@ Javascript:
           ☐ Firefox
             ✔ Country Lookup -> Theres a black line to the left hand side @done(16:54 - 16/06/22)
               ✔ It's an outline on the slide 2, whose width I fixed to be correctly within its own boundaries @done(16:54 - 16/06/22)
-            ☐ Country Lookup -> Remove the latest.js you see when typing
+            ✔ Country Lookup -> Remove the latest.js you see when typing @done(16:56 - 16/06/22)
           ✔ Edge @done(16:50 - 16/06/22)
 
         Mobile Browser Check:

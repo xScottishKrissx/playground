@@ -13,7 +13,7 @@ export default function Latest(props) {
     const getCountry = filterCountry[0]
 
     // Don't return anything while user is typing
-    if(!getCountry) return  <Loading content="latest js..."/>;
+    if(!getCountry) return  <Loading content="searching..."/>;
     
     const {continent, countryInfo, updated } = getCountry
     const {lat, long} = countryInfo
