@@ -1,3 +1,5 @@
+Covid-19 Dashboard
+
 The Covid 19 dashboard is an escalation of SimpleChart and builds upon everything it did. 
 
 There are three sections, each outputting data from an API supplied by disease.sh. You can view each country's covid data by clicking on the map marker, searching the map using the search box or the country lookup section. You can also favourite a country so that it will be the default country you see on load and when you click on the gold marker on the map. 
