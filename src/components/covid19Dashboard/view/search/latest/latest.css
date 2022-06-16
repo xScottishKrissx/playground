@@ -1,16 +1,6 @@
-
-
-
-.covid19Dashboard__latestContainer{
-    
-}
-
 .locationInfo{
     display: flex;
     align-items: center;
-}
-.locationInfo > span{
-
 }
 .locationInfo span img{
     width: 30px;
@@ -18,9 +8,6 @@
     margin-right: 5px;
 }
 
-#locationInfo__population{
-
-}
 #unstar{
     opacity: 0.5;
 }
@@ -28,7 +15,6 @@
     animation: showStarAni 0.75s;
     animation-fill-mode: forwards;
 }
-
 
 @keyframes showStarAni{
     0%{opacity: 0.5; transform: translateY(0);}
@@ -60,7 +46,6 @@
     color: grey;
     margin: 0;
     min-width: 150px;
-    /* outline: 1px solid; */
 }
 
 
@@ -69,8 +54,6 @@
     color: white;
     margin: 0;
 }
-
-/*  */
 
 /* covid19Dashboard__graphContainer p-4 */
 @media screen and (max-width:768px){

@@ -8,10 +8,8 @@ import { useState } from 'react'
 
 export default function FavCountryView(props) {
 
-    // localStorage.clear()
     const {country, lat, long,updateMarker} = props
     const usersFavCountry = localStorage.getItem("favCountry") || "UK"
-    // const startingCountry = usersFavCountry || "UK"
     // eslint-disable-next-line no-unused-vars
     const [updateStateOnStarClick, forceUpdate] = useState(0)
     

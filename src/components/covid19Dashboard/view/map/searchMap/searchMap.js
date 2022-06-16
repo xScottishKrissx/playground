@@ -4,7 +4,7 @@ import './searchMap.css'
 
 export default function SearchMap(props) {
 
-    const thing = useRef()
+    const searchMap = useRef()
     const {countryData, goToCountry, toggleDrag, closePanel} = props
     // console.log(countryData)
 
@@ -27,7 +27,7 @@ export default function SearchMap(props) {
     const handleDrag = (x) => toggleDrag(x) 
 
   return (
-      <div className='searchMap' onMouseDown={()=>handleDrag(true)} onMouseUp={()=>handleDrag(false)} ref={thing}>
+      <div className='searchMap' onMouseDown={()=>handleDrag(true)} onMouseUp={()=>handleDrag(false)} ref={searchMap}>
 
           <SearchBox input={getInput} showIcon={true} closePanel={closePanel} />
 

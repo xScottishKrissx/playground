@@ -2,43 +2,20 @@ import React from 'react'
 
 import './totalStats.css'
 
-import { Container, Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap'
 import Updated from '../updated'
 
 export default function TotalStats(props) {
-  // const data = props.data
   const vaccineData = props.vaccineData
-  // console.log(vaccineData)
-  // console.log(props.data)
-
-
-
-  // const getTotalCasesFromData = Object.entries(data.cases).reverse()[0][1]
-  // const totalCases = numberWithCommas(getTotalCasesFromData)
-
-  // const getTotalDeathsFromData = Object.entries(data.deaths).reverse()[0][1]
-  // const totalDeaths = numberWithCommas(getTotalDeathsFromData)
 
   const getTotalVaccinesFromData = Object.entries(vaccineData).reverse()[0][1]
   const totalVaccines = numberWithCommas(getTotalVaccinesFromData)
-
-  // const countryData = props.countryData
-  // console.log(data)
-
-
-// For adding objects within an array
-  //   const sum = [data.cases].reduce((partialSum,a) => partialSum + a,0)
-
-// Useful for adding values withing an object
-  //  console.log(Object.values(data.cases).reduce((t,n ) => t + n))
 
   // src: https://stackoverflow.com/questions/2901102/how-to-print-a-number-with-commas-as-thousands-separators-in-javascript
   function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
 
-  
-  // console.log(props.data)
   const {
       todayCases, 
       cases,
@@ -57,9 +34,6 @@ export default function TotalStats(props) {
       activePerOneMillion,
       updated
     } = props.data
-
-
-
 
   return (
   <>
@@ -177,7 +151,6 @@ export default function TotalStats(props) {
               </div>
             </Col>
           </Row>
-          {/* <p>Updated: {updated}</p> */}
           <p className='text-muted ps-3'>Updated: <Updated updated={updated} /></p>
         </div>
       </div> 
@@ -185,5 +158,3 @@ export default function TotalStats(props) {
   </>
   )
 }
-
-//134,355,861,486

@@ -10,7 +10,6 @@ export default function LocationInfo(props) {
 
     return (
             <div className='locationInfo__container'>
-                
                     <div className="locationInfo__country" > 
                         <FavCountryView country={country} lat={lat} long={long} updateMarker={updateMarker}/>
                     </div>
@@ -22,10 +21,7 @@ export default function LocationInfo(props) {
                     <div className='locationInfo__updated '>
                         <span >Updated</span> 
                         <span><Updated updated={updated} /></span>
-                    </div> 
-                    
-
-                
+                    </div>                 
             </div>
     )
 }

@@ -8,7 +8,7 @@ export default function Markers(props) {
     const {countryData, toggleInfoPanel} = props
     const usersFavCountry = localStorage.getItem("favCountry") || "UK"
     const favIcon = new L.icon({
-        iconRetinaUrl: require('../../../../assets/marker-icon-2x-gold.png'),
+        iconRetinaUrl: require('../../../../assets/marker-icon-gold.png'),
         iconUrl: require('../../../../assets/marker-icon-gold.png'),
         shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
         // className: "markedAsFav"
@@ -17,9 +17,9 @@ export default function Markers(props) {
     })
 
     const normalIcon = new L.icon({
-        iconRetinaUrl: require('../../../../assets/marker-icon-2x-blue.png'),
+        iconRetinaUrl: require('../../../../assets/marker-icon-blue.png'),
         iconUrl: require('../../../../assets/marker-icon-blue.png'),
-        shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
+        // shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
         iconAnchor: [15, 35],
     })
 

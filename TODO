@@ -287,7 +287,7 @@ Javascript:
             
 
           
-        ☐ Graphs (search.js)
+        Graphs (search.js):
           Goal:
             ✔ You can search a country and get a chart visualising various pieces of data from that country @done(17:24 - 02/06/22)
             Notes
@@ -352,12 +352,17 @@ Javascript:
       browser - chrome, firefox, edge
 
       Map View:
-        ☐ On mobile, can you pinch to zoom the map in and out?
+        ✔ On mobile, can you pinch to zoom the map in and out? @done(16:02 - 16/06/22)
+          ✔ yes @done(16:02 - 16/06/22)
         ✔ Mobile -> Information panel is totally borked, fix the spacing here. @done(12:58 - 14/06/22)
         ✔ Mobile -> Information panel font size is ugly as hell @done(12:58 - 14/06/22)
         ✔ Mobile -> Perhaps, favouriting a country should happen after clicking anywhere in the name, rather than just the star which might be tricky to press @done(13:19 - 14/06/22)
-        ☐ Mobile -> The markers are way too big and in the wrong place, might be an issue.
-          ☐ Might be a virtual emulation issue
+        ✘ Mobile -> The markers are way too big and in the wrong place, might be an issue. @cancelled(16:00 - 16/06/22)
+          ✔ Might be a virtual emulation issue @done(11:56 - 16/06/22)
+            ✔ It's not but I'm not sure what to do about this @done(16:00 - 16/06/22)
+            ✔ The marker size -> Set a width of 25px which is the same as on desktop and should be fine on mobile. This also solves the position problem. 
+            @done(16:00 - 16/06/22)
+              ✔ This didn't fix it and i dont know what else to do. So i am moving on and will come back and fix it if I get any ideas @done(16:01 - 16/06/22)
         ✔ Mobile -> The loading dashboard signal should be in the middle of the page and in a column configuration @done(13:25 - 14/06/22)
       Global Stats:
         ✔ Mobile -> Maybe increase the padding on the left and right as the bigger numbers are getting closer to the edges @done(13:44 - 14/06/22)
@@ -374,19 +379,26 @@ Javascript:
             ✔ ...maybe I just need to create better structure for the page. @done(17:22 - 15/06/22)
       I think most of the initial polishing is complete, the next stage would be to get the dashboard onto the portfolio so i can test with a real mobile.
       Build and test the Covid-19 Dashboard:
-        ☐ Fill in tags
-        ☐ Fill in project description
+        ✔ Fill in tags @done(16:47 - 16/06/22)
+        ✔ Fill in project description @done(16:47 - 16/06/22)
         
         Browser Check:
-          ☐ Chrome
+          ✔ Chrome @done(16:48 - 16/06/22)
           ☐ Firefox
-          ☐ Edge
+            ✔ Country Lookup -> Theres a black line to the left hand side @done(16:54 - 16/06/22)
+              ✔ It's an outline on the slide 2, whose width I fixed to be correctly within its own boundaries @done(16:54 - 16/06/22)
+            ☐ Country Lookup -> Remove the latest.js you see when typing
+          ✔ Edge @done(16:50 - 16/06/22)
 
         Mobile Browser Check:
           ☐ Chrome
           ☐ Firefox
           ☐ Edge
       
+      ☐ Final Build
+
+
+    ☐ End of Project
         
 
 
