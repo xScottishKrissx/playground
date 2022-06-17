@@ -409,7 +409,7 @@ Javascript:
       375px:
         ✔ The dropdown menu looks naff, a bit more separation from the title. @done(15:41 - 17/06/22)
         ✔ The main search bar looks naff @done(15:43 - 17/06/22)
-        ☐ Simple API -> there is text going off screen
+        ✔ Simple API -> there is text going off screen @done(15:51 - 17/06/22)
         ☐ SImple Filter -> This also looks naff
           ☐ Clean up the filter buttons
           ☐ The filter results are off centre and look...naff
