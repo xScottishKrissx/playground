@@ -420,6 +420,10 @@ Javascript:
             ✔ ...then unhidden all at once @done(17:57 - 17/06/22)
           ✔ I don't think an accordion like system is viable due to the differing sizes of each project. A simple hide/unhide all is probably the best way forward. @done(17:57 - 17/06/22)
           ✔ It shouldn't affect the search result number and it should be highlighted if that projects are hidden AT ALL TIMES. @done(17:57 - 17/06/22)
+    ✔ There is a lot of white space to the right when view on my phone. @done(18:04 - 17/06/22)
+        ✔ ...testing and fixed. @done(18:04 - 17/06/22)
+        ... this was fixed in the above fixes, i just hadnt uploaded a new build
+    ✔ The hide button icon needs it's z-index tweaked. @done(18:06 - 17/06/22)
 
           
   ☐ Drag and Drop functionality
