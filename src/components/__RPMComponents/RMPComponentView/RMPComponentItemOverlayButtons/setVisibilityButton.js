@@ -1,11 +1,8 @@
-import React, {useRef} from 'react'
-
-
-
+import React from 'react'
 
 export default function SetVisibilityButton(props) {
 
-    const {numberHidden} = props
+    const {numberHidden, iconColour} = props
 
     const hideParent = (e) =>{
 
@@ -21,8 +18,11 @@ export default function SetVisibilityButton(props) {
 
 
   return (
-    <div onClick={(e)=>hideParent(e)}>
-        <span className="material-icons">visibility</span>
+    <div onClick={(e)=>hideParent(e)} className="hideProjectButton" title="Hide project from view(resets on load)">
+        {iconColour === "dark" ? 
+            <span className="material-icons">visibility</span> : 
+            <span className="material-icons light">visibility</span>
+        }
     </div>
   )
 }

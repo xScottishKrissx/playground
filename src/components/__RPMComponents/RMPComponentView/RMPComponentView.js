@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useState} from 'react'
 
 import './RMPComponentView.css'
 
@@ -39,7 +39,7 @@ export default function RMPComponentView(props) {
             <div className='componentItemButtonsContainer d-flex w-100 top-0 left-0 position-absolute'>
               <GithubLink githubUrl={x.github} iconColour={x.iconColour}/>
               <TaskInformation  name={x.name} information={x.information} iconColour={x.iconColour} tags={x.tags}/>
-              <SetVisibilityButton numberHidden={setHidden}/>
+              <SetVisibilityButton iconColour={x.iconColour} numberHidden={setHidden}/>
             </div>
 
 
@@ -64,9 +64,8 @@ export default function RMPComponentView(props) {
 
             {hidden ? 
               
-              <div>
-                <p>Hidden: {hidden}</p> 
-                <p onClick={unHideAll}>Unhide All</p>
+              <div onClick={unHideAll} className='hiddenProjectIndication text-muted'>
+                <p>{hidden} project hidden -- <span >Restore All</span> </p> 
               </div>
               
               : null} 
