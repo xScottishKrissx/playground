@@ -407,8 +407,8 @@ Javascript:
     ☐ The website looks very rough on my phone, do a pass on everything and make tweaks where appropriate to fix any issues.
       ✔ Remove the sticky navbar, just keep it in place. @done(17:56 - 13/06/22)
       375px:
-        ☐ The dropdown menu looks naff, a bit more separation from the title.
-        ☐ The main search bar looks naff
+        ✔ The dropdown menu looks naff, a bit more separation from the title. @done(15:41 - 17/06/22)
+        ✔ The main search bar looks naff @done(15:43 - 17/06/22)
         ☐ Simple API -> there is text going off screen
         ☐ SImple Filter -> This also looks naff
           ☐ Clean up the filter buttons
