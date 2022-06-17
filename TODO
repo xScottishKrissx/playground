@@ -414,8 +414,12 @@ Javascript:
           ✔ Clean up the filter buttons @done(16:06 - 17/06/22)
           ✔ The filter results are off centre and look...naff @done(16:06 - 17/06/22)
           ✔ Moved data to it's own json file @done(15:56 - 17/06/22)
-        ☐ The footer looks naff
+        ✔ The footer looks naff @done(16:08 - 17/06/22)
         ☐ Add a hide section button to each project.
+          ☐ A structure where eask project can be hidden.
+            ☐ ...then unhidden all at once
+          ☐ I don't think an accordion like system is viable due to the differing sizes of each project. A simple hide/unhide all is probably the best way forward.
+          ☐ It shouldn't affect the search result number and it should be highlighted if that projects are hidden AT ALL TIMES.
 
           
   ☐ Drag and Drop functionality
