@@ -54,6 +54,7 @@
             flex-direction: column;
         height: 0px;
         overflow: hidden;
+        margin-top: 20px;
     }
     #portfolioLink, #portfolioLink:active, #portfolioLink:hover{
         color: black !important;

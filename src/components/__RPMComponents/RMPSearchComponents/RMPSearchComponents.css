@@ -1,4 +1,11 @@
+.RMPSearchWrapper{
+    /* outline: 1px solid cyan; */
+    box-shadow: 0px 0px 10px 0px #00000040;
+}
+
+
 .RMPComponentView__resultNumber{
+    box-shadow: none !important;
     padding: 20px !important;
     height: auto !important;
     min-height: auto !important ;
@@ -6,10 +13,14 @@
 }
 
 .RMPComponentView__search{
-    min-height: auto !important;
+    box-shadow: none !important;
+    min-height: auto !important ;
     padding: 0 !important;
+
+   
 }
 .RMPComponentView__search input{
+   
     border: none;
     font-size: 2rem;
     opacity: 0.5;

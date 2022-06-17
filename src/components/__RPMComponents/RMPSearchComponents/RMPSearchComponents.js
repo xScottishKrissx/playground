@@ -32,9 +32,9 @@ export default function RMPSearchComponents(props) {
 
   return (
     <>
-        <Row className='mb-3'>
-            <Col lg={10} className='RMPComponentView__search'><RMPSearch setInputState={props.setInputState}/></Col>
-            <Col ref={resultNum} className='RMPComponentView__resultNumber'>{showNumberOfResults}</Col>
+        <Row className='mb-3 RMPSearchWrapper'>
+            <Col xs={10} className='RMPComponentView__search'><RMPSearch setInputState={props.setInputState}/></Col>
+            <Col xs={2} ref={resultNum} className='RMPComponentView__resultNumber'>{showNumberOfResults}</Col>
         </Row>
     </>
   )
