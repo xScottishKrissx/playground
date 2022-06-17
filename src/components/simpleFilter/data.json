@@ -1,0 +1,65 @@
+[
+    {
+        "name":"Alan",
+        "department":"IT",
+        "img":"https://randomuser.me/api/portraits/men/1.jpg"
+    },
+    {
+        "name":"Bob",
+        "department":"HR",
+        "img":"https://randomuser.me/api/portraits/men/2.jpg"
+        
+    },
+    {
+        "name":"Cara",
+        "department":"Marketing",
+        "img":"https://randomuser.me/api/portraits/women/3.jpg"
+    },
+    {
+        "name":"Donna",
+        "department":"Legal",
+        "img":"https://randomuser.me/api/portraits/women/4.jpg"
+    },
+    {
+        "name":"Edward",
+        "department":"IT",
+        "img":"https://randomuser.me/api/portraits/men/5.jpg"
+    },
+    {
+        "name":"George",
+        "department":"Sales",
+        "img":"https://randomuser.me/api/portraits/men/6.jpg"
+    },
+    {
+        "name":"Harry",
+        "department":"Sales",
+        "img":"https://randomuser.me/api/portraits/men/7.jpg"
+    },
+    {
+        "name":"India",
+        "department":"Marketing",
+        "img":"https://randomuser.me/api/portraits/women/8.jpg"
+    },
+    {
+        "name":"Jenny",
+        "department":"Sales",
+        "img":"https://randomuser.me/api/portraits/women/9.jpg"
+    },
+    {
+        "name":"Konnor",
+        "department":"Legal",
+        "img":"https://randomuser.me/api/portraits/men/10.jpg"
+    },
+    {
+        "name":"Luis",
+        "department":"Legal",
+        "img":"https://randomuser.me/api/portraits/men/11.jpg"
+    },
+    {
+        "name":"Myrtle",
+        "department":"Marketing",
+        "img":"https://randomuser.me/api/portraits/women/12.jpg"
+    }
+
+]
+

@@ -13,7 +13,17 @@
     background-color: white;
     z-index: 10;
 }
+/* Buttons */
+.simpleFilter__filterButtons{
+    display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
 
+}
+.simpleFilter__filterButtons button{
+    margin-bottom: 5px;
+    min-width: 130px;
+}
 
 /* Information Layout */
 .simpleFilter__staffOutput div {
@@ -42,3 +52,5 @@
 .lock-scroll{
     overflow: hidden;
 }
+
+

@@ -2,78 +2,14 @@ import * as React from 'react'
 
 import './simpleFilter.css'
 
-
 import { Row,Col } from 'react-bootstrap';
 import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
+import myData from './data.json'
 
 export const SimpleFilter = (props) =>{
 
-    const data = [
-        {
-            name:"Alan",
-            department:"IT",
-            img:"https://randomuser.me/api/portraits/men/1.jpg"
-        },
-        {
-            name:"Bob",
-            department:"HR",
-            img:"https://randomuser.me/api/portraits/men/2.jpg"
-            
-        },
-        {
-            name:"Cara",
-            department:"Marketing",
-            img:"https://randomuser.me/api/portraits/women/3.jpg"
-        },
-        {
-            name:"Donna",
-            department:"Legal",
-            img:"https://randomuser.me/api/portraits/women/4.jpg"
-        },
-        {
-            name:"Edward",
-            department:"IT",
-            img:"https://randomuser.me/api/portraits/men/5.jpg"
-        },
-        {
-            name:"George",
-            department:"Sales",
-            img:"https://randomuser.me/api/portraits/men/6.jpg"
-        },
-        {
-            name:"Harry",
-            department:"Sales",
-            img:"https://randomuser.me/api/portraits/men/7.jpg"
-        },
-        {
-            name:"India",
-            department:"Marketing",
-            img:"https://randomuser.me/api/portraits/women/8.jpg"
-        },
-        {
-            name:"Jenny",
-            department:"Sales",
-            img:"https://randomuser.me/api/portraits/women/9.jpg"
-        },
-        {
-            name:"Konnor",
-            department:"Legal",
-            img:"https://randomuser.me/api/portraits/men/10.jpg"
-        },
-        {
-            name:"Luis",
-            department:"Legal",
-            img:"https://randomuser.me/api/portraits/men/11.jpg"
-        },
-        {
-            name:"Myrtle",
-            department:"Marketing",
-            img:"https://randomuser.me/api/portraits/women/12.jpg"
-        }
-
-    ]
-
+    const data = myData
     const [showModal, setModalStatus] = useState(false)
     const [option, setOption] = useState("All")
 
@@ -85,7 +21,7 @@ export const SimpleFilter = (props) =>{
     }
 
 
-    // Filtering 
+///////// Filtering 
     function toggleFilter(option){ setOption(option) }
     
     const filterData = data.filter(x => x.department === option)
@@ -96,23 +32,28 @@ export const SimpleFilter = (props) =>{
     const displayInfo = useData.map((x,index) => {
         return(
             
-                <Col key={index} sm={3} className="d-flex align-items-center justify-content-flex-start p-0 m-2 w-auto"> 
+                <Col key={index} className="d-flex align-items-center justify-content-flex-start p-0 m-2 w-auto"> 
                     <img src={x.img} alt={x.name} />
                     <p className="text-center">{x.name} - <strong>{x.department}</strong></p>
                 </Col>
         )
     })
 
-    // Mapping Buttons from data
+
+
+
+///////// Mapping Buttons from data
     const getDepartmentFromData = data.map(x => x.department)
     // ...return an array of unique values(the departments)
     const departmentArray = Array.from(new Set(getDepartmentFromData))
+    // Adding an all to the department array
     departmentArray.unshift("All")
+    // Moving all to the start of the array
     departmentArray.sort()
 
     const mapButtons = departmentArray.map((x,index) => {
         return(
-            <Button className="ms-2 me-2 ps-4 pe-4" key={index} onClick={()=>toggleFilter(x)}>{x}</Button>
+            <Button className="ps-4 pe-4" key={index} onClick={()=>toggleFilter(x)}>{x}</Button>
         )
     })
     
@@ -136,6 +77,9 @@ return(
             null
 
             :
+            
+
+
             
             <div className="simpleFilter__modalContainer d-flex justify-content-center top-0 start-0 position-fixed w-100 h-100 overflow-auto"  >
                 

@@ -1,4 +1,5 @@
-[{"id":1,"first_name":"Lizbeth","last_name":"Senecaut"},
+[
+    {"id":1,"first_name":"Lizbeth","last_name":"Senecaut"},
 {"id":2,"first_name":"Allys","last_name":"Gasker"},
 {"id":3,"first_name":"Kendal","last_name":"Danett"},
 {"id":4,"first_name":"Brockie","last_name":"McArdell"},
