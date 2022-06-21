@@ -404,7 +404,7 @@ Javascript:
 
 
   RMP Polishing Break:
-    ☐ The website looks very rough on my phone, do a pass on everything and make tweaks where appropriate to fix any issues.
+    ✔ The website looks very rough on my phone, do a pass on everything and make tweaks where appropriate to fix any issues. @done(18:15 - 17/06/22)
       ✔ Remove the sticky navbar, just keep it in place. @done(17:56 - 13/06/22)
       375px:
         ✔ The dropdown menu looks naff, a bit more separation from the title. @done(15:41 - 17/06/22)
@@ -424,10 +424,11 @@ Javascript:
         ✔ ...testing and fixed. @done(18:04 - 17/06/22)
         ... this was fixed in the above fixes, i just hadnt uploaded a new build
     ✔ The hide button icon needs it's z-index tweaked. @done(18:06 - 17/06/22)
-
+    
           
   ☐ Drag and Drop functionality
-  ☐ Something with react leaflet and maps
+    ..like a trello mimic?
+  ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
   .. i think this is out of date.
   ☐ rock paper scissor
@@ -438,6 +439,7 @@ Javascript:
           
           
 Things to Look into:
+  ☐ React Redux
   ☐ Investigate React Context
   https://levelup.gitconnected.com/5-concepts-that-will-make-you-a-better-react-developer-4d0b56e031e7?source=social.tw 
   ☐ React Portals

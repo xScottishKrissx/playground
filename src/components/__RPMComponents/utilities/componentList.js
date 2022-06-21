@@ -16,6 +16,7 @@ import ColourFlipper from "../../colourFlipper/colourFlipper";
 import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 import simpleChart from "../../simpleCharts/simpleChart";
+import ChessTutorial from "../../chessTutorial/chessTutorial";
 
 
 // Available Parameters
@@ -26,12 +27,22 @@ import simpleChart from "../../simpleCharts/simpleChart";
 //// iconColour - (light / dark - if the github/information logo needs to be black or white)
 //// information - (provide further context to project)
 //// size - accepted parameter - wide (changes bootstrap lg from 6(50%) to 12(full width))
-////
+//// 
 ////
 
 
 
 export const components = [
+  {
+    name:"ChessTutorial",
+    componentName:ChessTutorial,
+    tags:"",
+    github:"",
+    iconColour:"dark",
+    information:"",
+    size:"",
+  },
+  
     {
       name:"Covid19Dashboard",
       componentName:Covid19Dashboard,
@@ -40,7 +51,6 @@ export const components = [
       iconColour:"dark",
       information:"The Covid 19 dashboard is an escalation of SimpleChart and builds upon everything it did. There are three sections, each outputting data from an API supplied by disease.sh. You can view each country's covid data by clicking on the map marker, searching the map using the search box or the country lookup section. You can also favourite a country so that it will be the default country you see on load and when you click on the gold marker on the map. You also get graphs created with react-chartjs-2 alongside the map, built using react-leaflet, although only for certain countries due to limitations of some data from the API.",
       size:"wide",
-      visibility:true
     },
     {
       name:"SimpleChart",
