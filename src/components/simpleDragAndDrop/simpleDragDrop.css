@@ -3,3 +3,21 @@
     height: 100%;
     width: 100%;
 }
+
+.thingsToDrag{
+    height: 150px;
+    display: flex;
+        justify-content: center;
+}
+
+.thingsToDrag img{
+    outline: 1px solid red;
+}
+
+.placeToDrop{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    outline: 1px solid green;
+    margin-top: 20px;
+}
