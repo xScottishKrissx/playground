@@ -16,7 +16,8 @@ import ColourFlipper from "../../colourFlipper/colourFlipper";
 import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 import simpleChart from "../../simpleCharts/simpleChart";
-import ChessTutorial from "../../chessTutorial/chessTutorial";
+// import ChessTutorial from "../../simpleDragAndDrop/simpleDragDrop";
+import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
 
 
 // Available Parameters
@@ -34,12 +35,12 @@ import ChessTutorial from "../../chessTutorial/chessTutorial";
 
 export const components = [
   {
-    name:"ChessTutorial",
-    componentName:ChessTutorial,
+    name:"Simple Drag and Drop",
+    componentName:SimpleDragDrop,
     tags:"",
     github:"",
     iconColour:"dark",
-    information:"",
+    information:"Images by rawpixel.com",
     size:"",
   },
   
