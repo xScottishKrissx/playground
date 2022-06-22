@@ -10,8 +10,6 @@ const mapImages = images.map((x) => {
     return <Image key={x.id} src={x.src} id={x.id} /> 
 })
 
-
-
 export default function DragDrop() {
     
     const [board, setBoard] = useState([])
@@ -52,6 +50,8 @@ export default function DragDrop() {
             <div className='placeToDrop' ref={drop}>
                 {board.length > 0 ? mapBoard : <span>Drop Here</span>}
             </div>
+
+            <button className='resetBoardButton' onClick={()=>setBoard([])}>Reset Board</button>
         </>
     )
 }

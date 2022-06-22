@@ -436,7 +436,7 @@ Javascript:
           ✔ Description of what each piece can do @done(16:28 - 22/06/22)
             ✔ Try and get more chess pictures @done(16:28 - 22/06/22)
           ✔ Move the images data object to separate file @done(16:44 - 22/06/22)
-          ☐ Reset Board Button
+          ✔ Reset Board Button @done(16:53 - 22/06/22)
           ☐ Add effect to board when hovering with droppable
 
 
