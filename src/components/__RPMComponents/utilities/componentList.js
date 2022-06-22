@@ -40,7 +40,7 @@ export const components = [
     tags:"",
     github:"",
     iconColour:"dark",
-    information:"Images by rawpixel.com",
+    information:"Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/ , images supplied by various sketchy websites, https://www.pngwing.com/ -> looks decent though",
     size:"",
   },
   

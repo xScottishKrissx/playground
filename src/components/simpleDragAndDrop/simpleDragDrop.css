@@ -5,19 +5,41 @@
 }
 
 .thingsToDrag{
-    height: 150px;
+    /* height: 150px; */
     display: flex;
+        flex-wrap: wrap;
         justify-content: center;
 }
 
 .thingsToDrag img{
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
+    height: 150px;
+    width: 150px;
 }
 
 .placeToDrop{
-    height: 150px;
+    min-height: 150px;
     display: flex;
-    justify-content: center;
+        align-items: center;
+        justify-content: center;
     outline: 1px solid green;
     margin-top: 20px;
 }
+    .placeToDrop > div{
+        display: flex;
+        /* height: 150px; */
+    }
+    .placeToDrop > span{
+        opacity: 0.5;
+    }
+
+    .droppedItem{
+        align-items: center;
+    }
+        .droppedItem img{
+            height: 150px;
+            min-width: 100px;
+        }
+            .droppedItem__info{
+                /* background-color: blanchedalmond; */
+            }

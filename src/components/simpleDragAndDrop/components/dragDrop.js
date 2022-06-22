@@ -2,24 +2,14 @@ import React from 'react'
 import { useState } from 'react'
 import {useDrop} from 'react-dnd'
 
-import king from '../assets/king.png'
-import knight from '../assets/knight.png'
-import rook from '../assets/rook.png'
 import Image from './image'
+import images from './importImages'
 
-const images = [
-    { id:1, name:"king", src:king },
-    { id:2, name:"knight", src:knight },
-    { id:3, name:"rook", src:rook }
-]
 
 const mapImages = images.map((x) => {
-    return(
-        <> 
-            <Image key={x.id} src={x.src} id={x.id} /> 
-        </>
-    )
+    return <Image key={x.id} src={x.src} id={x.id} /> 
 })
+
 
 
 export default function DragDrop() {
@@ -32,29 +22,36 @@ export default function DragDrop() {
             isOver:!!monitor.isOver(),
         }),
     }))
+    
     const addImageToBoard = (id) =>{
         // console.log(id)
         const imagesList = images.filter((image) => image.id === id)
 
         // Add Elements
-            setBoard((board) => [...board, imagesList[0]])
+            // setBoard((board) => [...board, imagesList[0]])
         // Replace Elements
-            // setBoard([imagesList[0]])
+            setBoard([imagesList[0]])
     }
 
     const mapBoard = board.map((x, key) =>{
-        return(
-            <>
+        return (
+            <div className='droppedItem' key={key}>
                 <Image key={x.id} src={x.src} id={x.id} />
-            </>
-        )
+                <div className='droppedItem__info'>
+                    <p>{x.name}</p>
+                    <p>{x.option}</p>
+                </div>
+            </div>
+            )
     })
 
     return (
         <>
             <div className='thingsToDrag'> {mapImages} </div>
 
-            <div className='placeToDrop' ref={drop}>{mapBoard}</div>
+            <div className='placeToDrop' ref={drop}>
+                {board.length > 0 ? mapBoard : <span>Drop Here</span>}
+            </div>
         </>
     )
 }

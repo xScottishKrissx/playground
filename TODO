@@ -431,6 +431,13 @@ Javascript:
     ☐ Using React Drag and Drop Library
         https://react-dnd.github.io/react-dnd/
       ☐ Started the Official React Drag and Drop tutorial but wasn't following along to well. Found a better(much clearer) example on YouTube and I'm following that.
+        ☐ I followed that tutorial and managed to create a simple drag and drop interface. Now i am going to play around with it, read the docs and see what I can do and overall understand the library more
+        Mini Goals:
+          ✔ Description of what each piece can do @done(16:28 - 22/06/22)
+            ✔ Try and get more chess pictures @done(16:28 - 22/06/22)
+          ✔ Move the images data object to separate file @done(16:44 - 22/06/22)
+          ☐ Reset Board Button
+          ☐ Add effect to board when hovering with droppable
 
 
 

@@ -3,7 +3,7 @@ import './simpleDragDrop.css'
 import {DndProvider} from 'react-dnd'
 import {HTML5Backend} from 'react-dnd-html5-backend'
 import DragDrop from './components/dragDrop'
-
+import king from '../../components/simpleDragAndDrop/assets/king.png'
 
 
 export default function SimpleDragDrop() {
