@@ -14,7 +14,7 @@ export default function Graph(props) {
     const [chartData] = useState({
         labels:getCasesFromTimeline.map((x) => x.date),
         datasets:[{
-            label:"Cases (Past 30 Days)",
+            label:"Total Cases (Past 30 Days)",
             data:getCasesFromTimeline.map((x) => x.number),
             backgroundColor:"red"
         }]
@@ -24,7 +24,7 @@ export default function Graph(props) {
     const [deathData] = useState({
         labels:getDeathsFromTimeline.map((x) => x.date),
         datasets:[{
-            label:"Deaths (Past 30 Days)",
+            label:"Total Deaths (Past 30 Days)",
             data:getDeathsFromTimeline.map((x) => x.number),
             backgroundColor:"red"
         }]
@@ -35,7 +35,7 @@ export default function Graph(props) {
     const [vaccineData] = useState({
         labels:getVaccineTimeline.map((x) => x.date),
         datasets:[{
-            label:"Vaccine Total (Past 30 Days)",
+            label:"Total Vaccines (Past 30 Days)",
             data:getVaccineTimeline.map((x) => x.number),
             backgroundColor:"green"
         }]

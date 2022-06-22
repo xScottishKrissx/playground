@@ -426,19 +426,28 @@ Javascript:
     ✔ The hide button icon needs it's z-index tweaked. @done(18:06 - 17/06/22)
     
           
-  Drag and Drop functionality:
+  Basic Drag and Drop functionality:
   ..like a trello mimic?
-    ☐ Using React Drag and Drop Library
+    ✔ Using React Drag and Drop Library @done(17:58 - 22/06/22)
         https://react-dnd.github.io/react-dnd/
-      ☐ Started the Official React Drag and Drop tutorial but wasn't following along to well. Found a better(much clearer) example on YouTube and I'm following that.
-        ☐ I followed that tutorial and managed to create a simple drag and drop interface. Now i am going to play around with it, read the docs and see what I can do and overall understand the library more
+      ✔ Started the Official React Drag and Drop tutorial but wasn't following along to well. Found a better(much clearer) example on YouTube and I'm following that. @done(17:58 - 22/06/22)
+        ✔ I followed that tutorial and managed to create a simple drag and drop interface. Now i am going to play around with it, read the docs and see what I can do and overall understand the library more. @done(17:55 - 22/06/22)
+        ✔ I feel like It's not too hard. I think if I try and now move on to a new task, with more advanced goals in mind, i should be fine. @done(17:58 - 22/06/22)
         Mini Goals:
           ✔ Description of what each piece can do @done(16:28 - 22/06/22)
             ✔ Try and get more chess pictures @done(16:28 - 22/06/22)
           ✔ Move the images data object to separate file @done(16:44 - 22/06/22)
           ✔ Reset Board Button @done(16:53 - 22/06/22)
-          ☐ Add effect to board when hovering with droppable
+          ✔ Add effect to board when hovering with droppable @done(17:48 - 22/06/22)
+            ✔ How about an effect that happens when dragging but NOT over the board @done(17:48 - 22/06/22)
+            ... I think i am understanding this more. The useDrag, useDrop hooks have an array of options that return true/false that you can assign to state and then use to change things on the page.
 
+  Task Board(using drag and drop):
+    ☐ Basically trying to achieve something like trello
+    ☐ 3 Boards
+      ☐ Task(yet to start)
+      ☐ In Progress
+      ☐ Completed
 
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
