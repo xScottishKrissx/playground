@@ -441,6 +441,16 @@ Javascript:
           ✔ Add effect to board when hovering with droppable @done(17:48 - 22/06/22)
             ✔ How about an effect that happens when dragging but NOT over the board @done(17:48 - 22/06/22)
             ... I think i am understanding this more. The useDrag, useDrop hooks have an array of options that return true/false that you can assign to state and then use to change things on the page.
+    Porfolio Checklist:
+      ☐ Clean up rough edges
+      ☐ Device check
+      ☐ Tags
+      ☐ Description
+      ☐ Github
+
+    ☐ Uploaded
+    ☐ Portfolio Updated
+  ☐ Moving On
 
   Task Board(using drag and drop):
     ☐ Basically trying to achieve something like trello
