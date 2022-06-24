@@ -43,7 +43,7 @@
     }
         .droppedItem img{
             height: 150px;
-            min-width: 100px;
+            min-width: 150px;
             padding: 10px;
         }
             .droppedItem__info{

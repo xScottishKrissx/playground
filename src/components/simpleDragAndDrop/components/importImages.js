@@ -1,9 +1,9 @@
-import king from '../assets/king.png'
-import knight from '../assets/knight.png'
-import rook from '../assets/rook.png'
-import bishop  from '../assets/bishop.png'
-import pawn from '../assets/pawn.png'
-import queen from '../assets/queen.png'
+import king from '../assets/new/king.png'
+import knight from '../assets/new/knight.png'
+import rook from '../assets/new/rook.png'
+import bishop  from '../assets/new/bishop.png'
+import pawn from '../assets/new/pawn.png'
+import queen from '../assets/new/queen.png'
 
 const images = [
     { 

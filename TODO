@@ -443,6 +443,7 @@ Javascript:
             ... I think i am understanding this more. The useDrag, useDrop hooks have an array of options that return true/false that you can assign to state and then use to change things on the page.
     Porfolio Checklist:
       ☐ Clean up rough edges
+        ✔ Optimised image sizes and dimensions @done(16:30 - 24/06/22)
       ☐ Device check
       ☐ Tags
       ☐ Description
