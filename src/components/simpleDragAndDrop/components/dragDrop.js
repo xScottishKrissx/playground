@@ -60,13 +60,13 @@ export default function DragDrop() {
     return (
         <>
 
-            <div className='thingsToDrag'> {mapImages} </div>
+            <div className='thingsToDrag' > {mapImages} </div>
 
             <div 
                 className='placeToDrop' 
                 ref={drop} 
                 style={{
-                    boxShadow: isOver ? hovering : notHovering
+                    boxShadow: isOver ? hovering : notHovering,
                 }}
             >
                 { board.length > 0 ? mapBoard : <span>{hoverMessage}</span> }

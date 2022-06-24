@@ -444,6 +444,7 @@ Javascript:
     Porfolio Checklist:
       ☐ Clean up rough edges
         ✔ Optimised image sizes and dimensions @done(16:30 - 24/06/22)
+        ✘ Can i change the mouse while the image is being dragged? @cancelled(18:19 - 24/06/22)
       ☐ Device check
         ☐ I added a line that checks for the device and switches the backend. This should mean the project should work on both mobiles and desktops.
           ☐ Amend description
