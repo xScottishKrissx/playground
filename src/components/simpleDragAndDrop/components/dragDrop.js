@@ -7,7 +7,7 @@ import images from './importImages'
 
 
     const mapImages = images.map((x) => {
-        return <Image key={x.id} src={x.src} id={x.id} /> 
+        return <Image key={x.id} src={x.src} id={x.id} name={x.name} /> 
     })
 
 export default function DragDrop() {
@@ -43,7 +43,7 @@ export default function DragDrop() {
     const mapBoard = board.map((x, key) =>{
         return (
             <div className='droppedItem' key={key}>
-                <Image key={x.id} src={x.src} id={x.id} />
+                <Image key={x.id} src={x.src} id={x.id} name={x.name}/>
                 <div className='droppedItem__info'>
                     <p>{x.name}</p>
                     <p>{x.option}</p>

@@ -18,7 +18,7 @@ export default function Image({src, url, name, id, }) {
     return <img 
         ref={drag}
         src={src} 
-        alt="shut up es lint" 
+        alt={name + " chess piece" }
         style={{border: isDragging ? "2px solid yellow" : "0px"}}
     />
 

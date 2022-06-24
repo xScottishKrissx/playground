@@ -16,7 +16,7 @@ const images = [
         id:2, 
         name:"knight", 
         src:knight, 
-        option:"in an ‘L’ shape’: two squares in a horizontal or vertical direction, then move one square horizontally or vertically. They are the only piece able to jump over other pieces" 
+        option:"in an L shape: two squares in a horizontal or vertical direction, then move one square horizontally or vertically. They are the only piece able to jump over other pieces" 
     },
     { 
         id:3, 

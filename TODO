@@ -445,9 +445,15 @@ Javascript:
       ☐ Clean up rough edges
         ✔ Optimised image sizes and dimensions @done(16:30 - 24/06/22)
       ☐ Device check
-      ☐ Tags
-      ☐ Description
-      ☐ Github
+        ☐ I added a line that checks for the device and switches the backend. This should mean the project should work on both mobiles and desktops.
+          ☐ Amend description
+          Remove if the above is correct
+          WARNING:: will not work on tablet or mobile devices. There is touch support in the Drag and Drop library, but I felt that would be going too far for a simple project like this. This is just getting to to grips with the basics.
+
+      ✔ Tags @done(16:44 - 24/06/22)
+      ✔ Description @done(16:44 - 24/06/22)
+      ✔ Github @done(16:44 - 24/06/22)
+      ☐ Add a source section to the description
 
     ☐ Uploaded
     ☐ Portfolio Updated

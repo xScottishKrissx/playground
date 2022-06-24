@@ -35,13 +35,18 @@ import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
 
 export const components = [
   {
-    name:"Simple Drag and Drop",
+    name:"SimpleDragandDrop",
     componentName:SimpleDragDrop,
-    tags:"",
-    github:"",
+    tags:"React Drag Drop, DnD, DnDProvider, HTML5Backend, images, useState, map, useDrop, filter, ternary formatting, inline style, onClick, useDrag,  ",
+    github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleDragAndDrop",
     iconColour:"dark",
-    information:"Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/ , images supplied by various sketchy websites, https://www.pngwing.com/ -> looks decent though",
-    size:"",
+    information:"This is very basic attempt at drag and drop using the React Drag and Drop library. I wanted to give myself a solid base and understand the fundamentals before moving onto more complicated implementations.",
+    size:"wide",
+    sources:{
+      source1:"React DND -> https://react-dnd.github.io/react-dnd/about",
+      source2:"Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/",
+      source3:"Chess Pieces from Google and  https://www.pngwing.com/",
+    }
   },
   
     {
