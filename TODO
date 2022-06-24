@@ -456,9 +456,16 @@ Javascript:
         ✔ Add a source section to the description @done(17:51 - 24/06/22)
       ✔ Github @done(16:44 - 24/06/22)
 
-    ☐ Uploaded
-    ☐ Portfolio Updated
-  ☐ Moving On
+    ✔ Uploaded @done(18:21 - 24/06/22)
+    ✔ Testing @done(18:35 - 24/06/22)
+      ✔ Desktop @done(18:22 - 24/06/22)
+      ✔ Mobile @done(18:35 - 24/06/22)
+        ✘ There is no preview image on mobile when dragging. @cancelled(18:34 - 24/06/22)
+          ✔ It doesnt exist in the library, you need to create your own which is way beyond the  scope of the project @done(18:35 - 24/06/22)
+      ✔ Add a header to the project @done(18:37 - 24/06/22)
+      
+    ✔ Portfolio Updated @done(18:40 - 24/06/22)
+  ✔ Moving On @done(18:40 - 24/06/22)
 
   Task Board(using drag and drop):
     ☐ Basically trying to achieve something like trello

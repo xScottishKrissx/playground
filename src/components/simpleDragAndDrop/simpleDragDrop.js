@@ -22,6 +22,7 @@ export default function SimpleDragDrop() {
   return (
       <DndProvider backend={deviceCheck} options={opts}>
             <div className='simpleDragDrop__wrapper'>
+              <h2 className='text-center mb-3 w-100'>Simple Drag and Drop</h2>
               <DragDrop />
             </div>
       </DndProvider>
