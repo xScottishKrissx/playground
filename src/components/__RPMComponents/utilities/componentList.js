@@ -28,7 +28,7 @@ import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
 //// iconColour - (light / dark - if the github/information logo needs to be black or white)
 //// information - (provide further context to project)
 //// size - accepted parameter - wide (changes bootstrap lg from 6(50%) to 12(full width))
-//// 
+//// sources - array
 ////
 
 
@@ -42,11 +42,8 @@ export const components = [
     iconColour:"dark",
     information:"This is very basic attempt at drag and drop using the React Drag and Drop library. I wanted to give myself a solid base and understand the fundamentals before moving onto more complicated implementations.",
     size:"wide",
-    sources:{
-      source1:"React DND -> https://react-dnd.github.io/react-dnd/about",
-      source2:"Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/",
-      source3:"Chess Pieces from Google and  https://www.pngwing.com/",
-    }
+    sources:["React DND -> https://react-dnd.github.io/react-dnd/about", "Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/",
+      "Chess Pieces from Google and  https://www.pngwing.com/" ]
   },
   
     {

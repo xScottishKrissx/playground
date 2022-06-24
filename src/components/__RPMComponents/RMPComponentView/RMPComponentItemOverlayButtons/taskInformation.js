@@ -5,13 +5,29 @@ import React, { useState } from 'react'
 import infoLogoDark from './infoLogoDark.png'
 import infoLogoLight  from './infoLogoLight.png'
 
+
+const DisplaySources = (props) =>{
+
+    const mapSources = props.sources.map((x,key) =>{
+        return(
+            <div key={key}>
+                <p>{x}</p>
+            </div>
+        )
+    })
+    return mapSources
+    
+}
+
 export default function TaskInformation(props) {
 
     const [infoOpen, setInfoOpen] = useState(false)
     const toggleInfo =(x)=>{ setInfoOpen(x) }
-
+    
+    // console.log(props.sources)
     let iconStyle = props.iconColour === "light" ? infoLogoLight : infoLogoDark
-    return (
+
+        return (
         <>
 
         <div className='componentItemButtonIconContainer' onClick={()=>toggleInfo(true)}>
@@ -31,7 +47,9 @@ export default function TaskInformation(props) {
                     </div>
                     
                     <p>{props.information}</p>
-
+                   
+                    {props.sources ?  <DisplaySources sources={props.sources} /> : null}
+                    
                     <h4>tags</h4>
                     <p>{props.tags}</p>
                 </div>

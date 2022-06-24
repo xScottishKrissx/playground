@@ -38,7 +38,7 @@ export default function RMPComponentView(props) {
 
             <div className='componentItemButtonsContainer d-flex w-100 top-0 left-0 position-absolute'>
               <GithubLink githubUrl={x.github} iconColour={x.iconColour}/>
-              <TaskInformation  name={x.name} information={x.information} iconColour={x.iconColour} tags={x.tags}/>
+              <TaskInformation  name={x.name} sources={x.sources} information={x.information} iconColour={x.iconColour} tags={x.tags}/>
               <SetVisibilityButton iconColour={x.iconColour} numberHidden={setHidden}/>
             </div>
 
