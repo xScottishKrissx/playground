@@ -1,0 +1,8 @@
+.taskBoard__columnWrapper{
+    display: flex;
+    flex-direction: row;
+}
+    .taskBoard__column{
+        outline: 1px solid red;
+        min-width: 140px;
+    }
