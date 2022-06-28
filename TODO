@@ -469,10 +469,16 @@ Javascript:
 
   Task Board(using drag and drop):
     ☐ Basically trying to achieve something like trello
+    ☐ Add Task
+      ☐ A simple form that adds a value to an array
     ☐ 3 Boards
       ☐ Task(yet to start)
       ☐ In Progress
       ☐ Completed
+    
+    ☐ Things to figure out
+      ☐ How to remove an item from it's original position after being dropped
+      ☐ How to drag and reogranise items within a board
 
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)

@@ -40,17 +40,17 @@ export const components = [
     componentName: TaskBoard,
     tags:"",
   },
-  {
-    name:"SimpleDragandDrop",
-    componentName:SimpleDragDrop,
-    tags:"React Drag Drop, DnD, DnDProvider, HTML5Backend, images, useState, map, useDrop, filter, ternary formatting, inline style, onClick, useDrag,  ",
-    github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleDragAndDrop",
-    iconColour:"dark",
-    information:"This is very basic attempt at drag and drop using the React Drag and Drop library. I wanted to give myself a solid base and understand the fundamentals before moving onto more complicated implementations.",
-    size:"wide",
-    sources:["React DND -> https://react-dnd.github.io/react-dnd/about", "Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/",
-      "Chess Pieces from Google and  https://www.pngwing.com/" ]
-  },
+  // {
+  //   name:"SimpleDragandDrop",
+  //   componentName:SimpleDragDrop,
+  //   tags:"React Drag Drop, DnD, DnDProvider, HTML5Backend, images, useState, map, useDrop, filter, ternary formatting, inline style, onClick, useDrag,  ",
+  //   github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleDragAndDrop",
+  //   iconColour:"dark",
+  //   information:"This is very basic attempt at drag and drop using the React Drag and Drop library. I wanted to give myself a solid base and understand the fundamentals before moving onto more complicated implementations.",
+  //   size:"wide",
+  //   sources:["React DND -> https://react-dnd.github.io/react-dnd/about", "Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/",
+  //     "Chess Pieces from Google and  https://www.pngwing.com/" ]
+  // },
   
     {
       name:"Covid19Dashboard",
