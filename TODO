@@ -478,6 +478,7 @@ Javascript:
     
     ☐ Things to figure out
       ☐ How to remove an item from it's original position after being dropped
+        ☐ I have no idea what I am doing or what is going. The board.js useDrop  just stops working after adding a single thing to the tasks array. I don't know how to fix and have no idea how to procede. I might have to start again because this is a mess.
       ☐ How to drag and reogranise items within a board
 
 

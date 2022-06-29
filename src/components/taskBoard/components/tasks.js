@@ -12,9 +12,10 @@ export default function Tasks(props) {
       type:"text",
       item:{id:props.id}
     }))
+    // console.log(props.thing)
 
     return(
-      <div ref={drag}><p>{props.content}</p></div>
+      <div ref={drag}><p>{props.content}{props.id}</p></div>
     )
     // return (
         

@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import './taskBoard.css'
 import {DndProvider, useDrop, useDrag} from 'react-dnd'
 import {HTML5Backend} from 'react-dnd-html5-backend'
@@ -30,15 +30,25 @@ export default function TaskBoard() {
     {id:"item-3", text:"text-3"}
   ]
 
-
-  const [isTask, setIsTask] = useState(tasksArray)
+  let tasks = [] || tasksArray
+  const [isTask, setIsTask] = useState(tasks)
   const addItem = () =>{
     const formValue = formInput.current.value
     if(formValue.length > 1){
       let itemsArray = isTask || []
-      itemsArray.push({'id':"item-" + isTask.length + 1,'text': formValue})
+      itemsArray.push({'id':"item-" + (isTask.length + 1) , 'text': formValue})
       setIsTask(isTask => ([...isTask]))
     }
+    console.log(isTask)
+  }
+
+  const editItems = (item) =>{
+    // console.log("Edit Item")
+    // console.log(item)
+    let currentTasks = isTask || []
+    let updateTasks = currentTasks.filter(x => x.id !== item)
+    // console.log(updateTasks)
+    // setIsTask(updateTasks)
   }
 
 
@@ -49,8 +59,8 @@ export default function TaskBoard() {
               <h2 className='text-center mb-3 w-100'>Simple Drag and Drop</h2>
               <div className='taskBoard__columnWrapper'>
                 {/* <Board /> */}
-                <Board tasks={isTask}/>
-                <AddItem ref={formInput} addItem={addItem}/>
+                <Board tasks={isTask} editItems={editItems}/>
+                <AddItem ref={formInput} addItem={addItem} />
 
               </div>
             </div>
