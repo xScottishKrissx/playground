@@ -29,7 +29,7 @@ export default function Tboard() {
     }
 
     const addToInProgress = (itemId) =>{
-        console.log(itemId)
+        // console.log(itemId)
         let filterCurrentTasks = currentTasks
         const getResultOfFilter = filterCurrentTasks.filter((x) => x.id === itemId)
         const mergedArrays = [...inProgress, ...getResultOfFilter]
@@ -38,7 +38,7 @@ export default function Tboard() {
     }
 
     const removeItem = (itemId) =>{
-        console.log("Remove Item", itemId)
+        // console.log("Remove Item", itemId)
         let removeFromCurrentTasks = currentTasks
         const getResultOfFilter = removeFromCurrentTasks.filter((x) => x.id !== itemId)
         setCurrentTasks(getResultOfFilter)
@@ -89,18 +89,72 @@ export default function Tboard() {
                 isOver: monitor.isOver()  && monitor.canDrop()
             })
         }))
+
+        const [{isOver2}, drop2] = useDrop(()=>({
+            accept: "text",
+            // this matches the drag function
+            drop:(item) => handleDrop2(item.id),
+            collect: (monitor) => ({
+                isOver2: monitor.isOver()  && monitor.canDrop()
+            })
+        }))
         // console.log(isOver)
 
-        return <div className='dropArea' ref={drop}>{mapInProgress}</div>
+        return (
+            <div className='boardWrapper'>
+                <div className='dropArea' ref={drop2}>
+                    <h4>Current Tasks</h4>
+                    {mapCurrentTask}
+                </div>
+                <div className='dropArea' ref={drop}>
+                    <h4>In Progress</h4>
+                    {mapInProgress}
+                </div>
+            </div>
+        )
     }
 
     const handleDrop = (itemId) =>{
         addToInProgress(itemId)
         removeItem(itemId)
-        console.log("Add to In Progress")
+        console.log("Handle Drop 1")
+    }
+    const handleDrop2 = (itemId) =>{
+        console.log(itemId)
+        addToCurrent(itemId)
+        removeFromInProgress(itemId)
+        console.log("Handle Drop 2")
+        // removeItem(itemId)
+        
     }
 
+    const addToCurrent = (itemId) =>{
+        console.log("Add to Current")
+        let filterInProgress = inProgress
+        // console.log(filterInProgress)
+        const getResultOfFilter = filterInProgress.filter((x) => x.id === itemId)
+        // console.log(getResultOfFilter)
 
+
+        const mergedArrays = [...currentTasks, ...getResultOfFilter]
+        // console.log(mergedArrays)
+        setCurrentTasks(mergedArrays)
+        setLocalStorage("currentTasks",mergedArrays)
+    }
+
+    const removeFromInProgress = (itemId) =>{
+        console.log(itemId)
+        let filterCurrentTasks = inProgress
+        const getResultOfFilter = filterCurrentTasks.filter((x) => x.id === itemId)
+        const mergedArrays = [...inProgress, ...getResultOfFilter]
+        console.log(mergedArrays)
+        setInProgress(mergedArrays)
+        setLocalStorage("inProgress",mergedArrays)
+    }
+    
+
+    // console.log(currentTasks)
+    // console.log(inProgress)
   return (
     <DndProvider backend={HTML5Backend}>
         <div>
@@ -111,7 +165,8 @@ export default function Tboard() {
             <button onClick={addItem}>Add</button>
 
             {/* Board */}
-            <div className='boardWrapper'>
+            <DropItem />
+            {/* <div className='boardWrapper'>
                 <div>
                     Current Tasks
                     {mapCurrentTask}
@@ -121,7 +176,7 @@ export default function Tboard() {
                     In Progress
                     <DropItem />
                 </div>
-            </div>
+            </div> */}
         </div>
     </DndProvider>
   )
