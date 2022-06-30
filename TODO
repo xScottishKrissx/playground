@@ -495,6 +495,9 @@ Javascript:
                   ✔ It's a bit of a mess but i think im getting somewhere. I can drag items back from in progress, but they're not being removed from in progress. It's something in the removeFromInProgress function. @done(15:22 - 30/06/22)
                     ✔ Got it, it's a total mess but i now have elements being dragged and dropped across both boards @done(15:23 - 30/06/22)
                   ☐ The next step here is to reduce the duplicate code being used here
+                    ✔ created a remove from board function that replaces the current 2 @done(17:18 - 30/06/22)
+                    ✔ Added a counter,saved in local storage, to assign item ids. @done(17:11 - 30/06/22)
+                    ☐ Created a add to board that replaces 2 of the 3. The add new item might need to be separate but I haven't properly looked. I'm more concerned about the 3rd board. I think my solution for the addToBoard is a little too binary.
 
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)

@@ -11,63 +11,35 @@ export default function Tboard() {
     // localStorage.clear()
     const currentTasksLocalStorage = JSON.parse(localStorage.getItem("currentTasks"))
     const inProgressLocalStorage = JSON.parse(localStorage.getItem("inProgress"))
+    const counterLocalStorage = JSON.parse(localStorage.getItem("counter"))
+
 
     const form = useRef()
     const [currentTasks, setCurrentTasks] = useState(currentTasksLocalStorage || [])
     const [inProgress, setInProgress] = useState(inProgressLocalStorage || [])
+    const [counter, setCounter] = useState(counterLocalStorage + 1|| 0)
 
-
-    const addItem = () =>{
-        const formValue = form.current.value
-
-        if(formValue.length > 1){
-            let itemsArray = currentTasks || []
-            itemsArray.push({'id':"item-" + (currentTasks.length + 1) , 'text': formValue})
-            setCurrentTasks(currentTasks => ([...currentTasks]))
-            setLocalStorage("currentTasks",currentTasks)
-          }
-    }
-
-    const addToInProgress = (itemId) =>{
-        // console.log(itemId)
-        let filterCurrentTasks = currentTasks
-        const getResultOfFilter = filterCurrentTasks.filter((x) => x.id === itemId)
-        const mergedArrays = [...inProgress, ...getResultOfFilter]
-        setInProgress(mergedArrays)
-        setLocalStorage("inProgress",mergedArrays)
-    }
-
-    const removeItem = (itemId) =>{
-        // console.log("Remove Item", itemId)
-        let removeFromCurrentTasks = currentTasks
-        const getResultOfFilter = removeFromCurrentTasks.filter((x) => x.id !== itemId)
-        setCurrentTasks(getResultOfFilter)
-        setLocalStorage("currentTasks",getResultOfFilter)
-    }
-
-    const setLocalStorage = (name, thingToSave) =>{
-        localStorage.setItem(name, JSON.stringify(thingToSave))
-    }
-
-
-
-
+    
+    
+    
+    
     // console.log(currentTasks)
     const mapCurrentTask = currentTasks.map((x, key) => {
         return(
             // <p onClick={()=>removeItem(x.id)} key={key} id={x.id}>{x.text}</p>
-            <TaskItem id={x.id} key={key} text={x.text} />
+            <DragItem id={x.id} key={key} text={x.text} />
         )
     })
 
     const mapInProgress = inProgress.map((x,key) =>{
+        // console.log(x.id)
         return(
-            <TaskItem id={x.id} key={key} text={x.text} />
+            <DragItem id={x.id} key={key} text={x.text} />
         )
     })
 
 // Dragging
-    function TaskItem(props){
+function DragItem(props){
         // console.log(props.id)
         const [{}, drag] = useDrag(()=>({
             type: "text",
@@ -77,14 +49,14 @@ export default function Tboard() {
 
         return  <p ref={drag} id={props.id}>{props.text}</p>
     }
-
-// Dropping
+    
+    // Dropping
     function DropItem(){
         
         const [{isOver}, drop] = useDrop(()=>({
             accept: "text",
             // this matches the drag function
-            drop:(item) => handleDrop(item.id),
+            drop:(item) => addToInProgress(item.id),
             collect: (monitor) => ({
                 isOver: monitor.isOver()  && monitor.canDrop()
             })
@@ -93,13 +65,13 @@ export default function Tboard() {
         const [{isOver2}, drop2] = useDrop(()=>({
             accept: "text",
             // this matches the drag function
-            drop:(item) => handleDrop2(item.id),
+            drop:(item) => addToCurrentTasks(item.id),
             collect: (monitor) => ({
                 isOver2: monitor.isOver()  && monitor.canDrop()
             })
         }))
         // console.log(isOver)
-
+        
         return (
             <div className='boardWrapper'>
                 <div className='dropArea' ref={drop2}>
@@ -114,53 +86,117 @@ export default function Tboard() {
         )
     }
 
-    const handleDrop = (itemId) =>{
-        addToInProgress(itemId)
-        removeItem(itemId)
-        console.log("Handle Drop 1")
+    const addToInProgress = (itemId) =>{
+        // Add To inProgress...
+        addToBoard(itemId, currentTasks, inProgress)
+        // ... then remove from Current Tasks
+        removeFromBoard(itemId, currentTasks)
     }
-    const handleDrop2 = (itemId) =>{
-        console.log(itemId)
-        addToCurrent(itemId)
-        removeFromInProgress(itemId)
-        console.log("Handle Drop 2")
-        // removeItem(itemId)
-        
-    }
-
-    const addToCurrent = (itemId) =>{
-        console.log("Add to Current")
-        let filterInProgress = inProgress
-        // console.log(filterInProgress)
-        const getResultOfFilter = filterInProgress.filter((x) => x.id === itemId)
-        // console.log(getResultOfFilter)
-
-
-        const mergedArrays = [...currentTasks, ...getResultOfFilter]
-        // console.log(mergedArrays)
-        setCurrentTasks(mergedArrays)
-        setLocalStorage("currentTasks",mergedArrays)
+    const addToCurrentTasks = (itemId) =>{
+        // Add To Current Tasks --------------
+        addToBoard(itemId, inProgress, currentTasks)
+        // and then remove from inProgress
+        removeFromBoard(itemId, inProgress)
     }
 
-    const removeFromInProgress = (itemId) =>{
-        // console.log(itemId)
-        let filterInProgress = inProgress
-        const getResultOfFilter = filterInProgress.filter((x) => x.id !== itemId)
-        setInProgress(getResultOfFilter)
-        setLocalStorage("inProgress",getResultOfFilter)
+    // What about the completed board?? How will the above fit in?
+
+//Add to Board
+    const addToBoard = (itemId, originBoardArray, targetBoardArray) =>{
+        let filterArray = originBoardArray
+        const getFilterResult = filterArray.filter((x) => x.id === itemId)
+        const mergedArrays = [...targetBoardArray, getFilterResult[0]]
+
+        if(targetBoardArray === currentTasks){
+            setCurrentTasks(mergedArrays)
+            setLocalStorage("currentTasks",mergedArrays)
+        }
+
+        if(targetBoardArray === inProgress){
+            setInProgress(mergedArrays)
+            setLocalStorage("inProgress",mergedArrays)
+        }
+    }
+
+    // const addToCurrent = (itemId) =>{
+    //     console.log("Add to Current")
+    //     let filterInProgress = inProgress
+    //     const getResultOfFilter = filterInProgress.filter((x) => x.id === itemId)
+    //     const mergedArrays = [...currentTasks, ...getResultOfFilter]
+    //     setCurrentTasks(mergedArrays)
+    //     setLocalStorage("currentTasks",mergedArrays)
+    // }
+
+    // const addToInProgress = (itemId) =>{
+    //     let filterCurrentTasks = currentTasks
+    //     const getResultOfFilter = filterCurrentTasks.filter((x) => x.id === itemId)
+    //     const mergedArrays = [...inProgress, ...getResultOfFilter]
+    //     setInProgress(mergedArrays)
+    //     setLocalStorage("inProgress",mergedArrays)
+    // }
+
+    const addItem = () =>{
+        const formValue = form.current.value
+    
+        if(formValue.length > 1){
+            let itemsArray = currentTasks || []
+            itemsArray.push({'id':"item-" + (counter).toString() , 'text': formValue})
+            setCurrentTasks(currentTasks => ([...currentTasks]))
+            setLocalStorage("currentTasks",currentTasks)
+          }
+        setCounter(counter + 1)
+        localStorage.setItem("counter", JSON.stringify(counter))
+    }
+
+// Remove From Board
+const removeFromBoard = (itemId,arrayToFilter) =>{
+    let filterArray = arrayToFilter
+    const getFilterResult = filterArray.filter((x) => x.id !== itemId)
+
+    if(arrayToFilter === inProgress) {
+        setInProgress(getFilterResult)
+        setLocalStorage("inProgress", getFilterResult)
+    }
+    if(arrayToFilter === currentTasks) {
+        setCurrentTasks(getFilterResult)
+        setLocalStorage("currentTasks", getFilterResult)
+    }
+
+}
+    // const removeFromInProgress = (itemId) =>{
+    //     // console.log(itemId)
+    //     let filterInProgress = inProgress
+    //     const getResultOfFilter = filterInProgress.filter((x) => x.id !== itemId)
+    //     setInProgress(getResultOfFilter)
+    //     setLocalStorage("inProgress",getResultOfFilter)
+    // }
+    
+    
+    
+    // const removeItem = (itemId) =>{
+    //     // console.log("Remove Item", itemId)
+    //     let removeFromCurrentTasks = currentTasks
+    //     const getResultOfFilter = removeFromCurrentTasks.filter((x) => x.id !== itemId)
+    //     setCurrentTasks(getResultOfFilter)
+    //     setLocalStorage("currentTasks",getResultOfFilter)
+    // }
+
+// Set Local Storage
+    const setLocalStorage = (name, thingToSave) =>{
+        localStorage.setItem(name, JSON.stringify(thingToSave))
     }
     
-
     // console.log(currentTasks)
     // console.log(inProgress)
-  return (
-    <DndProvider backend={HTML5Backend}>
+    return (
+        <DndProvider backend={HTML5Backend}>
         <div>
             {/* User Input */}
             <form>
                 <input ref={form} />
             </form>
             <button onClick={addItem}>Add</button>
+            
 
             {/* Board */}
             <DropItem />
@@ -168,13 +204,13 @@ export default function Tboard() {
                 <div>
                     Current Tasks
                     {mapCurrentTask}
-                </div>
-
-                <div>
+                    </div>
+                    
+                    <div>
                     In Progress
                     <DropItem />
-                </div>
-            </div> */}
+                    </div>
+                </div> */}
         </div>
     </DndProvider>
   )
