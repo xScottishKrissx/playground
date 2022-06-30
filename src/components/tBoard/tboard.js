@@ -56,7 +56,7 @@ function DragItem(props){
         const [{isOver}, drop] = useDrop(()=>({
             accept: "text",
             // this matches the drag function
-            drop:(item) => addToInProgress(item.id),
+            drop:(item, monitor) => addToInProgress(item.id, "inProgress"),
             collect: (monitor) => ({
                 isOver: monitor.isOver()  && monitor.canDrop()
             })
@@ -65,7 +65,7 @@ function DragItem(props){
         const [{isOver2}, drop2] = useDrop(()=>({
             accept: "text",
             // this matches the drag function
-            drop:(item) => addToCurrentTasks(item.id),
+            drop:(item) => addToCurrentTasks(item.id, "current"),
             collect: (monitor) => ({
                 isOver2: monitor.isOver()  && monitor.canDrop()
             })
@@ -86,15 +86,18 @@ function DragItem(props){
         )
     }
 
-    const addToInProgress = (itemId) =>{
+    const addToInProgress = (itemId, targetBoardName) =>{
+        // console.log(monitor)
         // Add To inProgress...
-        addToBoard(itemId, currentTasks, inProgress)
+        addToBoard(itemId, currentTasks, inProgress, targetBoardName)
         // ... then remove from Current Tasks
         removeFromBoard(itemId, currentTasks)
+
+
     }
-    const addToCurrentTasks = (itemId) =>{
+    const addToCurrentTasks = (itemId, targetBoardName) =>{
         // Add To Current Tasks --------------
-        addToBoard(itemId, inProgress, currentTasks)
+        addToBoard(itemId, inProgress, currentTasks, targetBoardName)
         // and then remove from inProgress
         removeFromBoard(itemId, inProgress)
     }
@@ -102,9 +105,15 @@ function DragItem(props){
     // What about the completed board?? How will the above fit in?
 
 //Add to Board
-    const addToBoard = (itemId, originBoardArray, targetBoardArray) =>{
+    const addToBoard = (itemId, originBoardArray, targetBoardArray, targetBoardName) =>{
         let filterArray = originBoardArray
         const getFilterResult = filterArray.filter((x) => x.id === itemId)
+        const mapThing = getFilterResult.map(x =>{
+            return( x.board = targetBoardName  )})
+        console.log(mapThing)
+        console.log(getFilterResult)
+
+
         const mergedArrays = [...targetBoardArray, getFilterResult[0]]
 
         if(targetBoardArray === currentTasks){
@@ -140,7 +149,7 @@ function DragItem(props){
     
         if(formValue.length > 1){
             let itemsArray = currentTasks || []
-            itemsArray.push({'id':"item-" + (counter).toString() , 'text': formValue})
+            itemsArray.push({'id':"item-" + (counter).toString() , 'text': formValue, "board":"current"})
             setCurrentTasks(currentTasks => ([...currentTasks]))
             setLocalStorage("currentTasks",currentTasks)
           }
@@ -186,8 +195,8 @@ const removeFromBoard = (itemId,arrayToFilter) =>{
         localStorage.setItem(name, JSON.stringify(thingToSave))
     }
     
-    // console.log(currentTasks)
-    // console.log(inProgress)
+    console.log(currentTasks)
+    console.log(inProgress)
     return (
         <DndProvider backend={HTML5Backend}>
         <div>

@@ -498,7 +498,13 @@ Javascript:
                     ✔ created a remove from board function that replaces the current 2 @done(17:18 - 30/06/22)
                     ✔ Added a counter,saved in local storage, to assign item ids. @done(17:11 - 30/06/22)
                     ☐ Created a add to board that replaces 2 of the 3. The add new item might need to be separate but I haven't properly looked. I'm more concerned about the 3rd board. I think my solution for the addToBoard is a little too binary.
+                      ☐ Can you get the id of the thing you're currently dragged over?
 
+                  ☐ I've had an idea, what if instead of having 3 different arrays, i had 1 array with a board property that I could use to determine which boards exist and where items are displayed. 
+                    ☐ I've added code to the drop functions that pass a name to the addToBoard function. This then changes the board property of the array to the new target board.
+                    ☐ I think i should now create a single array and output the contents of this array to each board based on the board name property.
+                
+          ☐ Bug: Dragging a draggable over itself will crash the page and require a cache clear.
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
