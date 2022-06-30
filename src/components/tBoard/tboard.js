@@ -143,13 +143,11 @@ export default function Tboard() {
     }
 
     const removeFromInProgress = (itemId) =>{
-        console.log(itemId)
-        let filterCurrentTasks = inProgress
-        const getResultOfFilter = filterCurrentTasks.filter((x) => x.id === itemId)
-        const mergedArrays = [...inProgress, ...getResultOfFilter]
-        console.log(mergedArrays)
-        setInProgress(mergedArrays)
-        setLocalStorage("inProgress",mergedArrays)
+        // console.log(itemId)
+        let filterInProgress = inProgress
+        const getResultOfFilter = filterInProgress.filter((x) => x.id !== itemId)
+        setInProgress(getResultOfFilter)
+        setLocalStorage("inProgress",getResultOfFilter)
     }
     
 
