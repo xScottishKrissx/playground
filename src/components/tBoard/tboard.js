@@ -44,9 +44,20 @@ export default function Tboard() {
     // console.log(currentTasks)
     const mapCurrentTask = currentTasks.map((x, key) => {
         return(
-            <p onClick={()=>removeItem(x.id)} key={key} id={x.id}>{x.text}</p>
+            // <p onClick={()=>removeItem(x.id)} key={key} id={x.id}>{x.text}</p>
+            <TaskItem id={x.id} key={key} text={x.text} />
         )
     })
+
+
+    function TaskItem(props){
+        // console.log(props.id)
+        const [{}, drag] = useDrag(()=>({
+            type: "text",
+        }))
+
+        return  <p ref={drag} id={props.id}>{props.text}</p>
+    }
 
 
   return (
