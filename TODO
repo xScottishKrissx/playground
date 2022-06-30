@@ -481,6 +481,12 @@ Javascript:
         ☐ I have no idea what I am doing or what is going. The board.js useDrop  just stops working after adding a single thing to the tasks array. I don't know how to fix and have no idea how to procede. I might have to start again because this is a mess.
       ☐ How to drag and reogranise items within a board
 
+      TBoard - Starting Over:
+        ☐ I think i tried to do too much to quickly and confused myself. So i am going to start again and be more careful with what Im doing.
+          ✔ Ability to add something to the page @done(12:14 - 30/06/22)
+          ✔ Save that to local storage and the display on reload @done(12:13 - 30/06/22)
+          ☐ I think i've set a decent base, now i need to add dragging.
+
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet

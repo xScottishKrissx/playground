@@ -17,8 +17,9 @@ import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 import simpleChart from "../../simpleCharts/simpleChart";
 // import ChessTutorial from "../../simpleDragAndDrop/simpleDragDrop";
-import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
-import TaskBoard from "../../taskBoard/taskBoard";
+// import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
+// import TaskBoard from "../../taskBoard/taskBoard";
+import Tboard from "../../tBoard/tboard";
 
 
 // Available Parameters
@@ -37,7 +38,7 @@ import TaskBoard from "../../taskBoard/taskBoard";
 export const components = [
   {
     name:"TaskBoard",
-    componentName: TaskBoard,
+    componentName: Tboard,
     tags:"",
   },
   // {
