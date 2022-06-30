@@ -55,6 +55,7 @@ export default function Tboard() {
         // console.log(props.id)
         const [{}, drag] = useDrag(()=>({
             type: "text",
+            item:{id:props.id}
         }))
 
         return  <p ref={drag} id={props.id}>{props.text}</p>
