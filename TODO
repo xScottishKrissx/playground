@@ -489,7 +489,9 @@ Javascript:
             ✔ Added dragging to current tasks, now dropping @done(12:36 - 30/06/22)
             ✔ I have the item triggering the drop area, but It's not returning the id as expected.  Still, solid progress. @done(12:42 - 30/06/22)
               ✔ Cracked it, i was missing the item:{id:props.id} is the drag function that matches the item.id in the drop function. @done(12:42 - 30/06/22)
-                ☐ At the moment the drop function is removing items from the current tasks, this fine. I also need it to add to the in Progress board.
+                ✔ At the moment the drop function is removing items from the current tasks, this fine. I also need it to add to the in Progress board. @done(13:31 - 30/06/22)
+                ✔ Done. You can now drag items across from the current tasks board to the inProgress board and they will drop and stay in place through page load. @done(13:31 - 30/06/22)
+                ☐ How about dragging back to current task from in progress?
 
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)

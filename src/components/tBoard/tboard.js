@@ -10,10 +10,11 @@ export default function Tboard() {
 
     // localStorage.clear()
     const currentTasksLocalStorage = JSON.parse(localStorage.getItem("currentTasks"))
+    const inProgressLocalStorage = JSON.parse(localStorage.getItem("inProgress"))
 
     const form = useRef()
     const [currentTasks, setCurrentTasks] = useState(currentTasksLocalStorage || [])
-    const [inProgress, setInProgress] = useState([])
+    const [inProgress, setInProgress] = useState(inProgressLocalStorage || [])
 
 
     const addItem = () =>{
@@ -25,6 +26,15 @@ export default function Tboard() {
             setCurrentTasks(currentTasks => ([...currentTasks]))
             setLocalStorage("currentTasks",currentTasks)
           }
+    }
+
+    const addToInProgress = (itemId) =>{
+        console.log(itemId)
+        let filterCurrentTasks = currentTasks
+        const getResultOfFilter = filterCurrentTasks.filter((x) => x.id === itemId)
+        const mergedArrays = [...inProgress, ...getResultOfFilter]
+        setInProgress(mergedArrays)
+        setLocalStorage("inProgress",mergedArrays)
     }
 
     const removeItem = (itemId) =>{
@@ -50,11 +60,18 @@ export default function Tboard() {
         )
     })
 
+    const mapInProgress = inProgress.map((x,key) =>{
+        return(
+            <TaskItem id={x.id} key={key} text={x.text} />
+        )
+    })
+
 // Dragging
     function TaskItem(props){
         // console.log(props.id)
         const [{}, drag] = useDrag(()=>({
             type: "text",
+            // this matches the drop function
             item:{id:props.id}
         }))
 
@@ -66,15 +83,21 @@ export default function Tboard() {
         
         const [{isOver}, drop] = useDrop(()=>({
             accept: "text",
-            drop:(item) => removeItem(item.id),
+            // this matches the drag function
+            drop:(item) => handleDrop(item.id),
             collect: (monitor) => ({
                 isOver: monitor.isOver()  && monitor.canDrop()
             })
         }))
+        // console.log(isOver)
 
-        console.log(isOver)
+        return <div className='dropArea' ref={drop}>{mapInProgress}</div>
+    }
 
-        return <div className='dropArea' ref={drop}>Drop</div>
+    const handleDrop = (itemId) =>{
+        addToInProgress(itemId)
+        removeItem(itemId)
+        console.log("Add to In Progress")
     }
 
 
