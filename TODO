@@ -487,6 +487,7 @@ Javascript:
           ✔ Save that to local storage and the display on reload @done(12:13 - 30/06/22)
           ✔ I think i've set a decent base, now i need to add dragging. @done(12:26 - 30/06/22)
             ☐ Added dragging to current tasks, now dropping
+            ☐ I have the item triggering the drop area, but It's not returning the id as expected.  Still, solid progress.
 
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)

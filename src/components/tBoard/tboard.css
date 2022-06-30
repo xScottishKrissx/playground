@@ -8,3 +8,8 @@
     .boardWrapper > div{
         outline: 1px solid black;
     }
+
+.dropArea{
+    outline: 1px solid green;
+    height: 100%;
+}

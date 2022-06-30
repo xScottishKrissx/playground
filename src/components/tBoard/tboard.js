@@ -28,6 +28,7 @@ export default function Tboard() {
     }
 
     const removeItem = (itemId) =>{
+        console.log("Remove Item", itemId)
         let removeFromCurrentTasks = currentTasks
         const getResultOfFilter = removeFromCurrentTasks.filter((x) => x.id !== itemId)
         setCurrentTasks(getResultOfFilter)
@@ -49,7 +50,7 @@ export default function Tboard() {
         )
     })
 
-
+// Dragging
     function TaskItem(props){
         // console.log(props.id)
         const [{}, drag] = useDrag(()=>({
@@ -57,6 +58,22 @@ export default function Tboard() {
         }))
 
         return  <p ref={drag} id={props.id}>{props.text}</p>
+    }
+
+// Dropping
+    function DropItem(){
+        
+        const [{isOver}, drop] = useDrop(()=>({
+            accept: "text",
+            drop:(item) => removeItem(item.id),
+            collect: (monitor) => ({
+                isOver: monitor.isOver()  && monitor.canDrop()
+            })
+        }))
+
+        console.log(isOver)
+
+        return <div className='dropArea' ref={drop}>Drop</div>
     }
 
 
@@ -78,7 +95,7 @@ export default function Tboard() {
 
                 <div>
                     In Progress
-                    
+                    <DropItem />
                 </div>
             </div>
         </div>
