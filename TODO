@@ -503,6 +503,7 @@ Javascript:
                   ☐ I've had an idea, what if instead of having 3 different arrays, i had 1 array with a board property that I could use to determine which boards exist and where items are displayed. 
                     ☐ I've added code to the drop functions that pass a name to the addToBoard function. This then changes the board property of the array to the new target board.
                     ☐ I think i should now create a single array and output the contents of this array to each board based on the board name property.
+                    ☐ I think this is the better way but I can't untangle this current version. I will need to start again again to make this properly work. The code's a mess and Im making a complete meal of what should be a simple thing. I'm not happy with my work in this project and its frustrating me.
                 
           ☐ Bug: Dragging a draggable over itself will crash the page and require a cache clear.
 
