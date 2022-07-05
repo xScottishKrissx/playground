@@ -476,40 +476,44 @@ Javascript:
       ☐ In Progress
       ☐ Completed
     
-    ☐ Things to figure out
-      ☐ How to remove an item from it's original position after being dropped
-        ☐ I have no idea what I am doing or what is going. The board.js useDrop  just stops working after adding a single thing to the tasks array. I don't know how to fix and have no idea how to procede. I might have to start again because this is a mess.
+    ✔ Things to figure out @done(16:58 - 05/07/22)
+      ✔ How to remove an item from it's original position after being dropped @done(16:58 - 05/07/22)
+        ✔ I have no idea what I am doing or what is going. The board.js useDrop  just stops working after adding a single thing to the tasks array. I don't know how to fix and have no idea how to procede. I might have to start again because this is a mess. @done(16:57 - 05/07/22)
+     
+
+    TBoard - Starting Over:
+      ✔ I think i tried to do too much to quickly and confused myself. So i am going to start again and be more careful with what Im doing. @done(16:56 - 05/07/22)
+        ✔ Ability to add something to the page @done(12:14 - 30/06/22)
+        ✔ Save that to local storage and the display on reload @done(12:13 - 30/06/22)
+        ✔ I think i've set a decent base, now i need to add dragging. @done(12:26 - 30/06/22)
+          ✔ Added dragging to current tasks, now dropping @done(12:36 - 30/06/22)
+          ✔ I have the item triggering the drop area, but It's not returning the id as expected.  Still, solid progress. @done(12:42 - 30/06/22)
+            ✔ Cracked it, i was missing the item:{id:props.id} is the drag function that matches the item.id in the drop function. @done(12:42 - 30/06/22)
+              ✔ At the moment the drop function is removing items from the current tasks, this fine. I also need it to add to the in Progress board. @done(13:31 - 30/06/22)
+              ✔ Done. You can now drag items across from the current tasks board to the inProgress board and they will drop and stay in place through page load. @done(13:31 - 30/06/22)
+              ✔ How about dragging back to current task from in progress? @done(16:54 - 05/07/22)
+                ✔ It's a bit of a mess but i think im getting somewhere. I can drag items back from in progress, but they're not being removed from in progress. It's something in the removeFromInProgress function. @done(15:22 - 30/06/22)
+                  ✔ Got it, it's a total mess but i now have elements being dragged and dropped across both boards @done(15:23 - 30/06/22)
+                ✔ The next step here is to reduce the duplicate code being used here @done(16:54 - 05/07/22)
+                  ✔ created a remove from board function that replaces the current 2 @done(17:18 - 30/06/22)
+                  ✔ Added a counter,saved in local storage, to assign item ids. @done(17:11 - 30/06/22)
+                  ✔ Created a add to board that replaces 2 of the 3. The add new item might need to be separate but I haven't properly looked. I'm more concerned about the 3rd board. I think my solution for the addToBoard is a little too binary. @done(16:54 - 05/07/22)
+                    ✘ Can you get the id of the thing you're currently dragged over? @cancelled(16:54 - 05/07/22)
+
+                ✔ I've had an idea, what if instead of having 3 different arrays, i had 1 array with a board property that I could use to determine which boards exist and where items are displayed. @done(16:54 - 05/07/22)
+                  ✔ I've added code to the drop functions that pass a name to the addToBoard function. This then changes the board property of the array to the new target board. @done(15:38 - 05/07/22)
+                  ✔ I think i should now create a single array and output the contents of this array to each board based on the board name property. @done(15:38 - 05/07/22)
+                  ✔ I think this is the better way but I can't untangle this current version. I will need to start again again to make this properly work. The code's a mess and Im making a complete meal of what should be a simple thing. I'm not happy with my work in this project and its frustrating me. @done(15:38 - 05/07/22)
+                  ✔ The main issue was that I wasn't doing a JSON.stringify when setting storage which caused some issues. I think restarting was a the correct call anyway as it was pointless to try and refactor the code from that position. @done(15:38 - 05/07/22)
+                  ✔ Carrying on with this in a new version of this: tbored @done(16:54 - 05/07/22)
+                    ✔ Going through the same steps as above, only using 1 array with columns instead of multiple dedicated arrays for each board. @done(16:54 - 05/07/22)
+                    ✔ Caught Up @done(16:54 - 05/07/22)
+    Tbored - A Better Version:
       ☐ How to drag and reogranise items within a board
-
-      TBoard - Starting Over:
-        ☐ I think i tried to do too much to quickly and confused myself. So i am going to start again and be more careful with what Im doing.
-          ✔ Ability to add something to the page @done(12:14 - 30/06/22)
-          ✔ Save that to local storage and the display on reload @done(12:13 - 30/06/22)
-          ✔ I think i've set a decent base, now i need to add dragging. @done(12:26 - 30/06/22)
-            ✔ Added dragging to current tasks, now dropping @done(12:36 - 30/06/22)
-            ✔ I have the item triggering the drop area, but It's not returning the id as expected.  Still, solid progress. @done(12:42 - 30/06/22)
-              ✔ Cracked it, i was missing the item:{id:props.id} is the drag function that matches the item.id in the drop function. @done(12:42 - 30/06/22)
-                ✔ At the moment the drop function is removing items from the current tasks, this fine. I also need it to add to the in Progress board. @done(13:31 - 30/06/22)
-                ✔ Done. You can now drag items across from the current tasks board to the inProgress board and they will drop and stay in place through page load. @done(13:31 - 30/06/22)
-                ☐ How about dragging back to current task from in progress?
-                  ✔ It's a bit of a mess but i think im getting somewhere. I can drag items back from in progress, but they're not being removed from in progress. It's something in the removeFromInProgress function. @done(15:22 - 30/06/22)
-                    ✔ Got it, it's a total mess but i now have elements being dragged and dropped across both boards @done(15:23 - 30/06/22)
-                  ☐ The next step here is to reduce the duplicate code being used here
-                    ✔ created a remove from board function that replaces the current 2 @done(17:18 - 30/06/22)
-                    ✔ Added a counter,saved in local storage, to assign item ids. @done(17:11 - 30/06/22)
-                    ☐ Created a add to board that replaces 2 of the 3. The add new item might need to be separate but I haven't properly looked. I'm more concerned about the 3rd board. I think my solution for the addToBoard is a little too binary.
-                      ☐ Can you get the id of the thing you're currently dragged over?
-
-                  ☐ I've had an idea, what if instead of having 3 different arrays, i had 1 array with a board property that I could use to determine which boards exist and where items are displayed. 
-                    ✔ I've added code to the drop functions that pass a name to the addToBoard function. This then changes the board property of the array to the new target board. @done(15:38 - 05/07/22)
-                    ✔ I think i should now create a single array and output the contents of this array to each board based on the board name property. @done(15:38 - 05/07/22)
-                    ✔ I think this is the better way but I can't untangle this current version. I will need to start again again to make this properly work. The code's a mess and Im making a complete meal of what should be a simple thing. I'm not happy with my work in this project and its frustrating me. @done(15:38 - 05/07/22)
-                    ✔ The main issue was that I wasn't doing a JSON.stringify when setting storage which caused some issues. I think restarting was a the correct call anyway as it was pointless to try and refactor the code from that position. @done(15:38 - 05/07/22)
-                    ☐ Carrying on with this in a new version of this: tbored
-                      ☐ Going through the same steps as above, only using 1 array with columns instead of multiple dedicated arrays for each board.
-                    
+      ☐ How to add boards dynamically
+        ☐ I feel like this is easy as all I need is a board name.
                 
-          ☐ Bug: Dragging a draggable over itself will crash the page and require a cache clear.
+          ✘ Bug: Dragging a draggable over itself will crash the page and require a cache clear. @cancelled(16:54 - 05/07/22)
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
