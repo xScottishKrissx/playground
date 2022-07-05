@@ -149,8 +149,14 @@ function DragItem(props){
     
         if(formValue.length > 1){
             let itemsArray = currentTasks || []
-            itemsArray.push({'id':"item-" + (counter).toString() , 'text': formValue, "board":"current"})
+            itemsArray.push({
+                'id':"item-" + (counter).toString() , 
+                'text': formValue, "board":"current"
+            })
+
             setCurrentTasks(currentTasks => ([...currentTasks]))
+            // I think the issue was the I wasn't setting JSON.stringify here.
+            // I gave up on this project but this is the reason I was getting Object not a valid react child errors.
             setLocalStorage("currentTasks",currentTasks)
           }
         setCounter(counter + 1)

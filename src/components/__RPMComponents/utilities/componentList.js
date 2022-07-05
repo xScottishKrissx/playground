@@ -16,10 +16,12 @@ import ColourFlipper from "../../colourFlipper/colourFlipper";
 import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 import simpleChart from "../../simpleCharts/simpleChart";
+import Tbored from "../../tbored/tbored";
 // import ChessTutorial from "../../simpleDragAndDrop/simpleDragDrop";
 // import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
 // import TaskBoard from "../../taskBoard/taskBoard";
-import Tboard from "../../tBoard/tboard";
+// import Tboard from "../../tBoard/tboard";
+
 
 
 // Available Parameters
@@ -37,8 +39,8 @@ import Tboard from "../../tBoard/tboard";
 
 export const components = [
   {
-    name:"TaskBoard",
-    componentName: Tboard,
+    name:"TaskBored",
+    componentName: Tbored,
     tags:"",
   },
   // {
