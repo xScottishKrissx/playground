@@ -521,6 +521,7 @@ Javascript:
                 
           ✘ Bug: Dragging a draggable over itself will crash the page and require a cache clear. @cancelled(16:54 - 05/07/22)
           ☐ Bug: Add 2 items and drag one to inProgress. Then add a new item and when you attempt to drag it to inProgress, it vanishes @started(16:43 - 06/07/22)
+            ☐ Solved this by adding a localStorage.getItem instead of the items prop. Not sure how else to fix this. I imagine it has something to do with the way state is set/called but i can't figure it out. 
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet

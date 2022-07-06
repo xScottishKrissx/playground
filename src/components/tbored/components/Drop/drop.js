@@ -7,15 +7,19 @@ export default function Board({items, setItems, setLocalStorage}) {
     // console.log(items)
     // console.log("Drop: " , items)
     const addToBoard = (itemId, newBoard, test) =>{
+
         // console.log(itemId)
         // console.log(newBoard)
         // console.log(test)
-        let itemsCopy = [...items]
+        // console.log(items)
+        // let itemsCopy = [...items]
+        // let itemsCopy = [...test]
+
+        let itemsCopy = JSON.parse(localStorage.getItem("tbored-items")) || []
         // console.log(itemsCopy)
         let changeBoard = itemsCopy.map(x => {
             if( x.id === itemId ){ 
                 x.board = newBoard
-                console.log("Drop")
             }
 
             return x
@@ -27,7 +31,7 @@ export default function Board({items, setItems, setLocalStorage}) {
 
     const [{}, toInProgress] = useDrop(()=>({
         accept:"text",
-        drop:(item) => addToBoard(item.id,"inProgress", item)
+        drop:(item) => addToBoard(item.id,"inProgress")
     }))
 
     const [{}, toUnassigned] = useDrop(()=>({

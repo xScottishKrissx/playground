@@ -1,7 +1,7 @@
 import React,{useRef} from 'react'
 
 export default function UserInput({items, counter, setItems, setLocalStorage, setCounter}) {
-    // console.log("Input: " , items)
+    // console.log( items)
     const myForm = useRef()
 
     const resetBoard = () =>{

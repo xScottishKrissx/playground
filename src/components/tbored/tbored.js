@@ -24,7 +24,7 @@ export default function Tbored(){
     // state
     const [items, setItems ] = useState(storedItems)
     const [counter, setCounter] = useState(counterLocalStorage)
-    console.log(items)
+    // console.log("------------------>", items)
 
 
     // Add From User Input
@@ -62,7 +62,7 @@ export default function Tbored(){
 
     // Utilities
     const setItemState = (newItems) => {
-        // console.log(newItems)
+        // console.log("------------->", newItems)
         setItems(newItems) 
     }
     const setLocalStorage = (name,thingToStore) => {
