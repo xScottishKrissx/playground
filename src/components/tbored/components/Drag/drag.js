@@ -7,17 +7,14 @@ function DragItem({id, text, test}) {
         item:{id:id},
         collect: (monitor) =>({
             isDragging: monitor.isDragging(),
-            
         }),
     }))
-    // console.log(isDragging, test)
     return <p ref={drag}>{text}</p>
 }
 
 
 export default function MapContent({itemsArray, boardName}) {
-    //  console.log(itemsArray)
-    // console.log("Drag: " , itemsArray)
+
     return itemsArray.map((x,key) =>{
         if(x.board === boardName){
             return(
@@ -25,5 +22,6 @@ export default function MapContent({itemsArray, boardName}) {
             )
         }
     })
+    
  }
  

@@ -4,27 +4,13 @@ import { useDrop} from 'react-dnd'
 import MapContent from '../Drag/drag'
 
 export default function Board({items, setItems, setLocalStorage}) {
-    // console.log(items)
-    // console.log("Drop: " , items)
-    const addToBoard = (itemId, newBoard, test) =>{
 
-        // console.log(itemId)
-        // console.log(newBoard)
-        // console.log(test)
-        // console.log(items)
-        // let itemsCopy = [...items]
-        // let itemsCopy = [...test]
+    const addToBoard = (itemId, newBoard) =>{
 
         let itemsCopy = JSON.parse(localStorage.getItem("tbored-items")) || []
-        // console.log(itemsCopy)
         let changeBoard = itemsCopy.map(x => {
-            if( x.id === itemId ){ 
-                x.board = newBoard
-            }
-
-            return x
+            if( x.id === itemId ){ x.board = newBoard } return x
         })
-        // console.log(changeBoard)
         setItems(changeBoard)
         setLocalStorage("tbored-items", changeBoard)
     }

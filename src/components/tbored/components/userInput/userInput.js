@@ -1,7 +1,7 @@
 import React,{useRef} from 'react'
 
 export default function UserInput({items, counter, setItems, setLocalStorage, setCounter}) {
-    // console.log( items)
+
     const myForm = useRef()
 
     const resetBoard = () =>{
@@ -13,21 +13,18 @@ export default function UserInput({items, counter, setItems, setLocalStorage, se
         const formValue = myForm.current.value
 
         if(formValue.length > 1){
-            // console.log(items)
             let itemsArray = items || []
             itemsArray.push({
                 "id": "item" + counter.toString() ,
                 "text": formValue,
                 "board":"unassigned"
             })
-            // console.log(itemsArray)
             setItems(itemsArray)
             setLocalStorage("tbored-items", itemsArray)
         }
+        // Incremements a counter in order to assign unique id to items
         setCounter(counter + 1)
         localStorage.setItem("counter", JSON.stringify(counter))
-        // console.log(items)
-
 
         // Clear Input After Saving
         myForm.current.value = ""
