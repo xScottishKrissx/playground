@@ -512,6 +512,13 @@ Javascript:
       ☐ How to drag and reogranise items within a board
       ☐ How to add boards dynamically
         ☐ I feel like this is easy as all I need is a board name.
+      ☐ Separate code into components before this get's too messy.
+        ..a component at a time, making sure everything works
+        ☐ Drag Component
+        ☐ Drop Area Component
+        ☐ Form Component
+        ☐ Map Content Component
+        ☐ Input Component
                 
           ✘ Bug: Dragging a draggable over itself will crash the page and require a cache clear. @cancelled(16:54 - 05/07/22)
 

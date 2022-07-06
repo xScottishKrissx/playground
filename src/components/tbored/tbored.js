@@ -4,6 +4,7 @@ import {DndProvider, useDrop, useDrag} from 'react-dnd'
 import {HTML5Backend} from 'react-dnd-html5-backend'
 import {TouchBackend} from 'react-dnd-touch-backend'
 import Counter from '../counter/counter'
+import MapContent from './components/Drag/drag'
 
 import './tboard.css'
 
@@ -66,25 +67,25 @@ export default function Tbored() {
     }
 
     // Displaying On Page
-    function MapContent({itemsArray, boardName}){
-        return itemsArray.map((x,key) =>{
-            if(x.board === boardName){
-                return(
-                    <DragItem id={x.id} key={key} text={x.text}/>
-                )
-            }
-        })
-    }
+    // function MapContent({itemsArray, boardName}){
+    //     return itemsArray.map((x,key) =>{
+    //         if(x.board === boardName){
+    //             return(
+    //                 <DragItem id={x.id} key={key} text={x.text}/>
+    //             )
+    //         }
+    //     })
+    // }
 
 
     // Dragging
-    function DragItem({id, text}){
-        const [{}, drag] = useDrag(()=>({
-            type:"text",
-            item:{id:id}
-        }))
-        return <p ref={drag}>{text}</p>
-    }
+    // function DragItem({id, text}){
+    //     const [{}, drag] = useDrag(()=>({
+    //         type:"text",
+    //         item:{id:id}
+    //     }))
+    //     return <p ref={drag}>{text}</p>
+    // }
 
     // Dropping
     function DropItem(){
@@ -106,6 +107,7 @@ export default function Tbored() {
                     <h3>Unassigned</h3>
                     {/* {mapUnassigned} */}
                     <MapContent itemsArray={items} boardName={"unassigned"}/>
+                    
                     
                 </div>
 
