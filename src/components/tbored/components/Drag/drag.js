@@ -1,20 +1,27 @@
 import React from 'react'
-import {DndProvider, useDrop, useDrag} from 'react-dnd'
+import {useDrag} from 'react-dnd'
 
-function DragItem({id, text}) {
-    const [{}, drag] = useDrag(()=>({
+function DragItem({id, text, test}) {
+    const [{isDragging}, drag] = useDrag(()=>({
         type:"text",
-        item:{id:id}
+        item:{id:id},
+        collect: (monitor) =>({
+            isDragging: monitor.isDragging(),
+            
+        }),
     }))
+    // console.log(isDragging, test)
     return <p ref={drag}>{text}</p>
 }
 
- 
- export default function MapContent({itemsArray, boardName}) {
+
+export default function MapContent({itemsArray, boardName}) {
+    //  console.log(itemsArray)
+    // console.log("Drag: " , itemsArray)
     return itemsArray.map((x,key) =>{
         if(x.board === boardName){
             return(
-                <DragItem id={x.id} key={key} text={x.text}/>
+                <DragItem test={itemsArray} id={x.id} key={key} text={x.text}/>
             )
         }
     })

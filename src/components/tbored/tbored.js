@@ -1,21 +1,22 @@
-import React,{useState, useRef} from 'react'
+import React,{useState} from 'react'
 
-import {DndProvider, useDrop, useDrag} from 'react-dnd'
+import {DndProvider} from 'react-dnd'
 import {HTML5Backend} from 'react-dnd-html5-backend'
-import {TouchBackend} from 'react-dnd-touch-backend'
-import Counter from '../counter/counter'
-import MapContent from './components/Drag/drag'
+// import {TouchBackend} from 'react-dnd-touch-backend'
+// import Counter from '../counter/counter'
+// import MapContent from './components/Drag/drag'
+import Board from './components/Drop/drop'
 import UserInput from './components/userInput/userInput'
 
 import './tboard.css'
 
-export default function Tbored() {
+export default function Tbored(){
 
     // local storage
     // localStorage.clear()
     const storedItems = JSON.parse(localStorage.getItem("tbored-items")) || []
     const counterLocalStorage = JSON.parse(localStorage.getItem("counter")) + 1 || 0
-    console.log(storedItems)
+    // console.log(storedItems)
 
     // ref
     // const myForm = useRef()
@@ -23,7 +24,7 @@ export default function Tbored() {
     // state
     const [items, setItems ] = useState(storedItems)
     const [counter, setCounter] = useState(counterLocalStorage)
-    // console.log(items)
+    console.log(items)
 
 
     // Add From User Input
@@ -50,18 +51,24 @@ export default function Tbored() {
     // }
 
     // Change Board with Drag And Drop
-    const addToBoard = (itemId, newBoard) =>{
-        let itemsCopy = [...items]
-        const changeBoard = itemsCopy.map(x => {
-            if( x.id === itemId ){ x.board = newBoard } return x
-        })
-        setItems(changeBoard)
-        setLocalStorage("tbored-items", items)
+    // const addToBoard = (itemId, newBoard) =>{
+    //     let itemsCopy = [...items]
+    //     const changeBoard = itemsCopy.map(x => {
+    //         if( x.id === itemId ){ x.board = newBoard } return x
+    //     })
+    //     setItems(changeBoard)
+    //     setLocalStorage("tbored-items", items)
+    // }
+
+    // Utilities
+    const setItemState = (newItems) => {
+        // console.log(newItems)
+        setItems(newItems) 
     }
-
-
-
-    const setLocalStorage = (name,thingToStore) => {localStorage.setItem(name, JSON.stringify(thingToStore))}
+    const setLocalStorage = (name,thingToStore) => {
+        // console.log(thingToStore)
+        localStorage.setItem(name, JSON.stringify(thingToStore))
+    }
     // const resetBoard = () =>{
     //     console.log("Clearing Local Storage, reload page")
     //     localStorage.clear()
@@ -89,38 +96,38 @@ export default function Tbored() {
     // }
 
     // Dropping
-    function DropItem(){
+    // function DropItem(){
 
-        const [{}, toInProgress] = useDrop(()=>({
-            accept:"text",
-            drop:(item) => addToBoard(item.id,"inProgress")
-        }))
+    //     const [{}, toInProgress] = useDrop(()=>({
+    //         accept:"text",
+    //         drop:(item) => addToBoard(item.id,"inProgress")
+    //     }))
 
-        const [{}, toUnassigned] = useDrop(()=>({
-            accept:"text",
-            drop:(item) => addToBoard(item.id,"unassigned")
-        }))
+    //     const [{}, toUnassigned] = useDrop(()=>({
+    //         accept:"text",
+    //         drop:(item) => addToBoard(item.id,"unassigned")
+    //     }))
 
-        return (
-            <div className='boardWrapper'>
+    //     return (
+    //         <div className='boardWrapper'>
 
-                <div className='dropArea' ref={toUnassigned}>
-                    <h3>Unassigned</h3>
-                    {/* {mapUnassigned} */}
-                    <MapContent itemsArray={items} boardName={"unassigned"}/>
+    //             <div className='dropArea' ref={toUnassigned}>
+    //                 <h3>Unassigned</h3>
+    //                 {/* {mapUnassigned} */}
+    //                 <MapContent itemsArray={items} boardName={"unassigned"}/>
                     
                     
-                </div>
+    //             </div>
 
-                <div className='dropArea' ref={toInProgress}>
-                    <h3>In Progress</h3>
-                    {/* {mapInProgress} */}
-                    <MapContent itemsArray={items} boardName={"inProgress"}/>
-                </div>
+    //             <div className='dropArea' ref={toInProgress}>
+    //                 <h3>In Progress</h3>
+    //                 {/* {mapInProgress} */}
+    //                 <MapContent itemsArray={items} boardName={"inProgress"}/>
+    //             </div>
 
-            </div>
-        )
-    }
+    //         </div>
+    //     )
+    // }
 
     // Dropping
 
@@ -128,7 +135,13 @@ export default function Tbored() {
     <DndProvider backend={HTML5Backend}>
         <div>
             <h3>Tbored</h3>
-            <UserInput items={items} setItems={()=>setItems} counter={counter} setCounter={()=>setCounter(counter + 1)} setLocalStorage={setLocalStorage}/>
+            <UserInput 
+                items={items} 
+                setItems={setItemState} 
+                setLocalStorage={setLocalStorage}
+                counter={counter} 
+                setCounter={()=>setCounter(counter + 1)} 
+            />
             {/* <button onClick={addNew}>Add</button>
             <button onClick={resetBoard}>Reset</button>
 
@@ -136,7 +149,13 @@ export default function Tbored() {
                 <input ref={myForm} />
             </form> */}
 
-            <DropItem />
+            <Board 
+                items={items} 
+                setItems={setItemState} 
+                setLocalStorage={setLocalStorage}
+            />
+
+            {/* <DropItem /> */}
         </div>
     </DndProvider>
   )
