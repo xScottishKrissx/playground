@@ -509,19 +509,19 @@ Javascript:
                     ✔ Going through the same steps as above, only using 1 array with columns instead of multiple dedicated arrays for each board. @done(16:54 - 05/07/22)
                     ✔ Caught Up @done(16:54 - 05/07/22)
     Tbored - A Better Version:
-      ☐ How to drag and reogranise items within a board
+      ☐ How to drag to reogranise items within a board
       ☐ How to add boards dynamically
         ☐ I feel like this is easy as all I need is a board name.
-      ☐ Separate code into components before this get's too messy.
+      ✔ Separate code into components before this get's too messy. @done(17:03 - 06/07/22)
         ..a component at a time, making sure everything works
         ✔ Drag Component @done(16:42 - 06/07/22)
-        ☐ Drop Area Component
+        ✔ Drop Area Component @done(17:03 - 06/07/22)
         ✔ Form Component @done(16:42 - 06/07/22)
         ✔ Map Content Component @done(16:42 - 06/07/22)
                 
           ✘ Bug: Dragging a draggable over itself will crash the page and require a cache clear. @cancelled(16:54 - 05/07/22)
-          ☐ Bug: Add 2 items and drag one to inProgress. Then add a new item and when you attempt to drag it to inProgress, it vanishes @started(16:43 - 06/07/22)
-            ☐ Solved this by adding a localStorage.getItem instead of the items prop. Not sure how else to fix this. I imagine it has something to do with the way state is set/called but i can't figure it out. 
+          ✔ Bug: Add 2 items and drag one to inProgress. Then add a new item and when you attempt to drag it to inProgress, it vanishes @started(16:43 - 06/07/22) @done(17:03 - 06/07/22) @lasted(20m21s)
+            ✔ Solved this by adding a localStorage.getItem instead of the items prop. Not sure how else to fix this. I imagine it has something to do with the way state is set/called but i can't figure it out. @done(17:03 - 06/07/22)
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet

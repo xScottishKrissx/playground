@@ -1,10 +1,10 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import { useDrop} from 'react-dnd'
 
 import MapContent from '../Drag/drag'
 
-export default function Board({items, setItems, setLocalStorage}) {
-
+export default function Board({items, setItems, setLocalStorage, index}) {
+    const ref = useRef(null)
     const addToBoard = (itemId, newBoard) =>{
 
         let itemsCopy = JSON.parse(localStorage.getItem("tbored-items")) || []
@@ -20,9 +20,10 @@ export default function Board({items, setItems, setLocalStorage}) {
         drop:(item) => addToBoard(item.id,"inProgress")
     }))
 
-    const [{}, toUnassigned] = useDrop(()=>({
+    const [, toUnassigned] = useDrop(()=>({
         accept:"text",
-        drop:(item) => addToBoard(item.id,"unassigned")
+        drop:(item) => addToBoard(item.id,"unassigned"),
+
     }))
 
     return (
