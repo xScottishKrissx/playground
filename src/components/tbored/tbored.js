@@ -5,6 +5,7 @@ import {HTML5Backend} from 'react-dnd-html5-backend'
 import {TouchBackend} from 'react-dnd-touch-backend'
 import Counter from '../counter/counter'
 import MapContent from './components/Drag/drag'
+import UserInput from './components/userInput/userInput'
 
 import './tboard.css'
 
@@ -17,7 +18,7 @@ export default function Tbored() {
     console.log(storedItems)
 
     // ref
-    const myForm = useRef()
+    // const myForm = useRef()
 
     // state
     const [items, setItems ] = useState(storedItems)
@@ -26,27 +27,27 @@ export default function Tbored() {
 
 
     // Add From User Input
-    const addNew = () =>{
-        const formValue = myForm.current.value
+    // const addNew = () =>{
+    //     const formValue = myForm.current.value
 
-        if(formValue.length > 1){
-            let itemsArray = items || []
-            itemsArray.push({
-                "id": "item" + counter.toString() ,
-                "text": formValue,
-                "board":"unassigned"
-            })
-            setItems(itemsArray)
-            setLocalStorage("tbored-items", items)
-        }
-        setCounter(counter + 1)
-        localStorage.setItem("counter", JSON.stringify(counter))
-        // console.log(items)
+    //     if(formValue.length > 1){
+    //         let itemsArray = items || []
+    //         itemsArray.push({
+    //             "id": "item" + counter.toString() ,
+    //             "text": formValue,
+    //             "board":"unassigned"
+    //         })
+    //         setItems(itemsArray)
+    //         setLocalStorage("tbored-items", items)
+    //     }
+    //     setCounter(counter + 1)
+    //     localStorage.setItem("counter", JSON.stringify(counter))
+    //     // console.log(items)
 
 
-        // Clear Input After Saving
-        myForm.current.value = ""
-    }
+    //     // Clear Input After Saving
+    //     myForm.current.value = ""
+    // }
 
     // Change Board with Drag And Drop
     const addToBoard = (itemId, newBoard) =>{
@@ -61,10 +62,10 @@ export default function Tbored() {
 
 
     const setLocalStorage = (name,thingToStore) => {localStorage.setItem(name, JSON.stringify(thingToStore))}
-    const resetBoard = () =>{
-        console.log("Clearing Local Storage, reload page")
-        localStorage.clear()
-    }
+    // const resetBoard = () =>{
+    //     console.log("Clearing Local Storage, reload page")
+    //     localStorage.clear()
+    // }
 
     // Displaying On Page
     // function MapContent({itemsArray, boardName}){
@@ -127,12 +128,13 @@ export default function Tbored() {
     <DndProvider backend={HTML5Backend}>
         <div>
             <h3>Tbored</h3>
-            <button onClick={addNew}>Add</button>
+            <UserInput items={items} setItems={()=>setItems} counter={counter} setCounter={()=>setCounter(counter + 1)} setLocalStorage={setLocalStorage}/>
+            {/* <button onClick={addNew}>Add</button>
             <button onClick={resetBoard}>Reset</button>
 
             <form>
                 <input ref={myForm} />
-            </form>
+            </form> */}
 
             <DropItem />
         </div>
