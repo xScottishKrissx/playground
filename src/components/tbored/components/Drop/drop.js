@@ -26,10 +26,16 @@ export default function Board({items, setItems, setLocalStorage, index}) {
 
     }))
 
-
-    const onDragOver = () =>{
-
+    const draggedItem = (x) =>{
+        console.log(x)
     }
+
+    const draggedOverItem =(x) =>{
+        console.log(x)
+
+        
+    }
+
 
     return (
         <div className='boardWrapper'>
@@ -37,7 +43,7 @@ export default function Board({items, setItems, setLocalStorage, index}) {
             <div className='dropArea' ref={toUnassigned}>
                 <h3>Unassigned</h3>
                 {/* {mapUnassigned} */}
-                <MapContent itemsArray={[...items]} boardName={"unassigned"}/>
+                <MapContent itemsArray={[...items]} boardName={"unassigned"} setDraggedItem={draggedItem} setDraggedOverItem={draggedOverItem}/>
                 
                 
             </div>
@@ -45,7 +51,7 @@ export default function Board({items, setItems, setLocalStorage, index}) {
             <div className='dropArea' ref={toInProgress} >
                 <h3>In Progress</h3>
                 {/* {mapInProgress} */}
-                <MapContent itemsArray={[...items]} boardName={"inProgress"}/>
+                <MapContent itemsArray={[...items]} boardName={"inProgress"} setDraggedItem={draggedItem} setDraggedOverItem={draggedOverItem}/>
             </div>
 
         </div>
