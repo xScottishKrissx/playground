@@ -1,4 +1,4 @@
-import React,{useRef} from 'react'
+import React,{useRef, useState} from 'react'
 import { useDrop} from 'react-dnd'
 
 import MapContent from '../Drag/drag'
@@ -26,14 +26,30 @@ export default function Board({items, setItems, setLocalStorage, index}) {
 
     }))
 
-    const draggedItem = (x) =>{
-        console.log(x)
+    const [draggedItem, setDraggedItem] = useState()
+    const [draggedOverItem, setDraggedOverItem] = useState()
+
+    const getDraggedItem = (x) =>{
+        setDraggedItem(x)
     }
 
-    const draggedOverItem =(x) =>{
-        console.log(x)
+    const getDraggedOverItem =(x, indexxxx) =>{
+        setDraggedOverItem(x)
+
+        if(draggedItem === draggedOverItem){
+            console.log("It's the same, so stop Dragging")
+            return
+        }
 
         
+        let spliceItems = items.filter((item) => item !== draggedItem)
+        // console.log(spliceItems)
+        console.log(indexxxx)
+        console.log(draggedItem)
+        spliceItems.splice(indexxxx, 0, draggedItem)
+
+        // This might be it...
+        console.log(spliceItems)
     }
 
 
@@ -43,7 +59,7 @@ export default function Board({items, setItems, setLocalStorage, index}) {
             <div className='dropArea' ref={toUnassigned}>
                 <h3>Unassigned</h3>
                 {/* {mapUnassigned} */}
-                <MapContent itemsArray={[...items]} boardName={"unassigned"} setDraggedItem={draggedItem} setDraggedOverItem={draggedOverItem}/>
+                <MapContent itemsArray={[...items]} boardName={"unassigned"} setDraggedItem={getDraggedItem} setDraggedOverItem={getDraggedOverItem}/>
                 
                 
             </div>
@@ -51,7 +67,7 @@ export default function Board({items, setItems, setLocalStorage, index}) {
             <div className='dropArea' ref={toInProgress} >
                 <h3>In Progress</h3>
                 {/* {mapInProgress} */}
-                <MapContent itemsArray={[...items]} boardName={"inProgress"} setDraggedItem={draggedItem} setDraggedOverItem={draggedOverItem}/>
+                <MapContent itemsArray={[...items]} boardName={"inProgress"} setDraggedItem={getDraggedItem} setDraggedOverItem={getDraggedOverItem}/>
             </div>
 
         </div>

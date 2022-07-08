@@ -30,7 +30,8 @@ function DragItem({id, text, test, index, setDraggedItem, setDraggedOverItem}) {
     }
  
     const onDragOver = () =>{
-        setDraggedOverItem(test[index])
+        setDraggedOverItem(test[index], index)
+        console.log(index)
         // if(draggedItem === draggedOverItem){ return }
         // let items = test.filter((item) => item !== draggedItem)
         // items.splice(index, 0, draggedItem)
