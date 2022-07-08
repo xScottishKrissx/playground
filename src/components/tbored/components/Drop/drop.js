@@ -26,6 +26,11 @@ export default function Board({items, setItems, setLocalStorage, index}) {
 
     }))
 
+
+    const onDragOver = () =>{
+
+    }
+
     return (
         <div className='boardWrapper'>
 
@@ -37,7 +42,7 @@ export default function Board({items, setItems, setLocalStorage, index}) {
                 
             </div>
 
-            <div className='dropArea' ref={toInProgress}>
+            <div className='dropArea' ref={toInProgress} >
                 <h3>In Progress</h3>
                 {/* {mapInProgress} */}
                 <MapContent itemsArray={[...items]} boardName={"inProgress"}/>
