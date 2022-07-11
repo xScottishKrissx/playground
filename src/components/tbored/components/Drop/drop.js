@@ -33,23 +33,25 @@ export default function Board({items, setItems, setLocalStorage, index}) {
         setDraggedItem(x)
     }
 
-    const getDraggedOverItem =(x, indexxxx) =>{
+    const getDraggedOverItem = (x, indexxxx) =>{
         setDraggedOverItem(x)
 
         if(draggedItem === draggedOverItem){
-            console.log("It's the same, so stop Dragging")
+            // console.log("It's the same, so stop Dragging")
             return
         }
 
         
         let spliceItems = items.filter((item) => item !== draggedItem)
         // console.log(spliceItems)
-        console.log(indexxxx)
-        console.log(draggedItem)
+        // console.log(indexxxx)
+        // console.log(draggedItem)
         spliceItems.splice(indexxxx, 0, draggedItem)
 
         // This might be it...
-        console.log(spliceItems)
+        // console.log(spliceItems)
+        setItems(spliceItems)
+        setLocalStorage("tbored-items", spliceItems)
     }
 
 
