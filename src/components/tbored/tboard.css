@@ -1,1 +1,22 @@
 /* *{ outline: 1px solid red;} */
+
+.board_item{
+    /* border: 1px dashed black; */
+    /* border-radius: 10px; */
+    text-align: center;
+
+}
+
+
+.board_item{
+    
+}
+
+.testStyle{
+    background-color: grey !important;
+    /* border-bottom: 10px solid red !important; */
+}
+@keyframes thing {
+    0%{ opacity: 0.5; transform: translateX(0);}
+    100%{ opacity: 2; transform: translateX(500);}
+}

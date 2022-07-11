@@ -15,9 +15,9 @@ export default function Board({items, setItems, setLocalStorage, index}) {
         setLocalStorage("tbored-items", changeBoard)
     }
 
-    const [{}, toInProgress] = useDrop(()=>({
+    const [{isOver}, toInProgress] = useDrop(()=>({
         accept:"text",
-        drop:(item) => addToBoard(item.id,"inProgress")
+        drop:(item) => addToBoard(item.id,"inProgress"),
     }))
 
     const [, toUnassigned] = useDrop(()=>({

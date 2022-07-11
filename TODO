@@ -510,6 +510,12 @@ Javascript:
                     ✔ Caught Up @done(16:54 - 05/07/22)
     Tbored - A Better Version:
       ☐ How to drag to reogranise items within a board
+        ☐ Dropped the React DND library, instead Im justing using reacts built in drag and drop functionality.
+        ✔ I can drag and drop items to re-arrange items @done(15:35 - 11/07/22)
+        ☐ Now i need to clean up the feedback:
+          ☐ better feedback for hovering with an item
+          ☐ better feedback for dropping an item into a new position
+          ☐ better feedback for dropping an item into a new board
       ☐ How to add boards dynamically
         ☐ I feel like this is easy as all I need is a board name.
       ✔ Separate code into components before this get's too messy. @done(17:03 - 06/07/22)
