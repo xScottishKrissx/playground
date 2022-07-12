@@ -5,6 +5,7 @@ import MapContent from '../Drag/drag'
 
 export default function Board({items, setItems, setLocalStorage, index}) {
     const ref = useRef(null)
+    const overlay = useRef()
     const addToBoard = (itemId, newBoard) =>{
 
         let itemsCopy = JSON.parse(localStorage.getItem("tbored-items")) || []
@@ -18,7 +19,18 @@ export default function Board({items, setItems, setLocalStorage, index}) {
     const [{isOver}, toInProgress] = useDrop(()=>({
         accept:"text",
         drop:(item) => addToBoard(item.id,"inProgress"),
+        collect:(monitor) =>({
+            isOver: monitor.canDrop()
+        })
     }))
+
+    // console.log(isOver)
+    if(isOver){
+        // overlay.current.classList.add("showOverlay")
+        
+    }
+
+
 
     const [, toUnassigned] = useDrop(()=>({
         accept:"text",
@@ -53,12 +65,14 @@ export default function Board({items, setItems, setLocalStorage, index}) {
         setItems(spliceItems)
         setLocalStorage("tbored-items", spliceItems)
     }
+    
 
 
     return (
         <div className='boardWrapper'>
 
-            <div className='dropArea' ref={toUnassigned}>
+            <div className='dropArea unassigned' ref={toUnassigned}>
+                <span ref={overlay} className='moveBoardOverlay'>BackgroundThing</span>
                 <h3>Unassigned</h3>
                 {/* {mapUnassigned} */}
                 <MapContent itemsArray={[...items]} boardName={"unassigned"} setDraggedItem={getDraggedItem} setDraggedOverItem={getDraggedOverItem}/>
@@ -66,7 +80,7 @@ export default function Board({items, setItems, setLocalStorage, index}) {
                 
             </div>
 
-            <div className='dropArea' ref={toInProgress} >
+            <div className='dropArea inprogress' ref={toInProgress} >
                 <h3>In Progress</h3>
                 {/* {mapInProgress} */}
                 <MapContent itemsArray={[...items]} boardName={"inProgress"} setDraggedItem={getDraggedItem} setDraggedOverItem={getDraggedOverItem}/>

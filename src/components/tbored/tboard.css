@@ -1,5 +1,7 @@
-/* *{ outline: 1px solid red;} */
-
+*{ outline: 1px solid red;}
+.boardWrapper{
+    display: flex
+}
 .board_item{
     /* border: 1px dashed black; */
     /* border-radius: 10px; */
@@ -7,9 +9,28 @@
 
 }
 
+.dropArea{
+    position: relative;
+    outline: 1px solid red;
+    min-height: 300px;
+}
+
 
 .board_item{
     
+}
+
+.moveBoardOverlay{
+    outline: 1px solid black;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    position: absolute;
+    display: none;
+}
+
+.showOverlay{
+    display: block;
 }
 
 .testStyle{

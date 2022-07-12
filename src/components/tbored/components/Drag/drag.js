@@ -15,9 +15,7 @@ function DragItem({id, text, test, index, setDraggedItem, setDraggedOverItem,}) 
         }),
     }))
 
-    if(isDragging){
-        // console.log(index)
-    }
+    console.log(isDragging)
     // let draggedItem
     // let draggedOverItem
 
@@ -30,7 +28,7 @@ function DragItem({id, text, test, index, setDraggedItem, setDraggedOverItem,}) 
         // console.log(test[index])
         // console.log(e.target.parentNode)
         
-        console.log(e.target.id)
+        // console.log(e.target.id)
         if(e.target.id === id){
             
             e.target.classList.add("testStyle")
@@ -62,7 +60,7 @@ function DragItem({id, text, test, index, setDraggedItem, setDraggedOverItem,}) 
 
     const onDragEnd = (e) =>{
         // console.log(testRef.current.children[0])
-        console.log(testRef.current)
+        // console.log(testRef.current)
         // testRef.current.children[0].classList.remove("testStyle")
         // console.log(test[index])
         // console.log(e)
