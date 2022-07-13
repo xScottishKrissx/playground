@@ -2,20 +2,3 @@
     color: green;
 }
 
-.columnWrapper{
-    margin: 8px;
-    border:1px solid grey;
-    border-radius:2px;
-}
-
-.columnWrapper h3{ padding: 8px; }
-.taskListContainer{padding: 8px;}
-
-
-/* tasks */
-.taskContainer{
-    border: 1px solid gray;
-    border-radius: 2px;
-    margin-bottom: 10px;
-    padding: 8px;
-}

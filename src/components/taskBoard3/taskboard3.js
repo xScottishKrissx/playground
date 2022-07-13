@@ -1,31 +1,87 @@
-import React,{useState} from 'react'
+import React,{StrictMode, useState} from 'react'
 import data from './data'
 import './taskboard3.css'
 
-import { DragDropContext} from 'react-beautiful-dnd'
+import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
 
-import Column from './column'
+
 
 export default function Taskboard3() {
-    const [startingData, setStartingData] = useState(data || [])
+    const [items, setItems] = useState(data)
 
-
-    const test = startingData.columnOrder.map(x =>{
-        const column = startingData.columns[x]
-        const tasks = column.taskIds.map(taskId => startingData.tasks[taskId])
-        return <Column key={column.id} column={column} tasks={tasks}/>
+    const mapData = items.map(x =>{
+        return(
+            <div>{x.content}</div>
+        )
     })
 
-    const onDragEnd = () =>{
+    function handleOnDragEnd(result){
+        console.log(result)
+        if(!result.destination) return
+        const changeItems = Array.from(items)
+        const [newItemsOrder] = changeItems.splice(result.source.index, 1)
+        changeItems.splice(result.destination.index, 0, newItemsOrder)
 
+        setItems(changeItems)
     }
-
   return (
     <div className='taskboard3Wrapper'>
-        <DragDropContext onDragEnd={onDragEnd} >
-        {test}
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+
+            <Droppable droppableId='items'>
+                {(provided)=>(
+                    <ul className='items' {...provided.droppableProps} ref={provided.innerRef}>
+                        {items.map(({id, content},index) =>{
+                            return(
+                                <Draggable key={id} draggableId={id} index={index}>
+                                    {(provided)=>(
+                                        <li {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef}>
+                                            {content}
+                                        </li>
+                                    )}
+                                </Draggable >
+                            )
+                        })}
+                        {provided.placeholder}
+                    </ul>
+                )}
+            </Droppable>
 
         </DragDropContext>
     </div>
+
+    
   )
 }
+
+// return (
+   
+
+    
+//     <div>
+//         <DragDropContext >
+//           <Droppable droppableId="items">
+//             {(provided) => (
+//               <ul className="items" {...provided.droppableProps} ref={provided.innerRef}>
+//                 {items.map(({id, content}, index) => {
+//                   return (
+//                     <Draggable key={id} draggableId={id} index={index}>
+//                       {(provided) => (
+//                         <li ref={provided.innerRef} {...provided.draggableProps} {...provided.dragHandleProps}>
+//                             { content }
+//                         </li>
+//                       )}
+//                     </Draggable>
+//                   );
+//                 })}
+//                 {provided.placeholder}
+//               </ul>
+//             )}
+//           </Droppable>
+//         </DragDropContext>
+      
+
+//     </div>
+    
+// );
+//             }

@@ -539,6 +539,9 @@ Javascript:
     https://github.com/atlassian/react-beautiful-dnd
     .. tutorial
     https://egghead.io/lessons/react-course-introduction-beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd
+    ☐ So i've been following  a tutorial and ran into an issue where the above library wouldn't work with Strict Mode. I have since disabled Strict Mode, letting me carry on.
+
+
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
