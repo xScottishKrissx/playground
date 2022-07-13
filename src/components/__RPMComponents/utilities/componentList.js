@@ -21,6 +21,7 @@ import Tbored from "../../tbored/tbored";
 // import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
 // import TaskBoard from "../../taskBoard/taskBoard";
 // import Tboard from "../../tBoard/tboard";
+import Taskboard3 from "../../taskBoard3/taskboard3";
 
 
 
@@ -40,7 +41,7 @@ import Tbored from "../../tbored/tbored";
 export const components = [
   {
     name:"TaskBored",
-    componentName: Tbored,
+    componentName: Taskboard3,
     tags:"",
   },
   // {
