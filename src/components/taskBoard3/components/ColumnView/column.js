@@ -1,5 +1,6 @@
 import React from 'react'
 import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
+import ItemView from './ItemView/item'
 
 export default function ColumnView({columns}) {
   return (
@@ -23,8 +24,8 @@ export default function ColumnView({columns}) {
                                         outline:"10px solid black"
                                     }}
                                 >
-                                    {/* Items */}
-                                    {column.items.map((item, index) =>{
+                                    <ItemView column={column}/>
+                                    {/* {column.items.map((item, index) =>{
                                         return(
                                             <Draggable index={index} key={item.id} draggableId={item.id}>
                                                 
@@ -51,7 +52,7 @@ export default function ColumnView({columns}) {
                                                 }}
                                             </Draggable>
                                         )
-                                    })}
+                                    })} */}
                                     {provided.placeholder}
                                 </div>
                             )

@@ -548,8 +548,8 @@ Javascript:
         ✔ Remove commented code @done(16:37 - 14/07/22)
         ☐ Separate off into components/files
           ✔ On Drag End Component @done(16:51 - 14/07/22)
-          ☐ Columns
-          ☐ Items
+          ✔ Columns @done(17:15 - 14/07/22)
+          ✔ Items @done(17:15 - 14/07/22)
         ✔ Add local storage support @done(16:36 - 14/07/22)
         ✔ Change column string id to UUID @done(16:44 - 14/07/22)
       ☐ Ability to add items to board
