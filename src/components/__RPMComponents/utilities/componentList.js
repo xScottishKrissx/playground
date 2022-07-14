@@ -38,7 +38,7 @@ import Taskboard from "../../taskBoard/taskboard";
 
 export const components = [
   {
-    name:"TaskBored",
+    name:"TaskBoard",
     componentName: Taskboard,
     tags:"",
   },

@@ -1,12 +1,12 @@
 import React,{useState} from 'react'
-// import data from './data'
 import {v4 as uuidv4} from 'uuid'
-import './taskboard.css'
-
 import { DragDropContext} from 'react-beautiful-dnd'
+
+import './taskboard.css'
 
 import onDragEnd from './components/onDragEnd'
 import ColumnView from './components/ColumnView/column'
+import UserInput from './components/UserInput/userInput'
 
 // This will become empty arrays so no need to clean this up
     const tasks = [
@@ -39,9 +39,8 @@ export default function Taskboard() {
         <div className='taskboardWrapper'>
             <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
                 <ColumnView columns={columns} />
+                <UserInput columns={columns}/>
             </DragDropContext>
         </div>
     )
 }
-
-
