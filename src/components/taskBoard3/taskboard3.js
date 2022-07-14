@@ -5,28 +5,27 @@ import './taskboard3.css'
 
 import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
 
-const tasks = [
+import onDragEnd from './components/onDragEnd'
 
-    {id:'task1', content:'task-1 content'},
-    {id:'task2', content:'task-2 content'},
-    {id:'task4', content:'task-4 content'},
-    {id:'task3', content:'task-3 content'},
-    
+// This will become empty arrays so no need to clean this up
+    const tasks = [
+        {id:[uuidv4()], content:'task-1 content'},
+        {id:'task2', content:'task-2 content'},
+        {id:'task4', content:'task-4 content'},
+        {id:'task3', content:'task-3 content'},
+    ];
 
-];
-
-const columnData = 
-{
-    [uuidv4()]: {
-        name:"Todo",
-        items: tasks
-    },
-    [uuidv4()]: {
-        name:"progress",
-        items:[]
+    const columnData = 
+    {
+        [uuidv4()]: {
+            name:"Todo",
+            items: tasks
+        },
+        [uuidv4()]: {
+            name:"progress",
+            items:[]
+        }
     }
-}
-
 
 export default function Taskboard3() {
     
@@ -34,53 +33,10 @@ export default function Taskboard3() {
     const [columns, setColumns] = useState(grabLocalStorage || [] || columnData)
     if(columns !== grabLocalStorage){ localStorage.setItem("userData", JSON.stringify(columns)) }
 
-    const onDropEnd = (result, columns, setColumns) =>{
-        if(!result.destination) return;
-        const {source, destination} = result
-        if(source.droppableId !== destination.droppableId){
-            // Move to New Column
-            const sourceColumn = columns[source.droppableId]
-            const destColumn = columns[destination.droppableId]
-
-            const sourceItems = [...sourceColumn.items]
-            const destItems = [...destColumn.items]
-
-            const [removed] = sourceItems.splice(source.index, 1)
-            destItems.splice(destination.index, 0, removed)
-
-            setColumns({
-                ...columns,
-                [source.droppableId]:{
-                    ...sourceColumn,
-                    items: sourceItems
-                },
-                [destination.droppableId]:{
-                    ...destColumn,
-                    items: destItems
-                }
-            })
-            
-        } else{
-            // Reorder In Column
-            const column = columns[source.droppableId]
-            const copiedItems = [...column.items]
-    
-            const [removed] = copiedItems.splice(source.index, 1)
-            copiedItems.splice(destination.index, 0, removed)
-    
-            setColumns({
-                ...columns,
-                [source.droppableId]:{
-                    ...columns,
-                    items:copiedItems
-                }
-            })
-        }
-    }
 
     return (
         <div className='taskboardWrapper'>
-            <DragDropContext onDragEnd={(result)=>onDropEnd(result, columns, setColumns)}>
+            <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
             {/* {newThing} */}
             {Object.entries(columns).map(([id, column])=>{
                 return(

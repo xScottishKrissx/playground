@@ -547,6 +547,9 @@ Javascript:
       ☐ Clean Up File
         ✔ Remove commented code @done(16:37 - 14/07/22)
         ☐ Separate off into components
+          ✔ On Drag End Component @done(16:51 - 14/07/22)
+          ☐ Columns
+          ☐ Items
         ✔ Add local storage support @done(16:36 - 14/07/22)
         ✔ Change column string id to UUID @done(16:44 - 14/07/22)
       ☐ Ability to add items to board
