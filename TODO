@@ -509,15 +509,15 @@ Javascript:
                     ✔ Going through the same steps as above, only using 1 array with columns instead of multiple dedicated arrays for each board. @done(16:54 - 05/07/22)
                     ✔ Caught Up @done(16:54 - 05/07/22)
     Tbored - A Better Version:
-      ☐ How to drag to reogranise items within a board
-        ☐ Dropped the React DND library, instead Im justing using reacts built in drag and drop functionality.
+      ✘ How to drag to reogranise items within a board @cancelled(16:01 - 14/07/22)
+        ✘ Dropped the React DND library, instead Im justing using reacts built in drag and drop functionality. @cancelled(16:01 - 14/07/22)
         ✔ I can drag and drop items to re-arrange items @done(15:35 - 11/07/22)
-        ☐ Now i need to clean up the feedback:
-          ☐ better feedback for hovering with an item
-          ☐ better feedback for dropping an item into a new position
-          ☐ better feedback for dropping an item into a new board
-      ☐ How to add boards dynamically
-        ☐ I feel like this is easy as all I need is a board name.
+        ✘ Now i need to clean up the feedback: @cancelled(16:01 - 14/07/22)
+          ✘ better feedback for hovering with an item @cancelled(16:01 - 14/07/22)
+          ✘ better feedback for dropping an item into a new position @cancelled(16:00 - 14/07/22)
+          ✘ better feedback for dropping an item into a new board @cancelled(16:00 - 14/07/22)
+      ✘ How to add boards dynamically @cancelled(16:00 - 14/07/22)
+        ✘ I feel like this is easy as all I need is a board name. @cancelled(16:00 - 14/07/22)
       ✔ Separate code into components before this get's too messy. @done(17:03 - 06/07/22)
         ..a component at a time, making sure everything works
         ✔ Drag Component @done(16:42 - 06/07/22)
@@ -529,21 +529,25 @@ Javascript:
           ✔ Bug: Add 2 items and drag one to inProgress. Then add a new item and when you attempt to drag it to inProgress, it vanishes @started(16:43 - 06/07/22) @done(17:03 - 06/07/22) @lasted(20m21s)
             ✔ Solved this by adding a localStorage.getItem instead of the items prop. Not sure how else to fix this. I imagine it has something to do with the way state is set/called but i can't figure it out. @done(17:03 - 06/07/22)
     
-    ☐ Trying something else.
-      ☐ react-dnd isn't really working for me. I'm not in a position to really pass judgment but i find the documentation to be a bit too vague(on top of the examples not actually working) and trying to use both react-dnd and reacts built in drag and drop, i don't think i am working well with the library. That is probably on me but i'm really not feeling it.
-      ☐ So i have decided to(again) start over but this time i am using the react-beautiful-dnd library which seems more along my street. Especially as it's designed around lists and moving lists between columns.
+    ✔ Trying something else. @done(16:00 - 14/07/22)
+      ✔ react-dnd isn't really working for me. I'm not in a position to really pass judgment but i find the documentation to be a bit too vague(on top of the examples not actually working) and trying to use both react-dnd and reacts built in drag and drop, i don't think i am working well with the library. That is probably on me but i'm really not feeling it. @done(16:00 - 14/07/22)
+      ✔ So i have decided to(again) start over but this time i am using the react-beautiful-dnd library which seems more along my street. Especially as it's designed around lists and moving lists between columns. @done(16:00 - 14/07/22)
 
   task board(with react-beautiful-dnd):
-    ☐ Install react-beautfiul dnd and get started
+    ✔ Install react-beautfiul dnd and get started @done(16:00 - 14/07/22)
     .. download
     https://github.com/atlassian/react-beautiful-dnd
     .. tutorial
     https://egghead.io/lessons/react-course-introduction-beautiful-and-accessible-drag-and-drop-with-react-beautiful-dnd
-    ☐ So i've been following  a tutorial and ran into an issue where the above library wouldn't work with Strict Mode. I have since disabled Strict Mode, letting me carry on.
-    ☐ Ok so i've made a mess of the tutorial im doing but I do understand what's going on. I tried to be a smart arse but got ahead of myself and then got confused so i am going to start again. I know, another restart but this is the first time I'm restarting because I know i can do better. Previously I was restarting because I had no idea what was happening but now I do, i just want to rewind a bit and make sure the end product is as good as I can make it.
-      ☐ restart again
-
-
+    ✔ So i've been following  a tutorial and ran into an issue where the above library wouldn't work with Strict Mode. I have since disabled Strict Mode, letting me carry on. @done(16:00 - 14/07/22)
+    ✔ Ok so i've made a mess of the tutorial im doing but I do understand what's going on. I tried to be a smart arse but got ahead of myself and then got confused so i am going to start again. I know, another restart but this is the first time I'm restarting because I know i can do better. Previously I was restarting because I had no idea what was happening but now I do, i just want to rewind a bit and make sure the end product is as good as I can make it. @done(16:00 - 14/07/22)
+      ✔ restart again @done(16:00 - 14/07/22)
+      ✔ Tutorial Complete, now to turn it into my own thing @done(16:00 - 14/07/22)
+    Taskboard(actual own work):
+      ☐ Clean Up File
+        ☐ Remove commented code
+        ☐ Separate off into components
+      ☐ Ability to add items to board
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
