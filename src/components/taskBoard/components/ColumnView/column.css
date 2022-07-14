@@ -1,0 +1,11 @@
+.column{
+    /* background-color: aquamarine; */
+    outline: 1px solid black;
+    margin: 10px;
+    min-height:150;
+    width:250, 
+}
+
+.columnDropArea{
+    height: 300px;
+}

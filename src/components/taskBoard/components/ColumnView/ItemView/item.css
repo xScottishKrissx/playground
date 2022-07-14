@@ -1,0 +1,8 @@
+.item{
+    color: white;
+    /* margin: 10px; */
+    min-height: 50px;
+    outline: 1px solid black;
+    padding: 1px;
+    user-select: none;
+}

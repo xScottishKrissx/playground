@@ -16,12 +16,10 @@ import ColourFlipper from "../../colourFlipper/colourFlipper";
 import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 import simpleChart from "../../simpleCharts/simpleChart";
-import Tbored from "../../tbored/tbored";
 // import ChessTutorial from "../../simpleDragAndDrop/simpleDragDrop";
 // import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
-// import TaskBoard from "../../taskBoard/taskBoard";
-// import Tboard from "../../tBoard/tboard";
-import Taskboard3 from "../../taskBoard3/taskboard3";
+
+import Taskboard from "../../taskBoard/taskboard";
 
 
 
@@ -41,7 +39,7 @@ import Taskboard3 from "../../taskBoard3/taskboard3";
 export const components = [
   {
     name:"TaskBored",
-    componentName: Taskboard3,
+    componentName: Taskboard,
     tags:"",
   },
   // {

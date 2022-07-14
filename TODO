@@ -546,13 +546,16 @@ Javascript:
     Taskboard(actual own work):
       ☐ Clean Up File
         ✔ Remove commented code @done(16:37 - 14/07/22)
-        ☐ Separate off into components/files
+        ✔ Separate off into components/files @done(17:56 - 14/07/22)
           ✔ On Drag End Component @done(16:51 - 14/07/22)
           ✔ Columns @done(17:15 - 14/07/22)
-          ✔ Items @done(17:15 - 14/07/22)
+              ✔ Clean Up File, remove inline css and make it easier to read @done(17:48 - 14/07/22)
+            ✔ Items @done(17:15 - 14/07/22)
+              ✔ Clean Up File, remove inline css and make it easier to read @done(17:48 - 14/07/22)
         ✔ Add local storage support @done(16:36 - 14/07/22)
         ✔ Change column string id to UUID @done(16:44 - 14/07/22)
-      ☐ Ability to add items to board
+      ☐ Ability to add items to board via input
+      ☐ Ability to add new boards via input
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
