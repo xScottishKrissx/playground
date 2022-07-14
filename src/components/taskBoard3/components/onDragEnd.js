@@ -35,7 +35,7 @@ const onDragEnd = (result, columns, setColumns) => {
         setColumns({
             ...columns,
             [source.droppableId]:{
-                ...columns,
+                ...column,
                 items:copiedItems
             }
         })

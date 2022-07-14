@@ -546,7 +546,7 @@ Javascript:
     Taskboard(actual own work):
       ☐ Clean Up File
         ✔ Remove commented code @done(16:37 - 14/07/22)
-        ☐ Separate off into components
+        ☐ Separate off into components/files
           ✔ On Drag End Component @done(16:51 - 14/07/22)
           ☐ Columns
           ☐ Items
