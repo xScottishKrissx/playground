@@ -545,9 +545,10 @@ Javascript:
       ✔ Tutorial Complete, now to turn it into my own thing @done(16:00 - 14/07/22)
     Taskboard(actual own work):
       ☐ Clean Up File
-        ☐ Remove commented code
+        ✔ Remove commented code @done(16:37 - 14/07/22)
         ☐ Separate off into components
         ✔ Add local storage support @done(16:36 - 14/07/22)
+        ✔ Change column string id to UUID @done(16:44 - 14/07/22)
       ☐ Ability to add items to board
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)

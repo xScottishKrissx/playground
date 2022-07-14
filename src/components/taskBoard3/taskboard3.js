@@ -1,5 +1,6 @@
 import React,{StrictMode, useState} from 'react'
 // import data from './data'
+import {v4 as uuidv4} from 'uuid'
 import './taskboard3.css'
 
 import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
@@ -16,11 +17,11 @@ const tasks = [
 
 const columnData = 
 {
-    "unassigned": {
+    [uuidv4()]: {
         name:"Todo",
         items: tasks
     },
-    "inprogress": {
+    [uuidv4()]: {
         name:"progress",
         items:[]
     }
