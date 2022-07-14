@@ -547,6 +547,7 @@ Javascript:
       ☐ Clean Up File
         ☐ Remove commented code
         ☐ Separate off into components
+        ✔ Add local storage support @done(16:36 - 14/07/22)
       ☐ Ability to add items to board
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)

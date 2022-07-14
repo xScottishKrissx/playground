@@ -4,12 +4,12 @@ import './taskboard3.css'
 
 import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
 
-const data = [
+const tasks = [
 
     {id:'task1', content:'task-1 content'},
     {id:'task2', content:'task-2 content'},
-    {id:'task3', content:'task-3 content'},
     {id:'task4', content:'task-4 content'},
+    {id:'task3', content:'task-3 content'},
     
 
 ];
@@ -18,7 +18,7 @@ const columnData =
 {
     "unassigned": {
         name:"Todo",
-        items:data
+        items: tasks
     },
     "inprogress": {
         name:"progress",
@@ -28,15 +28,16 @@ const columnData =
 
 
 export default function Taskboard3() {
-
-    const [columns, setColumns] = useState(columnData)
-
     
+    const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
+    const [columns, setColumns] = useState(grabLocalStorage || [] || columnData)
+    if(columns !== grabLocalStorage){ localStorage.setItem("userData", JSON.stringify(columns)) }
 
     const onDropEnd = (result, columns, setColumns) =>{
         if(!result.destination) return;
         const {source, destination} = result
         if(source.droppableId !== destination.droppableId){
+            // Move to New Column
             const sourceColumn = columns[source.droppableId]
             const destColumn = columns[destination.droppableId]
 
@@ -45,7 +46,7 @@ export default function Taskboard3() {
 
             const [removed] = sourceItems.splice(source.index, 1)
             destItems.splice(destination.index, 0, removed)
-            
+
             setColumns({
                 ...columns,
                 [source.droppableId]:{
@@ -57,8 +58,9 @@ export default function Taskboard3() {
                     items: destItems
                 }
             })
-
+            
         } else{
+            // Reorder In Column
             const column = columns[source.droppableId]
             const copiedItems = [...column.items]
     
@@ -81,9 +83,9 @@ export default function Taskboard3() {
             {/* {newThing} */}
             {Object.entries(columns).map(([id, column])=>{
                 return(
-                    <div style={{margin:8}}>
+                    <div style={{margin:8}} key={id}>
                     <h2>{column.name}</h2>
-                    <Droppable droppableId={id} key={id}>
+                    <Droppable droppableId={id} >
                        
                         {(provided, snapshot) =>{
                             return(
@@ -138,86 +140,3 @@ export default function Taskboard3() {
 }
 
 
-// export default function Taskboard3() {
-//     console.log(columnData.items.items)
-//     const [columns, setColumns] = useState(columnData)
-//     // const [items, setItems] = useState(columnData.items.items)
-    
-//     function handleOnDragEnd(result, columns){
-//         // console.log(result)
-//         if(!result.destination) return
-//         const column = columns[result.source.droppableId]
-//         const copyOfItems = [...column.items]
-    
-//         const [removed] = copyOfItems.splice(result.source.index, 1)
-//         copyOfItems.splice(result.destination.index, 0, removed)
-
-//         setColumns({
-//             ...columns,
-//             [result.source.droppableId]:{
-//                 ...column,
-//                 items: copyOfItems
-//             }
-//         })
-//     }
-
-    
-    // const mapData = columns.items.items.map(({id, content}, index) =>{
-    //     return(
-    //         <Draggable key={id} draggableId={id} index={index}>
-    //             {(provided)=>(
-    //                 <p {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} style={{...provided.draggableProps.style}}>
-    //                     {content}
-    //                 </p>
-    //             )}
-    //         </Draggable >
-    //     )
-    // })
-
-    // function MapColumn ({column}){
-    //     console.log(column)
-    //     const mapThing = column.items.map(({id, content}, index) =>{
-    //         return(
-    //             <Draggable key={id} draggableId={id} index={index}>
-    //                 {(provided)=>(
-    //                     <p {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} style={{...provided.draggableProps.style}}>
-    //                         {content}
-    //                     </p>
-    //                 )}
-    //             </Draggable >
-    //         )
-    //     })
-    //     return mapThing
-    // }
-
-    
-//   return (
-//     <div className='taskboard3Wrapper'>
-//         <DragDropContext onDragEnd={(x) => handleOnDragEnd(x, columns)}>
-//             {Object.entries(columns).map(([id, column])=>{
-//                 return(
-//                     <div key={id}>
-
-//                     <h3>{column.name}</h3>
-//                     <Droppable droppableId='items' key={id}>
-//                         {(provided,snapshot)=>(
-//                             <div className='items' {...provided.droppableProps} ref={provided.innerRef} 
-//                             style={{background: snapshot.isDraggingOver ? 'lightblue' : "white", width:250, minHeight:250}}>
-//                                 {mapData}
-//                                 {/* <MapColumn column={column}/> */}
-//                                 {provided.placeholder}
-//                             </div>
-//                         )}
-//                     </Droppable>
-//                     </div>
-
-//                 )
-//             })}
-
-
-//         </DragDropContext>
-//     </div>
-
-    
-//   )
-// }
