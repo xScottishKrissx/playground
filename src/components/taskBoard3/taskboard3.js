@@ -6,6 +6,7 @@ import './taskboard3.css'
 import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
 
 import onDragEnd from './components/onDragEnd'
+import ColumnView from './components/ColumnView/column'
 
 // This will become empty arrays so no need to clean this up
     const tasks = [
@@ -39,7 +40,9 @@ export default function Taskboard3() {
         <div className='taskboardWrapper'>
             <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
             {/* {newThing} */}
-            {Object.entries(columns).map(([id, column])=>{
+                <ColumnView columns={columns} />
+            
+            {/* {Object.entries(columns).map(([id, column])=>{
                 console.log(column)
                 return(
                     <div style={{margin:8}} key={id}>
@@ -48,7 +51,7 @@ export default function Taskboard3() {
                        
                         {(provided, snapshot) =>{
                             return(
-                                // Column
+                                
                                 <div 
                                     ref={provided.innerRef} 
                                     {...provided.droppableProps} 
@@ -59,7 +62,7 @@ export default function Taskboard3() {
                                         outline:"10px solid black"
                                     }}
                                 >
-                                    {/* Items */}
+                                   
                                     {column.items.map((item, index) =>{
                                         return(
                                             <Draggable index={index} key={item.id} draggableId={item.id}>
@@ -95,7 +98,7 @@ export default function Taskboard3() {
                     </Droppable>
                     </div>
                 )
-            })}
+            })} */}
 
             </DragDropContext>
         </div>

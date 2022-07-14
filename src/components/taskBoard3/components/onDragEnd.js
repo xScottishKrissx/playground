@@ -1,4 +1,6 @@
 const onDragEnd = (result, columns, setColumns) => {
+
+    console.log(result)
     if(!result.destination) return;
     const {source, destination} = result
     if(source.droppableId !== destination.droppableId){
