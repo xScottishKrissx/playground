@@ -31,6 +31,7 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard}
                                         }}
                                     >
                                         <ItemView column={column}/>
+                                        {provided.placeholder}
                                         <UserInput 
                                             columns={columns} 
                                             columnId={id} 
@@ -39,7 +40,6 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard}
                                             instruction="item"
                                         />
 
-                                        {provided.placeholder}
                                     </div>
                                 )
                             }}                                
