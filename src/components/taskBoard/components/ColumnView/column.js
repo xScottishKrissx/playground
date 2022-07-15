@@ -31,7 +31,7 @@ export default function ColumnView({columns, handleAddNewItem}) {
                                         }}
                                     >
                                         <ItemView column={column}/>
-                                        <UserInput columns={columns} handleAddNewItem={handleAddNewItem} columnId={id}/>
+                                        <UserInput columns={columns} handleAddNewItem={handleAddNewItem} columnId={id} instruction="newItem"/>
 
                                         {provided.placeholder}
                                     </div>

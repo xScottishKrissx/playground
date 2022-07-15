@@ -1,6 +1,6 @@
 import React,{useRef} from 'react'
 
-export default function UserInput({columns, handleAddNewItem, columnId}) {
+export default function UserInput({columns, handleAddNewItem, columnId, instruction}) {
 
     const myForm = useRef()
 
@@ -12,14 +12,25 @@ export default function UserInput({columns, handleAddNewItem, columnId}) {
     
     const addNew = () =>{
         const formValue = myForm.current.value
-
         const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
 
-        Object.entries(grabLocalStorage).map(([id, items]) =>{
-            if(id === columnId){
-                handleAddNewItem(id, formValue)
-            }
-        })
+        if(formValue.length  < 1) {
+            alert("Field cannot be empty")
+            return
+        }
+        
+        if(instruction === "newItem"){
+            console.log("New Item")
+            Object.entries(grabLocalStorage).map(([id, items]) =>{
+                if(id === columnId){
+                    handleAddNewItem(id, formValue)
+                }
+            })
+
+        }else{
+            console.log("New Board")
+            handleAddNewItem(formValue)
+        }
 
 
         myForm.current.value = ""
@@ -28,8 +39,8 @@ export default function UserInput({columns, handleAddNewItem, columnId}) {
 
   return (
     <div>
-            <button onClick={addNew}>Add</button>
-            {/* <button onClick={resetBoard}>Reset</button> */}
+            <button onClick={addNew}>{"Add " + instruction}</button>
+            <button onClick={resetBoard}>Reset</button>
 
             <form>
                 <input ref={myForm} />
