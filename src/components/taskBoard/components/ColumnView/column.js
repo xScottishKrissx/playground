@@ -3,8 +3,9 @@ import {Droppable} from 'react-beautiful-dnd'
 import ItemView from './ItemView/item'
 
 import './column.css'
+import UserInput from '../UserInput/userInput'
 
-export default function ColumnView({columns}) {
+export default function ColumnView({columns, handleAddNewItem}) {
 
     const restColour = "orange"
     const colourOnHoverOver ="yellow"
@@ -30,6 +31,7 @@ export default function ColumnView({columns}) {
                                         }}
                                     >
                                         <ItemView column={column}/>
+                                        <UserInput columns={columns} handleAddNewItem={handleAddNewItem} columnId={id}/>
 
                                         {provided.placeholder}
                                     </div>

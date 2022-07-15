@@ -41,6 +41,7 @@ export const components = [
     name:"TaskBoard",
     componentName: Taskboard,
     tags:"",
+    size:"wide"
   },
   // {
   //   name:"SimpleDragandDrop",

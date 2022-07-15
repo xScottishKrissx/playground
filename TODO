@@ -554,7 +554,10 @@ Javascript:
               ✔ Clean Up File, remove inline css and make it easier to read @done(17:48 - 14/07/22)
         ✔ Add local storage support @done(16:36 - 14/07/22)
         ✔ Change column string id to UUID @done(16:44 - 14/07/22)
-      ☐ Ability to add items to board via input
+      ✔ Ability to add items to board via input @done(16:14 - 15/07/22)
+        ✔ Done... @done(16:14 - 15/07/22)
+          ✔ ...but what about attaching the input to each board, so they're always adding to their own board, instead of always to the unassigned. @done(16:14 - 15/07/22)
+            ✔ Done, you can now add to each board separatley @done(16:14 - 15/07/22)
       ☐ Ability to add new boards via input
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)

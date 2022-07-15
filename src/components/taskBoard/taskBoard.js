@@ -32,11 +32,11 @@ export default function Taskboard() {
     // localStorage.clear()
     const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
     const [columns, setColumns] = useState(grabLocalStorage || columnData)
-    console.log(columns)
+    // console.log(columns)
     if(columns !== grabLocalStorage){ localStorage.setItem("userData", JSON.stringify(columns)) }
 
-    const addToColumn = (id, name, formValue) => {
-        console.log(columns[id].items)
+    const handleAddNewItem = (id, formValue) => {
+        // console.log(columns[id].items)
         const currentFirstColumnItems = columns[id].items
         const addNewItemToCurrentFistColItems = [...currentFirstColumnItems].concat({'id': uuidv4() , 'content': formValue})
         const objectToUpdate = columns[id]
@@ -47,8 +47,8 @@ export default function Taskboard() {
     return (
         <div className='taskboardWrapper'>
             <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
-                <ColumnView columns={columns} />
-                <UserInput columns={columns} addToUnassigned={addToColumn}/>
+                <ColumnView columns={columns} handleAddNewItem={handleAddNewItem}/>
+                {/* <UserInput columns={columns} handleAddNewItem={handleAddNewItem}/> */}
             </DragDropContext>
         </div>
     )
