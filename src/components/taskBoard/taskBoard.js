@@ -32,39 +32,16 @@ export default function Taskboard() {
     // localStorage.clear()
     const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
     const [columns, setColumns] = useState(grabLocalStorage || columnData)
-    
+    console.log(columns)
     if(columns !== grabLocalStorage){ localStorage.setItem("userData", JSON.stringify(columns)) }
 
-    const addToColumn = (id, name, newItems) => {
-        // console.log(id)
-        // console.log(name)
-        // console.log(newItems)
-        // setColumns({ ...columns, [id]:{ ...columns, items:newItems }})
-        
-        const columnTest = columns
-        // Now get the unnassigned column
-        // console.log(columnTest)
-        Object.entries(columnTest).map(([id, items]) =>{
-            if(items.name === "Unassigned"){
-                // console.log(items.items)
-                let oldItems = items.items
-                oldItems.push({'id': uuidv4() , 'content': newItems})
-            }
-            return 
-            // return true
-        })
-        // setColumns(columns => [...columns])
-        setColumns(columns)
-        
-        //and edit it's items array
-        
-        console.log(columnTest)
-        console.log(columns)
-
-
-
+    const addToColumn = (id, name, formValue) => {
+        console.log(columns[id].items)
+        const currentFirstColumnItems = columns[id].items
+        const addNewItemToCurrentFistColItems = [...currentFirstColumnItems].concat({'id': uuidv4() , 'content': formValue})
+        const objectToUpdate = columns[id]
+        setColumns({ ...columns, [id]:{ ...objectToUpdate, items:addNewItemToCurrentFistColItems } })
     }
-    // console.log(columns)
 
 
     return (
