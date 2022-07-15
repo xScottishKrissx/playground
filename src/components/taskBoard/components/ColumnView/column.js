@@ -5,7 +5,7 @@ import ItemView from './ItemView/item'
 import './column.css'
 import UserInput from '../UserInput/userInput'
 
-export default function ColumnView({columns, handleAddNewItem}) {
+export default function ColumnView({columns, handleAddNewItem, handleResetBoard}) {
 
     const restColour = "orange"
     const colourOnHoverOver ="yellow"
@@ -31,7 +31,13 @@ export default function ColumnView({columns, handleAddNewItem}) {
                                         }}
                                     >
                                         <ItemView column={column}/>
-                                        <UserInput columns={columns} handleAddNewItem={handleAddNewItem} columnId={id} instruction="newItem"/>
+                                        <UserInput 
+                                            columns={columns} 
+                                            columnId={id} 
+                                            handleAddNewItem={handleAddNewItem} 
+                                            handleResetBoard={handleResetBoard}
+                                            instruction="item"
+                                        />
 
                                         {provided.placeholder}
                                     </div>

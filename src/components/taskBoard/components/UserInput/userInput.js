@@ -1,12 +1,17 @@
 import React,{useRef} from 'react'
 
-export default function UserInput({columns, handleAddNewItem, columnId, instruction}) {
+export default function UserInput({columns, handleAddNewItem, columnId, instruction, handleResetBoard}) {
 
     const myForm = useRef()
 
     const resetBoard = () =>{
-        console.log("Clearing Local Storage, reload page")
-        localStorage.clear()
+        // localStorage.clear()
+        if(instruction === "item"){
+            handleResetBoard(columnId)
+        }else{
+            console.log("Clearing Local Storage, reload page")
+            localStorage.clear()
+        }
     }
 
     
@@ -19,8 +24,7 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
             return
         }
         
-        if(instruction === "newItem"){
-            console.log("New Item")
+        if(instruction === "item"){
             Object.entries(grabLocalStorage).map(([id, items]) =>{
                 if(id === columnId){
                     handleAddNewItem(id, formValue)
@@ -28,7 +32,6 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
             })
 
         }else{
-            console.log("New Board")
             handleAddNewItem(formValue)
         }
 
@@ -37,10 +40,12 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
     }
 
 
+    const resetButtonText = instruction === "item" ? "Reset Board" : "Reset All"
+
   return (
     <div>
             <button onClick={addNew}>{"Add " + instruction}</button>
-            <button onClick={resetBoard}>Reset</button>
+            <button onClick={resetBoard}>{resetButtonText}</button>
 
             <form>
                 <input ref={myForm} />

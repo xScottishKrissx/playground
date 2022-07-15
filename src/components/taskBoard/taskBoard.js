@@ -38,7 +38,6 @@ export default function Taskboard() {
     const handleAddNewItem = (id, formValue) => {
         // console.log(columns[id].items)
         const currentFirstColumnItems = columns[id].items
-        console.log(columns[id].items)
         const addNewItemToCurrentFistColItems = [...currentFirstColumnItems].concat({'id': uuidv4() , 'content': formValue})
         const objectToUpdate = columns[id]
         setColumns({ ...columns, [id]:{ ...objectToUpdate, items:addNewItemToCurrentFistColItems } })
@@ -46,17 +45,23 @@ export default function Taskboard() {
 
     const handleAddNewBoard = (formValue) =>{
         console.log("New Board !")
-        const newBoard = {[uuidv4()]:{name:formValue, items:[]}}
+        const newBoard = {[uuidv4()]:{ name:formValue, items:[] }}
         const currentBoard = {...columns, ...newBoard}
         setColumns(currentBoard)
+    }
+
+    const handleResetBoard = (columnId) =>{
+        // console.log("Reset Board" + columnId)
+        const objectToUpdate = columns[columnId]
+        setColumns({ ...columns, [columnId] : {...objectToUpdate, items:[]} })
     }
 
 
     return (
         <div className='taskboardWrapper'>
             <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
-                <ColumnView columns={columns} handleAddNewItem={handleAddNewItem}  />
-                <UserInput columns={columns} handleAddNewItem={handleAddNewBoard} instruction="newBoard" />
+                <ColumnView columns={columns} handleAddNewItem={handleAddNewItem}  handleResetBoard={handleResetBoard}/>
+                <UserInput columns={columns} handleAddNewItem={handleAddNewBoard} instruction="board" />
             </DragDropContext>
         </div>
     )
