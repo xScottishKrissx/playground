@@ -1,6 +1,6 @@
 import React,{useRef} from 'react'
 
-export default function UserInput({columns}) {
+export default function UserInput({columns, addToUnassigned}) {
 
     const myForm = useRef()
 
@@ -12,18 +12,23 @@ export default function UserInput({columns}) {
     
     const addNew = () =>{
         const formValue = myForm.current.value
-        console.log(formValue)
+        // console.log(formValue)
 
 
 
 
 
         const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
-        console.log(Object.entries(grabLocalStorage).map(([id, items]) =>{
+        // console.log(columns)
+        // console.log(grabLocalStorage)
+
+
+        const thing = Object.entries(grabLocalStorage).map(([id, items]) =>{
             if(items.name === "Unassigned"){
-                return items
+                addToUnassigned(id, items.name, formValue)
+                // console.log(id, items.name, [])
             }
-        }))
+        })
 
         if(formValue.length > 1){
 
