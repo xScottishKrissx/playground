@@ -19,7 +19,8 @@ import simpleChart from "../../simpleCharts/simpleChart";
 // import ChessTutorial from "../../simpleDragAndDrop/simpleDragDrop";
 // import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
 
-import Taskboard from "../../taskBoard/taskboard";
+// import Taskboard from "../../taskBoard/taskboard";
+import Taskboard from "../../taskboard/taskboard";
 
 
 
