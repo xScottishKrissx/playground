@@ -9,8 +9,10 @@ const onDragEnd = (result, columns, setColumns) => {
     // Re arrange columns
     if(type === 'column'){
         const currentColumnOrder = Object.entries(columns)
+        
         const [removed] = currentColumnOrder.splice(source.index, 1)
         currentColumnOrder.splice(destination.index, 0, removed)
+        
         const newColumnOrder = Object.fromEntries(currentColumnOrder)
         setColumns(newColumnOrder)
         return

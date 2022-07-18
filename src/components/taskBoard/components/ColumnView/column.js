@@ -5,11 +5,15 @@ import ItemView from './ItemView/item'
 import './column.css'
 import UserInput from '../UserInput/userInput'
 
-export default function ColumnView({columns, handleAddNewItem, handleResetBoard}) {
+export default function ColumnView({columns, handleAddNewItem, handleResetBoard, handleDeleteColumn}) {
 
     const restColour = "orange"
     const colourOnHoverOver ="yellow"
     // console.log(columns)
+
+    const deleteColumn = (id) =>{
+        handleDeleteColumn(id)
+    }
 
     return (
         <>
@@ -20,6 +24,7 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard}
                             <div className='column' key={id} ref={provided.innerRef} {...provided.draggableProps}>
     {/* Column Header */}
                                 <h2 {...provided.dragHandleProps}>{column.name}</h2>
+                                <span onClick={()=>deleteColumn(id)}>Delete Column</span>
 
                                 <Droppable droppableId={id} type="tasks">
                                     {(provided, snapshot) =>{
