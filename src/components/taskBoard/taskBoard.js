@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {v4 as uuidv4} from 'uuid'
-import { DragDropContext} from 'react-beautiful-dnd'
+import { DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd'
 
 import './taskboard.css'
 
@@ -60,7 +60,17 @@ export default function Taskboard() {
     return (
         <div className='taskboardWrapper'>
             <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
-                <ColumnView columns={columns} handleAddNewItem={handleAddNewItem}  handleResetBoard={handleResetBoard}/>
+
+                <Droppable droppableId='allColumns' direction='horizontal' type="column" >
+                    {(provided) =>(
+                        <div className='allColumns' ref={provided.innerRef}  {...provided.droppableProps}  >                        
+                            <ColumnView columns={columns} handleAddNewItem={handleAddNewItem}  handleResetBoard={handleResetBoard}/>
+                            {provided.placeholder}
+                        </div>
+                    )}
+                </Droppable>
+
+
                 <UserInput columns={columns} handleAddNewItem={handleAddNewBoard} instruction="board" />
             </DragDropContext>
         </div>

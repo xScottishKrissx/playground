@@ -1,5 +1,5 @@
 import React from 'react'
-import {Droppable} from 'react-beautiful-dnd'
+import {Droppable, Draggable} from 'react-beautiful-dnd'
 import ItemView from './ItemView/item'
 
 import './column.css'
@@ -9,43 +9,51 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard}
 
     const restColour = "orange"
     const colourOnHoverOver ="yellow"
+    console.log(columns)
 
     return (
         <>
-            {Object.entries(columns).map(([id, column]) => {
+            {Object.entries(columns).map(([id, column], index) => {
                 return(
-                    <div className='column' key={id}>
-{/* Column Header */}
-                        <h2>{column.name}</h2>
+                    <Draggable draggableId={id} index={index}>
+                        {(provided) =>(
+                            <div className='column' key={id} ref={provided.innerRef} {...provided.draggableProps}>
+    {/* Column Header */}
+                                <h2 
+                                    {...provided.dragHandleProps}
 
-                        <Droppable droppableId={id} >
-                            {(provided, snapshot) =>{
-                                return(
-                                    // Column
-                                    <div 
-                                        className='columnDropArea'
-                                        ref={provided.innerRef} 
-                                        {...provided.droppableProps} 
-                                        style={{ 
-                                            background: snapshot.isDraggingOver ? colourOnHoverOver : restColour, 
-                                        }}
-                                    >
-                                        <ItemView column={column}/>
-                                        {provided.placeholder}
-                                        <UserInput 
-                                            columns={columns} 
-                                            columnId={id} 
-                                            handleAddNewItem={handleAddNewItem} 
-                                            handleResetBoard={handleResetBoard}
-                                            instruction="item"
-                                        />
+                                >{column.name}</h2>
 
-                                    </div>
-                                )
-                            }}                                
-                        </Droppable>
+                                <Droppable droppableId={id} type="tasks">
+                                    {(provided, snapshot) =>{
+                                        return(
+                                            // Column
+                                            <div 
+                                            className='columnDropArea'
+                                                ref={provided.innerRef} 
+                                                {...provided.droppableProps} 
+                                                style={{ 
+                                                    background: snapshot.isDraggingOver ? colourOnHoverOver : restColour, 
+                                                }}
+                                            >
+                                                <ItemView column={column}/>
+                                                {provided.placeholder}
+                                                <UserInput 
+                                                    columns={columns} 
+                                                    columnId={id} 
+                                                    handleAddNewItem={handleAddNewItem} 
+                                                    handleResetBoard={handleResetBoard}
+                                                    instruction="item"
+                                                    />
 
-                    </div>
+                                            </div>
+                                        )
+                                    }}                                
+                                </Droppable>
+
+                        </div>
+                        )}
+                    </Draggable>
                 )
             })}
         </>

@@ -5,3 +5,7 @@
     width: 100%;
     outline: 1px solid blue;
 }
+
+.allColumns{
+    display: flex;
+}
