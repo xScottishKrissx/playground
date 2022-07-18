@@ -11,10 +11,6 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
     const colourOnHoverOver ="yellow"
     // console.log(columns)
 
-    const deleteColumn = (id) =>{
-        handleDeleteColumn(id)
-    }
-
     return (
         <>
             {Object.entries(columns).map(([id, column], index) => {
@@ -24,7 +20,7 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                             <div className='column' key={id} ref={provided.innerRef} {...provided.draggableProps}>
     {/* Column Header */}
                                 <h2 {...provided.dragHandleProps}>{column.name}</h2>
-                                <span onClick={()=>deleteColumn(id)}>Delete Column</span>
+                                <span onClick={()=>handleDeleteColumn(id)}>Delete Column</span>
 
                                 <Droppable droppableId={id} type="tasks">
                                     {(provided, snapshot) =>{

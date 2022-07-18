@@ -442,7 +442,7 @@ Javascript:
             ✔ How about an effect that happens when dragging but NOT over the board @done(17:48 - 22/06/22)
             ... I think i am understanding this more. The useDrag, useDrop hooks have an array of options that return true/false that you can assign to state and then use to change things on the page.
     Porfolio Checklist:
-      ☐ Clean up rough edges
+      ✘ Clean up rough edges @cancelled(17:51 - 18/07/22)
         ✔ Optimised image sizes and dimensions @done(16:30 - 24/06/22)
         ✘ Can i change the mouse while the image is being dragged? @cancelled(18:19 - 24/06/22)
       ☐ Device check

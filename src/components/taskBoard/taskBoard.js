@@ -58,11 +58,11 @@ export default function Taskboard() {
         setColumns({ ...columns, [columnId] : {...objectToUpdate, items:[]} })
     }
 
-    const handleDeleteColumn = (columnIdToDelete) =>{
+    const handleDeleteColumn = (columnToDeleteId) =>{
         // Convert to array
         const currentColumns = Object.entries(columns)
         // Filter for key
-        const filterColumn = currentColumns.filter(column => column[0] !== columnIdToDelete)
+        const filterColumn = currentColumns.filter(column => column[0] !== columnToDeleteId)
         // Filter back to object
         const newColumns = Object.fromEntries(filterColumn)
         // set state...
@@ -77,7 +77,12 @@ export default function Taskboard() {
                 <Droppable droppableId='allColumns' direction='horizontal' type="column" >
                     {(provided) =>(
                         <div className='allColumns' ref={provided.innerRef}  {...provided.droppableProps}  >                        
-                            <ColumnView columns={columns} handleAddNewItem={handleAddNewItem}  handleResetBoard={handleResetBoard} handleDeleteColumn={handleDeleteColumn}/>
+                            <ColumnView 
+                                columns={columns} 
+                                handleAddNewItem={handleAddNewItem}  
+                                handleResetBoard={handleResetBoard} 
+                                handleDeleteColumn={handleDeleteColumn}
+                            />
                             {provided.placeholder}
                         </div>
                     )}
