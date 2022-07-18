@@ -572,12 +572,14 @@ Javascript:
         ✔ Ability to reset each board @done(17:16 - 15/07/22)
         ☐ Hide user input when dragging items
         ☐ delete columns button
-        ☐ drag and drop columns / reorganise columns
+        ✔ drag and drop columns / reorganise columns @done(17:04 - 18/07/22)
           ... is it naive to think this is just the same as making item's draggable but wrapping the columns in a <draggable> thingy?
           ... i think exactly what it is but I'm not sure how to get it working with other draggables.
+          ✔ It was effectively as above, i just needed to read the documentation to push me over the edge. Overall, not to hard but there are some easy pitfalls. Stick to the documentation and it's not too bad. @done(17:05 - 18/07/22)
           ✔ Basic Mistake @done(15:57 - 18/07/22)
             ✔ Its {(provided) => (...)} 
             ✘ Not {(provided) => {...}} 
+          ✔ Using column id as the key instead of index fixed an issue where dragging once would break the draggable. @done(17:04 - 18/07/22)
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet

@@ -19,12 +19,14 @@ import UserInput from './components/UserInput/userInput'
     const columnData = 
     {
         [uuidv4()]: {
-            name:"Unassigned",
-            items: tasks
+            name:"One",
+            items: tasks,
+            position:1
         },
         [uuidv4()]: {
-            name:"Requested",
-            items:[]
+            name:"Two",
+            items:[],
+            position:2
         }
     }
 
@@ -32,7 +34,7 @@ export default function Taskboard() {
     // localStorage.clear()
     const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
     const [columns, setColumns] = useState(grabLocalStorage || columnData)
-    // console.log(columns)
+    console.log(columns)
     if(columns !== grabLocalStorage){ localStorage.setItem("userData", JSON.stringify(columns)) }
 
     const handleAddNewItem = (id, formValue) => {
@@ -45,17 +47,17 @@ export default function Taskboard() {
 
     const handleAddNewBoard = (formValue) =>{
         console.log("New Board !")
-        const newBoard = {[uuidv4()]:{ name:formValue, items:[] }}
+        const newBoard = {[uuidv4()]:{ name:formValue, items:[] , position:columns.length + 1}}
         const currentBoard = {...columns, ...newBoard}
         setColumns(currentBoard)
     }
-
+    
     const handleResetBoard = (columnId) =>{
         // console.log("Reset Board" + columnId)
         const objectToUpdate = columns[columnId]
         setColumns({ ...columns, [columnId] : {...objectToUpdate, items:[]} })
     }
-
+    
 
     return (
         <div className='taskboardWrapper'>

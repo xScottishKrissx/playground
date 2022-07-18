@@ -1,8 +1,22 @@
+import { configure } from "@testing-library/react";
+
 const onDragEnd = (result, columns, setColumns) => {
 
-    console.log(result)
+    // console.log(result)
     if(!result.destination) return;
-    const {source, destination} = result
+    const {source, destination, type} = result
+
+    // Re arrange columns
+    if(type === 'column'){
+        const currentColumnOrder = Object.entries(columns)
+        const [removed] = currentColumnOrder.splice(source.index, 1)
+        currentColumnOrder.splice(destination.index, 0, removed)
+        const newColumnOrder = Object.fromEntries(currentColumnOrder)
+        setColumns(newColumnOrder)
+        return
+    }
+
+    // Items within columns
     if(source.droppableId !== destination.droppableId){
         // Move to New Column
         const sourceColumn = columns[source.droppableId]
