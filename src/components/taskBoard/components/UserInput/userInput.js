@@ -16,6 +16,8 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
         }
     }
 
+
+
     
     const addNew = () =>{
         const formValue = myForm.current.value
@@ -47,7 +49,7 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
   return (
     <div className='userInputContainer'>
         <form>
-            <input ref={myForm} placeholder="add item..."/>
+            <input maxLength={25} ref={myForm} placeholder="add item..."/>
         </form>
 
         {instruction === "item" ?

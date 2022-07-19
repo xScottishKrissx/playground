@@ -560,8 +560,9 @@ Javascript:
             ✔ ...but what about attaching the input to each board, so they're always adding to their own board, instead of always to the unassigned. @done(16:14 - 15/07/22)
               ✔ Done, you can now add to each board separatley @done(16:14 - 15/07/22)
           ✔ Prevent adding new items with empty field @done(16:59 - 15/07/22)
-          ☐ Max character limit for new items
+          ✔ Max character limit for new items @done(15:30 - 19/07/22)
           ☐ Delete Item Button
+          ☐ Mark task as complete button
 
         Click on item to get an Item Modal:
           ☐ Nothing too fancy here, just a basic modal with content that appears when clicking on an item
@@ -572,16 +573,19 @@ Javascript:
 
       Columns:
         ✔ Ability to add new boards via input @done(16:57 - 15/07/22)
-            ☐ Max character limit
+            ✔ Max character limit @done(15:30 - 19/07/22)
             ☐ Improve UI
         ✔ Ability to reset each board @done(17:16 - 15/07/22)
+          ✔ Add confirm reset dialogue @done(16:34 - 19/07/22)
           ☐ Improve UI
-        ☐ Hide user input when dragging items
+        ✔ Hide user input when dragging items @done(15:30 - 19/07/22)
         ☐ delete columns button
           ✔ Handle 0 columns on page @done(17:39 - 18/07/22)
           ✔ Functionality to delete column @done(17:39 - 18/07/22)
-          ☐ Add confirm delete board thingy
+          ✔ Add confirm delete board dialog @done(16:34 - 19/07/22)
           ☐ Complete UI
+        ☐ Hide Column button
+
 
         ✔ drag and drop columns / reorganise columns @done(17:04 - 18/07/22)
           ... is it naive to think this is just the same as making item's draggable but wrapping the columns in a <draggable> thingy?
