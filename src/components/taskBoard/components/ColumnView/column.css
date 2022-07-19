@@ -9,3 +9,19 @@
 .columnDropArea{
     height: 300px;
 }
+
+/* Column Header */
+.columnHeader{
+    display: flex;
+        align-items: center;
+        justify-content: space-around;
+    
+}
+
+.columnHeader h2{
+    cursor: grab;
+}
+
+.columnHeader span{
+    cursor: pointer;
+}

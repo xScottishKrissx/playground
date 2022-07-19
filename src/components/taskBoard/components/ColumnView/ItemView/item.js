@@ -5,7 +5,7 @@ import './item.css'
 
 export default function ItemView({column}) {
 
-    const restColour = "red"
+    const restColour = "black"
     const draggingColour ="blue"
 
     return (
