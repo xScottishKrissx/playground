@@ -574,20 +574,23 @@ Javascript:
       Columns:
         ✔ Ability to add new boards via input @done(16:57 - 15/07/22)
             ✔ Max character limit @done(15:30 - 19/07/22)
-            ☐ Improve UI
+            ✔ Improve UI @done(17:20 - 19/07/22)
         ✔ Ability to reset each board @done(17:16 - 15/07/22)
           ✔ Add confirm reset dialogue @done(16:34 - 19/07/22)
-          ☐ Improve UI
+          ✔ Improve UI @done(17:20 - 19/07/22)
         ✔ Hide user input when dragging items @done(15:30 - 19/07/22)
-        ☐ delete columns button
+        ✔ delete columns button @done(17:19 - 19/07/22)
           ✔ Handle 0 columns on page @done(17:39 - 18/07/22)
           ✔ Functionality to delete column @done(17:39 - 18/07/22)
           ✔ Add confirm delete board dialog @done(16:34 - 19/07/22)
-          ☐ Complete UI
+          ✔ Complete UI @done(17:19 - 19/07/22)
         ☐ Hide Column button
-        ☐ Reset All Boards button
-          ☐ Re-integrate in another section
-
+        ✔ Reset All Boards button @done(18:08 - 19/07/22)
+          ✔ Re-integrate in another section @done(18:08 - 19/07/22)
+              ✔ @done(17:35 - 19/07/22)
+              ✔ Create separate component for taskboard header @done(18:08 - 19/07/22)
+              ✔ Create confirm delete all dialog @done(18:08 - 19/07/22)
+        ☐ Move Delete and Reset Buttons into own menu
 
         ✔ drag and drop columns / reorganise columns @done(17:04 - 18/07/22)
           ... is it naive to think this is just the same as making item's draggable but wrapping the columns in a <draggable> thingy?

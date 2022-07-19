@@ -6,15 +6,7 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
 
     const myForm = useRef()
 
-    const resetBoard = () =>{
-        // localStorage.clear()
-        if(instruction === "item"){
-            handleResetBoard(columnId)
-        }else{
-            console.log("Clearing Local Storage, reload page")
-            localStorage.clear()
-        }
-    }
+
 
 
 

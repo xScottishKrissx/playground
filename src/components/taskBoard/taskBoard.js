@@ -7,6 +7,7 @@ import './taskboard.css'
 import onDragEnd from './components/onDragEnd'
 import ColumnView from './components/ColumnView/column'
 import UserInput from './components/UserInput/userInput'
+import TaskboardHeader from './components/TaskboardHeader/taskboardHeader'
 
 // This will become empty arrays so no need to clean this up
     const tasks = [
@@ -31,6 +32,7 @@ import UserInput from './components/UserInput/userInput'
     }
 
 export default function Taskboard() {
+    // localStorage.clear()
     // localStorage.clear()
     const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
     const [columns, setColumns] = useState(grabLocalStorage || columnData)
@@ -68,29 +70,37 @@ export default function Taskboard() {
         // set state...
         setColumns(newColumns)
     }
-    
+
+    const handleDeleteAll = () =>{
+        setColumns(columnData)
+    }
 
     return (
         <div className='taskboardWrapper'>
-            <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
 
-                <Droppable droppableId='allColumns' direction='horizontal' type="column" >
-                    {(provided) =>(
-                        <div className='allColumns' ref={provided.innerRef}  {...provided.droppableProps}  >                        
-                            <ColumnView 
-                                columns={columns} 
-                                handleAddNewItem={handleAddNewItem}  
-                                handleResetBoard={handleResetBoard} 
-                                handleDeleteColumn={handleDeleteColumn}
-                            />
-                            {provided.placeholder}
-                        </div>
-                    )}
-                </Droppable>
+                <TaskboardHeader resetBoard={handleDeleteAll}/>
+
+                <div className='columnsContainer'>
+
+                <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
+                    <Droppable droppableId='allColumns' direction='horizontal' type="column" >
+                        {(provided) =>(
+                            <div className='allColumns' ref={provided.innerRef}  {...provided.droppableProps}  >                        
+                                <ColumnView 
+                                    columns={columns} 
+                                    handleAddNewItem={handleAddNewItem}  
+                                    handleResetBoard={handleResetBoard} 
+                                    handleDeleteColumn={handleDeleteColumn}
+                                    />
+                                {provided.placeholder}
+                            </div>
+                        )}
+                    </Droppable>
 
 
-                <UserInput columns={columns} handleAddNewItem={handleAddNewBoard} instruction="board" />
-            </DragDropContext>
+                    <UserInput columns={columns} handleAddNewItem={handleAddNewBoard} instruction="board" />
+                </DragDropContext>
+            </div>
         </div>
     )
 }
