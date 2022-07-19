@@ -43,25 +43,40 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
         myForm.current.value = ""
     }
 
+    const itemStyle={
+        color:"red"
+    }
+
+    const boardStyle={
+        backgroundColor:"#00000029",
+        boxShadow:"2px 2px 0px 0px #a1a1a1",
+        justifyContent:"center",
+        margin:"10px",
+        minHeight:"150px",
+        padding:"10px",
+        position:"relative",
+        minWidth:"250px"
+    }
 
     const resetButtonText = instruction === "item" ? "Reset Board" : "Reset All"
+    const style = instruction === "item" ? itemStyle : boardStyle
 
-  return (
-    <div className='userInputContainer'>
-        <form>
-            <input maxLength={25} ref={myForm} placeholder="add item..."/>
-        </form>
+    return (
+        <div className='userInputContainer' style={style}>
+            <form>
+                <input maxLength={25} ref={myForm} placeholder={"enter new " + instruction + " name"}/>
+            </form>
 
-        {instruction === "item" ?
-            <button onClick={addNew}>{"Add " + instruction}</button>
-            :
-            <>
+            {instruction === "item" ?
                 <button onClick={addNew}>{"Add " + instruction}</button>
-                <button onClick={resetBoard}>{resetButtonText}</button>
-            </>
-        
-        }
+                :
+                <>
+                    <button onClick={addNew}>{"Add " + instruction}</button>
+                    {/* <button onClick={resetBoard}>{resetButtonText}</button> */}
+                </>
+            
+            }
 
-    </div>
-  )
+        </div>
+    )
 }

@@ -2,12 +2,30 @@
     display: flex;
     align-items: start;
     flex-direction: column;
+
+
    
 }
 
     .userInputContainer form{
+        margin-bottom: 5px;
         width: 100%;
     }
         .userInputContainer form input{
+            border: none;
+            box-shadow: 2px 2px 0px 0px #a1a1a1;
             width: inherit;
         }
+        .userInputContainer button{
+            border: none;
+            box-shadow: 2px 2px 0px 0px #a1a1a1;
+        }
+
+/* New Board */
+/* background-color: #00000029;
+box-shadow: 2px 2px 0px 0px #a1a1a1;
+margin: 10px;
+min-height: 150px;
+position: relative;
+width: 250px; 
+*/

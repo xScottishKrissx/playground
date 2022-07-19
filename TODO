@@ -585,6 +585,8 @@ Javascript:
           ✔ Add confirm delete board dialog @done(16:34 - 19/07/22)
           ☐ Complete UI
         ☐ Hide Column button
+        ☐ Reset All Boards button
+          ☐ Re-integrate in another section
 
 
         ✔ drag and drop columns / reorganise columns @done(17:04 - 18/07/22)

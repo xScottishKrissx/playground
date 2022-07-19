@@ -1,9 +1,10 @@
 .taskboardWrapper{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     height: 100%;
+    overflow: auto;
     width: 100%;
-    outline: 1px solid blue;
+    /* outline: 1px solid blue; */
 }
 
 .allColumns{
