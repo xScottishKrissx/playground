@@ -7,8 +7,8 @@ import UserInput from '../UserInput/userInput'
 
 export default function ColumnView({columns, handleAddNewItem, handleResetBoard, handleDeleteColumn}) {
 
-    const restColour = "white"
-    const colourOnHoverOver ="yellow"
+    const restColour = "#d6d6d6"
+    const colourOnHoverOver ="#38e35d17"
     // console.log(columns)
 
     return (
@@ -21,7 +21,8 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
     {/* Column Header */}
                                 <div className='columnHeader'>
                                     <h2 {...provided.dragHandleProps}>{column.name}</h2>
-                                    <span onClick={()=>handleDeleteColumn(id)}><span class="material-icons">delete</span></span>
+                                    <span title="Delete Board" alt="Delete Board" onClick={()=>handleDeleteColumn(id)}><span class="material-icons">delete</span></span>
+                                    <span title='Clear Board' alt="Clear Board" onClick={()=>handleResetBoard(id)}><span class="material-icons">restart_alt</span></span>
                                 </div>
 
                                 <Droppable droppableId={id} type="tasks">
@@ -33,18 +34,25 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                                                 ref={provided.innerRef} 
                                                 {...provided.droppableProps} 
                                                 style={{ 
-                                                    background: snapshot.isDraggingOver ? colourOnHoverOver : restColour, 
+                                                    cursor: snapshot.isDraggingOver ? "grabbing" : "grab" ,
+                                                    backgroundColor: snapshot.isDraggingOver ? colourOnHoverOver : restColour,
                                                 }}
                                             >
-                                                <ItemView column={column}/>
+                                                <ItemView column={column} />
                                                 {provided.placeholder}
-                                                <UserInput 
-                                                    columns={columns} 
-                                                    columnId={id} 
-                                                    handleAddNewItem={handleAddNewItem} 
-                                                    handleResetBoard={handleResetBoard}
-                                                    instruction="item"
-                                                    />
+
+                                                {snapshot.isDraggingOver ? 
+                                                    null 
+                                                    : 
+                                                    
+                                                        <UserInput 
+                                                            columns={columns} 
+                                                            columnId={id} 
+                                                            handleAddNewItem={handleAddNewItem} 
+                                                            instruction="item"
+                                                        />
+                                                    
+                                                    }
 
                                             </div>
                                         )

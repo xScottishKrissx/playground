@@ -1,0 +1,13 @@
+.userInputContainer{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+   
+}
+
+    .userInputContainer form{
+        width: 100%;
+    }
+        .userInputContainer form input{
+            width: inherit;
+        }

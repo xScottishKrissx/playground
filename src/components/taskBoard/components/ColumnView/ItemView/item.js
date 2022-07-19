@@ -5,11 +5,11 @@ import './item.css'
 
 export default function ItemView({column}) {
 
-    const restColour = "black"
-    const draggingColour ="blue"
+    const restColour = "white"
+    const draggingColour ="#4eff5361"
 
     return (
-        <>
+        <div className='itemWrapper'>
             {column.items.map((item, index) =>{
                 return(
                     <Draggable index={index} key={item.id} draggableId={item.id}>
@@ -36,6 +36,6 @@ export default function ItemView({column}) {
                     </Draggable>
                 )
             })}
-        </>
+        </div>
     )
 }

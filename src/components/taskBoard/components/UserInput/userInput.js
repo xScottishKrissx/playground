@@ -1,5 +1,7 @@
 import React,{useRef} from 'react'
 
+import './userInput.css'
+
 export default function UserInput({columns, handleAddNewItem, columnId, instruction, handleResetBoard}) {
 
     const myForm = useRef()
@@ -43,13 +45,21 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
     const resetButtonText = instruction === "item" ? "Reset Board" : "Reset All"
 
   return (
-    <div>
-            <button onClick={addNew}>{"Add " + instruction}</button>
-            <button onClick={resetBoard}>{resetButtonText}</button>
+    <div className='userInputContainer'>
+        <form>
+            <input ref={myForm} placeholder="add item..."/>
+        </form>
 
-            <form>
-                <input ref={myForm} />
-            </form>
+        {instruction === "item" ?
+            <button onClick={addNew}>{"Add " + instruction}</button>
+            :
+            <>
+                <button onClick={addNew}>{"Add " + instruction}</button>
+                <button onClick={resetBoard}>{resetButtonText}</button>
+            </>
+        
+        }
+
     </div>
   )
 }

@@ -1,8 +1,19 @@
+.itemWrapper{
+    margin-bottom: 10px;
+}
+
 .item{
-    color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 0px 0px #a1a1a1;
+    color: black;
+    display:flex;
+        align-items: center;
+        justify-content: start;
     /* margin: 10px; */
+    margin-bottom: 5px;
     min-height: 50px;
-    outline: 1px solid black;
-    padding: 1px;
+    padding-left: 10px;
+    /* outline: 1px solid black; */
+    
     user-select: none;
 }
