@@ -19,15 +19,22 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
 
   return (
     <div className='columnHeader'>
+
+        <div className='columnHeaderButtons'>
+
+            <span title='Clear Board' alt="Clear Board" onClick={()=>showConfirmBox(true,"reset")}>
+                <span className="material-icons">restart_alt</span>
+            </span>
+            
+            <span title="Delete Board" alt="Delete Board" onClick={()=>showConfirmBox(true,"delete")}>
+                <span className="material-icons">delete</span>
+            </span>
+            
+
+        </div>
+
         <h2 {...provided.dragHandleProps}>{column.name}</h2>
         
-        <span title="Delete Board" alt="Delete Board" onClick={()=>showConfirmBox(true,"delete")}>
-            <span className="material-icons">delete</span>
-        </span>
-        
-        <span title='Clear Board' alt="Clear Board" onClick={()=>showConfirmBox(true,"reset")}>
-            <span className="material-icons">restart_alt</span>
-        </span>
 
         {!showBox ? null :
             <div className='confirmBox'>

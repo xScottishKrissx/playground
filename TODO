@@ -562,6 +562,7 @@ Javascript:
           ✔ Prevent adding new items with empty field @done(16:59 - 15/07/22)
           ✔ Max character limit for new items @done(15:30 - 19/07/22)
           ☐ Delete Item Button
+            ☐ Maybe leave for the model, avoid the item becoming cluttered
           ☐ Mark task as complete button
 
         Click on item to get an Item Modal:
@@ -584,13 +585,14 @@ Javascript:
           ✔ Functionality to delete column @done(17:39 - 18/07/22)
           ✔ Add confirm delete board dialog @done(16:34 - 19/07/22)
           ✔ Complete UI @done(17:19 - 19/07/22)
-        ☐ Hide Column button
+        ✘ Hide Column button @cancelled(11:20 - 20/07/22)
         ✔ Reset All Boards button @done(18:08 - 19/07/22)
           ✔ Re-integrate in another section @done(18:08 - 19/07/22)
               ✔ @done(17:35 - 19/07/22)
               ✔ Create separate component for taskboard header @done(18:08 - 19/07/22)
               ✔ Create confirm delete all dialog @done(18:08 - 19/07/22)
-        ☐ Move Delete and Reset Buttons into own menu
+        ✘ Move Delete and Reset Buttons into own menu @cancelled(11:19 - 20/07/22)
+          ✔ Don't need a menu, the confirm box should suffice. @done(11:20 - 20/07/22)
 
         ✔ drag and drop columns / reorganise columns @done(17:04 - 18/07/22)
           ... is it naive to think this is just the same as making item's draggable but wrapping the columns in a <draggable> thingy?
