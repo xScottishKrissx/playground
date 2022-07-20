@@ -8,12 +8,22 @@
     color: black;
     display:flex;
         align-items: center;
-        justify-content: start;
+        justify-content: space-evenly;
     /* margin: 10px; */
     margin-bottom: 5px;
     min-height: 50px;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     /* outline: 1px solid black; */
     
     user-select: none;
+    width: 100%;
+}
+
+#itemContent{
+    width: 75%;
+}
+
+.itemCheck{
+    opacity: 0.5;
+    cursor: pointer;
 }

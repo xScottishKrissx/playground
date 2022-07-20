@@ -7,7 +7,7 @@ import UserInput from '../UserInput/userInput'
 import ColumnHeader from './ColumnHeader/columnHeader'
 
 
-export default function ColumnView({columns, handleAddNewItem, handleResetBoard, handleDeleteColumn}) {
+export default function ColumnView({columns, handleAddNewItem, handleResetBoard, handleDeleteColumn, markAsDone}) {
 
     const restColour = "#d6d6d6"
     const colourOnHoverOver ="#38e35d17"
@@ -42,7 +42,7 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                                                     backgroundColor: snapshot.isDraggingOver ? colourOnHoverOver : restColour,
                                                 }}
                                             >
-                                                <ItemView column={column} />
+                                                <ItemView column={column} markAsDone={markAsDone} columnId={id}/>
                                                 {provided.placeholder}
 
                                                 {snapshot.isDraggingOver ? null  : 

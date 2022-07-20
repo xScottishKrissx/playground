@@ -11,10 +11,10 @@ import TaskboardHeader from './components/TaskboardHeader/taskboardHeader'
 
 // This will become empty arrays so no need to clean this up
     const tasks = [
-        {id:uuidv4(), content:'task-1 content'},
-        {id:'task2', content:'task-2 content'},
-        {id:'task4', content:'task-4 content'},
-        {id:'task3', content:'task-3 content'},
+        {id:uuidv4(), content:'task-1 content', status:"open"},
+        {id:'task2', content:'task-2 content', status:"open"},
+        {id:'task4', content:'task-4 content', status:"open"},
+        {id:'task3', content:'task-3 content', status:"done"},
     ];
 
     const columnData = 
@@ -22,12 +22,12 @@ import TaskboardHeader from './components/TaskboardHeader/taskboardHeader'
         [uuidv4()]: {
             name:"One",
             items: tasks,
-            position:1
+            
         },
         [uuidv4()]: {
             name:"Two",
             items:[],
-            position:2
+            
         }
     }
 
@@ -42,14 +42,14 @@ export default function Taskboard() {
     const handleAddNewItem = (id, formValue) => {
         // console.log(columns[id].items)
         const currentFirstColumnItems = columns[id].items
-        const addNewItemToCurrentFistColItems = [...currentFirstColumnItems].concat({'id': uuidv4() , 'content': formValue})
+        const addNewItemToCurrentFistColItems = [...currentFirstColumnItems].concat({'id': uuidv4() , 'content': formValue, 'status':"open"})
         const objectToUpdate = columns[id]
-        setColumns({ ...columns, [id]:{ ...objectToUpdate, items:addNewItemToCurrentFistColItems } })
+        setColumns({ ...columns, [id]:{ ...objectToUpdate, items:addNewItemToCurrentFistColItems, } })
     }
 
     const handleAddNewBoard = (formValue) =>{
         console.log("New Board !")
-        const newBoard = {[uuidv4()]:{ name:formValue, items:[] , position:columns.length + 1}}
+        const newBoard = {[uuidv4()]:{ name:formValue, items:[] , position:columns.length + 1, }}
         const currentBoard = {...columns, ...newBoard}
         setColumns(currentBoard)
     }
@@ -75,6 +75,17 @@ export default function Taskboard() {
         setColumns(columnData)
     }
 
+    const markAsDone = (itemId, columnId, setStatus) =>{
+        const objectToUpdate = columns[columnId]
+
+        const updateItem = objectToUpdate.items.map(item =>{
+            if(item.id === itemId){ item.status = setStatus } return item
+        })
+
+        setColumns({ ...columns,  [columnId]:{ ...objectToUpdate, items:updateItem } })
+        
+    }
+
     return (
         <div className='taskboardWrapper'>
 
@@ -91,6 +102,7 @@ export default function Taskboard() {
                                     handleAddNewItem={handleAddNewItem}  
                                     handleResetBoard={handleResetBoard} 
                                     handleDeleteColumn={handleDeleteColumn}
+                                    markAsDone={markAsDone}
                                     />
                                 {provided.placeholder}
                             </div>

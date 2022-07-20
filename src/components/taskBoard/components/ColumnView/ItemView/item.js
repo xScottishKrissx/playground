@@ -3,14 +3,20 @@ import { Draggable} from 'react-beautiful-dnd'
 
 import './item.css'
 
-export default function ItemView({column}) {
+export default function ItemView({column, markAsDone, columnId}) {
 
     const restColour = "white"
     const draggingColour ="#4eff5361"
 
+    const doneColour = "green"
+    
+
+
+
     return (
         <div className='itemWrapper'>
             {column.items.map((item, index) =>{
+                
                 return(
                     <Draggable index={index} key={item.id} draggableId={item.id}>
                         
@@ -24,12 +30,19 @@ export default function ItemView({column}) {
                                     {...provided.dragHandleProps} 
                                     style={{
                                         backgroundColor: snapshot.isDragging ? draggingColour : restColour,
+                                        backgroundColor: item.status === "done" ? doneColour : restColour,
                                         // Important for dragging preview, don't remove
                                         ...provided.draggableProps.style
                                     }}
 
                                     >
-                                        {item.content}
+                                        <span id="itemContent">{item.content}</span>
+                                        {item.status === "open" ? 
+                                        <span onClick={()=>markAsDone(item.id, columnId, "done")} title="Mark as Done" className="material-icons-outlined itemCheck">radio_button_unchecked</span>
+                                        :
+                                        <span onClick={()=>markAsDone(item.id, columnId, "open")} title="Mark as Done" className="material-icons-outlined itemCheck">check_circle_outline</span>
+                                        
+                                    }
                                     </div>
                             )
                         }}
