@@ -27,3 +27,37 @@
     opacity: 0.5;
     cursor: pointer;
 }
+
+/* Item Window */
+.itemWindow{
+    background-color: #a1a1a1;
+    height: 100%;
+    outline: 1px solid red;
+    position: absolute;
+        bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.itemWindow form{
+    /* background-color: red; */
+    margin: 5px;
+}
+
+.itemWindow form textarea{
+    background-color: #a1a1a1;
+    border: none;
+    height: 200px;
+    outline: 1px solid red;
+    resize: none;
+    width: 100%;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+}
+
+/* Hides Scrollbar, disabling for dev, enable for live */
+.itemWindow form textarea::-webkit-scrollbar {
+    /* display: none; */
+  }

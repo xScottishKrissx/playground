@@ -11,10 +11,10 @@ import TaskboardHeader from './components/TaskboardHeader/taskboardHeader'
 
 // This will become empty arrays so no need to clean this up
     const tasks = [
-        {id:uuidv4(), content:'task-1 content', status:"open"},
-        {id:'task2', content:'task-2 content', status:"open"},
-        {id:'task4', content:'task-4 content', status:"open"},
-        {id:'task3', content:'task-3 content', status:"done"},
+        {id:uuidv4(), content:'task-1 content', description:"" , status:"open"},
+        {id:'task2', content:'task-2 content', description:"" ,  status:"open"},
+        {id:'task4', content:'task-4 content', description:"" ,  status:"open"},
+        {id:'task3', content:'task-3 content', description:"" ,  status:"done"},
     ];
 
     const columnData = 
@@ -42,7 +42,7 @@ export default function Taskboard() {
     const handleAddNewItem = (id, formValue) => {
         // console.log(columns[id].items)
         const currentFirstColumnItems = columns[id].items
-        const addNewItemToCurrentFistColItems = [...currentFirstColumnItems].concat({'id': uuidv4() , 'content': formValue, 'status':"open"})
+        const addNewItemToCurrentFistColItems = [...currentFirstColumnItems].concat({'id': uuidv4() , 'content': formValue, 'status':"open", 'description': ''})
         const objectToUpdate = columns[id]
         setColumns({ ...columns, [id]:{ ...objectToUpdate, items:addNewItemToCurrentFistColItems, } })
     }
@@ -86,6 +86,15 @@ export default function Taskboard() {
         
     }
 
+    const addDescription = (formValue, columnId, itemId) =>{
+        const objectToUpdate = columns[columnId]
+
+        const updateItem = objectToUpdate.items.map(item =>{
+            if(item.id === itemId){ item.description = formValue } return item
+        })
+        setColumns({ ...columns,  [columnId]:{ ...objectToUpdate, items:updateItem } })
+    }
+
     return (
         <div className='taskboardWrapper'>
 
@@ -103,6 +112,7 @@ export default function Taskboard() {
                                     handleResetBoard={handleResetBoard} 
                                     handleDeleteColumn={handleDeleteColumn}
                                     markAsDone={markAsDone}
+                                    addDescription={addDescription}
                                     />
                                 {provided.placeholder}
                             </div>

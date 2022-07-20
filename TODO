@@ -571,6 +571,9 @@ Javascript:
               ☐ Delete item button
               ☐ Change title of item
               ☐ Add paragraph to content
+                ✔ Add New Description @done(16:35 - 20/07/22)
+                ☐ Edit descrption 
+                  ☐ It's a bit rough but it's there, just need to tighten up the ui
 
       Columns:
         ✔ Ability to add new boards via input @done(16:57 - 15/07/22)
