@@ -25,7 +25,7 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
             <span title='Clear Board' alt="Clear Board" onClick={()=>showConfirmBox(true,"reset")}>
                 <span className="material-icons">restart_alt</span>
             </span>
-            
+
             <span title="Delete Board" alt="Delete Board" onClick={()=>showConfirmBox(true,"delete")}>
                 <span className="material-icons">delete</span>
             </span>
@@ -38,7 +38,12 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
 
         {!showBox ? null :
             <div className='confirmBox'>
-                <p>This action is irreversible</p>
+
+                {instruction === "reset" ? 
+                    <p>This action keeps the board but removes all items.</p> 
+                    : 
+                    <p>This action deletes the entire board and all items.</p>
+                }
 
                 <div className='confirmBoxButtons'>
                     {instruction === "delete" ? 
