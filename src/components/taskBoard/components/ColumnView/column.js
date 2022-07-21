@@ -42,17 +42,24 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                                                     backgroundColor: snapshot.isDraggingOver ? colourOnHoverOver : restColour,
                                                 }}
                                             >
-                                                <ItemView column={column} markAsDone={markAsDone} columnId={id} addDescription={addDescription}/>
+                                                <ItemView 
+                                                    column={column} 
+                                                    markAsDone={markAsDone} 
+                                                    columnId={id} 
+                                                    addDescription={addDescription}
+                                                    
+                                                    />
                                                 {provided.placeholder}
 
-                                                {snapshot.isDraggingOver ? null  : 
+                                                {/* {snapshot.isDraggingOver ? null  :  */}
                                                     <UserInput 
                                                         columns={columns} 
                                                         columnId={id} 
                                                         handleAddNewItem={handleAddNewItem} 
                                                         instruction="item"
+                                                        
                                                     />
-                                                }
+                                               {/* // } */}
 
                                             </div>
                                         )

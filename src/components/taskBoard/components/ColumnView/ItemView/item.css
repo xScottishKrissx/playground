@@ -50,10 +50,18 @@
     margin: 5px;
 }
 
+.itemWindow form:focus, .itemWindow form textarea:focus-visible{
+    /* background-color: red; */
+    border:none;
+    outline: none;
+}
+
+
 .itemWindow form textarea{
     background-color: #a1a1a1;
-    /* border: none; */
-    height: 200px;
+    border: none;
+    /* height: 200px; */
+        min-height: 250px;
     /* outline: 1px solid red; */
     resize: none;
     width: 100%;
