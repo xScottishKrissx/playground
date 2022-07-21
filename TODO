@@ -576,7 +576,9 @@ Javascript:
                   ✔ It's a bit rough but it's there, just need to tighten up the ui @done(17:23 - 21/07/22)
                 ☐ Close item window when losing focus
                   ✔ ok so i can just use the HTML autoFocus to auto focus and then use a function to close the window when onBlur fires. @done(17:31 - 21/07/22)
-                  ☐ ...however, dragging doesn't count as losing focus so i need to figure out how to close all windows when dragging an item
+                  ✔ ...however, dragging doesn't count as losing focus so i need to figure out how to close all windows when dragging an item @done(17:58 - 21/07/22)
+                    ✔ Not sure how to get around this so im moving on for now @done(17:58 - 21/07/22)
+
 
       Columns:
         ✔ Ability to add new boards via input @done(16:57 - 15/07/22)

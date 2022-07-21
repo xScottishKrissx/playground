@@ -12,12 +12,14 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
     const restColour = "#d6d6d6"
     const colourOnHoverOver ="#38e35d17"
 
+
+
     return (
         <>
            
             {Object.entries(columns).map(([id, column], index) => {
                 return(
-                    <Draggable draggableId={id} index={index} key={id}>
+                    <Draggable draggableId={id} index={index} key={id} >
                         {(provided) =>(
                             <div className='column' key={id} ref={provided.innerRef} {...provided.draggableProps}>
     {/* Column Header */}
@@ -34,6 +36,7 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                                         return(
                                             // Column
                                             <div 
+                                            
                                                 className='columnDropArea'
                                                 ref={provided.innerRef} 
                                                 {...provided.droppableProps} 

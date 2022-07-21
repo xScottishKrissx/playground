@@ -5,6 +5,8 @@ import React,{useRef, useState, useEffect} from 'react'
 export default function ItemWindow({itemWindowState, item, closeItemWindow, columnId, addDescription}) {
 
     const {id, content, description} = item
+
+
     
     const addDescriptionForm = useRef()
     const itemWindow = useRef()

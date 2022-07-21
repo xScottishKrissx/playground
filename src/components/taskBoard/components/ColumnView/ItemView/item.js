@@ -18,13 +18,18 @@ export default function ItemView({column, markAsDone, columnId, addDescription,}
         disableDrag:false
     })
 
+    const [overwriteItemWindow, setOverwrite] = useState(false)
+
     
     
     const toggleItemWindow = (itemId, toggleStatus, setDrag) =>{
         setItemWindowState({open:toggleStatus, itemId:itemId, disableDrag:setDrag})
     }
 
-
+    const closeWindow = () =>{
+        console.log("Close Window")
+        setOverwrite(true)
+    }
 
 
     return (
@@ -39,42 +44,51 @@ export default function ItemView({column, markAsDone, columnId, addDescription,}
                         {(provided, snapshot) =>{
                             return(
                                 <div 
+                                // onDrag={} 
+                                className="item"                                    
+                                // React-Beautiful-DND
+                                ref={provided.innerRef} 
+                                
+                                {...provided.draggableProps} 
+                                {...provided.dragHandleProps} 
+                                style={{
                                     
-                                    className="item"                                    
-                                    // React-Beautiful-DND
-                                    ref={provided.innerRef} 
-                                    {...provided.draggableProps} 
-                                    {...provided.dragHandleProps} 
-                                    style={{
-                                        
-                                        backgroundColor: 
-                                            snapshot.isDragging ? draggingColour : null || 
-                                            item.status === "done" ? doneColour : restColour,
-                                        // Important for dragging preview, don't remove
-                                        ...provided.draggableProps.style,
-                                        
-
-                                    }}
-
-                                    >
-                                        <span id="itemContent" onClick={()=>toggleItemWindow(item.id, true, true)} >
+                                    backgroundColor: 
+                                    snapshot.isDragging ? draggingColour : null || 
+                                    item.status === "done" ? doneColour : restColour,
+                                    // Important for dragging preview, don't remove
+                                    ...provided.draggableProps.style,
+                                    
+                                    
+                                }}
+                                
+                                >
+                                        <span 
+                                            id="itemContent" 
+                                           
+                                            onClick={()=>toggleItemWindow(item.id, true, true)} 
+                                        >
                                                 {item.content}
                                         </span>
 
-                                        {/* {isItemOpen ?  : null} */}
+                                        
 
                                         
                                         
 
+                                          
+                                        
                                         <ItemWindow 
                                         itemWindowState={itemWindowState} 
                                         item={item}
                                         closeItemWindow={()=>toggleItemWindow(null,false, false)}
                                         addDescription={addDescription}
                                         columnId={columnId}
+                                        closeWindow={true}
                                         
                                         
                                         />
+                                        
                                         
 
                                         {item.status === "open" ? 
