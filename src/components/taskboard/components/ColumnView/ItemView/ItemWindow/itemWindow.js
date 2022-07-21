@@ -7,7 +7,8 @@ export default function ItemWindow({itemWindowState, item, closeItemWindow, colu
     const {id, content, description} = item
     
     const addDescriptionForm = useRef()
-        
+    const itemWindow = useRef()
+    
     const addNewDescription = () =>{
         // turnOffDrag(true)
         const formValue = addDescriptionForm.current.value
@@ -16,18 +17,17 @@ export default function ItemWindow({itemWindowState, item, closeItemWindow, colu
     }
 
     const handleBlur = () =>{
-        console.log("Blur")
-        if(document.activeElement === addDescriptionForm.current){
-            console.log("Do Something")
-        }
+        closeItemWindow()
     }
-  
+
+    
+    
     return (
         <>
 
             {itemWindowState.itemId === id ? 
                 
-                <div className='itemWindow' onFocus={null} onBlur={handleBlur} >
+                <div ref={itemWindow} className='itemWindow' onFocus={null} onBlur={()=>handleBlur()} >
                     <h2>{content}</h2>    
                     {/* <p>{description}</p> */}
 
@@ -35,13 +35,13 @@ export default function ItemWindow({itemWindowState, item, closeItemWindow, colu
                     {description.length > 0 ?  
                         <>
                             <form  >
-                                <textarea ref={addDescriptionForm} onChange={addNewDescription} value={description} />
+                                <textarea  autoFocus ref={addDescriptionForm} onChange={addNewDescription} value={description} />
                             </form>
                         </>
                     : 
                     <>
                             <form >
-                                <textarea aria-controls='none' onChange={addNewDescription} ref={addDescriptionForm} placeholder="Add Description"/>
+                                <textarea  autoFocus aria-controls='none' onChange={addNewDescription} ref={addDescriptionForm} placeholder="Add Description"/>
                             </form>
                             <span>Add Description</span>
                         </>
