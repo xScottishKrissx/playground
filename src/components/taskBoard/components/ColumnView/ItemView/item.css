@@ -34,7 +34,7 @@
 .itemWindow{
     background-color: #a1a1a1;
     height: 100%;
-    outline: 1px solid red;
+    /* outline: 1px solid red; */
     position: absolute;
         bottom: 0;
     width: 100%;
@@ -61,7 +61,7 @@
     background-color: #a1a1a1;
     border: none;
     /* height: 200px; */
-        /* min-height: 250px; */
+        min-height: 190px;
     /* outline: 1px solid red; */
     resize: none;
     width: 100%;
@@ -72,9 +72,14 @@
 
 }
 
+#formTitle{
+    min-height: auto !important;
+    font-size: 1.5rem;
+}
+
 /* Hides Scrollbar, disabling for dev, enable for live */
 .itemWindow form textarea::-webkit-scrollbar {
-    /* display: none; */
+    display: none;
   }
 
   /* New Item Window */
