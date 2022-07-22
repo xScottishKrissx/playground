@@ -90,9 +90,22 @@ export default function Taskboard() {
         const objectToUpdate = columns[columnId]
 
         const updateItem = objectToUpdate.items.map(item =>{
-            if(item.id === itemId){ item.description = formValue } return item
+            if(item.id === itemId ){ item.description = formValue }
+            return item
         })
         setColumns({ ...columns,  [columnId]:{ ...objectToUpdate, items:updateItem } })
+    }
+
+    const updateTitle = (formValue, columnId, itemId) =>{
+        // console.log(formValue)
+        const objectToUpdate = columns[columnId]
+        
+        const updateItem = objectToUpdate.items.map(item =>{
+            if(item.id === itemId){ item.content = formValue } return item
+        })
+
+        setColumns({ ...columns,  [columnId]:{ ...objectToUpdate, items:updateItem } })
+        
     }
 
     return (
@@ -115,6 +128,7 @@ export default function Taskboard() {
                                     handleDeleteColumn={handleDeleteColumn}
                                     markAsDone={markAsDone}
                                     addDescription={addDescription}
+                                    updateTitle={updateTitle}
                                     />
                                 {provided.placeholder}
                             </div>

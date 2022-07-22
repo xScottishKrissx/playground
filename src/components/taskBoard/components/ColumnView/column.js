@@ -7,7 +7,7 @@ import UserInput from '../UserInput/userInput'
 import ColumnHeader from './ColumnHeader/columnHeader'
 
 
-export default function ColumnView({columns, handleAddNewItem, handleResetBoard, handleDeleteColumn, markAsDone,addDescription}) {
+export default function ColumnView({columns, handleAddNewItem, handleResetBoard, handleDeleteColumn, markAsDone,addDescription, updateTitle}) {
 
     const restColour = "#d6d6d6"
     const colourOnHoverOver ="#38e35d17"
@@ -50,6 +50,7 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                                                     markAsDone={markAsDone} 
                                                     columnId={id} 
                                                     addDescription={addDescription}
+                                                    updateTitle={updateTitle}
                                                     
                                                     />
                                                 {provided.placeholder}
