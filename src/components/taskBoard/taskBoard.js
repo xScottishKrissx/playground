@@ -102,6 +102,8 @@ export default function Taskboard() {
 
                 <div className='columnsContainer'>
 
+
+
                 <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
                     <Droppable droppableId='allColumns' direction='horizontal' type="column" >
                         {(provided) =>(
@@ -117,11 +119,13 @@ export default function Taskboard() {
                                 {provided.placeholder}
                             </div>
                         )}
+
                     </Droppable>
 
 
                     <UserInput columns={columns} handleAddNewItem={handleAddNewBoard} instruction="board" />
                 </DragDropContext>
+
             </div>
         </div>
     )

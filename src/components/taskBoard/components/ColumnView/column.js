@@ -68,10 +68,10 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                                         )
                                     }}                                
                                 </Droppable>
-
                         </div>
                         )}
                     </Draggable>
+                                
                 )
             })}
         </>

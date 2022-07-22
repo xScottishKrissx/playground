@@ -18,9 +18,7 @@ export default function ItemWindow({itemWindowState, item, closeItemWindow, colu
         addDescriptionForm.current.value = ""
     }
 
-    const handleBlur = () =>{
-        closeItemWindow()
-    }
+
 
     
     
@@ -28,8 +26,9 @@ export default function ItemWindow({itemWindowState, item, closeItemWindow, colu
         <>
 
             {itemWindowState.itemId === id ? 
-                
-                <div ref={itemWindow} className='itemWindow' onFocus={null} onBlur={()=>handleBlur()} >
+                <>
+                <span onClick={closeItemWindow} className='itemWindowBackground'>Item Window Background</span>
+                <div id={columnId} ref={itemWindow} className='itemWindow' >
                     <h2>{content}</h2>    
                     {/* <p>{description}</p> */}
 
@@ -37,19 +36,20 @@ export default function ItemWindow({itemWindowState, item, closeItemWindow, colu
                     {description.length > 0 ?  
                         <>
                             <form  >
-                                <textarea  autoFocus ref={addDescriptionForm} onChange={addNewDescription} value={description} />
+                                <textarea ref={addDescriptionForm} onChange={addNewDescription} value={description} />
                             </form>
                         </>
                     : 
                     <>
                             <form >
-                                <textarea  autoFocus aria-controls='none' onChange={addNewDescription} ref={addDescriptionForm} placeholder="Add Description"/>
+                                <textarea aria-controls='none' onChange={addNewDescription} ref={addDescriptionForm} placeholder="Add Description"/>
                             </form>
                             <span>Add Description</span>
                         </>
                     }
                     <button onClick={closeItemWindow}>Save and Close</button>
                 </div>
+                    </>
 
                 : null}
 

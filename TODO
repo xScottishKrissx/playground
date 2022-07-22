@@ -578,6 +578,8 @@ Javascript:
                   ✔ ok so i can just use the HTML autoFocus to auto focus and then use a function to close the window when onBlur fires. @done(17:31 - 21/07/22)
                   ✔ ...however, dragging doesn't count as losing focus so i need to figure out how to close all windows when dragging an item @done(17:58 - 21/07/22)
                     ✔ Not sure how to get around this so im moving on for now @done(17:58 - 21/07/22)
+                  ✔ I've just added an inivisible background that takes up the full screen and sits behind the item window but in front of everything else. This just solve the problem @done(15:57 - 22/07/22)
+
 
 
       Columns:

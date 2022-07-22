@@ -68,10 +68,23 @@
 
     -ms-overflow-style: none;
     scrollbar-width: none;
+    z-index: 10;
 
 }
 
 /* Hides Scrollbar, disabling for dev, enable for live */
 .itemWindow form textarea::-webkit-scrollbar {
     /* display: none; */
+  }
+
+  /* New Item Window */
+  .itemWindowBackground{
+    /* outline: 1px solid red; */
+    position: fixed;
+        left: 0;
+        top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
   }

@@ -1,6 +1,7 @@
 
 .columnsContainer{
     display: flex;
+    position: relative;
 }
 .column{
     background-color: #00000029;
