@@ -555,14 +555,14 @@ Javascript:
         ✔ Add local storage support @done(16:36 - 14/07/22)
         ✔ Change column string id to UUID @done(16:44 - 14/07/22)
       Items:
-        ☐ Ability to add items to board via input
+        ✔ Ability to add items to board via input @done(11:32 - 26/07/22)
           ✔ Done... @done(16:14 - 15/07/22)
             ✔ ...but what about attaching the input to each board, so they're always adding to their own board, instead of always to the unassigned. @done(16:14 - 15/07/22)
               ✔ Done, you can now add to each board separatley @done(16:14 - 15/07/22)
           ✔ Prevent adding new items with empty field @done(16:59 - 15/07/22)
           ✔ Max character limit for new items @done(15:30 - 19/07/22)
-          ☐ Delete Item Button
-            ☐ Maybe leave for the model, avoid the item becoming cluttered
+          ✘ Delete Item Button @cancelled(11:32 - 26/07/22)
+            ✔ Maybe leave for the model, avoid the item becoming cluttered @done(11:32 - 26/07/22)
           ✔ Open Modal / Description Button @done(11:16 - 26/07/22)
           ✔ Mark task as complete button @done(12:54 - 20/07/22)
 

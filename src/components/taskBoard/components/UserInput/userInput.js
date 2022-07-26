@@ -1,15 +1,11 @@
-import React,{useRef} from 'react'
+import React,{useRef, useState} from 'react'
 
 import './userInput.css'
 
-export default function UserInput({columns, handleAddNewItem, columnId, instruction, handleResetBoard}) {
+export default function UserInput({handleAddNewItem, columnId, instruction}) {
 
+    const [formFocus, setFormFocus] = useState(false)
     const myForm = useRef()
-
-
-
-
-
     
     const addNew = () =>{
         const formValue = myForm.current.value
@@ -31,13 +27,9 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
             handleAddNewItem(formValue)
         }
 
-
         myForm.current.value = ""
     }
 
-    const itemStyle={
-        color:"red"
-    }
 
     const boardStyle={
         backgroundColor:"#00000029",
@@ -50,25 +42,18 @@ export default function UserInput({columns, handleAddNewItem, columnId, instruct
         minWidth:"250px"
     }
 
-    const resetButtonText = instruction === "item" ? "Reset Board" : "Reset All"
-    const style = instruction === "item" ? itemStyle : boardStyle
+    const buttonBright = { opacity:1 }
+    const buttonDull = { opacity:0.5 }
+
+    const style = instruction === "item" ? null : boardStyle
+    const buttonStyle = formFocus ? buttonBright : buttonDull
 
     return (
         <div className='userInputContainer' style={style}>
             <form>
-                <input maxLength={25} ref={myForm} placeholder={"enter new " + instruction + " name"}/>
+                <input onFocus={()=>setFormFocus(true)} onBlur={()=>setFormFocus(false)} maxLength={25} ref={myForm} placeholder={"enter new " + instruction + " name"}/>
             </form>
-
-            {instruction === "item" ?
-                <button onClick={addNew}>{"Add " + instruction}</button>
-                :
-                <>
-                    <button onClick={addNew}>{"Add " + instruction}</button>
-                    {/* <button onClick={resetBoard}>{resetButtonText}</button> */}
-                </>
-            
-            }
-
+            <button style={buttonStyle} onClick={addNew}>{"Add " + instruction}</button>  
         </div>
     )
 }
