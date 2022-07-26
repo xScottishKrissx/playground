@@ -2,7 +2,7 @@ import React,{useRef} from 'react'
 
 import './itemDescription.css'
 
-export default function ItemDescription({descriptionLength, currentDescription, addDescription, itemId, columnId}) {
+export default function ItemDescription({descriptionLength, currentDescription, addDescription, itemId, columnId, closeItemWindow}) {
 
 const addDescriptionForm = useRef()
 
@@ -11,13 +11,20 @@ const addNewDescription = () =>{
     addDescription(formValue, columnId, itemId)
 }
 
+const detectKeyDown = (e) =>{
+    if(e.key === "Enter"){
+        e.preventDefault()
+        closeItemWindow()
+    }
+}
+
 return (
     <div className='itemWindowItemDescription'>
         <form>
             {descriptionLength > 0 ?  
-                <textarea ref={addDescriptionForm} onChange={addNewDescription} value={currentDescription} />
+                <textarea onKeyDown={detectKeyDown} ref={addDescriptionForm} onChange={addNewDescription} value={currentDescription} />
                 :
-                <textarea ref={addDescriptionForm} onChange={addNewDescription}  placeholder="Add Description"/>
+                <textarea onKeyDown={detectKeyDown} ref={addDescriptionForm} onChange={addNewDescription}  placeholder="Add Description"/>
             }
         </form>
     </div>

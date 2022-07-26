@@ -33,6 +33,7 @@ export default function ItemWindow({itemWindowState, item, closeItemWindow, colu
                             addDescription={addDescription} 
                             itemId={itemWindowState.itemId} 
                             columnId={columnId}
+                            closeItemWindow={closeItemWindow}
                         />
 
                         <ItemWindowOptions 

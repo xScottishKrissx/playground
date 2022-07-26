@@ -544,7 +544,7 @@ Javascript:
       ✔ restart again @done(16:00 - 14/07/22)
       ✔ Tutorial Complete, now to turn it into my own thing @done(16:00 - 14/07/22)
     Taskboard(actual own work):
-      ☐ Clean Up File
+      ✔ Clean Up File @done(16:58 - 26/07/22)
         ✔ Remove commented code @done(16:37 - 14/07/22)
         ✔ Separate off into components/files @done(17:56 - 14/07/22)
           ✔ On Drag End Component @done(16:51 - 14/07/22)
@@ -620,10 +620,29 @@ Javascript:
             ✔ Its {(provided) => (...)} 
             ✘ Not {(provided) => {...}} 
           ✔ Using column id as the key instead of index fixed an issue where dragging once would break the draggable. @done(17:04 - 18/07/22)
+    Finishing Up:
+      Browser Check:
+        ✔ Chrome @done(16:59 - 26/07/22)
+        ✔ Firefox @done(17:02 - 26/07/22)
+        ✔ Edge @done(17:05 - 26/07/22)
+      ToDo:
+        ☐ Keyboard support, when adding a task, hitting enter should trigger the submit.
+          ✔ When adding new boards @done(17:23 - 26/07/22)
+          ✔ When changing item title @done(17:35 - 26/07/22)
+          ☐ When changing item description
+        ☐ Add tags
+        ☐ Do the description
+        ☐ Add github link
+        ☐ reenable simple drag and drop
+      Issues:
+        ☐ Deleting an item stops the ability to drag items when the window closes
+
+
 
   ✔ Something with react leaflet and maps @done(15:10 - 21/06/22)
   ..https://egghead.io/lessons/react-add-shapes-to-a-map-in-react-leaflet
   .. i think this is out of date.
+  ☐ look into how to test software
   ☐ rock paper scissor
   ☐ simon game
   ☐ platformer game - more of a watch thing

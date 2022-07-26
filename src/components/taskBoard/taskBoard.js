@@ -11,21 +11,21 @@ import TaskboardHeader from './components/TaskboardHeader/taskboardHeader'
 
 // This will become empty arrays so no need to clean this up
     const tasks = [
-        {id:uuidv4(), content:'task-1 content', description:"" , status:"open"},
-        {id:'task2', content:'task-2 content', description:"" ,  status:"open"},
-        {id:'task4', content:'task-4 content', description:"" ,  status:"open"},
-        {id:'task3', content:'task-3 content', description:"" ,  status:"done"},
+        {id:uuidv4(), content:'task-1', description:"This has a description" , status:"open"},
+        {id:uuidv4(), content:'task-2', description:"" ,  status:"open"},
+        {id:uuidv4(), content:'task-4', description:"" ,  status:"open"},
+        {id:uuidv4(), content:'task-3', description:"" ,  status:"open"},
     ];
 
     const columnData = 
     {
         [uuidv4()]: {
-            name:"One",
+            name:"First Board",
             items: tasks,
             
         },
         [uuidv4()]: {
-            name:"Two",
+            name:"Second Board",
             items:[],
             
         }
@@ -36,7 +36,7 @@ export default function Taskboard() {
     // localStorage.clear()
     const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
     const [columns, setColumns] = useState(grabLocalStorage || columnData)
-    console.log(columns)
+    // console.log(columns)
     if(columns !== grabLocalStorage){ localStorage.setItem("userData", JSON.stringify(columns)) }
 
     const handleAddNewItem = (id, formValue) => {

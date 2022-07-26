@@ -1,4 +1,4 @@
-import React,{useRef, useState} from 'react'
+import React,{useRef, useState, useEffect} from 'react'
 
 import './userInput.css'
 
@@ -30,6 +30,17 @@ export default function UserInput({handleAddNewItem, columnId, instruction}) {
         myForm.current.value = ""
     }
 
+    // useEffect(()=>{
+    //     window.addEventListener('keydown', detectKeyDown, true)
+    // },[])
+
+
+    const detectKeyDown = (e) =>{
+        if(formFocus === true && e.key === "Enter"){
+            e.preventDefault()
+            addNew()
+        }
+    }
 
     const boardStyle={
         backgroundColor:"#00000029",
@@ -57,6 +68,8 @@ export default function UserInput({handleAddNewItem, columnId, instruction}) {
                     onBlur={()=>setFormFocus(false)} 
                     placeholder={"enter new " + instruction + " name"}
                     ref={myForm} 
+                    onKeyDown={detectKeyDown}
+                   
                 />
             </form>
             <button style={buttonStyle} onClick={addNew}>{"Add " + instruction}</button>  
