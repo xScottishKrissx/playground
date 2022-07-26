@@ -571,7 +571,7 @@ Javascript:
             To-Do:
               Item Window Options:
                 ✔ Delete item button @done(12:57 - 26/07/22)
-                ☐ Change items status
+                ✔ Change items status @done(13:23 - 26/07/22)
                 
               ✔ Change title of item @done(11:39 - 26/07/22)
                 ✔ Functionality done, need to improve UI @done(11:39 - 26/07/22)

@@ -16,13 +16,14 @@ export default function ItemWindowOptions({handleDeleteItem, itemId, columnId, c
   return (
     <>
         <div className='itemWindowOptions'>
+            {/* Delete Item */}
             <span onClick={()=>setBoxView(true)} title="Delete Item" className="material-icons-outlined">delete_outline</span>
-
-            {/* <span title="Mark as Done" className="material-icons-outlined">radio_button_unchecked</span> */}
-
+            
+            {/* Change Item Status */}
             <ItemStatus itemStatus={itemStatus} itemId={itemId} columnId={columnId} markAsDone={markAsDone}/>
-
-            <button title="Save any changes and close window" onClick={closeItemWindow}>Save and Close</button>
+            
+            {/* Close Window */}
+            <span title="Save any changes and close window" onClick={closeItemWindow} className="material-icons-outlined">save</span>
         </div>
 
         <DeleteItem 
