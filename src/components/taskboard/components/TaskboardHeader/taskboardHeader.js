@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import DeleteItem from '../ColumnView/ItemView/ItemWindow/deleteItem'
 
 export default function TaskboardHeader({resetBoard}) {
 
@@ -18,8 +19,14 @@ export default function TaskboardHeader({resetBoard}) {
             <span>Delete All</span>
             <span className="material-icons-outlined">delete_sweep</span>
         </span>
+        
+        <DeleteItem 
+            confirmDelete={confirm} 
+            cancelDelete={()=>setBoxView(false)}
+            showBoxMessage={showBox} 
+        />
 
-        {!showBox ? null : 
+        {/* {!showBox ? null : 
             <div className='confirmDeleteAllBox'>
                 <p>This action is irreversible</p>
                 <span className='confirmDeleteAllBoxButtons'>
@@ -27,7 +34,7 @@ export default function TaskboardHeader({resetBoard}) {
                     <button onClick={()=>setBoxView(false)}>Cancel</button>
                 </span>
             </div>
-        }
+        } */}
 
     </div>
   )

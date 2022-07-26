@@ -4,7 +4,7 @@ import { Draggable} from 'react-beautiful-dnd'
 import './item.css'
 import ItemWindow from './ItemWindow/itemWindow'
 
-export default function ItemView({column, markAsDone, columnId, addDescription, updateTitle}) {
+export default function ItemView({column, markAsDone, columnId, addDescription, updateTitle, handleDeleteItem}) {
     
     const restColour = "white"
     const draggingColour ="#4eff5361"
@@ -89,6 +89,7 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                         columnId={columnId}
                                         closeWindow={true}
                                         
+                                        handleDeleteItem={handleDeleteItem}
                                         
                                         />
                                         

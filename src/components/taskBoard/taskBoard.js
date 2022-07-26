@@ -108,6 +108,12 @@ export default function Taskboard() {
         
     }
 
+    const handleDeleteItem = (itemId, columnId,) =>{
+        const objectToUpdate = columns[columnId]
+        const filterItems = objectToUpdate.items.filter(item => item.id !== itemId)
+        setColumns({ ...columns,  [columnId]:{ ...objectToUpdate, items:filterItems } })
+    }
+
     return (
         <div className='taskboardWrapper'>
 
@@ -129,6 +135,7 @@ export default function Taskboard() {
                                     markAsDone={markAsDone}
                                     addDescription={addDescription}
                                     updateTitle={updateTitle}
+                                    handleDeleteItem={handleDeleteItem}
                                     />
                                 {provided.placeholder}
                             </div>

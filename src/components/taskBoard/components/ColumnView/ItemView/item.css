@@ -54,19 +54,19 @@
     margin: 5px;
 }
 
-.itemWindow form:focus, .itemWindow form textarea:focus-visible{
+.itemWindow form:focus, .itemWindow form textarea:focus-visible, .itemWindow form input:focus-visible{
     /* background-color: red; */
     border:none;
     outline: none;
 }
 
 
-.itemWindow form textarea{
+.itemWindow form textarea, .itemWindow form input{
     background-color: #a1a1a1;
     border: none;
     /* height: 200px; */
-        min-height: 190px;
-    /* outline: 1px solid red; */
+        min-height: 250px;
+    outline: 1px solid red;
     resize: none;
     width: 100%;
 
@@ -77,8 +77,9 @@
 }
 
 #formTitle{
+    font-size: 1.25rem;
     min-height: auto !important;
-    font-size: 1.5rem;
+    text-align: center;
 }
 
 /* Hides Scrollbar, disabling for dev, enable for live */
@@ -97,3 +98,24 @@
     background-color: rgba(0, 0, 0, 0);
     z-index: 1;
   }
+
+  /* Item Window Options */
+.itemWindowOptions{
+    display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    position: absolute;
+        bottom: 0;
+    width: 100%;
+
+}
+
+.itemWindowOptions span{
+    cursor: pointer;
+}
+.itemWindowOptions button{
+    border: none;
+    box-shadow: 2px 2px 0px 0px #a1a1a1;
+}

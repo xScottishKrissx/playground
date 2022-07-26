@@ -569,15 +569,18 @@ Javascript:
         Click on item to get an Item Modal:
           ☐ Nothing too fancy here, just a basic modal with content that appears when clicking on an item
             To-Do:
-              ☐ Delete item button
-              ☐ Change title of item
-                ☐ Functionality done, need to improve UI
+              Item Window Options:
+                ✔ Delete item button @done(12:57 - 26/07/22)
+                ☐ Change items status
                 
-              ☐ Add paragraph to content
+              ✔ Change title of item @done(11:39 - 26/07/22)
+                ✔ Functionality done, need to improve UI @done(11:39 - 26/07/22)
+                
+              ✔ Add paragraph to content @done(11:39 - 26/07/22)
                 ✔ Add New Description @done(16:35 - 20/07/22)
-                ☐ Edit descrption 
+                ✔ Edit descrption @done(11:39 - 26/07/22)
                   ✔ It's a bit rough but it's there, just need to tighten up the ui @done(17:23 - 21/07/22)
-                ☐ Close item window when losing focus
+                ✔ Close item window when losing focus @done(11:39 - 26/07/22)
                   ✔ ok so i can just use the HTML autoFocus to auto focus and then use a function to close the window when onBlur fires. @done(17:31 - 21/07/22)
                   ✔ ...however, dragging doesn't count as losing focus so i need to figure out how to close all windows when dragging an item @done(17:58 - 21/07/22)
                     ✔ Not sure how to get around this so im moving on for now @done(17:58 - 21/07/22)

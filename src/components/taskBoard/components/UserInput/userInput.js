@@ -37,9 +37,9 @@ export default function UserInput({handleAddNewItem, columnId, instruction}) {
         justifyContent:"center",
         margin:"10px",
         minHeight:"150px",
+        minWidth:"250px",
         padding:"10px",
         position:"relative",
-        minWidth:"250px"
     }
 
     const buttonBright = { opacity:1 }
@@ -51,7 +51,13 @@ export default function UserInput({handleAddNewItem, columnId, instruction}) {
     return (
         <div className='userInputContainer' style={style}>
             <form>
-                <input onFocus={()=>setFormFocus(true)} onBlur={()=>setFormFocus(false)} maxLength={25} ref={myForm} placeholder={"enter new " + instruction + " name"}/>
+                <input 
+                    maxLength={25} 
+                    onFocus={()=>setFormFocus(true)} 
+                    onBlur={()=>setFormFocus(false)} 
+                    placeholder={"enter new " + instruction + " name"}
+                    ref={myForm} 
+                />
             </form>
             <button style={buttonStyle} onClick={addNew}>{"Add " + instruction}</button>  
         </div>
