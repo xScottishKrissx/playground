@@ -1,5 +1,7 @@
 import React,{ useRef} from 'react'
 
+import './itemHeader.css'
+
 export default function ItemHeader({updateTitle, columnId, itemId, content}) {
 
     const changeTitleForm = useRef()

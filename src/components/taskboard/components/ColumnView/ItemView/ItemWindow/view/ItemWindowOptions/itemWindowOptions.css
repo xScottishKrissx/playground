@@ -1,0 +1,21 @@
+  /* Item Window Options */
+  .itemWindowOptions{
+    display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    margin: 0 auto !important;
+    padding-bottom: 5px;
+    /* position: absolute; */
+        /* bottom: 0; */
+    width: 100%;
+
+}
+
+.itemWindowOptions span{
+    cursor: pointer;
+}
+
+.itemWindowOptions button{
+    border: none;
+    box-shadow: 2px 2px 0px 0px #a1a1a1;
+}

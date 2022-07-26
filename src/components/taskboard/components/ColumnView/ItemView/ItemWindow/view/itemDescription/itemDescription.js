@@ -1,5 +1,7 @@
 import React,{useRef} from 'react'
 
+import './itemDescription.css'
+
 export default function ItemDescription({descriptionLength, currentDescription, addDescription, itemId, columnId}) {
 
 const addDescriptionForm = useRef()

@@ -7,12 +7,19 @@ import UserInput from '../UserInput/userInput'
 import ColumnHeader from './ColumnHeader/columnHeader'
 
 
-export default function ColumnView({columns, handleAddNewItem, handleResetBoard, handleDeleteColumn, markAsDone,addDescription, updateTitle, handleDeleteItem}) {
+export default function ColumnView({
+    addDescription, 
+    columns, 
+    handleAddNewItem, 
+    handleDeleteColumn, 
+    handleDeleteItem,
+    handleResetBoard, 
+    markAsDone,
+    updateTitle, 
+    }){
 
     const restColour = "#d6d6d6"
     const colourOnHoverOver ="#38e35d17"
-
-
 
     return (
         <>
@@ -36,7 +43,6 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                                         return(
                                             // Column
                                             <div 
-                                            
                                                 className='columnDropArea'
                                                 ref={provided.innerRef} 
                                                 {...provided.droppableProps} 
@@ -52,20 +58,17 @@ export default function ColumnView({columns, handleAddNewItem, handleResetBoard,
                                                     addDescription={addDescription}
                                                     updateTitle={updateTitle}
                                                     handleDeleteItem={handleDeleteItem}
-                                                    
-                                                    />
+                                                />
+
                                                 {provided.placeholder}
 
-                                                {/* {snapshot.isDraggingOver ? null  :  */}
-                                                    <UserInput 
-                                                        columns={columns} 
-                                                        columnId={id} 
-                                                        handleAddNewItem={handleAddNewItem} 
-                                                        instruction="item"
-                                                        
-                                                    />
-                                               {/* // } */}
-
+                                                <UserInput 
+                                                    columns={columns} 
+                                                    columnId={id} 
+                                                    handleAddNewItem={handleAddNewItem} 
+                                                    instruction="item"
+                                                />
+                                               
                                             </div>
                                         )
                                     }}                                

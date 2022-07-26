@@ -567,7 +567,8 @@ Javascript:
           ✔ Mark task as complete button @done(12:54 - 20/07/22)
 
         Click on item to get an Item Modal:
-          ☐ Nothing too fancy here, just a basic modal with content that appears when clicking on an item
+          ✔ Nothing too fancy here, just a basic modal with content that appears when clicking on an item @done(15:50 - 26/07/22)
+          ✔ Item.css needs to organised into appropriate css files @done(15:50 - 26/07/22)
             To-Do:
               Item Window Options:
                 ✔ Delete item button @done(12:57 - 26/07/22)

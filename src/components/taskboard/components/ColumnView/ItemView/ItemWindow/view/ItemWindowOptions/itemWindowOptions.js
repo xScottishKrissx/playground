@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
-import ItemStatus from '../../utilityComponents/itemStatus'
-import DeleteItem from '../../utilityComponents/deleteItem'
 
+import './itemWindowOptions.css'
 
+import ItemStatus from '../../../utilityComponents/itemStatus'
+import DeleteItem from '../../../utilityComponents/deleteItem'
 
 export default function ItemWindowOptions({handleDeleteItem, itemId, columnId, closeItemWindow, itemStatus,markAsDone}) {
 
@@ -24,8 +25,10 @@ export default function ItemWindowOptions({handleDeleteItem, itemId, columnId, c
             
             {/* Close Window */}
             <span title="Save any changes and close window" onClick={closeItemWindow} className="material-icons-outlined">save</span>
+           
         </div>
 
+        {/* Confirm Delete Message */}
         <DeleteItem 
             confirmDelete={confirm} 
             cancelDelete={()=>setBoxView(false)}

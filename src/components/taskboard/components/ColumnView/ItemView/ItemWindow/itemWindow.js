@@ -1,7 +1,10 @@
 import React,{useRef} from 'react'
-import ItemDescription from './itemDescription'
-import ItemHeader from './itemHeader'
-import ItemWindowOptions from './ItemWindowOptions/itemWindowOptions'
+
+import './itemWindow.css'
+
+import ItemDescription from './view/itemDescription/itemDescription'
+import ItemHeader from './view/itemHeader/itemHeader'
+import ItemWindowOptions from './view/ItemWindowOptions/itemWindowOptions'
 
 export default function ItemWindow({itemWindowState, item, closeItemWindow, columnId, addDescription, updateTitle, handleDeleteItem, markAsDone}) {
 

@@ -25,97 +25,34 @@
     width: 75%;
 }
 
-.itemCheck{
-    opacity: 0.5;
-    cursor: pointer;
-}
-
 .openDescriptionButton{
     cursor: pointer;
 }
 
-/* Item Window */
-.itemWindow{
-    background-color: #a1a1a1;
-    height: 100%;
-    /* outline: 1px solid red; */
-    position: absolute;
-        bottom: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.itemWindow span img{
-    height: 50px;
-}
-
-.itemWindow form{
-    /* background-color: red; */
-    margin: 5px;
-}
-
-.itemWindow form:focus, .itemWindow form textarea:focus-visible, .itemWindow form input:focus-visible{
-    /* background-color: red; */
-    border:none;
-    outline: none;
-}
-
-
-.itemWindow form textarea, .itemWindow form input{
-    background-color: #a1a1a1;
-    border: none;
-    /* height: 200px; */
-        min-height: 250px;
-    outline: 1px solid red;
-    resize: none;
-    width: 100%;
-
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    z-index: 10;
-
-}
-
-#formTitle{
-    font-size: 1.25rem;
-    min-height: auto !important;
-    text-align: center;
-}
-
-/* Hides Scrollbar, disabling for dev, enable for live */
-.itemWindow form textarea::-webkit-scrollbar {
-    display: none;
-  }
-
-  /* New Item Window */
-  .itemWindowBackground{
-    /* outline: 1px solid red; */
-    position: fixed;
-        left: 0;
-        top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    z-index: 1;
-  }
-
-  /* Item Window Options */
-.itemWindowOptions{
-    display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-    margin: 0 auto;
-    padding-bottom: 5px;
-    position: absolute;
-        bottom: 0;
-    width: 100%;
-
-}
-
-.itemWindowOptions span{
+/* Item Status */
+.itemCheck{
     cursor: pointer;
 }
-.itemWindowOptions button{
-    border: none;
-    box-shadow: 2px 2px 0px 0px #a1a1a1;
+.itemOpen{
+
+}
+
+.itemClosed{
+    
+}
+
+.hasDescription{
+    font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.emptyDescription{
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48
 }

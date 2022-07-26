@@ -9,7 +9,7 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
     
     const restColour = "white"
     const draggingColour ="#4eff5361"
-    const doneColour = "green"
+    const doneColour = "rgb(136 221 0)"
     
     const [itemWindowState, setItemWindowState] = useState({
         open:false,
@@ -24,6 +24,7 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
     return (
         <div className='itemWrapper' >
             {column.items.map((item, index) =>{
+                const hasDescriptionStyle = item.description.length > 1 ? "hasDescription" : "emptyDescription"
                 return(
                     <Draggable  index={index} key={item.id} draggableId={item.id} isDragDisabled={itemWindowState.disableDrag} >
                         
@@ -46,14 +47,17 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                 }}
                                 >
                                         <div id="itemContent" onClick={()=>toggleItemWindow(item.id, true, true)} > {item.content} </div>
+                                        
 
+                                         
                                         <span 
                                             alt="Open Description" 
                                             title="Open Description" 
                                             onClick={()=>toggleItemWindow(item.id, true, true)} 
-                                            className="material-icons-outlined openDescriptionButton">
-                                                description
+                                            className={"material-symbols-outlined openDescriptionButton " + hasDescriptionStyle}>article
                                         </span>
+                                        
+                                        
 
                                         <ItemStatus itemStatus={item.status} itemId={item.id} columnId={columnId} markAsDone={markAsDone}/>
 
