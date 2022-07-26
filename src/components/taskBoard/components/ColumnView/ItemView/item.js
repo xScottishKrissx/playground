@@ -2,42 +2,28 @@ import React,{useState, useRef} from 'react'
 import { Draggable} from 'react-beautiful-dnd'
 
 import './item.css'
+import ItemStatus from './utilityComponents/itemStatus'
 import ItemWindow from './ItemWindow/itemWindow'
 
 export default function ItemView({column, markAsDone, columnId, addDescription, updateTitle, handleDeleteItem}) {
     
     const restColour = "white"
     const draggingColour ="#4eff5361"
-
     const doneColour = "green"
     
-
     const [itemWindowState, setItemWindowState] = useState({
         open:false,
         itemId:"",
         disableDrag:false
     })
-
-    const [overwriteItemWindow, setOverwrite] = useState(false)
-
-    
     
     const toggleItemWindow = (itemId, toggleStatus, setDrag) =>{
         setItemWindowState({open:toggleStatus, itemId:itemId, disableDrag:setDrag})
     }
 
-    const closeWindow = () =>{
-        console.log("Close Window")
-        setOverwrite(true)
-    }
-
-
     return (
         <div className='itemWrapper' >
             {column.items.map((item, index) =>{
-                
-              
-                
                 return(
                     <Draggable  index={index} key={item.id} draggableId={item.id} isDragDisabled={itemWindowState.disableDrag} >
                         
@@ -69,28 +55,18 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                                 description
                                         </span>
 
-                                        
-                                        {item.status === "open" ? 
-                                            <span onClick={()=>markAsDone(item.id, columnId, "done")} title="Mark as Done" className="material-icons-outlined itemCheck">radio_button_unchecked</span>
-                                        :
-                                            <span onClick={()=>markAsDone(item.id, columnId, "open")} title="Mark as Open" className="material-icons-outlined itemCheck">check_circle_outline</span>
-                                        }
-                                        
-                                        
+                                        <ItemStatus itemStatus={item.status} itemId={item.id} columnId={columnId} markAsDone={markAsDone}/>
 
-                                          
-                                        
                                         <ItemWindow 
-                                        itemWindowState={itemWindowState} 
-                                        item={item}
-                                        closeItemWindow={()=>toggleItemWindow(null,false, false)}
-                                        addDescription={addDescription}
-                                        updateTitle={updateTitle}
-                                        columnId={columnId}
-                                        closeWindow={true}
-                                        
-                                        handleDeleteItem={handleDeleteItem}
-                                        
+                                            addDescription={addDescription}
+                                            closeItemWindow={()=>toggleItemWindow(null,false, false)}
+                                            closeWindow={true}
+                                            columnId={columnId}
+                                            handleDeleteItem={handleDeleteItem}
+                                            item={item}
+                                            itemWindowState={itemWindowState} 
+                                            markAsDone={markAsDone}
+                                            updateTitle={updateTitle}
                                         />
                                         
                                         

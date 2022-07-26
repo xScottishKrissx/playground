@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import DeleteItem from '../ColumnView/ItemView/ItemWindow/deleteItem'
+import DeleteItem from '../ColumnView/ItemView/utilityComponents/deleteItem'
 
 export default function TaskboardHeader({resetBoard}) {
 
