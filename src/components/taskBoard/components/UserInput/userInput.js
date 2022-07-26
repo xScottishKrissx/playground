@@ -30,11 +30,6 @@ export default function UserInput({handleAddNewItem, columnId, instruction}) {
         myForm.current.value = ""
     }
 
-    // useEffect(()=>{
-    //     window.addEventListener('keydown', detectKeyDown, true)
-    // },[])
-
-
     const detectKeyDown = (e) =>{
         if(formFocus === true && e.key === "Enter"){
             e.preventDefault()

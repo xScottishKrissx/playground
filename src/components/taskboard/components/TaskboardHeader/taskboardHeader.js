@@ -27,19 +27,6 @@ export default function TaskboardHeader({resetBoard}) {
             showBoxMessage={showBox} 
         />
         
-
-        
-
-        {/* {!showBox ? null : 
-            <div className='confirmDeleteAllBox'>
-                <p>This action is irreversible</p>
-                <span className='confirmDeleteAllBoxButtons'>
-                    <button onClick={confirm}>Confirm Delete All</button>
-                    <button onClick={()=>setBoxView(false)}>Cancel</button>
-                </span>
-            </div>
-        } */}
-
     </div>
   )
 }

@@ -41,8 +41,11 @@ export const components = [
   {
     name:"TaskBoard",
     componentName: Taskboard,
-    tags:"",
-    size:"wide"
+    tags:"React Beautiful DnD, Drag and Drop, uuidv4, user input, json, parse, local storage, state, ref, spread, concat, stringify, arrays, objects, destructuring, props, lifting props, filter, onClick, onKeyDown, object to array, onChange, ternary operator, fromEntries, entries, map, onDragEnd, splice, index, changing value in object, modal, keyboard, preventDefault, forms, textarea, input, value, google symbols, inline styles,  ",
+    size:"wide",
+    sources:["react beautiful dnd -> https://github.com/atlassian/react-beautiful-dnd"],
+    information:"",
+    github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/taskBoard"
   },
   // {
   //   name:"SimpleDragandDrop",
