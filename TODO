@@ -602,6 +602,7 @@ Javascript:
           ✔ Functionality to delete column @done(17:39 - 18/07/22)
           ✔ Add confirm delete board dialog @done(16:34 - 19/07/22)
           ✔ Complete UI @done(17:19 - 19/07/22)
+          ✔ Hide confirm box if clicking off box @done(16:50 - 26/07/22)
         ✘ Hide Column button @cancelled(11:20 - 20/07/22)
         ✔ Reset All Boards button @done(18:08 - 19/07/22)
           ✔ Re-integrate in another section @done(18:08 - 19/07/22)

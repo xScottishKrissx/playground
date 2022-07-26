@@ -11,7 +11,9 @@
     display: flex;
         align-items: center;
         justify-content: space-between;
+    /* position: relative; */
 }
+
 .allColumns{
     display: flex;
 }
@@ -44,12 +46,14 @@
     font-size: 1.5rem;
     left: 0;
     height: 100%;
+    margin: 0 !important;
     position: absolute;
+    text-align: center;
     width: 100%;
     z-index: 1000;
 }
 .confirmDeleteAllBox p{
-    
+    border-bottom: 5px solid red;
 }
 .confirmDeleteAllBoxButtons{
     display: flex;

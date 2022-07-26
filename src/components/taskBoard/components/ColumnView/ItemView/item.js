@@ -48,8 +48,6 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                 >
                                         <div id="itemContent" onClick={()=>toggleItemWindow(item.id, true, true)} > {item.content} </div>
                                         
-
-                                         
                                         <span 
                                             alt="Open Description" 
                                             title="Open Description" 
@@ -57,8 +55,6 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                             className={"material-symbols-outlined openDescriptionButton " + hasDescriptionStyle}>article
                                         </span>
                                         
-                                        
-
                                         <ItemStatus itemStatus={item.status} itemId={item.id} columnId={columnId} markAsDone={markAsDone}/>
 
                                         <ItemWindow 
@@ -72,10 +68,6 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                             markAsDone={markAsDone}
                                             updateTitle={updateTitle}
                                         />
-                                        
-                                        
-
-                          
                                 </div>
                             )
                         }}

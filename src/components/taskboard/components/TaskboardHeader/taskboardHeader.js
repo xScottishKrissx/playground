@@ -19,12 +19,16 @@ export default function TaskboardHeader({resetBoard}) {
             <span>Delete All</span>
             <span className="material-icons-outlined">delete_sweep</span>
         </span>
-        
+
+
         <DeleteItem 
             confirmDelete={confirm} 
             cancelDelete={()=>setBoxView(false)}
             showBoxMessage={showBox} 
         />
+        
+
+        
 
         {/* {!showBox ? null : 
             <div className='confirmDeleteAllBox'>

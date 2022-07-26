@@ -20,6 +20,7 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
   return (
     <div className='columnHeader'>
 
+
         <div className='columnHeaderButtons'>
 
             <span title='Clear Board' alt="Clear Board" onClick={()=>showConfirmBox(true,"reset")}>
@@ -37,6 +38,9 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
         
 
         {!showBox ? null :
+            <>
+            
+            <span onClick={()=>setBox(false)} className='itemWindowBackground'>Item Window Background</span>
             <div className='confirmBox'>
 
                 {instruction === "reset" ? 
@@ -55,6 +59,7 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
                 </div>
 
             </div>
+            </>
         }
     </div>
   )

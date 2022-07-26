@@ -7,7 +7,7 @@ export default function DeleteItem({showBoxMessage, confirmDelete, cancelDelete}
             <div className='confirmDeleteAllBox'>
                 <p>Warning: This action is irreversible</p>
                 <span className='confirmDeleteAllBoxButtons'>
-                    <button onClick={()=>confirmDelete()}>Confirm Delete All</button>
+                    <button onClick={()=>confirmDelete()}>Confirm Delete</button>
                     <button onClick={()=>cancelDelete()}>Cancel</button>
                 </span>
             </div>
