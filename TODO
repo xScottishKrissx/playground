@@ -635,7 +635,8 @@ Javascript:
         ☐ Add github link
         ☐ reenable simple drag and drop
       Issues:
-        ☐ Deleting an item stops the ability to drag items when the window closes
+        ✔ Deleting an item stops the ability to drag items when the window closes @done(17:38 - 26/07/22)
+          ✔ The issue was a piece of code that became defunct @done(17:39 - 26/07/22)
 
 
 

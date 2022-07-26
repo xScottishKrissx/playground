@@ -14,7 +14,6 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
     const [itemWindowState, setItemWindowState] = useState({
         open:false,
         itemId:"",
-        disableDrag:false
     })
     
     const toggleItemWindow = (itemId, toggleStatus, setDrag) =>{
@@ -26,7 +25,7 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
             {column.items.map((item, index) =>{
                 const hasDescriptionStyle = item.description.length > 1 ? "hasDescription" : "emptyDescription"
                 return(
-                    <Draggable  index={index} key={item.id} draggableId={item.id} isDragDisabled={itemWindowState.disableDrag} >
+                    <Draggable  index={index} key={item.id} draggableId={item.id}  >
                         
                         {(provided, snapshot) =>{
                             return(
