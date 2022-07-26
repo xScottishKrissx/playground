@@ -30,6 +30,10 @@
     cursor: pointer;
 }
 
+.openDescriptionButton{
+    cursor: pointer;
+}
+
 /* Item Window */
 .itemWindow{
     background-color: #a1a1a1;

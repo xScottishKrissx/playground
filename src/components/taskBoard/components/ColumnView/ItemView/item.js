@@ -44,11 +44,8 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                         {(provided, snapshot) =>{
                             return(
                                 <div 
-                                // onDrag={} 
                                 className="item"                                    
-                                // React-Beautiful-DND
                                 ref={provided.innerRef} 
-                                
                                 {...provided.draggableProps} 
                                 {...provided.dragHandleProps} 
                                 style={{
@@ -61,18 +58,23 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                     
                                     
                                 }}
-                                
                                 >
+                                        <div id="itemContent" onClick={()=>toggleItemWindow(item.id, true, true)} > {item.content} </div>
+
                                         <span 
-                                            id="itemContent" 
-                                           
+                                            alt="Open Description" 
+                                            title="Open Description" 
                                             onClick={()=>toggleItemWindow(item.id, true, true)} 
-                                        >
-                                                {item.content}
+                                            className="material-icons-outlined openDescriptionButton">
+                                                description
                                         </span>
 
                                         
-
+                                        {item.status === "open" ? 
+                                            <span onClick={()=>markAsDone(item.id, columnId, "done")} title="Mark as Done" className="material-icons-outlined itemCheck">radio_button_unchecked</span>
+                                        :
+                                            <span onClick={()=>markAsDone(item.id, columnId, "open")} title="Mark as Open" className="material-icons-outlined itemCheck">check_circle_outline</span>
+                                        }
                                         
                                         
 
@@ -92,11 +94,7 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                         
                                         
 
-                                        {item.status === "open" ? 
-                                            <span onClick={()=>markAsDone(item.id, columnId, "done")} title="Mark as Done" className="material-icons-outlined itemCheck">radio_button_unchecked</span>
-                                        :
-                                            <span onClick={()=>markAsDone(item.id, columnId, "open")} title="Mark as Open" className="material-icons-outlined itemCheck">check_circle_outline</span>
-                                        }
+                          
                                 </div>
                             )
                         }}

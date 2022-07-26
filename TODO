@@ -563,6 +563,7 @@ Javascript:
           ✔ Max character limit for new items @done(15:30 - 19/07/22)
           ☐ Delete Item Button
             ☐ Maybe leave for the model, avoid the item becoming cluttered
+          ✔ Open Modal / Description Button @done(11:16 - 26/07/22)
           ✔ Mark task as complete button @done(12:54 - 20/07/22)
 
         Click on item to get an Item Modal:
