@@ -639,7 +639,9 @@ Javascript:
         ☐ Ability to change board title
         ✔ Animate red warning line for deleting @done(13:58 - 28/07/22)
         ✔ Fixed Reset All button spacing @done(13:47 - 28/07/22)
-        ☐ Can i move the taskboard.js functions into their own files?
+        ✔ Can i move the taskboard.js functions into their own files? @done(16:39 - 28/07/22)
+          ✔ Yes @done(16:39 - 28/07/22)
+          ✔ Done @done(16:39 - 28/07/22)
 
       Issues:
         ✔ Deleting an item stops the ability to drag items when the window closes @done(17:38 - 26/07/22)
