@@ -30,14 +30,15 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
                 <span className="material-icons">restart_alt</span>
             </span>
 
+            <span title="Click and Drag to Move Column" className="material-symbols-outlined" {...provided.dragHandleProps}> drag_handle</span>
+
             <span title="Delete Board" alt="Delete Board" onClick={()=>showConfirmBox(true,"delete")}>
                 <span className="material-icons">delete</span>
             </span>
-            
 
         </div>
 
-        <h2 {...provided.dragHandleProps}>{column.name}</h2>
+        {/* <h2 {...provided.dragHandleProps}>{column.name}</h2> */}
         <ColumnHeaderTitle updateTitle={updateTitle} columnId={id} content={column.name} />
 
 

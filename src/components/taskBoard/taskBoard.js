@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {v4 as uuidv4} from 'uuid'
-import { DragDropContext, Draggable, Droppable} from 'react-beautiful-dnd'
+import { DragDropContext, Droppable} from 'react-beautiful-dnd'
 
 import './taskboard.css'
 
@@ -30,13 +30,13 @@ const columnData = { [uuidv4()]: { name:"First Board", items: tasks, } }
 export default function Taskboard() {
     const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
     const [columns, setColumns] = useState(grabLocalStorage || columnData)
-    console.log(columns)
+
+    // If current columns don't match local storage, save columns to local storage.
     if(columns !== grabLocalStorage){ localStorage.setItem("userData", JSON.stringify(columns)) }
 
-
-    const doAddNewItem = (id, formValue) => addNewItem(id, formValue, columns, setColumns, uuidv4())
-    const doAddNewBoard = (formValue) =>addNewBoard(formValue, columns, setColumns, uuidv4())
     const doAddDescription = (formValue, columnId, itemId) => addDescription(formValue, columnId, itemId, columns, setColumns) 
+    const doAddNewBoard = (formValue) =>addNewBoard(formValue, columns, setColumns, uuidv4())
+    const doAddNewItem = (id, formValue) => addNewItem(id, formValue, columns, setColumns, uuidv4())
 
     const doDeleteColumn = (columnToDeleteId) => deleteColumn(columnToDeleteId, columns, setColumns) 
     const doDeleteItem = (itemId, columnId) => deleteItem(itemId, columnId, columns, setColumns) 
@@ -51,31 +51,30 @@ export default function Taskboard() {
                 <TaskboardHeader resetBoard={()=>setColumns(columnData)}/>
 
                 <div className='columnsContainer'>
+                    <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
+                        {/* Columns */}
+                        <Droppable droppableId='allColumns' direction='horizontal' type="column" >
+                            {(provided) =>(
+                                <div className='allColumns' ref={provided.innerRef}  {...provided.droppableProps}  >                        
+                                    <ColumnView 
+                                        columns={columns} 
+                                        handleAddNewItem={doAddNewItem}  
+                                        handleResetBoard={doResetBoard} 
+                                        handleDeleteColumn={doDeleteColumn}
+                                        markAsDone={doMarkAsDone}
+                                        addDescription={doAddDescription}
+                                        updateTitle={doUpdateTitle}
+                                        handleDeleteItem={doDeleteItem}
+                                        />
+                                    {provided.placeholder}
+                                </div>
+                            )}
+                        </Droppable>
+                        {/* Add New Board */}
+                        <UserInput columns={columns} handleAddNewItem={doAddNewBoard} instruction="board" />
 
-                <DragDropContext onDragEnd={(result)=>onDragEnd(result, columns, setColumns)}>
-                    <Droppable droppableId='allColumns' direction='horizontal' type="column" >
-                        {(provided) =>(
-                            <div className='allColumns' ref={provided.innerRef}  {...provided.droppableProps}  >                        
-                                <ColumnView 
-                                    columns={columns} 
-                                    handleAddNewItem={doAddNewItem}  
-                                    handleResetBoard={doResetBoard} 
-                                    handleDeleteColumn={doDeleteColumn}
-                                    markAsDone={doMarkAsDone}
-                                    addDescription={doAddDescription}
-                                    updateTitle={doUpdateTitle}
-                                    handleDeleteItem={doDeleteItem}
-                                    />
-                                {provided.placeholder}
-                            </div>
-                        )}
-
-                    </Droppable>
-
-                    <UserInput columns={columns} handleAddNewItem={doAddNewBoard} instruction="board" />
-                </DragDropContext>
-
-            </div>
+                    </DragDropContext>
+                </div>
         </div>
     )
 }

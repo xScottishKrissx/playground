@@ -636,12 +636,16 @@ Javascript:
         ✔ reenable simple drag and drop @done(13:03 - 28/07/22)
         ✔ Remove current default items and boards. @done(13:50 - 28/07/22)
           ✔ // leave one as tutorial @done(13:50 - 28/07/22)
-        ☐ Ability to change board title
+        ✔ Ability to change board title @done(17:15 - 28/07/22)
+          ✔ Functionality @done(16:44 - 28/07/22)
+          ✔ Appearance @done(17:15 - 28/07/22)
         ✔ Animate red warning line for deleting @done(13:58 - 28/07/22)
         ✔ Fixed Reset All button spacing @done(13:47 - 28/07/22)
         ✔ Can i move the taskboard.js functions into their own files? @done(16:39 - 28/07/22)
           ✔ Yes @done(16:39 - 28/07/22)
           ✔ Done @done(16:39 - 28/07/22)
+        ✔ Change Drag Handle from Column Header to something more obvious @done(17:15 - 28/07/22)
+        ☐ Change Font
 
       Issues:
         ✔ Deleting an item stops the ability to drag items when the window closes @done(17:38 - 26/07/22)

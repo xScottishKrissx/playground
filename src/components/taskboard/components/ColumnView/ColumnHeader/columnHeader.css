@@ -22,6 +22,26 @@
     /* margin-top: 0.5rem; */
 }
 
+.columnHeaderTitle form h2{
+    display: flex;
+        justify-content: space-evenly;
+}
+.columnHeaderTitle form h2 input{
+    background-color: inherit;
+    border: none;
+}
+
+.columnHeaderTitle form h2 span input {
+    width: 80%;
+}
+
+.columnHeaderTitle form:focus, 
+.columnHeaderTitle form input:focus-visible{
+    outline: none;
+    border-bottom: 1px solid white !important;
+}
+
+
 .columnHeader span{
     cursor: pointer;
 }
