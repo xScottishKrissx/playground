@@ -9,34 +9,22 @@ import ColumnView from './components/ColumnView/column'
 import UserInput from './components/UserInput/userInput'
 import TaskboardHeader from './components/TaskboardHeader/taskboardHeader'
 
-// This will become empty arrays so no need to clean this up
-    const tasks = [
-        {id:uuidv4(), content:'task-1', description:"This has a description" , status:"open"},
-        {id:uuidv4(), content:'task-2', description:"" ,  status:"open"},
-        {id:uuidv4(), content:'task-4', description:"" ,  status:"open"},
-        {id:uuidv4(), content:'task-3', description:"" ,  status:"open"},
-    ];
+// Columns
 
-    const columnData = 
-    {
-        [uuidv4()]: {
-            name:"First Board",
-            items: tasks,
-            
-        },
-        [uuidv4()]: {
-            name:"Second Board",
-            items:[],
-            
-        }
-    }
+// Items
+const tasks = [
+    {id:uuidv4(), content:'Item 1', description:"This is an item, it has a description and is marked as done. You can mark this item as done/open by hitting the check mark icon(bottom middle). You can delete this item by hitting the bin icon(bottom left) and the floppy disk(bottom right) will close the window." , status:"done"},
+    {id:uuidv4(), content:'Item B', description:"" ,  status:"open"},
+    {id:uuidv4(), content:'Task III', description:"" ,  status:"open"},
+    {id:uuidv4(), content:'Reminder Four', description:"" ,  status:"open"},
+];
+
+    const columnData = { [uuidv4()]: { name:"First Board", items: tasks, } }
 
 export default function Taskboard() {
-    // localStorage.clear()
-    // localStorage.clear()
     const grabLocalStorage = JSON.parse(localStorage.getItem("userData"))
     const [columns, setColumns] = useState(grabLocalStorage || columnData)
-    // console.log(columns)
+
     if(columns !== grabLocalStorage){ localStorage.setItem("userData", JSON.stringify(columns)) }
 
     const handleAddNewItem = (id, formValue) => {

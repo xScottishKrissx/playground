@@ -626,7 +626,7 @@ Javascript:
         ✔ Firefox @done(17:02 - 26/07/22)
         ✔ Edge @done(17:05 - 26/07/22)
       ToDo:
-        ☐ Keyboard support, when adding a task, hitting enter should trigger the submit.
+        ✔ Keyboard support, when adding a task, hitting enter should trigger the submit. @done(13:05 - 28/07/22)
           ✔ When adding new boards @done(17:23 - 26/07/22)
           ✔ When changing item title @done(17:35 - 26/07/22)
           ✘ When changing item description @cancelled(12:56 - 28/07/22)
@@ -634,6 +634,12 @@ Javascript:
         ✔ Do the description @done(13:03 - 28/07/22)
         ✔ Add github link @done(12:56 - 28/07/22)
         ✔ reenable simple drag and drop @done(13:03 - 28/07/22)
+        ✔ Remove current default items and boards. @done(13:50 - 28/07/22)
+          ✔ // leave one as tutorial @done(13:50 - 28/07/22)
+        ☐ Ability to change board title
+        ✔ Animate red warning line for deleting @done(13:58 - 28/07/22)
+        ✔ Fixed Reset All button spacing @done(13:47 - 28/07/22)
+
       Issues:
         ✔ Deleting an item stops the ability to drag items when the window closes @done(17:38 - 26/07/22)
           ✔ The issue was a piece of code that became defunct @done(17:39 - 26/07/22)

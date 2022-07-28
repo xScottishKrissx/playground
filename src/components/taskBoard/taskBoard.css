@@ -53,7 +53,10 @@
     z-index: 1000;
 }
 .confirmDeleteAllBox p{
-    border-bottom: 5px solid red;
+    /* border-bottom: 5px solid red; */
+    margin: 0;
+    padding: 0;
+
 }
 .confirmDeleteAllBoxButtons{
     display: flex;
@@ -64,4 +67,30 @@
     margin-bottom: 10px;
     border: none;
     box-shadow: 2px 2px 0px 0px #a1a1a1;
+}
+
+#warningLine{
+    width: 0%;
+    animation: animateWarningLine 2s;
+    animation-fill-mode: forwards;
+}
+
+
+
+#warningLine hr{
+    height: 15px;
+    color: red;
+    opacity: 1;
+}
+
+@keyframes animateWarningLine {
+    0%{
+        opacity: 0;
+        width: 0%;
+    }
+
+    100%{
+        opacity: 2;
+        width: 40%;
+    }
 }

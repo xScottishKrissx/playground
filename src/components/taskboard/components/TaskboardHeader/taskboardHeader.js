@@ -16,7 +16,7 @@ export default function TaskboardHeader({resetBoard}) {
         <h2>Simple Taskboard</h2>
 
         <span className='deleteAllButton' onClick={()=>setBoxView(true)}>
-            <span>Delete All</span>
+            <span>Reset All</span>
             <span className="material-icons-outlined">delete_sweep</span>
         </span>
 
