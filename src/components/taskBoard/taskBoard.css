@@ -7,6 +7,25 @@
     width: 100%;
     /* outline: 1px solid blue; */
 }
+
+.taskboardWrapper * p,
+.taskboardWrapper * div,
+.taskboardWrapper * form,
+.taskboardWrapper * input,
+.taskboardWrapper * textarea{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.taskboardWrapper * h1, 
+.taskboardWrapper * h2,
+.taskboardWrapper * h3,
+.taskboardWrapper * h4,
+.taskboardWrapper * h5,
+.taskboardWrapper * h6{
+    font-family: 'Roboto', sans-serif;
+}
+
+
 .taskboardHeader{
     display: flex;
         align-items: center;

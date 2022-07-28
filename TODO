@@ -645,7 +645,12 @@ Javascript:
           ✔ Yes @done(16:39 - 28/07/22)
           ✔ Done @done(16:39 - 28/07/22)
         ✔ Change Drag Handle from Column Header to something more obvious @done(17:15 - 28/07/22)
-        ☐ Change Font
+          ✔ Improved Drag Handle Width @done(17:28 - 28/07/22)
+        ✔ Change Font @done(17:25 - 28/07/22)
+        ✔ Can i animate a new column appearing? @done(17:36 - 28/07/22)
+          ✔ Yes @done(17:36 - 28/07/22)
+        ☐ Can I animate new items appearing?
+          ☐ ...
 
       Issues:
         ✔ Deleting an item stops the ability to drag items when the window closes @done(17:38 - 26/07/22)
