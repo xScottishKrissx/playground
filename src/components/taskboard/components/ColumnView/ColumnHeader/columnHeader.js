@@ -1,8 +1,9 @@
 import React,{useState} from 'react'
 
 import './columnHeader.css'
+import ColumnHeaderTitle from './columnHeaderTitle'
 
-export default function ColumnHeader({provided, column, confirmDelete, confirmResetBoard,id}) {
+export default function ColumnHeader({provided, column, confirmDelete, confirmResetBoard,id, updateTitle}) {
 
     const [showBox, setBox] = useState(false)
     const [instruction, setInstruction] = useState()
@@ -16,6 +17,8 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
         setBox(false)
         return x
     }
+
+     
 
   return (
     <div className='columnHeader'>
@@ -35,7 +38,8 @@ export default function ColumnHeader({provided, column, confirmDelete, confirmRe
         </div>
 
         <h2 {...provided.dragHandleProps}>{column.name}</h2>
-        
+        <ColumnHeaderTitle updateTitle={updateTitle} columnId={id} content={column.name} />
+
 
         {!showBox ? null :
             <>

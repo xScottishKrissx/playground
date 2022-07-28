@@ -36,6 +36,7 @@ export default function ColumnView({
                                     id={id} 
                                     confirmDelete={handleDeleteColumn} 
                                     confirmResetBoard={handleResetBoard}
+                                    updateTitle={updateTitle}
                                 />
 
                                 <Droppable droppableId={id} type="tasks">
