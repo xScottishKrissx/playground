@@ -19,6 +19,18 @@
     
     user-select: none;
     width: 100%;
+
+    animation: animateNewItem 1s;
+    animation-fill-mode: forwards;
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+
+@keyframes animateNewItem {
+        0%{ opacity: 0; transform: translateY(-25px); }
+        50%{ transform: translateY(0px); }
+        100%{ opacity: 2; }
 }
 
 #itemContent{

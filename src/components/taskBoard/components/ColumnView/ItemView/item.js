@@ -29,6 +29,7 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                         
                         {(provided, snapshot) =>{
                             return(
+                            <>
                                 <div 
                                 className="item"                                    
                                 ref={provided.innerRef} 
@@ -56,18 +57,20 @@ export default function ItemView({column, markAsDone, columnId, addDescription, 
                                         
                                         <ItemStatus itemStatus={item.status} itemId={item.id} columnId={columnId} markAsDone={markAsDone}/>
 
-                                        <ItemWindow 
-                                            addDescription={addDescription}
-                                            closeItemWindow={()=>toggleItemWindow(null,false, false)}
-                                            closeWindow={true}
-                                            columnId={columnId}
-                                            handleDeleteItem={handleDeleteItem}
-                                            item={item}
-                                            itemWindowState={itemWindowState} 
-                                            markAsDone={markAsDone}
-                                            updateTitle={updateTitle}
-                                        />
                                 </div>
+
+                                <ItemWindow 
+                                    addDescription={addDescription}
+                                    closeItemWindow={()=>toggleItemWindow(null,false, false)}
+                                    closeWindow={true}
+                                    columnId={columnId}
+                                    handleDeleteItem={handleDeleteItem}
+                                    item={item}
+                                    itemWindowState={itemWindowState} 
+                                    markAsDone={markAsDone}
+                                    updateTitle={updateTitle}
+                                />
+                            </>
                             )
                         }}
                     </Draggable>

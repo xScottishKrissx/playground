@@ -649,8 +649,8 @@ Javascript:
         ✔ Change Font @done(17:25 - 28/07/22)
         ✔ Can i animate a new column appearing? @done(17:36 - 28/07/22)
           ✔ Yes @done(17:36 - 28/07/22)
-        ☐ Can I animate new items appearing?
-          ☐ ...
+        ✔ Can I animate new items appearing? @done(17:44 - 28/07/22)
+          ✔ ...yes @done(17:44 - 28/07/22)
 
       Issues:
         ✔ Deleting an item stops the ability to drag items when the window closes @done(17:38 - 26/07/22)
