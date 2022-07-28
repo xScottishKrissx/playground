@@ -17,7 +17,7 @@ import SimpleApiFetch from "../../simplyApiFetch/simpleApiFetch";
 import Covid19Dashboard from "../../covid19Dashboard/covid19Dashboard";
 import simpleChart from "../../simpleCharts/simpleChart";
 // import ChessTutorial from "../../simpleDragAndDrop/simpleDragDrop";
-// import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
+import SimpleDragDrop from "../../simpleDragAndDrop/simpleDragDrop";
 
 // import Taskboard from "../../taskBoard/taskboard";
 import Taskboard from "../../taskboard/taskboard";
@@ -44,21 +44,11 @@ export const components = [
     tags:"React Beautiful DnD, Drag and Drop, uuidv4, user input, json, parse, local storage, state, ref, spread, concat, stringify, arrays, objects, destructuring, props, lifting props, filter, onClick, onKeyDown, object to array, onChange, ternary operator, fromEntries, entries, map, onDragEnd, splice, index, changing value in object, modal, keyboard, preventDefault, forms, textarea, input, value, google symbols, inline styles,  ",
     size:"wide",
     sources:["react beautiful dnd -> https://github.com/atlassian/react-beautiful-dnd"],
-    information:"",
+    information:"Simple Taskboard is an escalation of Simple Drag and Drop, where instead of just moving a single item, i wanted to move items between columns as well as moving the columns themselves. The library i used for this is React Beautiful DND, which is designed for this sort of work. I went further than simply moving objects and instead expanded into a basic trello clone, where you can reorganise items and click on them to reveal a window with more information. You can add new items and boards manually, mark them as done by clicking on the circle and change their titles and descriptions from the item window. The main caveat to this project is that it's not at all suitable for mobile devices so that's something to improve when I implement something like this in future projects.",
     github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/taskBoard"
   },
-  // {
-  //   name:"SimpleDragandDrop",
-  //   componentName:SimpleDragDrop,
-  //   tags:"React Drag Drop, DnD, DnDProvider, HTML5Backend, images, useState, map, useDrop, filter, ternary formatting, inline style, onClick, useDrag,  ",
-  //   github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleDragAndDrop",
-  //   iconColour:"dark",
-  //   information:"This is very basic attempt at drag and drop using the React Drag and Drop library. I wanted to give myself a solid base and understand the fundamentals before moving onto more complicated implementations.",
-  //   size:"wide",
-  //   sources:["React DND -> https://react-dnd.github.io/react-dnd/about", "Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/",
-  //     "Chess Pieces from Google and  https://www.pngwing.com/" ]
-  // },
   
+
     {
       name:"Covid19Dashboard",
       componentName:Covid19Dashboard,
@@ -111,7 +101,17 @@ export const components = [
       github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleTodo",
       information:"This is simple to do list that lets you add, edit and remove tasks to mimic a simple CRUD."
     },
-
+    {
+      name:"SimpleDragandDrop",
+      componentName:SimpleDragDrop,
+      tags:"React Drag Drop, DnD, DnDProvider, HTML5Backend, images, useState, map, useDrop, filter, ternary formatting, inline style, onClick, useDrag,  ",
+      github:"https://github.com/xScottishKrissx/playground/tree/master/src/components/simpleDragAndDrop",
+      iconColour:"dark",
+      information:"This is very basic attempt at drag and drop using the React Drag and Drop library. I wanted to give myself a solid base and understand the fundamentals before moving onto more complicated implementations.",
+      size:"wide",
+      sources:["React DND -> https://react-dnd.github.io/react-dnd/about", "Chess Info from -> https://www.ichess.net/blog/chess-pieces-moves/",
+        "Chess Pieces from Google and  https://www.pngwing.com/" ]
+    },
     {
       name:"LoremIpsum",
       componentName:LoremIpsum,

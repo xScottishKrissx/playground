@@ -629,11 +629,11 @@ Javascript:
         ☐ Keyboard support, when adding a task, hitting enter should trigger the submit.
           ✔ When adding new boards @done(17:23 - 26/07/22)
           ✔ When changing item title @done(17:35 - 26/07/22)
-          ☐ When changing item description
-        ☐ Add tags
-        ☐ Do the description
-        ☐ Add github link
-        ☐ reenable simple drag and drop
+          ✘ When changing item description @cancelled(12:56 - 28/07/22)
+        ✔ Add tags @done(12:56 - 28/07/22)
+        ✔ Do the description @done(13:03 - 28/07/22)
+        ✔ Add github link @done(12:56 - 28/07/22)
+        ✔ reenable simple drag and drop @done(13:03 - 28/07/22)
       Issues:
         ✔ Deleting an item stops the ability to drag items when the window closes @done(17:38 - 26/07/22)
           ✔ The issue was a piece of code that became defunct @done(17:39 - 26/07/22)
