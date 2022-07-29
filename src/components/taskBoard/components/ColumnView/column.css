@@ -14,7 +14,7 @@
     position: relative;
     width:250px;
 
-    animation: animateNewColumn 1s;
+    /* animation: animateNewColumn 1s; */
     animation-fill-mode: forwards;
     opacity: 1;
     transform: translateY(100);

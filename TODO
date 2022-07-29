@@ -651,6 +651,10 @@ Javascript:
           ✔ Yes @done(17:36 - 28/07/22)
         ✔ Can I animate new items appearing? @done(17:44 - 28/07/22)
           ✔ ...yes @done(17:44 - 28/07/22)
+        
+        ✔ Build @done(11:27 - 29/07/22)
+        ✔ Add To Portfolio @done(11:27 - 29/07/22)
+        ☐ Update Portfolio
 
       Issues:
         ✔ Deleting an item stops the ability to drag items when the window closes @done(17:38 - 26/07/22)
